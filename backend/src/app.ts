@@ -10,7 +10,7 @@ console.log(chalk.yellow('process.env.PORT', process.env.PORT));
 declare global {
   namespace NodeJS {
     interface Global {
-      SocketServer: io.Server
+      socketServer: io.Server
     }
   }
 }
@@ -23,7 +23,9 @@ const server = app.listen(port, () => {
 });
 
 // sockets
-global.SocketServer = io.listen(server, { pingInterval: 5000, pingTimeout: 10000, cookie: false });
+global.socketServer = new io.Server(server, {
+  pingInterval: 5000, pingTimeout: 10000, cookie: false,
+});
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
