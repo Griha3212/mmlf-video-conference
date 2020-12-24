@@ -30,7 +30,5 @@ frontend/package-lock.json
 backend/error*
 backend/info*
 backend/logs*
-
-backend/ormconfig.js
 docker-compose.yml
 error.log
