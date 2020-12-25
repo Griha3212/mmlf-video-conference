@@ -4,8 +4,8 @@ import allErrors from '../utils/errors';
 
 /* eslint-disable import/prefer-default-export */
 export const voteForSpeaker = async (req: Request, res: Response, next: NextFunction) => {
-  const userRepository = await getRepository(User);
-  const speakerRepository = await getRepository(Speaker);
+  const usersRepository = await getRepository(Users);
+  const speakersRepository = await getRepository(Speakers);
   const votesRepository = await getRepository(Votes);
 
   try {

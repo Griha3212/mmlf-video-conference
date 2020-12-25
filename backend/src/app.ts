@@ -1,34 +1,30 @@
-/* eslint-disable no-console */
-import chalk from 'chalk';
 import express, { Request, Response } from 'express';
+import { createConnection, getRepository } from 'typeorm';
 
-import * as io from 'socket.io';
-
-const port: Number = 3005;
-console.log(chalk.yellow('process.env.PORT', process.env.PORT));
-
-declare global {
-  namespace NodeJS {
-    interface Global {
-      socketServer: io.Server
-    }
-  }
-}
+import errorHandler from './middlewares/error.middleware';
+import Users from './entities/users';
 
 // Create a new express application instance
-export const app: express.Application = express();
+const app = express();
 
-const server = app.listen(port, () => {
-  console.log(chalk.yellow(`Example app listening on port ${port}!`));
-});
-
-// sockets
-global.socketServer = new io.Server(server, {
-  pingInterval: 5000, pingTimeout: 10000, cookie: false,
-});
+app.use(express.json({ limit: '10mb' }));
+app.use(express.urlencoded({ extended: true }));
+app.use(errorHandler);
+app.use(express.static('public'));
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
 
-export default app;
+// TO DO create db for staging/prod version without seeding
+createConnection().then(async () => {
+  const usersRepository = await getRepository(Users);
+  // seed only if dataBase is empty
+
+  const foundUser = await
+
+  await seedMockedUsers();
+  await seedMockedSpeakers();
+});
+
+module.exports = app;
