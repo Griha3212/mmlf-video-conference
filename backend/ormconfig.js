@@ -8,7 +8,7 @@ if (process.env.PORT) {
     username: process.env.POSTGRES_USER,
     password: process.env.POSTGRES_PASSWORD,
     database: process.env.POSTGRES_DB,
-    synchronize: true,
+    synchronize: false,
     logging: false,
     entities: [
       'build/entities/**/*.js',
@@ -32,9 +32,9 @@ if (process.env.PORT) {
     host: 'localhost',
     port: 5432,
     username: 'postgres',
-    password: '',
-    database: 'mgtdb',
-    synchronize: false,
+    password: 'sNpFXdDbQ]V2H~*f',
+    database: 'mmlfdb',
+    synchronize: true,
     logging: false,
     entities: [
       'build/entities/**/*.js',
