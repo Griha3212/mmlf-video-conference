@@ -26,6 +26,35 @@ export default class Users extends BaseEntity {
   @Column({ nullable: true })
   company: string;
 
+  // uniq login code
+  @Index()
+  @Column({ nullable: true })
+  loginCode: string;
+
+  @Index()
+  @Column({ nullable: true })
+  jwtKey: string;
+
+  @Index()
+  @Column({ nullable: true })
+  jwtRefreshKey: string;
+
+  @Index()
+  @Column({ nullable: true })
+  jwtKeyValidUntilDate: Date;
+
+  @Index()
+  @Column({ nullable: true })
+  jwtRefreshKeyValidUntilDate: Date;
+
+  @Index()
+  @Column({ default: false })
+  isAdmin: boolean;
+
+  @Index()
+  @Column({ default: false })
+  isSubAdmin: boolean;
+
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
 }

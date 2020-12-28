@@ -1,9 +1,12 @@
+/* eslint-disable no-console */
 /* eslint-disable import/prefer-default-export */
 import express, { Request, Response } from 'express';
 import { createConnection, getRepository } from 'typeorm';
+import chalk from 'chalk';
 
 import errorHandler from './middlewares/error.middleware';
 import Users from './entities/users';
+import { seedMockedUsers } from './utils/seeds/seedUsers';
 
 // Create a new express application instance
 export const app = express();
@@ -19,11 +22,19 @@ app.get('/', (req: Request, res: Response) => {
 
 // TO DO create db for staging/prod version without seeding
 createConnection().then(async () => {
-  const usersRepository = await getRepository(Users);
+  // const usersRepository = await getRepository(Users);
   // seed only if dataBase is empty
 
-  // const foundUser = await
+  const countOfUsers = await getRepository(Users)
+    .createQueryBuilder('user')
+    .getCount();
 
-  // await seedMockedUsers();
+  if (countOfUsers === 0) {
+    console.log(chalk.yellow('Found 0 users, mocking users'));
+    await seedMockedUsers();
+  }
+
+  // const foundUser = await usersRepository.find
+
   // await seedMockedSpeakers();
 });
