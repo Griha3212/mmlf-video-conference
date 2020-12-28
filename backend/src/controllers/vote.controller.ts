@@ -1,5 +1,8 @@
 import { Request, Response, NextFunction } from 'express';
 import { getRepository } from 'typeorm';
+import Speakers from '../entities/speakers';
+import Users from '../entities/users';
+import Votes from '../entities/votes';
 import allErrors from '../utils/errors';
 
 /* eslint-disable import/prefer-default-export */

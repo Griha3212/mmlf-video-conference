@@ -1,16 +1,16 @@
 import express from 'express';
-import * as authController from '../controllers/auth.controller';
+// import * as authController from '../controllers/auth.controller';
 
 const router = express.Router();
 
-const {
+// const {
 
-  userLogin,
-  updateToken,
+//   userLogin,
+//   updateToken,
 
-} = authController;
+// } = authController;
 
-router.post('/login', userLogin);
-router.post('/updateToken', updateToken);
+// router.post('/login', userLogin);
+// router.post('/updateToken', updateToken);
 
 export default router;

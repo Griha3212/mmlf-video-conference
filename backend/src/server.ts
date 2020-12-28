@@ -1,7 +1,7 @@
 import http from 'http';
 import * as io from 'socket.io';
 import chalk from 'chalk';
-import app from './app';
+import { app } from './app';
 /* eslint-disable no-console */
 
 declare global {
