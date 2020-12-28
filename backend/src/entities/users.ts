@@ -1,7 +1,9 @@
+/* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn,
+  Index, CreateDateColumn, OneToMany,
 } from 'typeorm';
+import Votes from './votes';
 
 @Entity()
 export default class Users extends BaseEntity {
@@ -23,4 +25,7 @@ export default class Users extends BaseEntity {
   @Index()
   @Column({ nullable: true })
   company: string;
+
+  @OneToMany(() => Votes, (votes) => votes.user)
+  votes: Votes[];
 }
