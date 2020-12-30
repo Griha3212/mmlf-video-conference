@@ -9,12 +9,15 @@ import {
 import history from './core/history';
 import logo from './logo.svg';
 import './App.css';
+import getLocalStorageData from './utils/helpers/localStorage.helper';
 
-export const App: FC = () => (
-  <Router history={history}>
-    {/* <CssBaseline /> */}
-    {/* <Snackbar /> */}
-    <MainContainer>
+export const App: FC = () => {
+  const [isAuth, setIsAuth] = useState(!!getLocalStorageData().token);
+  return (
+    <Router history={history}>
+      {/* <CssBaseline /> */}
+      {/* <Snackbar /> */}
+
       <Switch>
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/signin" component={SignInPage} />
@@ -28,8 +31,9 @@ export const App: FC = () => (
         <Route exact path="/notfound" component={NotFoundPage} />
         <Route path="/" component={isAuth ? PrivateRoute : PublicMarketPlace} />
       </Switch>
-    </MainContainer>
-  </Router>
-);
+
+    </Router>
+  );
+};
 
 export default memo(App);
