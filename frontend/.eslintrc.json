@@ -3,6 +3,7 @@
         "browser": true,
         "es6": true
     },
+    "root": true,
     "extends": [
         "airbnb-typescript",
         "plugin:@typescript-eslint/recommended"

@@ -1,4 +1,4 @@
-import React, { FC, memo } from 'react';
+import React, { FC, memo, useState } from 'react';
 
 import { Copyright } from '@material-ui/icons';
 // import ContentContainer from '../ContentContainer/ContentContainer';
@@ -34,7 +34,15 @@ const LoginPage: FC = () => {
     register, handleSubmit, watch,
     control, errors: fieldsErrors,
   } = useForm<FormData>();
-  const onSubmit = (data: any) => console.log(data);
+  const onSubmit = (data: FormData) => console.log(data);
+
+  const [user, setUser] = useState();
+
+  const [loading, setLoading]: [boolean, (loading: boolean) => void]
+    = React.useState<boolean>(true);
+  const [error, setError]: [string, (error: string) => void] = React.useState('');
+
+  // const sendLoginDataToServer =
 
   return (
 
@@ -82,23 +90,8 @@ const LoginPage: FC = () => {
           >
             Войти
           </Button>
-          {/* <Grid container>
-            <Grid item xs>
-              <Link href="#" variant="body2">
-                Forgot password?
-              </Link>
-            </Grid>
-            <Grid item>
-              <Link href="#" variant="body2">
-                Don't have an account? Sign Up
-              </Link>
-            </Grid>
-          </Grid> */}
         </form>
       </div>
-      {/* <Box mt={8}>
-        <Copyright />
-      </Box> */}
     </Container>
 
   );
