@@ -53,7 +53,6 @@ const LoginPage: FC = () => {
     const response = await apiLogin(data.loginCode);
 
     if (response.status === 404) {
-      console.log('404 :>> ');
       setError('Нет соединения');
       setOpen(true);
     }
@@ -63,7 +62,7 @@ const LoginPage: FC = () => {
     if (reason === 'clickaway') {
       return;
     }
-
+    setError('');
     setOpen(false);
   };
 
