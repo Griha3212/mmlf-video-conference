@@ -55,7 +55,12 @@ const LoginPage: FC = () => {
   const onSubmit = async (data: FormData) => {
     const response = await apiLogin(data.loginCode);
 
-    if (response.status === 404) {
+    if (response && response.status === 404) {
+      setError('Нет соединения');
+      setOpen(true);
+    }
+
+    if (!response) {
       setError('Нет соединения');
       setOpen(true);
     }

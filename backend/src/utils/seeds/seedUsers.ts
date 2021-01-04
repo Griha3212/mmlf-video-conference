@@ -38,8 +38,8 @@ export const seedMockedUsers = async () => {
     firstName: 'test4',
     lastName: 'testovich4',
     company: 'companyTest4',
-    loginCode: 'subadmin',
-    isSubAdmin: true,
+    loginCode: 'freeUser',
+    isFreeSessionAccessOnly: true,
 
   },
 
@@ -54,7 +54,7 @@ export const seedMockedUsers = async () => {
     newUser.lastName = user.lastName;
     newUser.company = user.company;
     newUser.isAdmin = !!user.isAdmin;
-    newUser.isSubAdmin = !!user.isSubAdmin;
+    newUser.isFreeSessionAccessOnly = !!user.isFreeSessionAccessOnly;
 
     results.push(newUser);
   }

@@ -26,6 +26,11 @@ export default class Users extends BaseEntity {
   @Column({ nullable: true })
   company: string;
 
+  // access only for one Free Session
+  @Index()
+  @Column({ default: false })
+  isFreeSessionAccessOnly: boolean;
+
   // uniq login code
   @Index()
   @Column({ nullable: true })
@@ -50,10 +55,6 @@ export default class Users extends BaseEntity {
   @Index()
   @Column({ default: false })
   isAdmin: boolean;
-
-  @Index()
-  @Column({ default: false })
-  isSubAdmin: boolean;
 
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
