@@ -1,4 +1,7 @@
-import React, { FC, memo, useState } from 'react';
+import React, {
+  FC, memo, useState, useEffect,
+  ChangeEvent,
+} from 'react';
 
 import { Copyright } from '@material-ui/icons';
 // import ContentContainer from '../ContentContainer/ContentContainer';
@@ -46,7 +49,7 @@ const LoginPage: FC = () => {
   const [open, setOpen] = React.useState(false);
 
   const {
-    register, handleSubmit, watch,
+    handleSubmit,
     control, errors: fieldsErrors,
   } = useForm<FormData>();
   const onSubmit = async (data: FormData) => {
@@ -58,12 +61,11 @@ const LoginPage: FC = () => {
     }
   };
 
-  const handleClose = (event: any, reason: any) => {
+  const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
     if (reason === 'clickaway') {
       return;
     }
-    setError('');
-    setOpen(false);
+    await setOpen(false);
   };
 
   // const sendLoginDataToServer =
