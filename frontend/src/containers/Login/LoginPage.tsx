@@ -17,6 +17,8 @@ import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useForm, Controller } from 'react-hook-form';
+import Snackbar from '@material-ui/core/Snackbar';
+import MuiAlert from '@material-ui/lab/Alert';
 import useStyles from './style';
 import { apiLogin } from '../../api/login';
 
@@ -26,31 +28,57 @@ type FormData = {
 
 interface Props {
   onSubmit: (data: FormData) => void;
+
+}
+
+function Alert(props: any) {
+  return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
 const LoginPage: FC = () => {
   const classes = useStyles();
-
-  const {
-    register, handleSubmit, watch,
-    control, errors: fieldsErrors,
-  } = useForm<FormData>();
-  const onSubmit = async (data: FormData) => {
-    console.log(data);
-    await apiLogin(data.loginCode);
-  };
 
   const [user, setUser] = useState();
 
   const [loading, setLoading]: [boolean, (loading: boolean) => void]
     = React.useState<boolean>(true);
   const [error, setError]: [string, (error: string) => void] = React.useState('');
+  const [open, setOpen] = React.useState(false);
+
+  const {
+    register, handleSubmit, watch,
+    control, errors: fieldsErrors,
+  } = useForm<FormData>();
+  const onSubmit = async (data: FormData) => {
+    const response = await apiLogin(data.loginCode);
+
+    if (response.status === 404) {
+      console.log('404 :>> ');
+      setError('Нет соединения');
+      setOpen(true);
+    }
+  };
+
+  const handleClose = (event: any, reason: any) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpen(false);
+  };
 
   // const sendLoginDataToServer =
 
   return (
 
     <Container component="main" maxWidth="xs">
+
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="error">
+          {error}
+        </Alert>
+      </Snackbar>
+
       <CssBaseline />
       <div className={classes.paper}>
         <Avatar className={classes.avatar}>

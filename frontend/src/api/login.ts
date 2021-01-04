@@ -9,7 +9,11 @@ export const apiLogin = async (
 
 ): Promise<any> => {
   const url = `${process.env.REACT_APP_API_URL}${api.login}`;
-  console.log('url :>> ', url);
-  const { data } = await axios.post(url, { loginCode });
-  return data;
+
+  try {
+    const { data } = await axios.post(url, { loginCode });
+    return data;
+  } catch (error) {
+    return error.response;
+  }
 };
