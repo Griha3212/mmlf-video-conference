@@ -13,6 +13,8 @@ import './App.css';
 import getLocalStorageData from './utils/helpers/localStorage.helper';
 import LoginPage from './containers/Login/LoginPage';
 
+console.log('process.env.API_URL :>> ', process.env.REACT_APP_API_URL);
+
 export const App: FC = () => {
   const [isAuth, setIsAuth] = useState(!!getLocalStorageData().token);
   return (

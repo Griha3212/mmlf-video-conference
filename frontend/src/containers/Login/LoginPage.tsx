@@ -18,6 +18,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import { useForm, Controller } from 'react-hook-form';
 import useStyles from './style';
+import { apiLogin } from '../../api/login';
 
 type FormData = {
   loginCode: string;
@@ -34,7 +35,10 @@ const LoginPage: FC = () => {
     register, handleSubmit, watch,
     control, errors: fieldsErrors,
   } = useForm<FormData>();
-  const onSubmit = (data: FormData) => console.log(data);
+  const onSubmit = async (data: FormData) => {
+    console.log(data);
+    await apiLogin(data.loginCode);
+  };
 
   const [user, setUser] = useState();
 
