@@ -37,7 +37,6 @@ app.get('/', (req: Request, res: Response) => {
 
 // TO DO create db for staging/prod version without seeding
 createConnection().then(async () => {
-  // const usersRepository = await getRepository(Users);
   // seed only if dataBase is empty
 
   const countOfUsers = await getRepository(Users)

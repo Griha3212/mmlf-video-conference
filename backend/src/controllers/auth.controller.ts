@@ -11,7 +11,12 @@ export const userLogin = async (req: Request, res: Response) => {
   const usersRepository = await getRepository(Users);
 
   const foundUserByLoginCodeInDatabase = await usersRepository
-    .findOne({ where: { loginCode: req.body && req.body.loginCode } });
+    .createQueryBuilder('user')
+    .where('user.loginCode = :loginCode', { loginCode: req.body && req.body.loginCode })
+    .getOne();
+
+  // const foundUserByLoginCodeInDatabase = await usersRepository
+  //   .findOne({ where: { loginCode: req.body && req.body.loginCode } });
 
   if (foundUserByLoginCodeInDatabase) {
     // if (foundUserByLoginCodeInDatabase.emailConfirmationToken === 'email activated') {
