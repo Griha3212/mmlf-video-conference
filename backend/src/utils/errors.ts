@@ -1,6 +1,7 @@
 const allErrors = {
 
-  notEnoughInputData: 'Please input all data',
+  notEnoughInputData: 'Недостаточно данных',
+  wrongLoginCode: 'Неверный код',
 
 };
 

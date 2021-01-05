@@ -60,8 +60,18 @@ const LoginPage: FC = () => {
       setOpen(true);
     }
 
+    if (response && response.status === 400) {
+      setError('Ошибка');
+      setOpen(true);
+    }
+
     if (!response) {
       setError('Нет соединения');
+      setOpen(true);
+    }
+
+    if (response && response.status === 500) {
+      setError(`${response.data}`);
       setOpen(true);
     }
   };

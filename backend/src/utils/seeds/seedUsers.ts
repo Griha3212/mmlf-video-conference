@@ -55,6 +55,7 @@ export const seedMockedUsers = async () => {
     newUser.company = user.company;
     newUser.isAdmin = !!user.isAdmin;
     newUser.isFreeSessionAccessOnly = !!user.isFreeSessionAccessOnly;
+    newUser.loginCode = user.loginCode;
 
     results.push(newUser);
   }

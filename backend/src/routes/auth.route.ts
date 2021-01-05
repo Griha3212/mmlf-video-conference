@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import express from 'express';
 import * as authController from '../controllers/auth.controller';
 

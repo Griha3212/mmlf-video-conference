@@ -38,19 +38,19 @@ export default class Users extends BaseEntity {
 
   @Index()
   @Column({ nullable: true })
-  jwtKey: string;
+  jwtToken: string;
 
   @Index()
   @Column({ nullable: true })
-  jwtRefreshKey: string;
+  jwtRefreshToken: string;
 
   @Index()
   @Column({ nullable: true })
-  jwtKeyValidUntilDate: Date;
+  jwtTokenValidUntilDate: Date;
 
   @Index()
   @Column({ nullable: true })
-  jwtRefreshKeyValidUntilDate: Date;
+  jwtRefreshTokenValidUntilDate: Date;
 
   @Index()
   @Column({ default: false })
