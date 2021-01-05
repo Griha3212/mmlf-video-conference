@@ -22,6 +22,8 @@ import Container from '@material-ui/core/Container';
 import { useForm, Controller } from 'react-hook-form';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import clsx from 'clsx';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import useStyles from './style';
 import { apiLogin } from '../../api/login';
 
@@ -43,36 +45,60 @@ const LoginPage: FC = () => {
 
   const [user, setUser] = useState();
 
-  const [loading, setLoading]: [boolean, (loading: boolean) => void]
-    = React.useState<boolean>(true);
+  const [loading, setLoading] = React.useState(false);
+  const [success, setSuccess] = React.useState(false);
   const [error, setError]: [string, (error: string) => void] = React.useState('');
   const [open, setOpen] = React.useState(false);
+
+  const buttonClassname = clsx({
+    [classes.buttonSuccess]: success,
+  });
 
   const {
     handleSubmit,
     control, errors: fieldsErrors,
   } = useForm<FormData>();
   const onSubmit = async (data: FormData) => {
+    if (!loading) {
+      setSuccess(false);
+      setLoading(true);
+    }
     const response = await apiLogin(data.loginCode);
+
+    console.log('response :>> ', response);
 
     if (response && response.status === 404) {
       setError('Нет соединения');
       setOpen(true);
+      setSuccess(false);
+      setLoading(false);
     }
 
     if (response && response.status === 400) {
       setError('Ошибка');
       setOpen(true);
+      setSuccess(false);
+      setLoading(false);
     }
 
     if (!response) {
       setError('Нет соединения');
       setOpen(true);
+      setSuccess(false);
+      setLoading(false);
     }
 
     if (response && response.status === 500) {
       setError(`${response.data}`);
       setOpen(true);
+      setSuccess(false);
+      setLoading(false);
+    }
+    if (response && response.token && response.refreshToken) {
+      localStorage.setItem('token', response.token);
+      localStorage.setItem('refreshToken', response.refreshToken);
+      setSuccess(true);
+      setLoading(false);
     }
   };
 
@@ -129,15 +155,20 @@ const LoginPage: FC = () => {
             }}
           />
           {fieldsErrors.loginCode && <Typography variant="caption" color="error">{fieldsErrors.loginCode.message}</Typography>}
-          <Button
-            type="submit"
-            fullWidth
-            variant="contained"
-            color="primary"
-            className={classes.submit}
-          >
-            Войти
-          </Button>
+          <div className={classes.wrapper}>
+            <Button
+              type="submit"
+              fullWidth
+              variant="contained"
+              color="primary"
+              // className={classes.submit}
+              className={buttonClassname}
+              disabled={loading}
+            >
+              Войти
+            </Button>
+            {loading && <CircularProgress size={24} className={classes.buttonProgress} />}
+          </div>
         </form>
       </div>
     </Container>

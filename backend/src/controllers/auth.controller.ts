@@ -7,7 +7,7 @@ import allErrors from '../utils/errors';
 // import allErrors from '../utils/errors';
 
 /* eslint-disable import/prefer-default-export */
-export const userLogin = async (req: any, res: Response) => {
+export const userLogin = async (req: Request, res: Response) => {
   const usersRepository = await getRepository(Users);
 
   const foundUserByLoginCodeInDatabase = await usersRepository
