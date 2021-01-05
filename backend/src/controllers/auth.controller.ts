@@ -44,18 +44,13 @@ export const userLogin = async (req: any, res: Response) => {
           refreshJWTTokenExpiredDate.setDate(refreshJWTTokenExpiredDate.getDate() + 7);
           // refreshJWTTokenExpiredDate.setMinutes(refreshJWTTokenExpiredDate.getMinutes() + 2)
 
+          // save refresh token info
           foundUserByLoginCodeInDatabase.jwtRefreshToken = refreshToken;
           foundUserByLoginCodeInDatabase.jwtRefreshTokenValidUntilDate = refreshJWTTokenExpiredDate;
 
           await usersRepository.save(foundUserByLoginCodeInDatabase);
 
-          // const newRefreshJWTToken = new Token();
-          // newRefreshJWTToken.refreshJWTToken = refreshToken;
-          // newRefreshJWTToken.refreshJWTTokenExpiredDate = refreshJWTTokenExpiredDate;
-          // newRefreshJWTToken.user = foundUserByLoginCodeInDatabase;
-
-          // await tokenRepository.save(newRefreshJWTToken);
-          // await userRepository.save(foundUserByLoginCodeInDatabase);
+          // TO DO disconnect via socket previous user
 
           res.status(200).send({ token, refreshToken });
         });
