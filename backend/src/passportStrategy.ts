@@ -1,5 +1,4 @@
 import passport from 'passport';
-import bcryptjs from 'bcryptjs';
 import { Strategy as LocalStrategy } from 'passport-local';
 import { Strategy as JWTStrategy, ExtractJwt } from 'passport-jwt';
 import { getRepository } from 'typeorm';

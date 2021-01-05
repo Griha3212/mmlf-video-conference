@@ -20,14 +20,10 @@ export const userLogin = async (req: any, res: Response) => {
       { session: false },
       (error: any, user: any) => {
         if (error || !user) {
-          console.log('error :>> ', error);
-          console.log('user :>> ', user);
-          console.log('here 1:>> ');
           return res.status(500).send(allErrors.wrongLoginCode);
         }
         req.login(user, { session: false }, async (err: any) => {
           if (err) {
-            console.log('err :>> ', err);
             res.status(400).send({ error });
           }
 
