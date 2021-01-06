@@ -16,16 +16,18 @@ export const localSignInStrategy = passport.use('localSignIn', new LocalStrategy
 
     const user = await getRepository(Users).findOne({ where: { loginCode } });
 
-    if (!user) throw Error(allErrors.wrongLoginCode);
+    if (!user) {
+      return done(null, {
+        status: false,
+        message: allErrors.wrongLoginCode,
+      });
+    }
 
-    // const loginCodesMatch = bcryptjs.compareSync(loginCode, user.loginCode);
-
-    if (loginCode === user.loginCode) {
+    if (loginCode === user?.loginCode) {
       return done(null, user);
     }
-    throw Error(allErrors.wrongLoginCode);
   } catch (error) {
-    done(error);
+    return done(error);
   }
 }));
 
