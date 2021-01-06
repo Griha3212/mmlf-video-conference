@@ -9,5 +9,6 @@
     "parserOptions": {
         "project": "./tsconfig.json",
         "createDefaultProgram": true
-    }
+    },
+    "root": true
 }

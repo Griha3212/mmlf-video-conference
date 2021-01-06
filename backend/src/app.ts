@@ -10,13 +10,16 @@ import errorHandler from './middlewares/error.middleware';
 import Users from './entities/users';
 import { seedMockedUsers } from './utils/seeds/seedUsers';
 import { router as authRouter } from './routes/auth.route';
-import passportStrategy from './passportStrategy';
+import { jwtStrategy, jwtStrategyIsAdmin, localSignInStrategy } from './passportStrategy';
 
 // Create a new express application instance
 export const app = express();
 
+// passport and strategies initialization
 app.use(passport.initialize());
-passportStrategy.initialize();
+app.use(localSignInStrategy.initialize());
+app.use(jwtStrategy.initialize());
+app.use(jwtStrategyIsAdmin.initialize());
 
 app.use(express.json({ limit: '10mb' }));
 app.use(express.urlencoded({ extended: true }));
@@ -24,8 +27,6 @@ app.use(errorHandler);
 app.use(express.static('public'));
 app.use(cors());
 app.use(compression());
-
-
 
 app.use('/api/auth', authRouter);
 

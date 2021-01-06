@@ -1,5 +1,5 @@
-const getLocalStorageData = () => {
-  const accessToken = localStorage.getItem('accessToken');
+const getLocalStorageData = (): any => {
+  const accessToken = localStorage.getItem('token');
   const refreshToken = localStorage.getItem('refreshToken');
 
   return {
