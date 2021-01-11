@@ -41,6 +41,9 @@ export const userLogin = async (req: Request, res: Response) => {
           //   isBuyer: user.isBuyer,
           //   isConfirmed: user.isConfirmed,
           // };
+
+          delete foundUserByLoginCodeInDatabase.loginCode;
+
           const token = jwt.sign({ ...foundUserByLoginCodeInDatabase }, process.env.JWT_SECRET as string, { expiresIn: '1m' });
           const refreshToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
 

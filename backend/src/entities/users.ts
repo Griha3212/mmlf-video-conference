@@ -34,7 +34,7 @@ export default class Users extends BaseEntity {
   // uniq login code
   @Index()
   @Column({ nullable: true })
-  loginCode: string;
+  loginCode?: string;
 
   @Index()
   @Column({ nullable: true })
