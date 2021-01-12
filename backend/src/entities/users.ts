@@ -66,11 +66,10 @@ export default class Users extends BaseEntity {
   @Column({ default: false })
   hasAccessToStatisticPage: boolean;
 
-  @Index()
   @ManyToMany(() => Speakers,
-    (speakers) => speakers.usersWhoWatchedSpeaker, { cascade: true })
+    (watchedSpeakers) => watchedSpeakers.usersWhoWatchedSpeaker, { cascade: true })
   @JoinTable()
-  watchedSpeakers: Speakers;
+  watchedSpeakers: Speakers[];
 
   // @Index()
   // @Column({ default: false })
