@@ -8,7 +8,8 @@ const useStyles = makeStyles((theme) => ({
     // borderColor: '#707070 !important',
     border: '1px solid #707070',
     borderRadius: '0px',
-    fontFamily: 'FuturaPTBold',
+    fontFamily: 'FuturaPTBook',
+    whiteSpace: 'nowrap',
 
   },
   mainContainer: {

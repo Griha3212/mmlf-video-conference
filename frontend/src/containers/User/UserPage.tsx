@@ -193,23 +193,25 @@ const UserPage: FC = () => {
           </Typography>
 
         </div>
+
       </Container>
 
-      <Grid container xl className={classes.mainContainer}>
+      <Grid container xl justify="space-between" className={classes.mainContainer}>
 
-        <Grid container xl={4}>
+        <Grid item xl={1}>
           <Typography>ММЛФ</Typography>
         </Grid>
 
-        <Grid justify="center" container xl={4}>
-          <Typography>Конференция</Typography>
+        <Grid item xl={1}>
+          <Typography align="center">Конференция</Typography>
         </Grid>
 
-        <Grid container xl={4} justify="flex-end">
+        <Grid item xl={1}>
           <Button className={classes.loadProgramButton}>Скачать программу</Button>
         </Grid>
 
       </Grid>
+
     </>
   );
 };
