@@ -15,6 +15,9 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import clsx from 'clsx';
 import CircularProgress from '@material-ui/core/CircularProgress';
+import {
+  useLocation, Prompt, useHistory,
+} from 'react-router-dom';
 import useStyles from './style';
 import { apiLogin } from '../../api/login';
 
@@ -38,6 +41,7 @@ const LoginPage: FC = () => {
   const [success, setSuccess] = useState(false);
   const [error, setError]: [string, (error: string) => void] = useState('');
   const [open, setOpen] = useState(false);
+  const history = useHistory();
 
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,
@@ -86,6 +90,7 @@ const LoginPage: FC = () => {
       localStorage.setItem('refreshToken', response.refreshToken);
       setSuccess(true);
       setLoading(false);
+      history.push('/user');
     }
   };
 

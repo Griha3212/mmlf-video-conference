@@ -28,3 +28,57 @@ server.listen(port, () => {
 global.socketServer = new io.Server(server, {
   pingInterval: 5000, pingTimeout: 10000, cookie: false,
 });
+
+global.socketServer.on('connection', (socket) => {
+  socket.emit('giveMeConnectionInfo', ('hello'));
+
+  // dealRoomId as room
+  // socket.on('connectToDealRoom', (dealRoomId) => {
+  //   const room = dealRoomId;
+  //   socket.join(room);
+  //   console.log(`connectedToDealRoom: ${dealRoomId}`);
+  // });
+
+  // accountId as room
+  socket.on('connectToPersonalRoom', (id: number) => {
+    const room = id;
+    socket.join(room);
+    console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
+  });
+
+  // socket.on('sendMessage', async (data) => {
+  //   console.log('sending message', data);
+  //   await saveMessageInDataBaseAndSendToDealRoomChat(data);
+  // });
+
+  // // NP sockets
+  // socket.on('changeNP', async (data) => {
+  //   await updateNPInDataBaseAndSendToDealRoom(data);
+  // });
+
+  // socket.on('agreeNP', async (data) => {
+  //   await agreeWithNPInDataBaseAndSendToDealRoom(data);
+  // });
+
+  // // Post trade steps sockets
+  // socket.on('changePTS', async (data) => {
+  //   await updatePTSInDataBaseAndSendToDealRoom(data);
+  // });
+
+  // socket.on('agreePTS', async (data) => {
+  //   await agreeWithPTSInDataBaseAndSendToDealRoom(data);
+  // });
+
+  // // Post trade steps sockets
+  // socket.on('changeTimer', async (data) => {
+  //   await updateDealTimerForBothSides(data);
+  // });
+
+  // socket.on('agreeTimer', async (data) => {
+  //   await agreedDealTimerForBothSides(data);
+  // });
+
+  // socket.on('changeShipToAddress', async (data) => {
+  //   await updateShipToAddress(data);
+  // });
+});
