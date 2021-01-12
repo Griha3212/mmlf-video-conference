@@ -90,7 +90,8 @@ const UserPage: FC = () => {
   }, []);
 
   useEffect(() => {
-    socket.on('giveMeConnectionInfo', () => {
+    socket.on('giveMeConnectionInfo', (data: any) => {
+      console.log('giveMeConnectionInfo data :>> ', data);
       socket.emit('connectToPersonalRoom', user.id);
     });
     return () => {
@@ -100,18 +101,20 @@ const UserPage: FC = () => {
 
   useEffect(() => {
     socket.on('connectToPersonalRoom', (data: any) => {
+      // console.log('object :>> ', object);
+      console.log('data :>> ', data);
       if (data.message === 'disconnect current user') {
         console.log('disconnectCurrentUser socket :>> ');
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
       }
 
-      // history.push('/');
+      history.push('/');
     });
     return () => {
       socket.off('connectToPersonalRoom');
     };
-  }, []);
+  });
 
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,

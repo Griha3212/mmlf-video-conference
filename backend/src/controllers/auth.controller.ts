@@ -4,6 +4,7 @@ import passport from 'passport';
 import jwt from 'jsonwebtoken';
 import Users from '../entities/users';
 import allErrors from '../utils/errors';
+import { io } from '../server';
 // import allErrors from '../utils/errors';
 
 /* eslint-disable import/prefer-default-export */
@@ -65,7 +66,11 @@ export const userLogin = async (req: Request, res: Response) => {
 
           const data = { message: 'disconnect current user' };
 
-          await global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', data);
+          await io.to(String('41')).emit('connectToPersonalRoom', '225');
+          // await global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', data);
+          console.log('here :>> ');
+          console.log('data :>> ', data);
+          console.log('room :>> ', room);
 
           res.status(200).send({ token, refreshToken });
         });

@@ -1,16 +1,18 @@
+/* eslint-disable import/prefer-default-export */
 import http from 'http';
-import * as io from 'socket.io';
+// import * as io from 'socket.io';
 import chalk from 'chalk';
+import { Server, Socket } from 'socket.io';
 import { app } from './app';
 /* eslint-disable no-console */
 
-declare global {
-  namespace NodeJS {
-    interface Global {
-      socketServer: io.Server
-    }
-  }
-}
+// declare global {
+//   namespace NodeJS {
+//     interface Global {
+//       socketServer: io.Server
+//     }
+//   }
+// }
 
 // Get port from environment and store in Express.
 const port: Number = parseInt(<string>process.env.PORT, 10) || 3005;
@@ -27,7 +29,7 @@ server.listen(port, () => {
 // console.log('process.env.UI_URL :>> ', process.env.UI_URL);
 
 // sockets
-global.socketServer = new io.Server(server, {
+export const io = new Server(server, {
   pingInterval: 5000,
   pingTimeout: 10000,
   cookie: false,
@@ -37,7 +39,7 @@ global.socketServer = new io.Server(server, {
   },
 });
 
-global.socketServer.on('connection', (socket) => {
+io.on('connection', (socket) => {
   socket.emit('giveMeConnectionInfo', ('hello'));
 
   // dealRoomId as room
@@ -50,8 +52,13 @@ global.socketServer.on('connection', (socket) => {
   // id as room
   socket.on('connectToPersonalRoom', (id: number) => {
     const room = id;
-    socket.join(room);
+    socket.join(String(id));
     console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
+    // socket.emit('connectToPersonalRoom', ('hello225'));
+
+    // global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', '225');
+    // io.to(String('41')).emit('connectToPersonalRoom', '225');
+    // global.socketServer.to(String(room)).emit('connectToPersonalRoom', 'hello225');
   });
 
   // socket.on('sendMessage', async (data) => {

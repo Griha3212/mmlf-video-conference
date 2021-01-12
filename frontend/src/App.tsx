@@ -17,12 +17,12 @@ import parseToken from './utils/parseToken';
 import AdminPage from './containers/Admin/AdminPage';
 import UserPage from './containers/User/UserPage';
 
-console.log('process.env.API_URL :>> ', process.env.REACT_APP_API_URL);
+// console.log('process.env.API_URL :>> ', process.env.REACT_APP_API_URL);
 
 export const App: FC = () => {
   const [isAuth, setIsAuth] = useState(getLocalStorageData().token.accessToken);
 
-  console.log('APP isAuth :>> ', isAuth);
+  // console.log('APP isAuth :>> ', isAuth);
 
   // useEffect(() => {
   //   const { token } = getLocalStorageData();
