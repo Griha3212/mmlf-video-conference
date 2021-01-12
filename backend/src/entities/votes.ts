@@ -16,10 +16,6 @@ export default class Votes extends BaseEntity {
   createdAt: Date;
 
   @Index()
-  @Column({ nullable: true })
-  company: string;
-
-  @Index()
   @ManyToOne(() => Users,
     (user) => user.id, { cascade: true })
   user: Users;

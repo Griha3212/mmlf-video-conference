@@ -1,8 +1,10 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany,
+  Index, CreateDateColumn, OneToMany, ManyToOne, ManyToMany, JoinTable,
 } from 'typeorm';
+import Sessions from './sessions';
+import Speakers from './speakers';
 import Votes from './votes';
 
 @Entity()
@@ -55,6 +57,28 @@ export default class Users extends BaseEntity {
   @Index()
   @Column({ default: false })
   isAdmin: boolean;
+
+  // @Index()
+  // @Column({ default: false })
+  // adminOfTheSession
+
+  @Index()
+  @Column({ default: false })
+  hasAccessToStatisticPage: boolean;
+
+  @Index()
+  @ManyToMany(() => Speakers,
+    (speakers) => speakers.usersWhoWatchedSpeaker, { cascade: true })
+  @JoinTable()
+  watchedSpeakers: Speakers;
+
+  // @Index()
+  // @Column({ default: false })
+  // currentSessionBlock
+
+  // @Index()
+  // @Column({ default: false })
+  // currentSession
 
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];

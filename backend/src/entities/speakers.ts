@@ -1,8 +1,10 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany,
+  Index, CreateDateColumn, OneToMany, ManyToMany, ManyToOne,
 } from 'typeorm';
+import Sessions from './sessions';
+import Users from './users';
 import Votes from './votes';
 
 @Entity()
@@ -10,9 +12,9 @@ export default class Speakers extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  // Date of speaker creation
-  @CreateDateColumn({ type: 'timestamptz' })
-  createdAt: Date;
+  @Index()
+  @Column({ nullable: true })
+  sessionName: string;
 
   @Index()
   @Column({ nullable: true })
@@ -26,6 +28,22 @@ export default class Speakers extends BaseEntity {
   @Column({ nullable: true })
   company: string;
 
+  @Index()
+  @Column({ nullable: true })
+  linkToZoom: string;
+
+  @Index()
+  @Column({ nullable: true })
+  linkToImg: string;
+
+  @ManyToMany(() => Users, (users) => users.watchedSpeakers)
+  usersWhoWatchedSpeaker: Users[];
+
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
+
+  @Index()
+  @ManyToOne(() => Sessions,
+    (session) => session.speakers, { cascade: true })
+  session: Sessions;
 }
