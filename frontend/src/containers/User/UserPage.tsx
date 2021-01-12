@@ -25,6 +25,8 @@ import MuiAlert from '@material-ui/lab/Alert';
 import clsx from 'clsx';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { Redirect } from 'react-router-dom';
+import { io } from 'socket.io-client';
+import userEvent from '@testing-library/user-event';
 import useStyles from './style';
 import { apiLogin } from '../../api/login';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
@@ -43,6 +45,19 @@ function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
+// const socket = io({
+//   path: `${process.env.REACT_APP_API_URL}`,
+//   reconnection: true,
+//   reconnectionAttempts: Infinity,
+//   reconnectionDelay: 1000,
+//   reconnectionDelayMax: 5000,
+//   randomizationFactor: 0.5,
+//   timeout: 20000,
+//   autoConnect: true,
+// });
+
+const socket = io(`${process.env.REACT_APP_API_URL}`);
+
 const UserPage: FC = () => {
   const [isAuth, setIsAuth] = useState(!!getLocalStorageData().token.accessToken);
   if (!isAuth) return <Redirect to="/signin" />;
@@ -59,12 +74,19 @@ const UserPage: FC = () => {
 
   const classes = useStyles();
 
-  const [user, setUser] = useState();
+  const [user, setUser] = useState(parseToken(token.accessToken as string));
+
+  console.log('user :>> ', user);
 
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
   const [error, setError]: [string, (error: string) => void] = React.useState('');
   const [open, setOpen] = React.useState(false);
+
+  // will start hook again if user will be changed
+  useEffect(() => {
+    socket.emit('connectToPersonalRoom', user.id);
+  }, []);
 
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,

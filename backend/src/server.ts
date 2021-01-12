@@ -24,9 +24,17 @@ server.listen(port, () => {
   console.log(chalk.yellow(`Server app listening on port ${port}!`));
 });
 
+// console.log('process.env.UI_URL :>> ', process.env.UI_URL);
+
 // sockets
 global.socketServer = new io.Server(server, {
-  pingInterval: 5000, pingTimeout: 10000, cookie: false,
+  pingInterval: 5000,
+  pingTimeout: 10000,
+  cookie: false,
+  cors: {
+    origin: `${process.env.UI_URL}`,
+    methods: ['GET', 'POST'],
+  },
 });
 
 global.socketServer.on('connection', (socket) => {
