@@ -47,7 +47,7 @@ global.socketServer.on('connection', (socket) => {
   //   console.log(`connectedToDealRoom: ${dealRoomId}`);
   // });
 
-  // accountId as room
+  // id as room
   socket.on('connectToPersonalRoom', (id: number) => {
     const room = id;
     socket.join(room);

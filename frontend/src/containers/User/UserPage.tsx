@@ -24,7 +24,7 @@ import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 import clsx from 'clsx';
 import CircularProgress from '@material-ui/core/CircularProgress';
-import { Redirect } from 'react-router-dom';
+import { Redirect, useHistory } from 'react-router-dom';
 import { io } from 'socket.io-client';
 import userEvent from '@testing-library/user-event';
 import useStyles from './style';
@@ -68,13 +68,14 @@ const UserPage: FC = () => {
     return <Redirect to="/admin" />;
   }
 
-  if (userData.isStatisticViewer) {
+  if (userData.hasAccessToStatisticPage) {
     return <Redirect to="/stats" />;
   }
 
   const classes = useStyles();
 
   const [user, setUser] = useState(parseToken(token.accessToken as string));
+  const history = useHistory();
 
   console.log('user :>> ', user);
 
@@ -94,6 +95,21 @@ const UserPage: FC = () => {
     });
     return () => {
       socket.off('giveMeConnectionInfo');
+    };
+  }, []);
+
+  useEffect(() => {
+    socket.on('connectToPersonalRoom', (data: any) => {
+      if (data.message === 'disconnect current user') {
+        console.log('disconnectCurrentUser socket :>> ');
+        localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
+      }
+
+      // history.push('/');
+    });
+    return () => {
+      socket.off('connectToPersonalRoom');
     };
   }, []);
 

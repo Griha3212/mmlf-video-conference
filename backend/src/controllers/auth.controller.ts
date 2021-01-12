@@ -61,6 +61,12 @@ export const userLogin = async (req: Request, res: Response) => {
 
           // TO DO disconnect via socket previous user
 
+          const room = foundUserByLoginCodeInDatabase.id;
+
+          const data = { message: 'disconnect current user' };
+
+          await global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', data);
+
           res.status(200).send({ token, refreshToken });
         });
       },

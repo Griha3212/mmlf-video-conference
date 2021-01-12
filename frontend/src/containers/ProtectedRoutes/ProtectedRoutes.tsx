@@ -57,7 +57,7 @@ export const ProtectedRoutes: FC = () => {
 
   // // if (!isAdmin) return <Redirect to="/signin" />;
   if (userData.isAdmin) return <Redirect to="/admin" />;
-  if (!userData.isStatisticViewer) return <Redirect to="/stats" />;
+  if (userData.hasAccessToStatisticPage) return <Redirect to="/stats" />;
   if (!userData.isAdmin) return <Redirect to="/user" />;
 
   // if (isAuth && !userData?.isAdmin) return <Redirect to="/user" />;
