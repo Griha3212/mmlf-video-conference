@@ -174,27 +174,43 @@ const UserPage: FC = () => {
   // const sendLoginDataToServer =
 
   return (
+    <>
+      <Container component="main" maxWidth="xs">
 
-    <Container component="main" maxWidth="xs">
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            {error}
+          </Alert>
+        </Snackbar>
 
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="error">
-          {error}
-        </Alert>
-      </Snackbar>
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Страница Пользователя
+          </Typography>
 
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Страница Пользователя
-        </Typography>
+        </div>
+      </Container>
 
-      </div>
-    </Container>
+      <Grid container xl className={classes.mainContainer}>
 
+        <Grid container xl={4}>
+          <Typography>ММЛФ</Typography>
+        </Grid>
+
+        <Grid justify="center" container xl={4}>
+          <Typography>Конференция</Typography>
+        </Grid>
+
+        <Grid container xl={4} justify="flex-end">
+          <Button className={classes.loadProgramButton}>Скачать программу</Button>
+        </Grid>
+
+      </Grid>
+    </>
   );
 };
 

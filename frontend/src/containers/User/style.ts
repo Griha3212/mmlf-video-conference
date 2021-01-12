@@ -2,6 +2,22 @@ import { makeStyles } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
+  loadProgramButton: {
+
+    // borderWidth: '1px',
+    // borderColor: '#707070 !important',
+    border: '1px solid #707070',
+    borderRadius: '0px',
+    fontFamily: 'FuturaPTBold',
+
+  },
+  mainContainer: {
+
+    paddingLeft: '15px',
+    paddingRight: '15px',
+    marginTop: '20px',
+
+  },
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',
