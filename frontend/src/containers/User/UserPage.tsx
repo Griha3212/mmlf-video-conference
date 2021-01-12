@@ -88,6 +88,15 @@ const UserPage: FC = () => {
     socket.emit('connectToPersonalRoom', user.id);
   }, []);
 
+  useEffect(() => {
+    socket.on('giveMeConnectionInfo', () => {
+      socket.emit('connectToPersonalRoom', user.id);
+    });
+    return () => {
+      socket.off('giveMeConnectionInfo');
+    };
+  }, []);
+
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,
   });
