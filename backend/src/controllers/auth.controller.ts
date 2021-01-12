@@ -66,7 +66,7 @@ export const userLogin = async (req: Request, res: Response) => {
 
           const data = { message: 'disconnect current user' };
 
-          await io.to(String('41')).emit('connectToPersonalRoom', '225');
+          await io.to(String(room)).emit('connectToPersonalRoom', data);
           // await global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', data);
           console.log('here :>> ');
           console.log('data :>> ', data);
