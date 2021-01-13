@@ -7,6 +7,7 @@ const useStyles = makeStyles((theme) => ({
 
     paddingLeft: '120px',
     paddingRight: '120px',
+    width: '100%',
 
   },
 

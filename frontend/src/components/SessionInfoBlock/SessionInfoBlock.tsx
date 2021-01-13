@@ -16,20 +16,26 @@ const SessionInfoBlock = (props: any) => {
 
   return (
     <>
-      <Grid container className={classes.mainSessionInfoContainer} xl={12}>
 
-        <Grid container className={classes.darkBlueBckg}>
+      <Grid item className={classes.darkBlueBckg}>
 
-          <Grid item xl={12}>
-            <p className={classes.sessionLetterText}>
-              {props.currentSessionLetter || 'Сессия #'}
-            </p>
-            <p className={classes.sessionNameText}>
-              {props.currentSessionName || 'Тема сессии'}
-            </p>
-          </Grid>
+        <p className={classes.sessionLetterText}>
+          {props.currentSessionLetter || 'Сессия #'}
+        </p>
+        <p className={classes.sessionNameText}>
+          {props.currentSessionName || 'Тема сессии'}
+        </p>
 
-        </Grid>
+      </Grid>
+
+      <Grid item className={classes.lightBlueBckg}>
+
+        <p className={classes.speakerTheme}>
+          {props.currentSpeakerTheme || 'Тема доклада'}
+        </p>
+        <p className={classes.sessionNameText}>
+          {props.currentSessionName || 'Тема сессии'}
+        </p>
 
       </Grid>
 

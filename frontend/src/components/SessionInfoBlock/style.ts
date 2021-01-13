@@ -4,7 +4,8 @@ const useStyles = makeStyles(() => ({
 
   sessionNameText: {
 
-    fontFamily: 'Open Sans Bold',
+    fontFamily: 'Open Sans',
+    fontWeight: 700,
     fontSize: '42px',
     lineHeight: '27px',
     color: 'white',
@@ -20,6 +21,7 @@ const useStyles = makeStyles(() => ({
     height: '34px',
     width: '163px',
     color: 'white',
+    textAlign: 'center',
 
   },
 
@@ -30,6 +32,8 @@ const useStyles = makeStyles(() => ({
   lightBlueBckg: {
 
     backgroundColor: '#1B3074',
+    width: '100%',
+    padding: '0 110px',
 
   },
 
@@ -37,6 +41,18 @@ const useStyles = makeStyles(() => ({
     paddingTop: '34px',
     padding: '0 110px',
     backgroundColor: '#00124D',
+    height: '190px',
+    width: '100%',
+  },
+
+  speakerTheme: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 400,
+    fontSize: '36px',
+    lineHeight: '51px',
+    color: 'white',
+    marginTop: '0px',
 
   },
 

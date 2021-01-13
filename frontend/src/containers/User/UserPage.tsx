@@ -222,13 +222,12 @@ const UserPage: FC = () => {
 
       </Grid>
 
-      <Grid className={classes.redBckgContainer} container xl justify="center">
+      <Grid className={classes.redBckgContainer} container justify="center">
 
-        <Grid container className={classes.innerContainer} xl justify="center">
+        <Grid item className={classes.innerContainer} justify="center">
 
           <SessionInfoBlock />
         </Grid>
-
       </Grid>
 
     </>
