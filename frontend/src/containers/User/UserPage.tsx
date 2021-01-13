@@ -31,6 +31,8 @@ import useStyles from './style';
 import { apiLogin } from '../../api/login';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 import parseToken from '../../utils/parseToken';
+import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
+import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock';
 
 type FormData = {
   loginCode: string;
@@ -209,6 +211,14 @@ const UserPage: FC = () => {
         <Grid item xl={1}>
           <Button className={classes.loadProgramButton}>Скачать программу</Button>
         </Grid>
+
+      </Grid>
+
+      <Grid container xl justify="center" className={classes.mainContainer}>
+
+        <VideoPlayerMain videoURL="https://facecast.net/v/pybh3r" />
+
+        <SessionInfoBlock />
 
       </Grid>
 
