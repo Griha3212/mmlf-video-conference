@@ -3,6 +3,20 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  innerContainer: {
+
+    paddingLeft: '120px',
+    paddingRight: '120px',
+
+  },
+
+  redBckgContainer: {
+
+    backgroundColor: '#FF414A',
+    height: '1034px',
+
+  },
+
   myAuto: {
 
     marginTop: 'auto',

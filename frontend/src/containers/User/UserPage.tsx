@@ -199,6 +199,7 @@ const UserPage: FC = () => {
 
       </Container>
 
+      {/* header */}
       <Grid container xl justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
 
         <Grid item className={classes.myAuto} xl={3}>
@@ -219,7 +220,14 @@ const UserPage: FC = () => {
 
         <VideoPlayerMain videoURL="https://facecast.net/v/pybh3r" />
 
-        <SessionInfoBlock />
+      </Grid>
+
+      <Grid className={classes.redBckgContainer} container xl justify="center">
+
+        <Grid container className={classes.innerContainer} xl justify="center">
+
+          <SessionInfoBlock />
+        </Grid>
 
       </Grid>
 

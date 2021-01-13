@@ -16,65 +16,17 @@ const SessionInfoBlock = (props: any) => {
 
   return (
     <>
-      <Grid
-        container
-        justify="center"
-        alignItems="center"
-      >
+      <Grid container className={classes.mainSessionInfoContainer} xl={12}>
 
-        <Grid item xl={6}>
-          <Typography>{props.currentSessionLetter || 'Буква сессии'}</Typography>
-          <Typography>{props.currentSessionName || 'Название сессии до 70 символов'}</Typography>
+        <Grid container className={classes.darkBlueBckg}>
 
-          <Typography>{props.currentSessionSpeakerFullName || 'ФИО Спикера'}</Typography>
-          <Typography>{props.currentSessionSpeakerPosition || 'Компания, должность'}</Typography>
-        </Grid>
-
-        <Grid item xl={6}>
-          {/* <Typography align="center"></Typography> */}
-          <Box component="fieldset" mb={3} borderColor="transparent">
-            <Typography component="legend">Оцените выступление</Typography>
-            <Rating
-              name="simple-controlled"
-              value={value}
-              onChange={(event, newValue: any) => {
-                setValue(newValue);
-              }}
-            />
-          </Box>
-          <Grid container>
-            <Grid item xl={6}>
-              {' '}
-              <Button>Скачать презентацию</Button>
-            </Grid>
-            <Grid item xl={6}>
-              {' '}
-              <Button>Перейти в Zoom</Button>
-            </Grid>
-          </Grid>
-
-        </Grid>
-
-      </Grid>
-
-      <Grid container>
-
-        <Grid item xl={2}>
-          <ModeratorCard />
-
-        </Grid>
-        <Divider orientation="vertical" flexItem />
-        <Grid item xl={10}>
-
-          <Grid container>
-            {/*
-            <Grid item xl={2}></Grid>
-            <Grid item xl={2}></Grid>
-            <Grid item xl={2}></Grid>
-            <Grid item xl={2}></Grid>
-            <Grid item xl={2}></Grid>
-            <Grid item xl={2}></Grid> */}
-
+          <Grid item xl={12}>
+            <p className={classes.sessionLetterText}>
+              {props.currentSessionLetter || 'Сессия #'}
+            </p>
+            <p className={classes.sessionNameText}>
+              {props.currentSessionName || 'Тема сессии'}
+            </p>
           </Grid>
 
         </Grid>
