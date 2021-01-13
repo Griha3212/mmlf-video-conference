@@ -2,20 +2,59 @@ import { makeStyles } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
+
+  myAuto: {
+
+    marginTop: 'auto',
+    marginBottom: 'auto',
+
+  },
+
+  topPart: {
+
+    height: '120px',
+
+  },
+
+  conferenceTopText: {
+
+    fontSize: '81px',
+    lineHeight: '91px',
+    fontFamily: 'Gotham Pro Bold',
+    textTransform: 'uppercase',
+    color: 'white',
+
+  },
+  darkBlueBckg: {
+    backgroundColor: '#00124D',
+  },
+  mmlfTopLogoImg: {
+
+    width: '374px',
+    height: '61px',
+
+  },
   loadProgramButton: {
 
     // borderWidth: '1px',
     // borderColor: '#707070 !important',
-    border: '1px solid #707070',
     borderRadius: '0px',
-    fontFamily: 'FuturaPTBook',
+    fontFamily: 'Gotham Pro Medium',
+    fontSize: '24px',
+    lineHeight: '27px',
     whiteSpace: 'nowrap',
-
+    backgroundColor: '#FF414A',
+    color: 'white',
+    border: 'none',
+    width: '340px',
+    height: '60px',
+    // textTransform: 'capitalize',
+    textTransform: 'initial',
   },
   mainContainer: {
 
-    paddingLeft: '15px',
-    paddingRight: '15px',
+    paddingLeft: '120px',
+    paddingRight: '120px',
     marginTop: '20px',
     borderTop: '1px solid #707070',
     borderBottom: '1px solid #707070',

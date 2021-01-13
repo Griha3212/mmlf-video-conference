@@ -33,6 +33,7 @@ import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 import parseToken from '../../utils/parseToken';
 import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
 import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock';
+import topMMLFLogo from '../../img/mmlfLogo2021.svg';
 
 type FormData = {
   loginCode: string;
@@ -198,23 +199,23 @@ const UserPage: FC = () => {
 
       </Container>
 
-      <Grid container xl justify="space-between" className={classes.mainContainer}>
+      <Grid container xl justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
 
-        <Grid item xl={1}>
-          <Typography>ММЛФ</Typography>
+        <Grid item className={classes.myAuto} xl={3}>
+          <img className={classes.mmlfTopLogoImg} src={topMMLFLogo} alt="" />
         </Grid>
 
-        <Grid item xl={1}>
-          <Typography align="center">Конференция</Typography>
+        <Grid item className={classes.myAuto} xl={6}>
+          <Typography className={classes.conferenceTopText} align="center">Конференция</Typography>
         </Grid>
 
-        <Grid item xl={1}>
+        <Grid item className={classes.myAuto} xl={3}>
           <Button className={classes.loadProgramButton}>Скачать программу</Button>
         </Grid>
 
       </Grid>
 
-      <Grid container xl justify="center" className={classes.mainContainer}>
+      <Grid container xl justify="center">
 
         <VideoPlayerMain videoURL="https://facecast.net/v/pybh3r" />
 
