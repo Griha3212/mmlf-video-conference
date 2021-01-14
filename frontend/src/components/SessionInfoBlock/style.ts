@@ -9,11 +9,14 @@ const useStyles = makeStyles(() => ({
     fontSize: '42px',
     lineHeight: '27px',
     color: 'white',
+    marginTop: '32px',
+    marginBottom: '38px',
 
   },
 
   sessionLetterText: {
 
+    marginTop: '0px',
     fontFamily: 'Gotham Pro Bold',
     fontSize: '22px',
     lineHeight: '31px',
