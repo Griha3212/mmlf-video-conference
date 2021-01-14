@@ -39,7 +39,7 @@ const SessionInfoBlock = (props: any) => {
           <Grid container spacing={5}>
 
             <Grid item xs={2}>
-              <img src={props.currentSessionSpeakerSrc || noAvatar} alt="" />
+              <img width="100%" src={props.currentSessionSpeakerSrc || noAvatar} alt="" />
 
             </Grid>
             <Grid item xs={8}>
