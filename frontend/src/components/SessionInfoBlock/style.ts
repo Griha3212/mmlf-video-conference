@@ -29,11 +29,18 @@ const useStyles = makeStyles(() => ({
 
   },
 
+  textCenter: {
+
+    textAlign: 'center',
+
+  },
+
   lightBlueBckg: {
 
     backgroundColor: '#1B3074',
     width: '100%',
     padding: '0 110px',
+    paddingTop: '61px',
 
   },
 
@@ -53,6 +60,45 @@ const useStyles = makeStyles(() => ({
     lineHeight: '51px',
     color: 'white',
     marginTop: '0px',
+
+  },
+
+  rateSpeakerText: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 300,
+    fontSize: '15px',
+    lineHeight: '28px',
+    color: 'white',
+    marginTop: '0px',
+
+  },
+
+  loadPresenationButton: {
+
+    fontFamily: 'Gotham Pro Medium',
+    fontSize: '21px',
+    lineHeight: '23px',
+    backgroundColor: '#FF414A',
+    height: '53px',
+    width: '302px',
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: '0px',
+
+  },
+
+  goToZoomButton: {
+
+    fontFamily: 'Gotham Pro Medium',
+    fontSize: '21px',
+    lineHeight: '23px',
+    backgroundColor: '#2D8CFF',
+    height: '53px',
+    width: '302px',
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: '0px',
 
   },
 
