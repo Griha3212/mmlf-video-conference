@@ -1,8 +1,9 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToOne, ManyToMany, JoinTable,
+  Index, CreateDateColumn, OneToMany, ManyToOne, ManyToMany, JoinTable, OneToOne,
 } from 'typeorm';
+import Channels from './channels';
 import Sessions from './sessions';
 import Speakers from './speakers';
 import Votes from './votes';
@@ -11,10 +12,6 @@ import Votes from './votes';
 export default class Users extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
-
-  // Date of user creation
-  @CreateDateColumn({ type: 'timestamptz' })
-  createdAt: Date;
 
   @Index()
   @Column({ nullable: true })
@@ -81,4 +78,7 @@ export default class Users extends BaseEntity {
 
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
+
+  @OneToOne(() => Channels, (channels) => channels.id)
+  activeChannel: Channels;
 }
