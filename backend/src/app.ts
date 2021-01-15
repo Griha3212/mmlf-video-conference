@@ -40,7 +40,9 @@ app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
 
-// console.log('process.env.JWT_SECRET :>> ', process.env.JWT_SECRET);
+console.log('process.env.JWT_SECRET :>> ', process.env.JWT_SECRET);
+
+console.log('process.env.BACKEND_URL :>> ', process.env.BACKEND_URL);
 
 // TO DO create db for staging/prod version without seeding
 createConnection().then(async () => {

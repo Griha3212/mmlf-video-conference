@@ -12,9 +12,9 @@ export default class Speakers extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Index()
-  @Column({ nullable: true })
-  sessionName: string;
+  // @Index()
+  // @Column({ nullable: true })
+  // sessionName: string;
 
   @Index()
   @Column({ nullable: true })

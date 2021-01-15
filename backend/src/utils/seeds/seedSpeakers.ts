@@ -1,3 +1,4 @@
+/* eslint-disable prefer-destructuring */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/prefer-default-export */
 import { getRepository } from 'typeorm';
@@ -56,7 +57,7 @@ export const seedMockedSpeakers = async () => {
     lastName: 'БОГАЧЕВ',
     firstName: 'Игорь',
 
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Tashbayev.jpg`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bogachev.png`,
     innerSystemName: 'Bogachev',
     isModerator: true,
     session: foundSessions.filter((session: any) => session.name === 'SessA'),
@@ -95,7 +96,8 @@ export const seedMockedSpeakers = async () => {
     newSpeaker.topicName = speaker.topicName || '';
     newSpeaker.innerSystemName = speaker.innerSystemName || '';
     newSpeaker.isModerator = speaker.isModerator || false;
-    newSpeaker.session = speaker.session;
+    newSpeaker.session = speaker.session[0];
+    // newSpeaker.session = speaker.session;
 
     results.push(newSpeaker);
   }
