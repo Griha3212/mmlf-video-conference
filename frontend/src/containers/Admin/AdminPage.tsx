@@ -1,6 +1,9 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
+/* eslint-disable @typescript-eslint/ban-types */
 import React, {
   FC, memo, useState, useEffect,
-  ChangeEvent,
+  ChangeEvent, useCallback,
 } from 'react';
 
 import { Copyright } from '@material-ui/icons';
@@ -30,6 +33,21 @@ import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 
+type Speaker = {
+
+  company: string;
+  firstName: string;
+  id: number;
+  innerSystemName: string;
+  isModerator: boolean;
+  lastName: string;
+  linkToImg: string;
+  linkToPresentation: string;
+  linkToZoom: string;
+  topicName: string;
+
+};
+
 type DataForAdmin = {
   channelForShowing: {
     break: boolean, id: number, link: string,
@@ -38,7 +56,9 @@ type DataForAdmin = {
   description: string;
   id: number;
   letter: string;
-  name: string
+  name: string;
+  speakers: Array<Speaker>
+
 };
 
 type FormData = {
@@ -100,34 +120,65 @@ const AdminPage: FC = () => {
 
   // const sendLoginDataToServer =
 
-  return (
+  // const renderSpeakersDataForAdmin = () => {
+  //   if (dataForAdmin) {
+  //     dataForAdmin.speakers.map((element) => {
+  //       console.log('element :>> ', element);
+  //       if (!element.isModerator) {
+  //         <p>
+  //           {element.lastName}
+  //           {' '}
+  //           {element.firstName}
+  //         </p>;
+  //       }
+  //     });
+  //   }
+  // };
 
-    <Container component="main" maxWidth="xs">
-
-      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="error">
-          {error}
-        </Alert>
-      </Snackbar>
-
-      <CssBaseline />
-      <div className={classes.paper}>
-        <Avatar className={classes.avatar}>
-          <LockOutlinedIcon />
-        </Avatar>
-        <Typography component="h1" variant="h5">
-          Страница Администратора
-
-        </Typography>
+  const renderSpeakersDataForAdmin = (element: Speaker) => {
+    if (!element.isModerator) {
+      return (
         <p>
+          {element.lastName}
           {' '}
-          {dataForAdmin && dataForAdmin.letter}
+          {element.firstName}
         </p>
+      );
+    }
+  };
 
-      </div>
+  return (
+    <>
+      <Container component="main" maxWidth="xs">
 
-    </Container>
+        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+          <Alert onClose={handleClose} severity="error">
+            {error}
+          </Alert>
+        </Snackbar>
 
+        <CssBaseline />
+        <div className={classes.paper}>
+          <Avatar className={classes.avatar}>
+            <LockOutlinedIcon />
+          </Avatar>
+          <Typography component="h1" variant="h5">
+            Страница Администратора
+
+          </Typography>
+          <p>
+            {' '}
+            {dataForAdmin && dataForAdmin.letter}
+          </p>
+          {
+            dataForAdmin?.speakers.map((element) => renderSpeakersDataForAdmin(element))
+          }
+
+        </div>
+
+      </Container>
+
+    </>
   );
 };
 
