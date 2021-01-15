@@ -1,7 +1,8 @@
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToMany,
+  Index, CreateDateColumn, OneToMany, ManyToMany, ManyToOne,
 } from 'typeorm';
+import Channels from './channels';
 import Speakers from './speakers';
 import Users from './users';
 import Votes from './votes';
@@ -25,4 +26,9 @@ export default class Sessions extends BaseEntity {
 
   @OneToMany(() => Speakers, (speakers) => speakers.session)
   speakers: Speakers[];
+
+  @Index()
+  @ManyToOne(() => Channels,
+    (channelForShowing) => channelForShowing.id, { cascade: true })
+  channelForShowing: Sessions;
 }

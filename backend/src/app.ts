@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable no-console */
 /* eslint-disable import/prefer-default-export */
 import express, { Request, Response } from 'express';
@@ -10,6 +11,7 @@ import errorHandler from './middlewares/error.middleware';
 import Users from './entities/users';
 import { seedMockedUsers } from './utils/seeds/seedUsers';
 import { router as authRouter } from './routes/auth.route';
+import { router as userRouter } from './routes/user.route';
 import { jwtStrategy, jwtStrategyIsAdmin, localSignInStrategy } from './passportStrategy';
 
 // Create a new express application instance
@@ -29,6 +31,7 @@ app.use(cors());
 app.use(compression());
 
 app.use('/api/auth', authRouter);
+app.use('/api/user', userRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');

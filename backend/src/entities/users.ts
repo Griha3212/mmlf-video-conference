@@ -55,9 +55,9 @@ export default class Users extends BaseEntity {
   @Column({ default: false })
   isAdmin: boolean;
 
-  // @Index()
-  // @Column({ default: false })
-  // adminOfTheSession
+  @Index()
+  @Column({ nullable: true })
+  adminOfTheSessionName: string;
 
   @Index()
   @Column({ default: false })

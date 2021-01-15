@@ -4,6 +4,8 @@ const api = {
 
   vote: 'api/auth/login',
 
+  getUser: 'api/user/get_user/',
+
 };
 
 export default api;

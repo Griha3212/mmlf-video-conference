@@ -26,6 +26,9 @@ import clsx from 'clsx';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import useStyles from './style';
 import { apiLogin } from '../../api/login';
+import { apiGetUser } from '../../api/user';
+import parseToken from '../../utils/parseToken';
+import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 
 type FormData = {
   loginCode: string;
@@ -42,8 +45,8 @@ function Alert(props: any) {
 
 const AdminPage: FC = () => {
   const classes = useStyles();
-
-  const [user, setUser] = useState();
+  const { token } = getLocalStorageData();
+  const [userData, setUserData] = useState(parseToken(token.accessToken as string));
 
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
@@ -63,44 +66,13 @@ const AdminPage: FC = () => {
       setSuccess(false);
       setLoading(true);
     }
-    const response = await apiLogin(data.loginCode);
 
-    console.log('response :>> ', response);
-
-    if (response && response.status === 404) {
-      setError('Нет соединения');
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-
-    if (response && response.status === 400) {
-      setError('Ошибка');
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-
-    if (!response) {
-      setError('Нет соединения');
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-
-    if (response && response.status === 500) {
-      setError(`${response.data}`);
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-    if (response && response.token && response.refreshToken) {
-      localStorage.setItem('token', response.token);
-      localStorage.setItem('refreshToken', response.refreshToken);
-      setSuccess(true);
-      setLoading(false);
-    }
+    let response;
   };
+
+  useEffect(() => {
+    apiGetUser(userData.id);
+  }, []);
 
   const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
     if (reason === 'clickaway') {
@@ -131,6 +103,7 @@ const AdminPage: FC = () => {
         </Typography>
 
       </div>
+
     </Container>
 
   );
