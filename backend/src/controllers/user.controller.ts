@@ -27,9 +27,9 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
       });
 
       res.status(200).send(sessionAdminInfo);
+    } else {
+      res.status(200).send(foundUser);
     }
-
-    res.status(200).send(foundUser);
   } catch (error) {
     next(error);
   }

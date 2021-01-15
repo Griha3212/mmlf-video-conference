@@ -6,12 +6,20 @@ import api from '../core/api';
 // Login
 export const apiGetUser = async (
   userId: string,
+  token: {
+    accessToken: string | null;
+    refreshToken: string | null;
+  },
 
 ): Promise<any> => {
   const url = `${process.env.REACT_APP_API_URL}${api.getUser}${userId}`;
 
   try {
-    const { data } = await axios.get(url);
+    const { data } = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
     return data;
   } catch (error) {
     return error.response;

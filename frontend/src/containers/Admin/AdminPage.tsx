@@ -30,6 +30,17 @@ import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 
+type DataForAdmin = {
+  channelForShowing: {
+    break: boolean, id: number, link: string,
+    number: number
+  },
+  description: string;
+  id: number;
+  letter: string;
+  name: string
+};
+
 type FormData = {
   loginCode: string;
 };
@@ -53,6 +64,8 @@ const AdminPage: FC = () => {
   const [error, setError]: [string, (error: string) => void] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
+  const [dataForAdmin, setDataForAdmin] = React.useState<DataForAdmin>();
+
   const buttonClassname = clsx({
     [classes.buttonSuccess]: success,
   });
@@ -71,7 +84,11 @@ const AdminPage: FC = () => {
   };
 
   useEffect(() => {
-    apiGetUser(userData.id);
+    async function anyNameFunction() {
+      const response = await apiGetUser(userData.id, token);
+      setDataForAdmin(response);
+    }
+    anyNameFunction();
   }, []);
 
   const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
@@ -100,7 +117,12 @@ const AdminPage: FC = () => {
         </Avatar>
         <Typography component="h1" variant="h5">
           Страница Администратора
+
         </Typography>
+        <p>
+          {' '}
+          {dataForAdmin && dataForAdmin.letter}
+        </p>
 
       </div>
 

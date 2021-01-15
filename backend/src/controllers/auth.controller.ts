@@ -44,8 +44,8 @@ export const userLogin = async (req: Request, res: Response) => {
           // };
 
           delete foundUserByLoginCodeInDatabase.loginCode;
-
-          const token = jwt.sign({ ...foundUserByLoginCodeInDatabase }, process.env.JWT_SECRET as string, { expiresIn: '1m' });
+          // TO DO, maybe make true token system later
+          const token = jwt.sign({ ...foundUserByLoginCodeInDatabase }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
           const refreshToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
 
           // save JWT refresh token in dataBase
