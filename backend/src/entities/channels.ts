@@ -15,9 +15,9 @@ export default class Channels extends BaseEntity {
   @OneToOne(() => Sessions, (sessions) => sessions.id) // specify inverse side as a second parameter
   activeSession: Sessions;
 
-  @Index()
-  @Column({ nullable: true })
-  sessionsAmount: number;
+  //   @Index()
+  //   @Column({ nullable: true })
+  //   sessionsAmount: number;
 
   @Column({ default: false })
   break: boolean;
@@ -28,4 +28,12 @@ export default class Channels extends BaseEntity {
 
   @OneToOne(() => Speakers, (speakers) => speakers.id)
   activeSpeaker: Speakers;
+
+  @Index()
+  @Column({ nullable: true })
+  number: number;
+
+  @Index()
+  @Column({ nullable: true })
+  link: string;
 }

@@ -36,6 +36,10 @@ export default class Speakers extends BaseEntity {
   @Column({ nullable: true })
   linkToImg: string;
 
+  @Index()
+  @Column({ nullable: true })
+  linkToPresentation: string;
+
   @ManyToMany(() => Users, (users) => users.watchedSpeakers)
   usersWhoWatchedSpeaker: Users[];
 
@@ -46,4 +50,16 @@ export default class Speakers extends BaseEntity {
   @ManyToOne(() => Sessions,
     (session) => session.speakers, { cascade: true })
   session: Sessions;
+
+  @Index()
+  @Column({ nullable: true })
+  topicName: string;
+
+  @Index()
+  @Column({ nullable: true })
+  innerSystemName: string;
+
+  @Index()
+  @Column({ default: false })
+  isModerator: boolean;
 }

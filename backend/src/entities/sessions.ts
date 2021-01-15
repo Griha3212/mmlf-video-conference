@@ -18,7 +18,15 @@ export default class Sessions extends BaseEntity {
 
   @Index()
   @Column({ nullable: true })
-  sessionsAmount: number;
+  letter: string;
+
+  @Index()
+  @Column({ nullable: true })
+  description: string;
+
+  // @Index()
+  // @Column({ nullable: true })
+  // sessionsAmount: number;
 
   // @Index()
   // @Column({ nullable: true })
@@ -30,5 +38,5 @@ export default class Sessions extends BaseEntity {
   @Index()
   @ManyToOne(() => Channels,
     (channelForShowing) => channelForShowing.id, { cascade: true })
-  channelForShowing: Sessions;
+  channelForShowing: Channels;
 }

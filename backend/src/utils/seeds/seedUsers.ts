@@ -43,6 +43,16 @@ export const seedMockedUsers = async () => {
 
   },
 
+  {
+
+    firstName: 'test5',
+    lastName: 'testovich5',
+    company: 'companyTest5',
+    loginCode: 'stats',
+    hasAccessToStatisticPage: true,
+
+  },
+
   ];
 
   const results = [];

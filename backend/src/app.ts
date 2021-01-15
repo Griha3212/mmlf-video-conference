@@ -13,6 +13,9 @@ import { seedMockedUsers } from './utils/seeds/seedUsers';
 import { router as authRouter } from './routes/auth.route';
 import { router as userRouter } from './routes/user.route';
 import { jwtStrategy, jwtStrategyIsAdmin, localSignInStrategy } from './passportStrategy';
+import { seedMockedChannels } from './utils/seeds/channelsSeed';
+import { seedMockedSessions } from './utils/seeds/seedSessions';
+import { seedMockedSpeakers } from './utils/seeds/seedSpeakers';
 
 // Create a new express application instance
 export const app = express();
@@ -48,8 +51,15 @@ createConnection().then(async () => {
     .getCount();
 
   if (countOfUsers === 0) {
-    console.log(chalk.yellow('Found 0 users, mocking users'));
+    console.log(chalk.yellow('Found 0 users, mocking data'));
     await seedMockedUsers();
+    console.log(chalk.yellow('Users mocking complete'));
+    await seedMockedChannels();
+    console.log(chalk.yellow('Channels mocking complete'));
+    await seedMockedSessions();
+    console.log(chalk.yellow('Sessions mocking complete'));
+    await seedMockedSpeakers();
+    console.log(chalk.yellow('Speakers mocking complete'));
   }
 
   // const foundUser = await usersRepository.find
