@@ -2,6 +2,13 @@ import { makeStyles } from '@material-ui/core';
 import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
+
+  speakerButton: {
+
+    marginBottom: '30px',
+
+  },
+
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',

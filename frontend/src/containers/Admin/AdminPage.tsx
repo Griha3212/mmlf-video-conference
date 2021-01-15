@@ -32,6 +32,7 @@ import { apiLogin } from '../../api/login';
 import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
+import { apiChangeActiveSpeakerInChannel } from '../../api/admin';
 
 type Speaker = {
 
@@ -84,6 +85,10 @@ const AdminPage: FC = () => {
   const [error, setError]: [string, (error: string) => void] = React.useState('');
   const [open, setOpen] = React.useState(false);
 
+  const [activeSpeaker, setActiveSpeaker] = React.useState('');
+
+  const [selectedSpeakerToActivate, setSelectedSpeakerToActivate] = React.useState('');
+
   const [dataForAdmin, setDataForAdmin] = React.useState<DataForAdmin>();
 
   const buttonClassname = clsx({
@@ -103,12 +108,13 @@ const AdminPage: FC = () => {
     let response;
   };
 
+  const loadDataForAdmin = async () => {
+    const response = await apiGetUser(userData.id, token);
+    setDataForAdmin(response);
+  };
+
   useEffect(() => {
-    async function anyNameFunction() {
-      const response = await apiGetUser(userData.id, token);
-      setDataForAdmin(response);
-    }
-    anyNameFunction();
+    loadDataForAdmin();
   }, []);
 
   const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
@@ -116,6 +122,16 @@ const AdminPage: FC = () => {
       return;
     }
     await setOpen(false);
+  };
+
+  const activateSelectedSpeaker = async (speakerId: string) => {
+    const response = await apiChangeActiveSpeakerInChannel(
+      token,
+      Number(speakerId),
+      Number(dataForAdmin && dataForAdmin.channelForShowing.number),
+    );
+    console.log('response2 :>> ', response);
+    // setDataForAdmin(response);
   };
 
   // const sendLoginDataToServer =
@@ -138,11 +154,20 @@ const AdminPage: FC = () => {
   const renderSpeakersDataForAdmin = (element: Speaker) => {
     if (!element.isModerator) {
       return (
-        <p>
-          {element.lastName}
-          {' '}
-          {element.firstName}
-        </p>
+
+        <Grid container xs={12} justify="center">
+          <Button
+            onClick={(e) => { setSelectedSpeakerToActivate(e.currentTarget.value); }}
+            value={element.id}
+            data-id=""
+            className={classes.speakerButton}
+            variant="outlined"
+            color="primary"
+          >
+            {`${element.lastName}  ${element.firstName}`}
+          </Button>
+        </Grid>
+
       );
     }
   };
@@ -170,13 +195,35 @@ const AdminPage: FC = () => {
             {' '}
             {dataForAdmin && dataForAdmin.letter}
           </p>
-          {
-            dataForAdmin?.speakers.map((element) => renderSpeakersDataForAdmin(element))
-          }
 
         </div>
 
       </Container>
+
+      <Grid container>
+        <Grid item container xs={6}>
+
+          <Grid item xs={6}>
+            {
+              dataForAdmin?.speakers.map((element) => renderSpeakersDataForAdmin(element))
+            }
+          </Grid>
+
+          <Grid item xs={6}>
+            <Button onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
+          </Grid>
+
+        </Grid>
+
+        <Grid item xs={6}>
+          <p>
+            Активный спикер:
+            {' '}
+            {`${activeSpeaker}`}
+          </p>
+        </Grid>
+
+      </Grid>
 
     </>
   );
