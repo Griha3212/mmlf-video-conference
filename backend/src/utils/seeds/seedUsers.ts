@@ -67,6 +67,7 @@ export const seedMockedUsers = async () => {
     newUser.isAdmin = !!user.isAdmin;
     newUser.isFreeSessionAccessOnly = !!user.isFreeSessionAccessOnly;
     newUser.loginCode = user.loginCode;
+    newUser.adminOfTheSessionName = user.adminOfTheSessionName || '';
 
     results.push(newUser);
   }

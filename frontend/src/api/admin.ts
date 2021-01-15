@@ -10,12 +10,12 @@ export const apiChangeActiveSpeakerInChannel = async (
     refreshToken: string | null;
   },
   speakerIdToActivate: number,
-  channelForShowingId: number,
+  channelForShowingNumber: number,
 ): Promise<any> => {
-  const url = `${process.env.REACT_APP_API_URL}${api.login}`;
+  const url = `${process.env.REACT_APP_API_URL}${api.changeActiveSpeakerInChannel}`;
 
   try {
-    const { data } = await axios.post(url, { speakerIdToActivate, channelForShowingId }, {
+    const { data } = await axios.post(url, { speakerIdToActivate, channelForShowingNumber }, {
       headers: {
         Authorization: `Bearer ${token.accessToken}`,
       },

@@ -205,7 +205,9 @@ const AdminPage: FC = () => {
 
           <Grid item xs={6}>
             {
-              dataForAdmin?.speakers.map((element) => renderSpeakersDataForAdmin(element))
+              dataForAdmin && dataForAdmin.speakers.map(
+                (element) => renderSpeakersDataForAdmin(element),
+              )
             }
           </Grid>
 

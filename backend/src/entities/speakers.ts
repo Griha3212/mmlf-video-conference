@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToMany, ManyToOne,
+  Index, CreateDateColumn, OneToMany, ManyToMany, ManyToOne, JoinColumn,
 } from 'typeorm';
 import Sessions from './sessions';
 import Users from './users';
@@ -48,8 +48,9 @@ export default class Speakers extends BaseEntity {
 
   @Index()
   @ManyToOne(() => Sessions,
-    (session) => session.speakers, { cascade: true })
-  session: Sessions;
+    (sessions) => sessions.speakers, { cascade: true })
+  @JoinColumn()
+  sessions: Sessions;
 
   @Index()
   @Column({ nullable: true })

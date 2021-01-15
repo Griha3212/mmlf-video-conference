@@ -32,7 +32,7 @@ export default class Sessions extends BaseEntity {
   // @Column({ nullable: true })
   // sessions: number;
 
-  @OneToMany(() => Speakers, (speakers) => speakers.session)
+  @OneToMany(() => Speakers, (speakers) => speakers.sessions)
   speakers: Speakers[];
 
   @Index()

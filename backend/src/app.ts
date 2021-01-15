@@ -12,6 +12,7 @@ import Users from './entities/users';
 import { seedMockedUsers } from './utils/seeds/seedUsers';
 import { router as authRouter } from './routes/auth.route';
 import { router as userRouter } from './routes/user.route';
+import { router as adminRouter } from './routes/admin.route';
 import { jwtStrategy, jwtStrategyIsAdmin, localSignInStrategy } from './passportStrategy';
 import { seedMockedChannels } from './utils/seeds/channelsSeed';
 import { seedMockedSessions } from './utils/seeds/seedSessions';
@@ -35,14 +36,15 @@ app.use(compression());
 
 app.use('/api/auth', authRouter);
 app.use('/api/user', userRouter);
+app.use('/api/admin', adminRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
 });
 
-console.log('process.env.JWT_SECRET :>> ', process.env.JWT_SECRET);
+// console.log('process.env.JWT_SECRET :>> ', process.env.JWT_SECRET);
 
-console.log('process.env.BACKEND_URL :>> ', process.env.BACKEND_URL);
+// console.log('process.env.BACKEND_URL :>> ', process.env.BACKEND_URL);
 
 // TO DO create db for staging/prod version without seeding
 createConnection().then(async () => {

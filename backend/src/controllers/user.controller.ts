@@ -18,6 +18,8 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
 
     const foundUser = await usersRepository.findOne({ where: { id: userId } });
 
+    console.log('foundUser :>> ', foundUser);
+
     if (!foundUser) throw new Error(allErrors.userNotFound);
 
     if (foundUser.isAdmin) {
@@ -25,6 +27,8 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
         where: { name: foundUser.adminOfTheSessionName },
         relations: ['speakers', 'channelForShowing'],
       });
+
+      console.log('sessionAdminInfo :>> ', sessionAdminInfo);
 
       res.status(200).send(sessionAdminInfo);
     } else {

@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToMany, OneToOne,
+  Index, CreateDateColumn, OneToMany, ManyToMany, OneToOne, JoinColumn,
 } from 'typeorm';
 import Sessions from './sessions';
 import Speakers from './speakers';
@@ -12,7 +12,8 @@ export default class Channels extends BaseEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @OneToOne(() => Sessions, (sessions) => sessions.id) // specify inverse side as a second parameter
+  @OneToOne(() => Sessions, (sessions) => sessions) // specify inverse side as a second parameter
+  @JoinColumn()
   activeSession: Sessions;
 
   //   @Index()
@@ -26,7 +27,8 @@ export default class Channels extends BaseEntity {
   // @Column({ nullable: true })
   // sessions: number;
 
-  @OneToOne(() => Speakers, (speakers) => speakers.id)
+  @OneToOne(() => Speakers, (speakers) => speakers)
+  @JoinColumn()
   activeSpeaker: Speakers;
 
   @Index()
