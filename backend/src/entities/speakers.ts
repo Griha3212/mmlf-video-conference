@@ -1,7 +1,7 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToMany, ManyToOne, JoinColumn,
+  Index, OneToMany, ManyToMany, ManyToOne, JoinColumn,
 } from 'typeorm';
 import Sessions from './sessions';
 import Users from './users';

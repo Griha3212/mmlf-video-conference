@@ -2,8 +2,6 @@
 /* eslint-disable import/prefer-default-export */
 import { getRepository } from 'typeorm';
 import Channels from '../../entities/channels';
-import Sessions from '../../entities/sessions';
-import Users from '../../entities/users';
 
 export const seedMockedChannels = async () => {
   const channelsRepository = await getRepository(Channels);

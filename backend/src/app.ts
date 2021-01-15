@@ -65,8 +65,4 @@ createConnection().then(async () => {
     await seedMockedSpeakers();
     console.log(chalk.yellow('Speakers mocking complete'));
   }
-
-  // const foundUser = await usersRepository.find
-
-  // await seedMockedSpeakers();
 });

@@ -1,10 +1,9 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToOne, ManyToMany, JoinTable, OneToOne,
+  Index, OneToMany, ManyToMany, JoinTable, OneToOne,
 } from 'typeorm';
 import Channels from './channels';
-import Sessions from './sessions';
 import Speakers from './speakers';
 import Votes from './votes';
 

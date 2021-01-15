@@ -1,11 +1,10 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToMany, OneToOne, JoinColumn,
+  Index, OneToOne, JoinColumn,
 } from 'typeorm';
 import Sessions from './sessions';
 import Speakers from './speakers';
-import Users from './users';
 
 @Entity()
 export default class Channels extends BaseEntity {

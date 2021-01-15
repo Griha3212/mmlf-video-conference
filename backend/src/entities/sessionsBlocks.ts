@@ -1,10 +1,8 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, CreateDateColumn, OneToMany, ManyToMany,
+  Index,
 } from 'typeorm';
-import Users from './users';
-import Votes from './votes';
 
 @Entity()
 export default class SessionsBlocks extends BaseEntity {

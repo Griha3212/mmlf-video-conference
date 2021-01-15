@@ -97,7 +97,6 @@ export const seedMockedSpeakers = async () => {
     newSpeaker.innerSystemName = speaker.innerSystemName || '';
     newSpeaker.isModerator = speaker.isModerator || false;
     newSpeaker.sessions = speaker.session[0];
-    // newSpeaker.session = speaker.session;
 
     results.push(newSpeaker);
   }

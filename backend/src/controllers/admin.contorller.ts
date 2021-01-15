@@ -20,8 +20,6 @@ export const changeActiveSpeakerInChannel = async (
       { where: { id: speakerIdToActivate }, relations: ['sessions'] },
     );
 
-    console.log('foundSpeaker :>> ', foundSpeaker);
-
     if (!foundSpeaker) throw new Error(allErrors.userNotFound);
 
     const foundChannelToUpdateInfo = await channelsRepository.findOne(
