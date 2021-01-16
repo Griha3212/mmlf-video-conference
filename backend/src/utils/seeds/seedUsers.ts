@@ -68,6 +68,15 @@ export const seedMockedUsers = async () => {
     newUser.isFreeSessionAccessOnly = !!user.isFreeSessionAccessOnly;
     newUser.loginCode = user.loginCode;
     newUser.adminOfTheSessionName = user.adminOfTheSessionName || '';
+    // newUser.activeChannel = foundFirstChannel;
+    // all users except free have default first channel active
+
+    if (user.isFreeSessionAccessOnly) {
+      // TO DO ask for free session channel
+      newUser.activeChannel = 2;
+    } else {
+      newUser.activeChannel = 1;
+    }
 
     results.push(newUser);
   }

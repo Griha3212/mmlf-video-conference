@@ -34,6 +34,36 @@ import parseToken from '../../utils/parseToken';
 import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
 import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock';
 import topMMLFLogo from '../../img/mmlfLogo2021.svg';
+import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/SpeakersSessionInfoBlock';
+import { apiGetUser } from '../../api/user';
+
+type DataForUser = {
+  channelForShowing: {
+    break: boolean, id: number, link: string,
+    number: number
+  },
+  description: string;
+  id: number;
+  letter: string;
+  name: string;
+  speakers: Array<Speaker>
+
+};
+
+type Speaker = {
+
+  company: string;
+  firstName: string;
+  id: number;
+  innerSystemName: string;
+  isModerator: boolean;
+  lastName: string;
+  linkToImg: string;
+  linkToPresentation: string;
+  linkToZoom: string;
+  topicName: string;
+
+};
 
 type FormData = {
   loginCode: string;
@@ -86,6 +116,7 @@ const UserPage: FC = () => {
   const [success, setSuccess] = React.useState(false);
   const [error, setError]: [string, (error: string) => void] = React.useState('');
   const [open, setOpen] = React.useState(false);
+  const [dataForUser, setDataForUser] = React.useState<DataForUser>();
 
   // will start hook again if user will be changed
   useEffect(() => {
@@ -174,6 +205,15 @@ const UserPage: FC = () => {
     await setOpen(false);
   };
 
+  const loadDataForUser = async () => {
+    const response = await apiGetUser(userData.id, token);
+    setDataForUser(response);
+  };
+
+  useEffect(() => {
+    loadDataForUser();
+  }, []);
+
   // const sendLoginDataToServer =
 
   return (
@@ -227,6 +267,13 @@ const UserPage: FC = () => {
         <Grid item className={classes.innerContainer} justify="center">
 
           <SessionInfoBlock />
+
+        </Grid>
+
+        <Grid item className={classes.innerContainer} justify="center">
+
+          <SpeakersSessionInfoBlock />
+
         </Grid>
       </Grid>
 

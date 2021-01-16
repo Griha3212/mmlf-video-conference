@@ -78,6 +78,7 @@ export default class Users extends BaseEntity {
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
 
-  @OneToOne(() => Channels, (channels) => channels.id)
-  activeChannel: Channels;
+  @Index()
+  @Column({ nullable: true })
+  activeChannel: number;
 }

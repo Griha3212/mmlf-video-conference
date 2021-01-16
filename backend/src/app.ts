@@ -56,10 +56,11 @@ createConnection().then(async () => {
 
   if (countOfUsers === 0) {
     console.log(chalk.yellow('Found 0 users, mocking data'));
-    await seedMockedUsers();
-    console.log(chalk.yellow('Users mocking complete'));
+
     await seedMockedChannels();
     console.log(chalk.yellow('Channels mocking complete'));
+    await seedMockedUsers();
+    console.log(chalk.yellow('Users mocking complete'));
     await seedMockedSessions();
     console.log(chalk.yellow('Sessions mocking complete'));
     await seedMockedSpeakers();
