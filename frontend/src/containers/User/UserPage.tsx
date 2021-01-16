@@ -118,6 +118,9 @@ const UserPage: FC = () => {
   const [open, setOpen] = React.useState(false);
   const [dataForUser, setDataForUser] = React.useState<DataForUser>();
 
+  // active session info
+  const [activeSessionLetter, setActiveSessionLetter] = React.useState<DataForUser>();
+
   // will start hook again if user will be changed
   useEffect(() => {
     socket.emit('connectToPersonalRoom', user.id);
@@ -208,6 +211,11 @@ const UserPage: FC = () => {
   const loadDataForUser = async () => {
     const response = await apiGetUser(userData.id, token);
     setDataForUser(response);
+
+    if (response) {
+      setActiveSessionLetter(response && response.channelUserInfo
+        && response.channelUserInfo.activeSession && response.channelUserInfo.activeSession.letter);
+    }
   };
 
   useEffect(() => {
@@ -266,7 +274,7 @@ const UserPage: FC = () => {
 
         <Grid item className={classes.innerContainer} justify="center">
 
-          <SessionInfoBlock />
+          <SessionInfoBlock currentSessionLetter={activeSessionLetter} />
 
         </Grid>
 

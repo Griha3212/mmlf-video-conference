@@ -20,7 +20,9 @@ const SessionInfoBlock = (props: any) => {
 
       <Grid item className={classes.darkBlueBckg}>
 
-        <p className={classes.sessionLetterText}>
+        <p className={props.currentSessionLetter && props.currentSessionLetter.length > 10
+          ? classes.sessionLetterTextLong : classes.sessionLetterText}
+        >
           {props.currentSessionLetter || 'Сессия #'}
         </p>
         <p className={classes.sessionNameText}>

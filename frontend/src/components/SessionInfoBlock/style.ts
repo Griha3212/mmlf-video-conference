@@ -14,6 +14,20 @@ const useStyles = makeStyles(() => ({
 
   },
 
+  sessionLetterTextLong: {
+
+    marginTop: '0px',
+    fontFamily: 'Gotham Pro Bold',
+    fontSize: '22px',
+    lineHeight: '31px',
+    backgroundColor: '#FF414A',
+    height: '34px',
+    width: '250px',
+    color: 'white',
+    textAlign: 'center',
+
+  },
+
   sessionLetterText: {
 
     marginTop: '0px',
