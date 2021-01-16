@@ -3,6 +3,12 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  textCenter: {
+
+    textAlign: 'center',
+
+  },
+
   speakerButton: {
 
     marginBottom: '30px',

@@ -38,3 +38,30 @@ export const changeActiveSpeakerInChannel = async (
     next(error);
   }
 };
+
+export const setBreakBetweenSessions = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const channelsRepository = await getRepository(Channels);
+
+  try {
+    const { channelForShowingNumber } = req.body;
+
+    const foundChannelToUpdateInfo = await channelsRepository.findOne(
+      { where: { number: channelForShowingNumber } },
+    );
+
+    if (!foundChannelToUpdateInfo) throw new Error(allErrors.channelNotFound);
+
+    foundChannelToUpdateInfo.activeSession = null;
+    foundChannelToUpdateInfo.activeSpeaker = null;
+    foundChannelToUpdateInfo.break = true;
+    await channelsRepository.save(foundChannelToUpdateInfo);
+
+    res.status(200).send(foundChannelToUpdateInfo);
+  } catch (error) {
+    next(error);
+  }
+};

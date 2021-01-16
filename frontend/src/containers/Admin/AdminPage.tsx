@@ -32,7 +32,7 @@ import { apiLogin } from '../../api/login';
 import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
-import { apiChangeActiveSpeakerInChannel } from '../../api/admin';
+import { apiChangeActiveSpeakerInChannel, apiSetBrakeInChannel } from '../../api/admin';
 
 type Speaker = {
 
@@ -130,7 +130,22 @@ const AdminPage: FC = () => {
       Number(speakerId),
       Number(dataForAdmin && dataForAdmin.channelForShowing.number),
     );
+
+    setActiveSpeaker(`${response.lastName} ${response.firstName}`);
+
     console.log('response2 :>> ', response);
+    // setDataForAdmin(response);
+  };
+
+  const setBreakBetweenSessions = async () => {
+    const response = await apiSetBrakeInChannel(
+      token,
+      Number(dataForAdmin && dataForAdmin.channelForShowing.number),
+    );
+
+    setActiveSpeaker('');
+
+    console.log('response3 :>> ', response);
     // setDataForAdmin(response);
   };
 
@@ -211,8 +226,17 @@ const AdminPage: FC = () => {
             }
           </Grid>
 
-          <Grid item xs={6}>
-            <Button onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
+          <Grid item justify="center" xs={6}>
+            <p className={classes.textCenter}>
+              {' '}
+              <Button onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
+            </p>
+
+            <p className={classes.textCenter}>
+              {' '}
+              <Button onClick={() => setBreakBetweenSessions()} variant="contained" color="primary">Активировать перерыв</Button>
+              {' '}
+            </p>
           </Grid>
 
         </Grid>

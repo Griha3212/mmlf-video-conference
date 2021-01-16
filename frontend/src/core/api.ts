@@ -8,6 +8,8 @@ const api = {
 
   changeActiveSpeakerInChannel: 'api/admin/change_active_speaker_in_channel',
 
+  setBrakeInChannel: 'api/admin/set_brake_in_cahnnel',
+
 };
 
 export default api;

@@ -13,7 +13,7 @@ export default class Channels extends BaseEntity {
 
   @OneToOne(() => Sessions, (sessions) => sessions) // specify inverse side as a second parameter
   @JoinColumn()
-  activeSession: Sessions;
+  activeSession: Sessions | null;
 
   //   @Index()
   //   @Column({ nullable: true })
@@ -28,7 +28,7 @@ export default class Channels extends BaseEntity {
 
   @OneToOne(() => Speakers, (speakers) => speakers)
   @JoinColumn()
-  activeSpeaker: Speakers;
+  activeSpeaker: Speakers | null;
 
   @Index()
   @Column({ nullable: true })
