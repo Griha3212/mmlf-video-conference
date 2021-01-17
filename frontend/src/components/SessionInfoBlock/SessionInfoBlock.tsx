@@ -15,6 +15,10 @@ const SessionInfoBlock = (props: any) => {
   const classes = useStyles();
   const [value, setValue] = React.useState<number | null>(2);
 
+  const { currentSpeakerInfo } = props;
+
+  console.log('currentSpeakerInfo :>> ', currentSpeakerInfo);
+
   return (
     <>
 
@@ -38,7 +42,7 @@ const SessionInfoBlock = (props: any) => {
 
         <Grid item xs={8}>
           <p className={classes.speakerTheme}>
-            {props.currentSpeakerTheme || 'Тема доклада'}
+            {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
           </p>
 
           <Grid container spacing={5}>

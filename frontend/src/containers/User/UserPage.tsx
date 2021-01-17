@@ -122,6 +122,10 @@ const UserPage: FC = () => {
   const [activeSessionLetter, setActiveSessionLetter] = React.useState<DataForUser>();
   const [activeSessionDescription, setActiveSessionDescription] = React.useState<DataForUser>();
 
+  // active speaker info
+
+  const [activeSpeakerInfo, setActiveSpeakerInfo] = React.useState<DataForUser>();
+
   // will start hook again if user will be changed
   useEffect(() => {
     socket.emit('connectToPersonalRoom', user.id);
@@ -220,6 +224,11 @@ const UserPage: FC = () => {
       setActiveSessionDescription(response && response.channelUserInfo
         && response.channelUserInfo.activeSession
         && response.channelUserInfo.activeSession.description);
+
+      setActiveSpeakerInfo(response && response.channelUserInfo
+        && response.channelUserInfo.activeSpeaker);
+
+      console.log('activeSpeakerInfo :>> ', activeSpeakerInfo);
     }
   };
 
@@ -282,6 +291,7 @@ const UserPage: FC = () => {
           <SessionInfoBlock
             currentSessionLetter={activeSessionLetter}
             currentSessionDescription={activeSessionDescription}
+            currentSpeakerInfo={activeSpeakerInfo}
           />
 
         </Grid>

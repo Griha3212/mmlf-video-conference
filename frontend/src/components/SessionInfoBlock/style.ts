@@ -60,6 +60,7 @@ const useStyles = makeStyles(() => ({
     width: '100%',
     padding: '0 110px',
     paddingTop: '61px',
+    paddingBottom: '80px',
 
   },
 

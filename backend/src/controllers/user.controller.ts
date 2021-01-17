@@ -33,7 +33,7 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
       const channelUserInfo = await channelsRepository.findOne(
         {
           where: { number: foundUser.activeChannel },
-          relations: ['activeSession', 'activeSession.speakers'],
+          relations: ['activeSession', 'activeSession.speakers', 'activeSpeaker'],
         },
       );
 
