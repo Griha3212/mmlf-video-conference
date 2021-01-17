@@ -40,7 +40,7 @@ const SessionInfoBlock = (props: any) => {
 
       <Grid item container justify="space-between" className={classes.lightBlueBckg}>
 
-        <Grid item xs={8}>
+        <Grid item className={classes.speakerInfoBlock} xs={8}>
           <p className={classes.speakerTheme}>
             {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
           </p>
@@ -48,13 +48,13 @@ const SessionInfoBlock = (props: any) => {
           <Grid container spacing={5}>
 
             <Grid item xs={2}>
-              <img width="100%" src={props.currentSessionSpeakerSrc || noAvatar} alt="" />
+              <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
 
             </Grid>
             <Grid item xs={8}>
-              <p>Спикер</p>
-              <p>{`${currentSpeakerInfo && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo && currentSpeakerInfo.firstName || 'Имя спикера'}`}</p>
-              <p>{`${currentSpeakerInfo && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo && currentSpeakerInfo.statusInCompany || 'должность'}`}</p>
+              <p className={classes.speakerHeaderText}>Спикер</p>
+              <p className={classes.speakerFullNameText}>{`${currentSpeakerInfo && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo && currentSpeakerInfo.firstName || 'Имя спикера'}`}</p>
+              <p className={classes.speakerFullCompanyText}>{`${currentSpeakerInfo && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo && currentSpeakerInfo.statusInCompany || 'должность'}`}</p>
             </Grid>
           </Grid>
 

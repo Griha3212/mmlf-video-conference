@@ -2,6 +2,57 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
 
+  speakerInfoBlock: {
+
+    marginTop: 'auto',
+
+  },
+
+  speakerAvatarImg: {
+
+    borderRadius: '50%',
+    border: '4px solid white',
+  },
+
+  speakerFullCompanyText: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 400,
+    fontSize: '15px',
+    lineHeight: '20px',
+    color: 'white',
+    marginTop: '5px',
+    // marginBottom: '38px',
+
+  },
+
+  speakerFullNameText: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 600,
+    fontSize: '30px',
+    lineHeight: '41px',
+    color: 'white',
+    marginTop: '5px',
+    marginBottom: '0px',
+
+  },
+
+  speakerHeaderText: {
+
+    marginTop: '0px',
+    fontFamily: 'Gotham Pro Bold',
+    fontSize: '20px',
+    lineHeight: '30px',
+    backgroundColor: '#FF414A',
+    height: '31px',
+    width: '93px',
+    color: 'white',
+    textAlign: 'center',
+    marginBottom: '0px',
+
+  },
+
   sessionNameText: {
 
     fontFamily: 'Open Sans',

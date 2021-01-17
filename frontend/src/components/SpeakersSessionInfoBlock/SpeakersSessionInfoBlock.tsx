@@ -15,6 +15,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
   const [value, setValue] = React.useState<number | null>(2);
 
+  const { currentModeratorInfo } = props;
+
   return (
     <>
 
@@ -30,8 +32,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
           </Grid>
           <Grid item xs={8}>
 
-            <p>Модератор</p>
-            <p>Демин Василий</p>
+            <p className={classes.moderatorHeaderText}>Модератор</p>
+            <p>{`${currentModeratorInfo && currentModeratorInfo.lastName || 'ФАМИЛИЯ'} ${currentModeratorInfo && currentModeratorInfo.firstName || 'Имя'}`}</p>
 
           </Grid>
 
@@ -42,62 +44,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
             (element) => renderSpeakersDataForUser(element),
           )
         } */}
-
-      </Grid>
-
-      <Grid item container justify="space-between" className={classes.lightBlueBckg}>
-
-        <Grid item xs={8}>
-          <p className={classes.speakerTheme}>
-            {props.currentSpeakerTheme || 'Тема доклада'}
-          </p>
-
-          <Grid container spacing={5}>
-
-            <Grid item xs={2}>
-              <img width="100%" src={props.currentSessionSpeakerSrc || noAvatar} alt="" />
-
-            </Grid>
-            <Grid item xs={8}>
-              <p>Спикер</p>
-              <p>{`${props.currentSpeakerLastName || 'ФАМИЛИЯ'} ${props.currentSpeakerFirstName || 'Имя спикера'}`}</p>
-              <p>{`${props.currentSpeakerCompany || 'Компания'}, ${props.currentSpeakerCompanyPosition || 'должность'}`}</p>
-            </Grid>
-          </Grid>
-
-        </Grid>
-
-        <Grid alignItems="center" alignContent="center" xs={3}>
-
-          <p className={classes.textCenter}>
-            <Box component="fieldset" mb={3} borderColor="transparent">
-              <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
-              <Rating
-                name="simple-controlled"
-                value={value}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
-                }}
-              />
-            </Box>
-          </p>
-
-          <p className={classes.textCenter}>
-            <Button className={classes.loadPresenationButton}>Скачать презентацию</Button>
-          </p>
-
-          <p className={classes.textCenter}>
-            <Button className={classes.goToZoomButton}>Перейти в Zoom</Button>
-          </p>
-
-        </Grid>
-
-        {/* <p className={classes.speakerTheme}>
-          {props.currentSpeakerTheme || 'Тема доклада'}
-        </p>
-        <p className={classes.sessionNameText}>
-          {props.currentSessionName || 'Тема сессии'}
-        </p> */}
 
       </Grid>
 
