@@ -2,6 +2,31 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
 
+  speakerAvatarInsideSessionParagraph: {
+
+    textAlign: 'center',
+
+  },
+
+  speakerNameInsideSession: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 700,
+    fontSize: '22px',
+    lineHeight: '30px',
+    color: 'black',
+    marginBottom: '0px',
+    marginTop: '0px',
+    textAlign: 'center',
+
+  },
+
+  speakerAvatarInsideSession: {
+
+    maxWidth: '117px',
+
+  },
+
   smallScoreStarImg: {
 
     fontSize: '22px',

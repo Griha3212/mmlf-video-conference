@@ -1,29 +1,31 @@
 import React, { memo } from 'react';
 import {
-  Grid, CircularProgress, Typography, Button,
+  Grid,
 } from '@material-ui/core';
-import Iframe from 'react-iframe';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
-import Divider from '@material-ui/core/Divider';
 import useStyles from './style';
-import VideoPlayerMain from '../VideoPlayerMain/VideoPlayerMain';
-import ModeratorCard from '../ModeratorCard/ModeratorCard';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
+import PDF from '../../img/pdf_icon.svg';
+import Zoom from '../../img/zoomfondo-blanco-vertical-seeklogo.svg';
 
 const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
-  const [value, setValue] = React.useState<number | null>(5);
+  const [value] = React.useState<number | null>(5);
 
   const { currentModeratorInfo, currentSessionSpeakersInfo } = props;
+
+  console.log('currentSessionSpeakersInfo :>> ', currentSessionSpeakersInfo);
 
   const renderMockedSessionSpeakers = () => (
     <>
       <Grid item>
 
-        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
-        <p>ФАМИЛИЯ</p>
-        <p>Имя</p>
+        <p className={classes.speakerAvatarInsideSessionParagraph}>
+          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+        </p>
+        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
+        <p className={classes.speakerNameInsideSession}>Имя</p>
         <p>
           {' '}
           <Box component="fieldset" mb={3} borderColor="transparent">
@@ -31,53 +33,184 @@ const SpeakersSessionInfoBlock = (props: any) => {
           </Box>
 
         </p>
-        <p>icons</p>
+
+        <Grid container justify="space-around">
+          <Grid item>
+
+            <img src={PDF} alt="" />
+
+          </Grid>
+          <Grid item>
+
+            <img src={Zoom} alt="" />
+
+          </Grid>
+
+        </Grid>
 
       </Grid>
 
       <Grid item>
 
-        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
-        <p>ДЕМИН</p>
-        <p>Василий</p>
-        <p>stars</p>
-        <p>icons</p>
+        <p className={classes.speakerAvatarInsideSessionParagraph}>
+          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+        </p>
+        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
+        <p className={classes.speakerNameInsideSession}>Имя</p>
+        <p>
+          {' '}
+          <Box component="fieldset" mb={3} borderColor="transparent">
+            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+          </Box>
+
+        </p>
+
+        <Grid container justify="space-around">
+          <Grid item>
+
+            <img src={PDF} alt="" />
+
+          </Grid>
+          <Grid item>
+
+            <img src={Zoom} alt="" />
+
+          </Grid>
+
+        </Grid>
 
       </Grid>
 
       <Grid item>
 
-        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
-        <p>ДЕМИН</p>
-        <p>Василий</p>
-        <p>stars</p>
-        <p>icons</p>
+        <p className={classes.speakerAvatarInsideSessionParagraph}>
+          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+        </p>
+        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
+        <p className={classes.speakerNameInsideSession}>Имя</p>
+        <p>
+          {' '}
+          <Box component="fieldset" mb={3} borderColor="transparent">
+            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+          </Box>
+
+        </p>
+
+        <Grid container justify="space-around">
+          <Grid item>
+
+            <img src={PDF} alt="" />
+
+          </Grid>
+          <Grid item>
+
+            <img src={Zoom} alt="" />
+
+          </Grid>
+
+        </Grid>
 
       </Grid>
 
       <Grid item>
 
-        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
-        <p>ДЕМИН</p>
-        <p>Василий</p>
-        <p>stars</p>
-        <p>icons</p>
+        <p className={classes.speakerAvatarInsideSessionParagraph}>
+          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+        </p>
+        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
+        <p className={classes.speakerNameInsideSession}>Имя</p>
+        <p>
+          {' '}
+          <Box component="fieldset" mb={3} borderColor="transparent">
+            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+          </Box>
+
+        </p>
+
+        <Grid container justify="space-around">
+          <Grid item>
+
+            <img src={PDF} alt="" />
+
+          </Grid>
+          <Grid item>
+
+            <img src={Zoom} alt="" />
+
+          </Grid>
+
+        </Grid>
 
       </Grid>
 
       <Grid item>
 
-        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
-        <p>ДЕМИН</p>
-        <p>Василий</p>
-        <p>stars</p>
-        <p>icons</p>
+        <p className={classes.speakerAvatarInsideSessionParagraph}>
+          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+        </p>
+        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
+        <p className={classes.speakerNameInsideSession}>Имя</p>
+        <p>
+          {' '}
+          <Box component="fieldset" mb={3} borderColor="transparent">
+            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+          </Box>
+
+        </p>
+
+        <Grid container justify="space-around">
+          <Grid item>
+
+            <img src={PDF} alt="" />
+
+          </Grid>
+          <Grid item>
+
+            <img src={Zoom} alt="" />
+
+          </Grid>
+
+        </Grid>
 
       </Grid>
     </>
   );
 
-  const renderSessionSpeakers = () => null;
+  const renderSessionSpeakers = () => (
+    currentSessionSpeakersInfo.map((element: any) => (
+      <>
+        <Grid item>
+
+          <p className={classes.speakerAvatarInsideSessionParagraph}>
+            <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+          </p>
+          <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
+          <p className={classes.speakerNameInsideSession}>Имя</p>
+          <p>
+            <Box component="fieldset" mb={3} borderColor="transparent">
+              <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+            </Box>
+
+          </p>
+
+          <Grid container justify="space-around">
+            <Grid item>
+
+              <img src={PDF} alt="" />
+
+            </Grid>
+            <Grid item>
+
+              <img src={Zoom} alt="" />
+
+            </Grid>
+
+          </Grid>
+
+        </Grid>
+      </>
+    ))
+  );
 
   return (
     <>
@@ -101,12 +234,10 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </Grid>
 
-        <Grid justify="space-between" container xs={12}>
+        <Grid justify="space-around" container xs={12}>
 
           {
-
-            currentSessionSpeakersInfo ? renderMockedSessionSpeakers() : renderSessionSpeakers()
-
+            currentSessionSpeakersInfo ? renderSessionSpeakers() : renderMockedSessionSpeakers()
           }
 
         </Grid>
