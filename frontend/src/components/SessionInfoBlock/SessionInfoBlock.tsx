@@ -53,8 +53,8 @@ const SessionInfoBlock = (props: any) => {
             </Grid>
             <Grid item xs={8}>
               <p>Спикер</p>
-              <p>{`${props.currentSpeakerLastName || 'ФАМИЛИЯ'} ${props.currentSpeakerFirstName || 'Имя спикера'}`}</p>
-              <p>{`${props.currentSpeakerCompany || 'Компания'}, ${props.currentSpeakerCompanyPosition || 'должность'}`}</p>
+              <p>{`${currentSpeakerInfo && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo && currentSpeakerInfo.firstName || 'Имя спикера'}`}</p>
+              <p>{`${currentSpeakerInfo && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo && currentSpeakerInfo.statusInCompany || 'должность'}`}</p>
             </Grid>
           </Grid>
 

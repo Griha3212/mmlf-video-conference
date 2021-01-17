@@ -111,6 +111,10 @@ const AdminPage: FC = () => {
   const loadDataForAdmin = async () => {
     const response = await apiGetUser(userData.id, token);
     setDataForAdmin(response);
+
+    if (response && response.channelForShowing && response.channelForShowing.activeSpeaker) {
+      setActiveSpeaker(`${response.channelForShowing.activeSpeaker.lastName} ${response.channelForShowing.activeSpeaker.firstName}`);
+    }
   };
 
   useEffect(() => {

@@ -63,4 +63,8 @@ export default class Speakers extends BaseEntity {
   @Index()
   @Column({ default: false })
   isModerator: boolean;
+
+  @Index()
+  @Column({ nullable: true })
+  statusInCompany: string;
 }

@@ -25,7 +25,7 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
     if (foundUser.isAdmin) {
       const sessionAdminInfo = await sessionsRepository.findOne({
         where: { name: foundUser.adminOfTheSessionName },
-        relations: ['speakers', 'channelForShowing'],
+        relations: ['speakers', 'channelForShowing', 'channelForShowing.activeSpeaker'],
       });
 
       res.status(200).send(sessionAdminInfo);
