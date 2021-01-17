@@ -123,8 +123,11 @@ const UserPage: FC = () => {
   const [activeSessionDescription, setActiveSessionDescription] = React.useState<DataForUser>();
 
   // active speaker info
-
   const [activeSpeakerInfo, setActiveSpeakerInfo] = React.useState<DataForUser>();
+
+  // active moderator info
+
+  const [activeModeratorInfo, setActiveModeratorInfo] = React.useState<DataForUser>();
 
   // will start hook again if user will be changed
   useEffect(() => {
@@ -228,7 +231,15 @@ const UserPage: FC = () => {
       setActiveSpeakerInfo(response && response.channelUserInfo
         && response.channelUserInfo.activeSpeaker);
 
-      console.log('activeSpeakerInfo :>> ', activeSpeakerInfo);
+      setActiveModeratorInfo(response && response.channelUserInfo
+        && response.channelUserInfo.activeSession &&
+        response.channelUserInfo.activeSession.speakers.find(
+          (element: any) => element.isModerator,
+        ));
+
+      // console.log('activeSpeakerInfo :>> ', activeSpeakerInfo);
+
+      console.log('activeModeratorInfo :>> ', activeModeratorInfo);
     }
   };
 
@@ -298,7 +309,7 @@ const UserPage: FC = () => {
 
         <Grid item className={classes.innerContainer} justify="center">
 
-          <SpeakersSessionInfoBlock />
+          <SpeakersSessionInfoBlock currentModeratorInfo={activeModeratorInfo} />
 
         </Grid>
       </Grid>

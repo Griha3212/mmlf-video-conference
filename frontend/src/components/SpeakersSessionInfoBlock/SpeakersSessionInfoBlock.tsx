@@ -22,19 +22,19 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       <Grid item container className={classes.mainContainerBckg}>
 
-        <Grid item xs={9}><p className={classes.speakersBlockHeader}>Спикеры сессии</p></Grid>
+        <Grid item xs={8}><p className={classes.speakersBlockHeader}>Спикеры сессии</p></Grid>
 
-        <Grid item container xs={3}>
+        <Grid item className={classes.moderatorContainerInfoBlock} container xs={4}>
 
-          <Grid item xs={4}>
-            <img width="100%" src={props.currentSessionSpeakerSrc || noAvatar} alt="" />
+          <Grid item xs={3}>
+            <img width="100%" src={currentModeratorInfo && currentModeratorInfo.linkToImg || noAvatar} alt="" />
 
           </Grid>
-          <Grid item xs={8}>
-
-            <p className={classes.moderatorHeaderText}>Модератор</p>
-            <p>{`${currentModeratorInfo && currentModeratorInfo.lastName || 'ФАМИЛИЯ'} ${currentModeratorInfo && currentModeratorInfo.firstName || 'Имя'}`}</p>
-
+          <Grid className={classes.moderatorInfoBlock} item xs={8}>
+            <div>
+              <p className={classes.moderatorHeaderText}>Модератор</p>
+              <p className={classes.moderatorFullName}>{`${currentModeratorInfo && currentModeratorInfo.lastName || 'ФАМИЛИЯ'} ${currentModeratorInfo && currentModeratorInfo.firstName || 'Имя'}`}</p>
+            </div>
           </Grid>
 
         </Grid>

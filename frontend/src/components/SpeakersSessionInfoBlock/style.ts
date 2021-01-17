@@ -2,6 +2,33 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
 
+  moderatorFullName: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 600,
+    fontSize: '30px',
+    lineHeight: '41px',
+    color: 'black',
+    marginBottom: '0px',
+    marginTop: '0px',
+
+  },
+
+  moderatorInfoBlock: {
+
+    marginTop: 'auto',
+    marginBottom: 'auto',
+    marginLeft: '30px',
+    // maxHeight: '120px',
+
+  },
+
+  moderatorContainerInfoBlock: {
+
+    height: '120px',
+
+  },
+
   speakerHeaderText: {
 
     marginTop: '0px',
@@ -27,7 +54,7 @@ const useStyles = makeStyles(() => ({
     width: '135px',
     color: 'white',
     textAlign: 'center',
-
+    marginBottom: '20px',
   },
 
   speakersBlockHeader: {
@@ -36,6 +63,8 @@ const useStyles = makeStyles(() => ({
     fontSize: '70px',
     lineHeight: '79px',
     marginTop: '0px',
+    textTransform: 'uppercase',
+    color: '#00124D',
 
   },
 
