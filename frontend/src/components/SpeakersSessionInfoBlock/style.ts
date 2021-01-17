@@ -2,6 +2,12 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
 
+  pointerImg: {
+
+    cursor: 'pointer',
+
+  },
+
   speakerAvatarInsideSessionParagraph: {
 
     textAlign: 'center',
