@@ -2,6 +2,13 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
 
+  rateSpeakerStarsImg: {
+
+    fontSize: '2rem',
+    color: '#FF414A',
+
+  },
+
   speakerInfoBlock: {
 
     marginTop: 'auto',

@@ -2,6 +2,13 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles(() => ({
 
+  smallScoreStarImg: {
+
+    fontSize: '22px',
+    color: '#FF414A',
+
+  },
+
   moderatorFullName: {
 
     fontFamily: 'Open Sans',

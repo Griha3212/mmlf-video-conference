@@ -13,9 +13,71 @@ import noAvatar from '../../img/speakersImg/noAvatar.svg';
 
 const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
-  const [value, setValue] = React.useState<number | null>(2);
+  const [value, setValue] = React.useState<number | null>(5);
 
-  const { currentModeratorInfo } = props;
+  const { currentModeratorInfo, currentSessionSpeakersInfo } = props;
+
+  const renderMockedSessionSpeakers = () => (
+    <>
+      <Grid item>
+
+        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
+        <p>ФАМИЛИЯ</p>
+        <p>Имя</p>
+        <p>
+          {' '}
+          <Box component="fieldset" mb={3} borderColor="transparent">
+            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+          </Box>
+
+        </p>
+        <p>icons</p>
+
+      </Grid>
+
+      <Grid item>
+
+        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
+        <p>ДЕМИН</p>
+        <p>Василий</p>
+        <p>stars</p>
+        <p>icons</p>
+
+      </Grid>
+
+      <Grid item>
+
+        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
+        <p>ДЕМИН</p>
+        <p>Василий</p>
+        <p>stars</p>
+        <p>icons</p>
+
+      </Grid>
+
+      <Grid item>
+
+        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
+        <p>ДЕМИН</p>
+        <p>Василий</p>
+        <p>stars</p>
+        <p>icons</p>
+
+      </Grid>
+
+      <Grid item>
+
+        <p><img src="http://localhost:3005/img/speakers/per_Marinus.jpg" alt="" /></p>
+        <p>ДЕМИН</p>
+        <p>Василий</p>
+        <p>stars</p>
+        <p>icons</p>
+
+      </Grid>
+    </>
+  );
+
+  const renderSessionSpeakers = () => null;
 
   return (
     <>
@@ -39,11 +101,15 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </Grid>
 
-        {/* {
-          dataForAdmin && dataForAdmin.speakers.map(
-            (element) => renderSpeakersDataForUser(element),
-          )
-        } */}
+        <Grid justify="space-between" container xs={12}>
+
+          {
+
+            currentSessionSpeakersInfo ? renderMockedSessionSpeakers() : renderSessionSpeakers()
+
+          }
+
+        </Grid>
 
       </Grid>
 

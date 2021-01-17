@@ -66,6 +66,7 @@ const SessionInfoBlock = (props: any) => {
             <Box component="fieldset" mb={3} borderColor="transparent">
               <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
               <Rating
+                className={classes.rateSpeakerStarsImg}
                 name="simple-controlled"
                 value={value}
                 onChange={(event, newValue) => {
