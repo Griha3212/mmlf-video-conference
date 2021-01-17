@@ -7,7 +7,7 @@ const useStyles = makeStyles(() => ({
     fontFamily: 'Open Sans',
     fontWeight: 700,
     fontSize: '42px',
-    lineHeight: '27px',
+    lineHeight: '51px',
     color: 'white',
     marginTop: '32px',
     marginBottom: '38px',
@@ -25,6 +25,7 @@ const useStyles = makeStyles(() => ({
     width: '250px',
     color: 'white',
     textAlign: 'center',
+    marginBottom: '0px',
 
   },
 
@@ -39,6 +40,7 @@ const useStyles = makeStyles(() => ({
     width: '163px',
     color: 'white',
     textAlign: 'center',
+    marginBottom: '0px',
 
   },
 
@@ -65,7 +67,8 @@ const useStyles = makeStyles(() => ({
     paddingTop: '34px',
     padding: '0 110px',
     backgroundColor: '#00124D',
-    height: '190px',
+    height: 'auto',
+    minHeight: '190px',
     width: '100%',
   },
 

@@ -120,6 +120,7 @@ const UserPage: FC = () => {
 
   // active session info
   const [activeSessionLetter, setActiveSessionLetter] = React.useState<DataForUser>();
+  const [activeSessionDescription, setActiveSessionDescription] = React.useState<DataForUser>();
 
   // will start hook again if user will be changed
   useEffect(() => {
@@ -215,6 +216,10 @@ const UserPage: FC = () => {
     if (response) {
       setActiveSessionLetter(response && response.channelUserInfo
         && response.channelUserInfo.activeSession && response.channelUserInfo.activeSession.letter);
+
+      setActiveSessionDescription(response && response.channelUserInfo
+        && response.channelUserInfo.activeSession
+        && response.channelUserInfo.activeSession.description);
     }
   };
 
@@ -274,7 +279,10 @@ const UserPage: FC = () => {
 
         <Grid item className={classes.innerContainer} justify="center">
 
-          <SessionInfoBlock currentSessionLetter={activeSessionLetter} />
+          <SessionInfoBlock
+            currentSessionLetter={activeSessionLetter}
+            currentSessionDescription={activeSessionDescription}
+          />
 
         </Grid>
 

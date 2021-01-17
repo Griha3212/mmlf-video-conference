@@ -18,15 +18,18 @@ const SessionInfoBlock = (props: any) => {
   return (
     <>
 
-      <Grid item className={classes.darkBlueBckg}>
+      <Grid item container className={classes.darkBlueBckg}>
+        <Grid item xs={12}>
+          <p className={props.currentSessionLetter && props.currentSessionLetter.length > 10
+            ? classes.sessionLetterTextLong : classes.sessionLetterText}
+          >
+            {props.currentSessionLetter || 'Сессия #'}
+          </p>
 
-        <p className={props.currentSessionLetter && props.currentSessionLetter.length > 10
-          ? classes.sessionLetterTextLong : classes.sessionLetterText}
-        >
-          {props.currentSessionLetter || 'Сессия #'}
-        </p>
+        </Grid>
+
         <p className={classes.sessionNameText}>
-          {props.currentSessionName || 'Тема сессии'}
+          {props.currentSessionDescription || 'Тема сессии'}
         </p>
 
       </Grid>
