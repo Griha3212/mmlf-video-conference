@@ -17,7 +17,14 @@ const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
   const [value] = React.useState<number | null>(5);
 
-  const { currentModeratorInfo, currentSessionSpeakersInfo } = props;
+  const {
+    currentModeratorInfo,
+    currentSessionSpeakersInfo,
+    currentSessionSpeakersAllRates,
+  } = props;
+
+  console.log('currentSessionSpeakersAllRates :>> ', currentSessionSpeakersAllRates);
+  console.log('currentSessionSpeakersInfo :>> ', currentSessionSpeakersInfo);
 
   const renderMockedSessionSpeakers = () => (
     <>
@@ -194,7 +201,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
               <p className={classes.speakerNameInsideSession}>{element.firstName}</p>
               <p>
                 <Box component="fieldset" mb={3} borderColor="transparent">
-                  <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+                  {console.log('element :>> ', element)}
+                  <Rating className={classes.smallScoreStarImg} name="read-only" value={currentSessionSpeakersAllRates.find((vote: any) => vote.speaker.id === element.id).rate} readOnly />
                 </Box>
 
               </p>

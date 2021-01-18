@@ -277,6 +277,7 @@ const UserPage: FC = () => {
           <SpeakersSessionInfoBlock
             currentModeratorInfo={activeModeratorInfo}
             currentSessionSpeakersInfo={activeSessionSpeakersInfo}
+            currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
           />
 
         </Grid>

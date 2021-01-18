@@ -13,7 +13,7 @@ import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 const SessionInfoBlock = (props: any) => {
-  const { currentSpeakerInfo, currentSpeakerRate } = props;
+  const { currentSpeakerInfo, currentSpeakerRate, activeSessionSpeakersAllRates } = props;
   const classes = useStyles();
   const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || null);
 
