@@ -25,3 +25,26 @@ export const apiGetUser = async (
     return error.response;
   }
 };
+
+export const apiVoteForSpeaker = async (
+  speakerId: number,
+  userId: number,
+  token: {
+    accessToken: string | null;
+    refreshToken: string | null;
+  },
+  rate: number | null,
+): Promise<any> => {
+  const url = `${process.env.REACT_APP_API_URL}${api.voteForSpeaker}`;
+
+  try {
+    const { data } = await axios.post(url, { speakerId, userId, rate }, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};

@@ -10,6 +10,8 @@ const api = {
 
   setBrakeInChannel: 'api/admin/set_brake_in_cahnnel',
 
+  voteForSpeaker: 'api/user/vote_for_speaker',
+
 };
 
 export default api;

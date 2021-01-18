@@ -10,12 +10,24 @@ import useStyles from './style';
 import VideoPlayerMain from '../VideoPlayerMain/VideoPlayerMain';
 import ModeratorCard from '../ModeratorCard/ModeratorCard';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
+import { apiVoteForSpeaker } from '../../api/user';
 
 const SessionInfoBlock = (props: any) => {
   const classes = useStyles();
-  const [value, setValue] = React.useState<number | null>(2);
+  const [rate, setRate] = React.useState<number | null>(2);
 
   const { currentSpeakerInfo } = props;
+
+  const sendVoteForSpeaker = async (rateDirectlyFromUI: number | null) => {
+    const response = await apiVoteForSpeaker(
+      props.currentSpeakerInfo.id,
+      props.userId,
+      props.token,
+      rateDirectlyFromUI,
+    );
+
+    console.log('response :>> ', response);
+  };
 
   console.log('currentSpeakerInfo :>> ', currentSpeakerInfo);
 
@@ -68,9 +80,10 @@ const SessionInfoBlock = (props: any) => {
               <Rating
                 className={classes.rateSpeakerStarsImg}
                 name="simple-controlled"
-                value={value}
-                onChange={(event, newValue) => {
-                  setValue(newValue);
+                value={rate}
+                onChange={async (event, newValue) => {
+                  setRate(newValue);
+                  sendVoteForSpeaker(newValue);
                 }}
               />
             </Box>

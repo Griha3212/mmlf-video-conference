@@ -325,6 +325,8 @@ const UserPage: FC = () => {
             currentSessionLetter={activeSessionLetter}
             currentSessionDescription={activeSessionDescription}
             currentSpeakerInfo={activeSpeakerInfo}
+            token={token}
+            userId={user.id}
           />
 
         </Grid>
