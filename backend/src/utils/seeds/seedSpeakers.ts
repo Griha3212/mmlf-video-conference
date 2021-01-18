@@ -43,7 +43,7 @@ export const seedMockedSpeakers = async () => {
 
     company: 'Группа «М.Видео-Эльдорадо»',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dementeva.png`,
-    linkToZoom: '',
+    linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
     topicName: 'Тренды, вызовы и задачи в логистике non-food ритейла в 2021 г.',
     innerSystemName: 'Dementeva_Plenar',
@@ -71,7 +71,7 @@ export const seedMockedSpeakers = async () => {
 
     company: 'Coca-Cola HBC Россия',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Eleckih.png`,
-    linkToZoom: '',
+    linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
     topicName: 'Трансформация рынка и цифровизация управления логистикой',
     innerSystemName: 'Eleckih',
