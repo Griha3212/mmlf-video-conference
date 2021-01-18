@@ -24,4 +24,8 @@ export default class Votes extends BaseEntity {
   @ManyToOne(() => Speakers,
     (speaker) => speaker.id, { cascade: true })
   speaker: Speakers;
+
+  @Index()
+  @Column({ nullable: true })
+  rate: number;
 }

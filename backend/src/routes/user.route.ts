@@ -8,6 +8,7 @@ const router = express.Router();
 const {
 
   getUser,
+  voteForSpeaker,
   // updateToken,
 
 } = authController;
@@ -16,6 +17,12 @@ router.get(
   '/get_user/:userId',
   passport.authenticate('jwt', { session: false }),
   getUser,
+);
+
+router.post(
+  '/vote_for_speaker',
+  passport.authenticate('jwt', { session: false }),
+  voteForSpeaker,
 );
 
 export { router };
