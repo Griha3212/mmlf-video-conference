@@ -47,7 +47,6 @@ type DataForUser = {
   letter: string;
   name: string;
   speakers: Array<Speaker>
-
 };
 
 type Speaker = {
@@ -124,6 +123,7 @@ const UserPage: FC = () => {
 
   // active speaker info
   const [activeSpeakerInfo, setActiveSpeakerInfo] = React.useState<DataForUser>();
+  const [activeSpeakerRate, setActiveSessionSpeakersRate] = React.useState<DataForUser>();
 
   // active moderator info
   const [activeModeratorInfo, setActiveModeratorInfo] = React.useState<DataForUser>();
@@ -232,6 +232,21 @@ const UserPage: FC = () => {
     await setOpen(false);
   };
 
+  const findAndSetCurrentSpeakerRate = (votes: any) => {
+    if (activeSpeakerInfo) {
+      console.log('votes :>> ', votes);
+      console.log('ctiveSpeakerInfo.id :>> ', activeSpeakerInfo.id);
+      const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
+        === activeSpeakerInfo.id);
+
+      console.log('currentSpeakerRate :>> ', currentSpeakerRate2);
+
+      setActiveSessionSpeakersRate(currentSpeakerRate2 && currentSpeakerRate2.rate);
+    }
+  };
+
+  console.log('activeSpeakerRate :>> ', activeSpeakerRate);
+
   const loadDataForUser = async () => {
     const response = await apiGetUser(userData.id, token);
     setDataForUser(response);
@@ -257,11 +272,10 @@ const UserPage: FC = () => {
         && response.channelUserInfo.activeSession
         && response.channelUserInfo.activeSession.speakers);
 
-      // console.log('activeSpeakerInfo :>> ', activeSpeakerInfo);
-
-      console.log('activeModeratorInfo :>> ', activeModeratorInfo);
-
       socket.emit('connectToChannelRoom', response.foundUser.activeChannel);
+
+      findAndSetCurrentSpeakerRate(response && response.foundUser
+        && response.foundUser.votes);
     }
   };
 
@@ -321,18 +335,22 @@ const UserPage: FC = () => {
 
         <Grid item className={classes.innerContainer} justify="center">
 
+          {/* first block (active speaker) info */}
           <SessionInfoBlock
             currentSessionLetter={activeSessionLetter}
             currentSessionDescription={activeSessionDescription}
             currentSpeakerInfo={activeSpeakerInfo}
             token={token}
             userId={user.id}
+            currentSpeakerRate={activeSpeakerRate}
+
           />
 
         </Grid>
 
         <Grid item className={classes.innerContainer} justify="center">
 
+          {/* block with all speakers in session */}
           <SpeakersSessionInfoBlock
             currentModeratorInfo={activeModeratorInfo}
             currentSessionSpeakersInfo={activeSessionSpeakersInfo}

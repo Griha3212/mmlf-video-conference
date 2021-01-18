@@ -16,7 +16,9 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
   try {
     const { userId } = req.params;
 
-    const foundUser = await usersRepository.findOne({ where: { id: userId } });
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId }, relations: ['votes', 'votes.speaker'] },
+    );
 
     if (!foundUser) throw new Error(allErrors.userNotFound);
 

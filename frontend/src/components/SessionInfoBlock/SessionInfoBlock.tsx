@@ -1,4 +1,4 @@
-import React, { memo } from 'react';
+import React, { memo, useEffect } from 'react';
 import {
   Grid, CircularProgress, Typography, Button,
 } from '@material-ui/core';
@@ -13,10 +13,15 @@ import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 const SessionInfoBlock = (props: any) => {
+  const { currentSpeakerInfo, activeSpeakerRate } = props;
   const classes = useStyles();
-  const [rate, setRate] = React.useState<number | null>(2);
+  const [rate, setRate] = React.useState<number | null>(activeSpeakerRate);
 
-  const { currentSpeakerInfo } = props;
+  useEffect(() => {
+    if (activeSpeakerRate) {
+      setRate(activeSpeakerRate);
+    }
+  }, []);
 
   const sendVoteForSpeaker = async (rateDirectlyFromUI: number | null) => {
     const response = await apiVoteForSpeaker(
