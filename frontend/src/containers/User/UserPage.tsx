@@ -136,10 +136,14 @@ const UserPage: FC = () => {
     socket.emit('connectToPersonalRoom', user.id);
   }, []);
 
+  // on reconnect of socket
   useEffect(() => {
     socket.on('giveMeConnectionInfo', (data: any) => {
       console.log('giveMeConnectionInfo data :>> ', data);
+      // connect to personalRoom
       socket.emit('connectToPersonalRoom', user.id);
+      // connect to channelRoom
+      socket.emit('connectToChannelRoom', user.activeChannel);
     });
     return () => {
       socket.off('giveMeConnectionInfo');
@@ -156,6 +160,16 @@ const UserPage: FC = () => {
     });
     return () => {
       socket.off('connectToPersonalRoom');
+    };
+  });
+
+  useEffect(() => {
+    socket.on('connectToChannelRoom', (data: any) => {
+      setActiveSpeakerInfo(data.updatedSpeaker);
+      console.log('connectToChannelRoom data :>> ', data);
+    });
+    return () => {
+      socket.off('connectToChannelRoom');
     };
   });
 
@@ -246,6 +260,8 @@ const UserPage: FC = () => {
       // console.log('activeSpeakerInfo :>> ', activeSpeakerInfo);
 
       console.log('activeModeratorInfo :>> ', activeModeratorInfo);
+
+      socket.emit('connectToChannelRoom', response.foundUser.activeChannel);
     }
   };
 

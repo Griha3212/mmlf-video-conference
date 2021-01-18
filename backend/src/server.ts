@@ -55,10 +55,13 @@ io.on('connection', (socket) => {
     socket.join(String(id));
     console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
     // socket.emit('connectToPersonalRoom', ('hello225'));
+  });
 
-    // global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', '225');
-    // io.to(String('41')).emit('connectToPersonalRoom', '225');
-    // global.socketServer.to(String(room)).emit('connectToPersonalRoom', 'hello225');
+  socket.on('connectToChannelRoom', (numberOfChannelToCoonect: number) => {
+    const room = numberOfChannelToCoonect;
+    socket.join(String(numberOfChannelToCoonect));
+    console.log(chalk.blue.underline(`connectedToChannelRoom: ${room}`));
+    // socket.emit('connectToPersonalRoom', ('hello225'));
   });
 
   // socket.on('sendMessage', async (data) => {

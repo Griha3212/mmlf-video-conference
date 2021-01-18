@@ -1,9 +1,11 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/prefer-default-export */
 import { Request, Response, NextFunction } from 'express';
 import { getRepository } from 'typeorm';
 import Channels from '../entities/channels';
 import Speakers from '../entities/speakers';
 import allErrors from '../utils/errors';
+import { io } from '../server';
 
 export const changeActiveSpeakerInChannel = async (
   req: Request,
@@ -32,6 +34,10 @@ export const changeActiveSpeakerInChannel = async (
     foundChannelToUpdateInfo.activeSession = foundSpeaker.sessions;
 
     await channelsRepository.save(foundChannelToUpdateInfo);
+
+    const data = { message: 'update speaker in channel', updatedSpeaker: foundSpeaker };
+
+    io.to(String(foundChannelToUpdateInfo.number)).emit('connectToChannelRoom', data);
 
     res.status(200).send(foundSpeaker);
   } catch (error) {

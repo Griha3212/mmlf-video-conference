@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 import { getRepository } from 'typeorm';
 import { Request, Response } from 'express';
 import passport from 'passport';
@@ -68,9 +69,6 @@ export const userLogin = async (req: Request, res: Response) => {
 
           await io.to(String(room)).emit('connectToPersonalRoom', data);
           // await global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', data);
-          console.log('here :>> ');
-          console.log('data :>> ', data);
-          console.log('room :>> ', room);
 
           res.status(200).send({ token, refreshToken });
         });
