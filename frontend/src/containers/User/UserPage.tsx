@@ -71,17 +71,6 @@ function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
 
-// const socket = io({
-//   path: `${process.env.REACT_APP_API_URL}`,
-//   reconnection: true,
-//   reconnectionAttempts: Infinity,
-//   reconnectionDelay: 1000,
-//   reconnectionDelayMax: 5000,
-//   randomizationFactor: 0.5,
-//   timeout: 20000,
-//   autoConnect: true,
-// });
-
 const socket = io(`${process.env.REACT_APP_API_URL}`);
 
 const UserPage: FC = () => {
