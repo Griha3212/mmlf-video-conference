@@ -109,6 +109,8 @@ const UserPage: FC = () => {
 
   // active session speakers info
   const [activeSessionSpeakersInfo, setActiveSessionSpeakersInfo] = React.useState<DataForUser>();
+  const [activeSessionSpeakersAllRates, setActiveSessionSpeakersAllRates]
+    = React.useState<Vote[]>();
 
   // will start hook again if user will be changed
   useEffect(() => {
@@ -158,6 +160,7 @@ const UserPage: FC = () => {
   };
 
   const findAndSetCurrentSpeakerRate = (votes: any) => {
+    console.log('votes :>> ', votes);
     if (activeSpeakerInfo && votes) {
       const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
         === activeSpeakerInfo.id);
@@ -201,6 +204,7 @@ const UserPage: FC = () => {
 
   useEffect(() => {
     findAndSetCurrentSpeakerRate(dataForUser && dataForUser.foundUser.votes);
+    setActiveSessionSpeakersAllRates(dataForUser && dataForUser.foundUser.votes);
   }, [dataForUser, activeSpeakerInfo]);
 
   // const sendLoginDataToServer =
