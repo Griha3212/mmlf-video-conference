@@ -77,12 +77,28 @@ const SessionInfoBlock = (props: any) => {
           </p>
 
           <p className={classes.textCenter}>
-            <Button className={classes.loadPresenationButton}>Скачать презентацию</Button>
+            <Button
+              onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank')}
+              className={classes.loadPresenationButton}
+            >
+              Скачать презентацию
+
+            </Button>
           </p>
 
-          <p className={classes.textCenter}>
-            <Button className={classes.goToZoomButton}>Перейти в Zoom</Button>
-          </p>
+          {
+            currentSpeakerInfo && currentSpeakerInfo.linkToZoom ? (
+              <p className={classes.textCenter}>
+                <Button
+                  onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToZoom}`, '_blank')}
+                  className={classes.goToZoomButton}
+                >
+                  Перейти в Zoom
+
+                </Button>
+              </p>
+            ) : null
+          }
 
         </Grid>
 
