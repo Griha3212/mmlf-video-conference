@@ -19,8 +19,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   const { currentModeratorInfo, currentSessionSpeakersInfo } = props;
 
-  console.log('currentSessionSpeakersInfo :>> ', currentSessionSpeakersInfo);
-
   const renderMockedSessionSpeakers = () => (
     <>
       <Grid item>

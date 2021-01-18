@@ -13,15 +13,13 @@ import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 const SessionInfoBlock = (props: any) => {
-  const { currentSpeakerInfo, activeSpeakerRate } = props;
+  const { currentSpeakerInfo, currentSpeakerRate } = props;
   const classes = useStyles();
-  const [rate, setRate] = React.useState<number | null>(activeSpeakerRate);
+  const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || null);
 
   useEffect(() => {
-    if (activeSpeakerRate) {
-      setRate(activeSpeakerRate);
-    }
-  }, []);
+    setRate(currentSpeakerRate);
+  }, [currentSpeakerRate]);
 
   const sendVoteForSpeaker = async (rateDirectlyFromUI: number | null) => {
     const response = await apiVoteForSpeaker(
@@ -30,11 +28,7 @@ const SessionInfoBlock = (props: any) => {
       props.token,
       rateDirectlyFromUI,
     );
-
-    console.log('response :>> ', response);
   };
-
-  console.log('currentSpeakerInfo :>> ', currentSpeakerInfo);
 
   return (
     <>

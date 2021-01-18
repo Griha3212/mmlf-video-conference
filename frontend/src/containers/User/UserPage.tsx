@@ -3,32 +3,20 @@ import React, {
   ChangeEvent,
 } from 'react';
 
-import { Copyright } from '@material-ui/icons';
 // import ContentContainer from '../ContentContainer/ContentContainer';
 
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import TextField from '@material-ui/core/TextField';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
-import Checkbox from '@material-ui/core/Checkbox';
-import Link from '@material-ui/core/Link';
 import Grid from '@material-ui/core/Grid';
-import Box from '@material-ui/core/Box';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { useForm, Controller } from 'react-hook-form';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import clsx from 'clsx';
-import CircularProgress from '@material-ui/core/CircularProgress';
 import { Redirect, useHistory } from 'react-router-dom';
 import { io } from 'socket.io-client';
-import userEvent from '@testing-library/user-event';
 import useStyles from './style';
-import { apiLogin } from '../../api/login';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 import parseToken from '../../utils/parseToken';
 import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
@@ -47,6 +35,21 @@ type DataForUser = {
   letter: string;
   name: string;
   speakers: Array<Speaker>
+
+  foundUser: {
+    votes: Array<Vote>
+    id: number;
+  }
+
+};
+
+type Vote = {
+
+  createdAt: Date;
+  id: number;
+  rate: number;
+  speaker: Speaker
+
 };
 
 type Speaker = {
@@ -63,15 +66,6 @@ type Speaker = {
   topicName: string;
 
 };
-
-type FormData = {
-  loginCode: string;
-};
-
-interface Props {
-  onSubmit: (data: FormData) => void;
-
-}
 
 function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
@@ -91,10 +85,10 @@ function Alert(props: any) {
 const socket = io(`${process.env.REACT_APP_API_URL}`);
 
 const UserPage: FC = () => {
-  const [isAuth, setIsAuth] = useState(!!getLocalStorageData().token.accessToken);
+  const [isAuth] = useState(!!getLocalStorageData().token.accessToken);
   if (!isAuth) return <Redirect to="/signin" />;
   const { token } = getLocalStorageData();
-  const [userData, setUserData] = useState(parseToken(token.accessToken as string));
+  const [userData] = useState(parseToken(token.accessToken as string));
 
   if (userData.isAdmin) {
     return <Redirect to="/admin" />;
@@ -106,14 +100,10 @@ const UserPage: FC = () => {
 
   const classes = useStyles();
 
-  const [user, setUser] = useState(parseToken(token.accessToken as string));
+  const [user] = useState(parseToken(token.accessToken as string));
   const history = useHistory();
 
-  console.log('user :>> ', user);
-
-  const [loading, setLoading] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
-  const [error, setError]: [string, (error: string) => void] = React.useState('');
+  const [error]: [string, (error: string) => void] = React.useState('');
   const [open, setOpen] = React.useState(false);
   const [dataForUser, setDataForUser] = React.useState<DataForUser>();
 
@@ -123,7 +113,7 @@ const UserPage: FC = () => {
 
   // active speaker info
   const [activeSpeakerInfo, setActiveSpeakerInfo] = React.useState<DataForUser>();
-  const [activeSpeakerRate, setActiveSessionSpeakersRate] = React.useState<DataForUser>();
+  const [activeSpeakerRate, setActiveSessionSpeakersRate] = React.useState<number>();
 
   // active moderator info
   const [activeModeratorInfo, setActiveModeratorInfo] = React.useState<DataForUser>();
@@ -138,8 +128,7 @@ const UserPage: FC = () => {
 
   // on reconnect of socket
   useEffect(() => {
-    socket.on('giveMeConnectionInfo', (data: any) => {
-      console.log('giveMeConnectionInfo data :>> ', data);
+    socket.on('giveMeConnectionInfo', () => {
       // connect to personalRoom
       socket.emit('connectToPersonalRoom', user.id);
       // connect to channelRoom
@@ -166,64 +155,11 @@ const UserPage: FC = () => {
   useEffect(() => {
     socket.on('connectToChannelRoom', (data: any) => {
       setActiveSpeakerInfo(data.updatedSpeaker);
-      console.log('connectToChannelRoom data :>> ', data);
     });
     return () => {
       socket.off('connectToChannelRoom');
     };
   });
-
-  const buttonClassname = clsx({
-    [classes.buttonSuccess]: success,
-  });
-
-  const {
-    handleSubmit,
-    control, errors: fieldsErrors,
-  } = useForm<FormData>();
-  const onSubmit = async (data: FormData) => {
-    if (!loading) {
-      setSuccess(false);
-      setLoading(true);
-    }
-    const response = await apiLogin(data.loginCode);
-
-    console.log('response :>> ', response);
-
-    if (response && response.status === 404) {
-      setError('Нет соединения');
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-
-    if (response && response.status === 400) {
-      setError('Ошибка');
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-
-    if (!response) {
-      setError('Нет соединения');
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-
-    if (response && response.status === 500) {
-      setError(`${response.data}`);
-      setOpen(true);
-      setSuccess(false);
-      setLoading(false);
-    }
-    if (response && response.token && response.refreshToken) {
-      localStorage.setItem('token', response.token);
-      localStorage.setItem('refreshToken', response.refreshToken);
-      setSuccess(true);
-      setLoading(false);
-    }
-  };
 
   const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
     if (reason === 'clickaway') {
@@ -233,19 +169,13 @@ const UserPage: FC = () => {
   };
 
   const findAndSetCurrentSpeakerRate = (votes: any) => {
-    if (activeSpeakerInfo) {
-      console.log('votes :>> ', votes);
-      console.log('ctiveSpeakerInfo.id :>> ', activeSpeakerInfo.id);
+    if (activeSpeakerInfo && votes) {
       const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
         === activeSpeakerInfo.id);
 
-      console.log('currentSpeakerRate :>> ', currentSpeakerRate2);
-
-      setActiveSessionSpeakersRate(currentSpeakerRate2 && currentSpeakerRate2.rate);
+      setActiveSessionSpeakersRate(currentSpeakerRate2.rate);
     }
   };
-
-  console.log('activeSpeakerRate :>> ', activeSpeakerRate);
 
   const loadDataForUser = async () => {
     const response = await apiGetUser(userData.id, token);
@@ -273,15 +203,16 @@ const UserPage: FC = () => {
         && response.channelUserInfo.activeSession.speakers);
 
       socket.emit('connectToChannelRoom', response.foundUser.activeChannel);
-
-      findAndSetCurrentSpeakerRate(response && response.foundUser
-        && response.foundUser.votes);
     }
   };
 
   useEffect(() => {
     loadDataForUser();
   }, []);
+
+  useEffect(() => {
+    findAndSetCurrentSpeakerRate(dataForUser && dataForUser.foundUser.votes);
+  }, [dataForUser, activeSpeakerInfo]);
 
   // const sendLoginDataToServer =
 
@@ -334,7 +265,6 @@ const UserPage: FC = () => {
       <Grid className={classes.redBckgContainer} container justify="center">
 
         <Grid item className={classes.innerContainer} justify="center">
-
           {/* first block (active speaker) info */}
           <SessionInfoBlock
             currentSessionLetter={activeSessionLetter}
