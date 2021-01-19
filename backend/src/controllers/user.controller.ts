@@ -19,7 +19,10 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
     const { userId } = req.params;
 
     const foundUser = await usersRepository.findOne(
-      { where: { id: userId }, relations: ['votes', 'votes.speaker'] },
+      {
+        where: { id: userId },
+        relations: ['votes', 'votes.speaker', 'watchedSpeakers'],
+      },
     );
 
     if (!foundUser) throw new Error(allErrors.userNotFound);
@@ -106,6 +109,34 @@ export const voteForSpeaker = async (req: Request, res: Response, next: NextFunc
 
     await io.to(String(room)).emit('connectToPersonalRoom', data);
     res.status(200).send(foundUserAfterVotesUpdate && foundUserAfterVotesUpdate.votes);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updateWatchedSpeakers = async (req: Request, res: Response, next: NextFunction) => {
+  const usersRepository = await getRepository(Users);
+  const speakersRepository = await getRepository(Speakers);
+  const votesRepository = await getRepository(Votes);
+
+  try {
+    const { userId, speakerId } = req.body;
+
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId }, relations: ['watchedSpeakers'] },
+    );
+
+    if (!foundUser) throw new Error(allErrors.userNotFound);
+
+    const foundSpeaker = await speakersRepository.findOne({ where: { id: speakerId } });
+
+    if (!foundSpeaker) throw new Error(allErrors.speakerNotFound);
+
+    foundUser.watchedSpeakers.push(foundSpeaker);
+
+    await usersRepository.save(foundUser);
+
+    res.status(200).send(foundUser);
   } catch (error) {
     next(error);
   }

@@ -46,13 +46,13 @@ export const userLogin = async (req: Request, res: Response) => {
 
           delete foundUserByLoginCodeInDatabase.loginCode;
           // TO DO, maybe make true token system later
-          const token = jwt.sign({ ...foundUserByLoginCodeInDatabase }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
-          const refreshToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, { expiresIn: '7d' });
+          const token = jwt.sign({ ...foundUserByLoginCodeInDatabase }, process.env.JWT_SECRET as string, { expiresIn: '50d' });
+          const refreshToken = jwt.sign({ id: user.id }, process.env.JWT_SECRET as string, { expiresIn: '50d' });
 
           // save JWT refresh token in dataBase
           // create ne Token exemplar
           const refreshJWTTokenExpiredDate = new Date();
-          refreshJWTTokenExpiredDate.setDate(refreshJWTTokenExpiredDate.getDate() + 7);
+          refreshJWTTokenExpiredDate.setDate(refreshJWTTokenExpiredDate.getDate() + 50);
           // refreshJWTTokenExpiredDate.setMinutes(refreshJWTTokenExpiredDate.getMinutes() + 2)
 
           // save refresh token info

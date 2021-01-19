@@ -9,6 +9,7 @@ const {
 
   getUser,
   voteForSpeaker,
+  updateWatchedSpeakers,
   // updateToken,
 
 } = authController;
@@ -23,6 +24,12 @@ router.post(
   '/vote_for_speaker',
   passport.authenticate('jwt', { session: false }),
   voteForSpeaker,
+);
+
+router.post(
+  '/update_watched_speakers',
+  passport.authenticate('jwt', { session: false }),
+  updateWatchedSpeakers,
 );
 
 export { router };
