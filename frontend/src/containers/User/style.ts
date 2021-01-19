@@ -39,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
   changeSessionMainContainer: {
 
-    marginTop: '510px',
+    marginTop: '100px',
 
   },
   innerContainer: {
@@ -113,7 +113,7 @@ const useStyles = makeStyles((theme) => ({
 
     paddingLeft: '120px',
     paddingRight: '120px',
-    marginTop: '20px',
+    // marginTop: '20px',
     borderTop: '1px solid #707070',
     borderBottom: '1px solid #707070',
 

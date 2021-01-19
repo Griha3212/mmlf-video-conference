@@ -36,6 +36,17 @@ export const seedMockedUsers = async () => {
 
   {
 
+    firstName: 'test3',
+    lastName: 'testovich3',
+    company: 'companyTest3',
+    loginCode: 'admin2',
+    adminOfTheSessionName: 'SessB',
+    isAdmin: true,
+
+  },
+
+  {
+
     firstName: 'test4',
     lastName: 'testovich4',
     company: 'companyTest4',

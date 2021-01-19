@@ -331,7 +331,7 @@ const UserPage: FC = () => {
 
   return (
     <>
-      <Container component="main" maxWidth="xs">
+      {/* <Container component="main" maxWidth="xs">
 
         <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
           <Alert onClose={handleClose} severity="error">
@@ -350,7 +350,7 @@ const UserPage: FC = () => {
 
         </div>
 
-      </Container>
+      </Container> */}
 
       {/* header */}
       <Grid container xl justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
