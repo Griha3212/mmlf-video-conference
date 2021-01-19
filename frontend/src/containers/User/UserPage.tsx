@@ -155,8 +155,6 @@ const UserPage: FC = () => {
     };
   }, []);
 
-  console.log('dataForUser :>> ', dataForUser);
-
   const findAndSetCurrentSpeakerRate = (votes: any) => {
     if (activeSpeakerInfo && votes) {
       const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
@@ -210,7 +208,6 @@ const UserPage: FC = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       if (activeSpeakerInfo) {
-        console.log('This will run every second!');
         let initialValueCurrentSpeaker = localStorage.getItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`);
 
         if (!initialValueCurrentSpeaker) {
@@ -231,8 +228,6 @@ const UserPage: FC = () => {
     }, 1000);
     return () => clearInterval(interval);
   }, [activeSpeakerInfo]);
-
-  console.log('activeSpeakerInfo :>> ', activeSpeakerInfo);
 
   useEffect(() => {
     socket.on('connectToPersonalRoom', (data: any) => {
@@ -327,8 +322,6 @@ const UserPage: FC = () => {
 
   // null
 
-  console.log('AllChannelsInfo :>> ', allChannelsInfo);
-
   return (
     <>
       {/* <Container component="main" maxWidth="xs">
@@ -392,7 +385,6 @@ const UserPage: FC = () => {
       </Grid>
 
       <Grid item className={classes.innerContainer} justify="center">
-        {console.log('activeSessionSpeakersAllRates :>> ', activeSessionSpeakersAllRates)}
         {/* block with all speakers in session */}
         <SpeakersSessionInfoBlock
           currentModeratorInfo={activeModeratorInfo}

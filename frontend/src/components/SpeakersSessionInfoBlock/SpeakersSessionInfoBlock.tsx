@@ -57,12 +57,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
     setCurrentSessionSpeakersAllRatesState(currentSessionSpeakersAllRates);
   }, [currentSessionSpeakersAllRates]);
 
-  console.log('currentSessionSpeakersAllRatesState :>> ', currentSessionSpeakersAllRatesState);
-
-  console.log('currentSessionSpeakersAllRates :>> ', currentSessionSpeakersAllRates);
-  // console.log('currentSessionSpeakersInfo :>> ', currentSessionSpeakersInfo);
-  // console.log('dataForUser :>> ', dataForUser);
-
   const checkIsWatched = (speakerId: number) => {
     if (dataForUser && dataForUser.foundUser && dataForUser.foundUser.watchedSpeakers) {
       const foundWtchedSpeaker = dataForUser.foundUser.watchedSpeakers.find(
@@ -266,12 +260,11 @@ const SpeakersSessionInfoBlock = (props: any) => {
               <p className={classes.speakerNameInsideSession}>{element.firstName}</p>
               <p>
                 <Box component="fieldset" mb={3} borderColor="transparent">
-                  {console.log('element :>> ', element)}
                   <Rating
                     className={classes.smallScoreStarImg}
                     name="read-only"
                     disabled={checkIsWatched(element.id)}
-                    value={renderSpeakersRates(element)}
+                    value={renderSpeakersRates(element) || 4}
                     readOnly
                   />
                 </Box>

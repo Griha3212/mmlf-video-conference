@@ -76,11 +76,12 @@ const useStyles = makeStyles((theme) => ({
 
   conferenceTopText: {
 
-    fontSize: '81px',
-    lineHeight: '91px',
+    fontSize: '4vw',
+    lineHeight: '6vw',
     fontFamily: 'Gotham Pro Bold',
     textTransform: 'uppercase',
     color: 'white',
+    marginLeft: '7vw',
 
   },
   darkBlueBckg: {
@@ -90,8 +91,11 @@ const useStyles = makeStyles((theme) => ({
 
     width: '374px',
     height: '61px',
+    position: 'relative',
+    top: '5px',
 
   },
+
   loadProgramButton: {
 
     // borderWidth: '1px',
@@ -108,6 +112,16 @@ const useStyles = makeStyles((theme) => ({
     height: '60px',
     // textTransform: 'capitalize',
     textTransform: 'initial',
+    marginLeft: '6vw',
+    marginTop: '6px',
+    transition: '0.2s',
+    left: '2vw',
+    '&:hover': {
+      backgroundColor: '#00124D',
+      border: '1px solid #FF414A',
+      color: '#FF414A',
+      transition: '0.2s',
+    },
   },
   mainContainer: {
 

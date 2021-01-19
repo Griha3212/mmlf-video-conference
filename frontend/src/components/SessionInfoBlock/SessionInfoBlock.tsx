@@ -15,7 +15,7 @@ import { apiVoteForSpeaker } from '../../api/user';
 const SessionInfoBlock = (props: any) => {
   const { currentSpeakerInfo, currentSpeakerRate, activeSessionSpeakersAllRates } = props;
   const classes = useStyles();
-  const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || 4);
+  const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || 0);
   const [closedAccess, setClosedAccess] = React.useState(true);
 
   // check timers logic-----------------------------------------------

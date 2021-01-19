@@ -14,8 +14,6 @@ import { ProtectedRoutes } from './containers/ProtectedRoutes/ProtectedRoutes';
 import AdminPage from './containers/Admin/AdminPage';
 import UserPage from './containers/User/UserPage';
 
-// console.log('process.env.API_URL :>> ', process.env.REACT_APP_API_URL);
-
 export const App: FC = () => (
 
   <Router history={history}>
