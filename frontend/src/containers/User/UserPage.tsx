@@ -172,6 +172,36 @@ const UserPage: FC = () => {
     }
   };
 
+  // watch timer functional
+
+  // if there is active speaker, update timer every seconds,
+  // until 10, then speaker status set to viewed
+  useEffect(() => {
+    const interval = setInterval(() => {
+      console.log('This will run every second!');
+
+      if (activeSpeakerInfo) {
+        console.log('activeSpeakerInfo :>> ', activeSpeakerInfo);
+        let initialValueCurrentSpeaker = localStorage.getItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`);
+
+        if (!initialValueCurrentSpeaker) {
+          localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, '0');
+        } else {
+          if (initialValueCurrentSpeaker !== 'viewed') {
+            if (initialValueCurrentSpeaker === '10') {
+              localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, 'viewed');
+              // TO DO, send to back viewed status
+            } else {
+              initialValueCurrentSpeaker = String(+initialValueCurrentSpeaker + 1);
+              localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, initialValueCurrentSpeaker);
+            }
+          }
+        }
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [activeSpeakerInfo]);
+
   useEffect(() => {
     socket.on('connectToPersonalRoom', (data: any) => {
       if (data.message === 'disconnect current user') {

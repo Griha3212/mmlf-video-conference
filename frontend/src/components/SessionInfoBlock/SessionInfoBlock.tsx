@@ -80,6 +80,7 @@ const SessionInfoBlock = (props: any) => {
                 className={classes.rateSpeakerStarsImg}
                 name="simple-controlled"
                 value={rate}
+                disabled
                 onChange={async (event, newValue) => {
                   setRate(newValue);
                   sendVoteForSpeaker(newValue);
