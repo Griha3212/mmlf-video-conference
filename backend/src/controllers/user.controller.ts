@@ -1,3 +1,4 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/prefer-default-export */
 import { Request, Response, NextFunction } from 'express';
 import { getRepository } from 'typeorm';
@@ -7,6 +8,7 @@ import Speakers from '../entities/speakers';
 import Users from '../entities/users';
 import Votes from '../entities/votes';
 import allErrors from '../utils/errors';
+import { io } from '../server';
 
 export const getUser = async (req: Request, res: Response, next: NextFunction) => {
   const usersRepository = await getRepository(Users);
@@ -61,7 +63,9 @@ export const voteForSpeaker = async (req: Request, res: Response, next: NextFunc
 
     console.log('here :>> ');
 
-    const foundUser = await usersRepository.findOne({ where: { id: userId } });
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId } },
+    );
 
     if (!foundUser) throw new Error(allErrors.userNotFound);
 
@@ -93,7 +97,15 @@ export const voteForSpeaker = async (req: Request, res: Response, next: NextFunc
       await votesRepository.save(newVote);
     }
 
-    res.status(200).send('success');
+    const foundUserAfterVotesUpdate = await usersRepository.findOne(
+      { where: { id: userId }, relations: ['votes', 'votes.speaker'] },
+    );
+
+    const room = foundUser.id;
+    const data = { message: 'update current speakers votes', votes: foundUserAfterVotesUpdate && foundUserAfterVotesUpdate.votes };
+
+    await io.to(String(room)).emit('connectToPersonalRoom', data);
+    res.status(200).send(foundUserAfterVotesUpdate && foundUserAfterVotesUpdate.votes);
   } catch (error) {
     next(error);
   }

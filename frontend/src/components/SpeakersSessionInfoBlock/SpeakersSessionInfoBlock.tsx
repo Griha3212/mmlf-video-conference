@@ -24,7 +24,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
   } = props;
 
   console.log('currentSessionSpeakersAllRates :>> ', currentSessionSpeakersAllRates);
-  console.log('currentSessionSpeakersInfo :>> ', currentSessionSpeakersInfo);
 
   const renderMockedSessionSpeakers = () => (
     <>
@@ -202,7 +201,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
               <p>
                 <Box component="fieldset" mb={3} borderColor="transparent">
                   {console.log('element :>> ', element)}
-                  <Rating className={classes.smallScoreStarImg} name="read-only" value={currentSessionSpeakersAllRates.find((vote: any) => vote.speaker.id === element.id).rate} readOnly />
+                  <Rating className={classes.smallScoreStarImg} name="read-only" value={currentSessionSpeakersAllRates && currentSessionSpeakersAllRates.find((vote: any) => vote.speaker.id === element.id).rate} readOnly />
                 </Box>
 
               </p>

@@ -1,6 +1,9 @@
+/* eslint-disable no-lone-blocks */
+/* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, {
   FC, memo, useState, useEffect,
   ChangeEvent,
+  useReducer,
 } from 'react';
 
 // import ContentContainer from '../ContentContainer/ContentContainer';
@@ -109,6 +112,7 @@ const UserPage: FC = () => {
 
   // active session speakers info
   const [activeSessionSpeakersInfo, setActiveSessionSpeakersInfo] = React.useState<DataForUser>();
+  // eslint-disable-next-line prefer-const
   const [activeSessionSpeakersAllRates, setActiveSessionSpeakersAllRates]
     = React.useState<Vote[]>();
 
@@ -130,37 +134,7 @@ const UserPage: FC = () => {
     };
   }, []);
 
-  useEffect(() => {
-    socket.on('connectToPersonalRoom', (data: any) => {
-      if (data.message === 'disconnect current user') {
-        localStorage.removeItem('token');
-        localStorage.removeItem('refreshToken');
-        history.push('/');
-      }
-    });
-    return () => {
-      socket.off('connectToPersonalRoom');
-    };
-  });
-
-  useEffect(() => {
-    socket.on('connectToChannelRoom', (data: any) => {
-      setActiveSpeakerInfo(data.updatedSpeaker);
-    });
-    return () => {
-      socket.off('connectToChannelRoom');
-    };
-  });
-
-  const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    await setOpen(false);
-  };
-
   const findAndSetCurrentSpeakerRate = (votes: any) => {
-    console.log('votes :>> ', votes);
     if (activeSpeakerInfo && votes) {
       const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
         === activeSpeakerInfo.id);
@@ -199,13 +173,50 @@ const UserPage: FC = () => {
   };
 
   useEffect(() => {
+    socket.on('connectToPersonalRoom', (data: any) => {
+      if (data.message === 'disconnect current user') {
+        localStorage.removeItem('token');
+        localStorage.removeItem('refreshToken');
+        history.push('/');
+      }
+
+      if (data.message === 'update current speakers votes') {
+        setActiveSessionSpeakersAllRates(data.votes);
+        loadDataForUser();
+        // findAndSetCurrentSpeakerRate(data.votes);
+        // forceUpdate();
+      }
+    });
+    return () => {
+      socket.off('connectToPersonalRoom');
+    };
+  });
+
+  useEffect(() => {
+    socket.on('connectToChannelRoom', (data: any) => {
+      setActiveSpeakerInfo(data.updatedSpeaker);
+    });
+    return () => {
+      socket.off('connectToChannelRoom');
+    };
+  });
+
+  const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+    await setOpen(false);
+  };
+
+  useEffect(() => {
     loadDataForUser();
   }, []);
 
   useEffect(() => {
+    // loadDataForUser();
     findAndSetCurrentSpeakerRate(dataForUser && dataForUser.foundUser.votes);
     setActiveSessionSpeakersAllRates(dataForUser && dataForUser.foundUser.votes);
-  }, [dataForUser, activeSpeakerInfo]);
+  }, [activeSpeakerInfo]);
 
   // const sendLoginDataToServer =
 
@@ -272,7 +283,7 @@ const UserPage: FC = () => {
         </Grid>
 
         <Grid item className={classes.innerContainer} justify="center">
-
+          {console.log('activeSessionSpeakersAllRates :>> ', activeSessionSpeakersAllRates)}
           {/* block with all speakers in session */}
           <SpeakersSessionInfoBlock
             currentModeratorInfo={activeModeratorInfo}
