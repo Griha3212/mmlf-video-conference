@@ -16,10 +16,42 @@ const SessionInfoBlock = (props: any) => {
   const { currentSpeakerInfo, currentSpeakerRate, activeSessionSpeakersAllRates } = props;
   const classes = useStyles();
   const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || null);
+  const [closedAccess, setClosedAccess] = React.useState(true);
+
+  console.log('closedAccess :>> ', closedAccess);
 
   useEffect(() => {
     setRate(currentSpeakerRate);
   }, [currentSpeakerRate]);
+
+  useEffect(() => {
+    setClosedAccess(true);
+
+    const currentSpeakerLocalStorageData = localStorage.getItem(
+      `${String(currentSpeakerInfo && currentSpeakerInfo.id)}`,
+    );
+
+    if (currentSpeakerLocalStorageData === 'viewed') {
+      setClosedAccess(false);
+    }
+  }, [currentSpeakerInfo]);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (currentSpeakerInfo) {
+        const currentSpeakerLocalStorageData = localStorage.getItem(
+          `${String(currentSpeakerInfo && currentSpeakerInfo.id)}`,
+        );
+
+        if (currentSpeakerLocalStorageData === 'viewed') {
+          setClosedAccess(false);
+        } else {
+          setClosedAccess(true);
+        }
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  }, [currentSpeakerInfo]);
 
   const sendVoteForSpeaker = async (rateDirectlyFromUI: number | null) => {
     const response = await apiVoteForSpeaker(
@@ -80,7 +112,7 @@ const SessionInfoBlock = (props: any) => {
                 className={classes.rateSpeakerStarsImg}
                 name="simple-controlled"
                 value={rate}
-                disabled
+                disabled={closedAccess}
                 onChange={async (event, newValue) => {
                   setRate(newValue);
                   sendVoteForSpeaker(newValue);
