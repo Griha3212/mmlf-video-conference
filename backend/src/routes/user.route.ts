@@ -10,6 +10,7 @@ const {
   getUser,
   voteForSpeaker,
   updateWatchedSpeakers,
+  getAllChannels,
   // updateToken,
 
 } = authController;
@@ -30,6 +31,12 @@ router.post(
   '/update_watched_speakers',
   passport.authenticate('jwt', { session: false }),
   updateWatchedSpeakers,
+);
+
+router.get(
+  '/get_all_channels/:userId',
+  passport.authenticate('jwt', { session: false }),
+  getAllChannels,
 );
 
 export { router };

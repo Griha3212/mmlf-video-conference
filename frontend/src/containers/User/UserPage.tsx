@@ -1,3 +1,5 @@
+/* eslint-disable consistent-return */
+/* eslint-disable array-callback-return */
 /* eslint-disable no-lone-blocks */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, {
@@ -26,9 +28,13 @@ import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
 import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock';
 import topMMLFLogo from '../../img/mmlfLogo2021.svg';
 import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/SpeakersSessionInfoBlock';
-import { apiGetUser, apiUserUpdateWatchedSpeakers } from '../../api/user';
+import { apiGetUser, apiUserUpdateWatchedSpeakers, apiGetAllChannels } from '../../api/user';
 
 type DataForUser = {
+  channelUserInfo: {
+    break: boolean, id: number, link: string,
+    number: number
+  },
   channelForShowing: {
     break: boolean, id: number, link: string,
     number: number
@@ -67,6 +73,13 @@ type Speaker = {
   linkToPresentation: string;
   linkToZoom: string;
   topicName: string;
+
+};
+
+type Channel = {
+
+  break: boolean, id: number, link: string,
+  number: number
 
 };
 
@@ -112,9 +125,12 @@ const UserPage: FC = () => {
 
   // active session speakers info
   const [activeSessionSpeakersInfo, setActiveSessionSpeakersInfo] = React.useState<DataForUser>();
-  // eslint-disable-next-line prefer-const
   const [activeSessionSpeakersAllRates, setActiveSessionSpeakersAllRates]
     = React.useState<Vote[]>();
+
+  // all channels info
+
+  const [allChannelsInfo, setAllChannelsInfo] = React.useState<Channel[]>();
 
   // will start hook again if user will be changed
   useEffect(() => {
@@ -134,6 +150,8 @@ const UserPage: FC = () => {
     };
   }, []);
 
+  console.log('dataForUser :>> ', dataForUser);
+
   const findAndSetCurrentSpeakerRate = (votes: any) => {
     if (activeSpeakerInfo && votes) {
       const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
@@ -146,6 +164,9 @@ const UserPage: FC = () => {
   const loadDataForUser = async () => {
     const response = await apiGetUser(userData.id, token);
     setDataForUser(response);
+
+    const response2 = await apiGetAllChannels(userData.id, token);
+    setAllChannelsInfo(response2);
 
     if (response) {
       setActiveSessionLetter(response && response.channelUserInfo
@@ -258,6 +279,37 @@ const UserPage: FC = () => {
 
   // const sendLoginDataToServer =
 
+  const renderOtherSessions = (channel: any) => {
+    if (channel.number !== dataForUser!.channelUserInfo.number) {
+      return (
+
+        <Grid item container className={classes.channelContainer}>
+
+          <Grid item xs={12}>
+            {' '}
+            <VideoPlayerMain classNameInner="channelVideoContainer" videoURL={channel.link} />
+          </Grid>
+          <Grid item xs={12} className={classes.channelContainerBottomPart}>
+
+            <p>Сессия #</p>
+            <p>
+              Название сессии
+              до 70 символов
+
+            </p>
+
+          </Grid>
+
+        </Grid>
+
+      );
+    }
+  };
+
+  // null
+
+  console.log('AllChannelsInfo :>> ', allChannelsInfo);
+
   return (
     <>
       <Container component="main" maxWidth="xs">
@@ -304,7 +356,7 @@ const UserPage: FC = () => {
 
       </Grid>
 
-      <Grid className={classes.redBckgContainer} container justify="center">
+      <Grid className={classes.redBckgContainer} container item justify="center">
 
         <Grid item className={classes.innerContainer} justify="center">
           {/* first block (active speaker) info */}
@@ -332,6 +384,22 @@ const UserPage: FC = () => {
           />
 
         </Grid>
+      </Grid>
+
+      <Grid container className={classes.changeSessionMainContainer} xl>
+
+        <Grid item className={classes.innerContainer}>
+          <Grid xs={12} item container className={classes.mainContainerBckg}>
+            <p className={classes.speakersBlockHeader}>Сменить сессию</p>
+          </Grid>
+
+          <Grid xs={12} item justify="space-between" container className={classes.mainContainerBckg}>
+            {allChannelsInfo && dataForUser
+              && allChannelsInfo.map((element) => renderOtherSessions(element))}
+          </Grid>
+
+        </Grid>
+
       </Grid>
 
     </>

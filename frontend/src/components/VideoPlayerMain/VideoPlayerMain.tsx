@@ -23,16 +23,14 @@ const VideoPlayerMain = (props: any) => {
       data-testid="loading-page"
     >
       <div
-        className="myClassname2"
+        className={props.classNameInner}
         ref={inputRef}
       >
         <Iframe
           // test url https://facecast.net/v/pybh3r?nolabel&noanimation&autorun=true&t=30
           url={props.videoURL}
           width="100%"
-          height="auto"
-          id="myId"
-          className="myClassname"
+          height="290px"
           position="relative"
           allow="fullscreen"
           onLoad={playVideo()}

@@ -3,6 +3,38 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  channelContainer: {
+
+    maxWidth: '29%',
+
+  },
+
+  channelContainerBottomPart: {
+
+    backgroundColor: '#ECF1F1',
+
+  },
+
+  mainContainerBckg: {
+    padding: '0 110px',
+  },
+
+  speakersBlockHeader: {
+
+    fontFamily: 'Gotham Pro Black',
+    fontSize: '70px',
+    lineHeight: '79px',
+    marginTop: '0px',
+    textTransform: 'uppercase',
+    color: '#00124D',
+
+  },
+
+  changeSessionMainContainer: {
+
+    marginTop: '720px',
+
+  },
   innerContainer: {
 
     paddingLeft: '120px',

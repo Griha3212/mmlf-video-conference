@@ -141,3 +141,26 @@ export const updateWatchedSpeakers = async (req: Request, res: Response, next: N
     next(error);
   }
 };
+
+export const getAllChannels = async (req: Request, res: Response, next: NextFunction) => {
+  const usersRepository = await getRepository(Users);
+  const speakersRepository = await getRepository(Speakers);
+  const votesRepository = await getRepository(Votes);
+  const channelsRepository = await getRepository(Channels);
+
+  try {
+    const { userId } = req.params;
+
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId } },
+    );
+
+    if (!foundUser) throw new Error(allErrors.userNotFound);
+
+    const foundAllChannels = await channelsRepository.find({ relations: ['activeSession'] });
+
+    res.status(200).send(foundAllChannels);
+  } catch (error) {
+    next(error);
+  }
+};

@@ -14,6 +14,10 @@ const api = {
 
   userUpdateWatchedSpeakers: 'api/user/update_watched_speakers',
 
+  getAllChannels: 'api/user/get_all_channels/',
+
+  changeActiveChannel: 'api/user/change_active_channel',
+
 };
 
 export default api;

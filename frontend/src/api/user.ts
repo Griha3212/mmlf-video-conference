@@ -70,3 +70,25 @@ export const apiUserUpdateWatchedSpeakers = async (
     return error.response;
   }
 };
+
+export const apiGetAllChannels = async (
+  userId: string,
+  token: {
+    accessToken: string | null;
+    refreshToken: string | null;
+  },
+
+): Promise<any> => {
+  const url = `${process.env.REACT_APP_API_URL}${api.getAllChannels}${userId}`;
+
+  try {
+    const { data } = await axios.get(url, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};
