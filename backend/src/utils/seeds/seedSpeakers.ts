@@ -54,6 +54,60 @@ export const seedMockedSpeakers = async () => {
 
   {
 
+    topicName: 'Как изменится цепочка поставок ритейлеров и поставщиков в 2021 г.',
+    lastName: 'ШУЛЬГА',
+    firstName: 'Денис',
+    statusInCompany: 'директор по логистике',
+    company: 'X5 Retail Group',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shulga.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    innerSystemName: 'Shulga_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Plenar'),
+
+  },
+
+  {
+
+    topicName: 'Формирование стратегии логистики компании: конкурентные преимущества и лучшие решения',
+    lastName: 'ДЕМИН',
+    firstName: 'Василий',
+    statusInCompany: 'д.т.н., заместитель директора,',
+    company: 'Координационный совет по логистике',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    innerSystemName: 'Demin_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Plenar'),
+
+  },
+
+  {
+
+    topicName: 'От карго-культа к мани-майнингу: как сделать деньги на логистических и информационных технологиях',
+    lastName: 'ЛИХАРЕВ',
+    firstName: 'Сергей',
+    statusInCompany: 'вице-президент по логистике',
+    company: 'ПАО «НЛМК»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_LIHAREV.jpg`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Plenar'),
+
+  },
+
+  {
+
     lastName: 'БОГАЧЕВ',
     firstName: 'Игорь',
 
@@ -75,8 +129,110 @@ export const seedMockedSpeakers = async () => {
     linkToPresentation: '',
     topicName: 'Трансформация рынка и цифровизация управления логистикой',
     innerSystemName: 'Eleckih',
-    statusInCompany: 'директор по логистике',
+    statusInCompany: 'директор по развитию и инновациям функции снабжения',
     session: foundSessions.filter((session: any) => session.name === 'SessA'),
+
+  },
+
+  {
+
+    topicName: '7 хороших вопросов вендору логистической платформы',
+    lastName: 'ГАВРИЛОВ',
+    firstName: 'Алексей',
+    statusInCompany: 'руководитель направления «Управление производством и цепочками поставок',
+    company: 'SAP CIS',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gavrilov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessA'),
+
+  },
+
+  {
+
+    topicName: 'Математика и доставка. Кейсы трансформации бизнеса в цифрах',
+    lastName: 'МАКЕЕВ',
+    firstName: 'Алексей',
+    statusInCompany: 'CEO',
+    company: 'VeeRoute Consulting',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Makeev.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessA'),
+
+  },
+
+  {
+
+    topicName: 'Логистика на пользу конкурентноспособности',
+    lastName: 'МАШКОВ',
+    firstName: 'Александр',
+    statusInCompany: 'директор по логистике',
+    company: 'ПАО «Ростелеком»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Mashkov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessA'),
+
+  },
+
+  {
+
+    lastName: 'МАРТЬЯНОВ',
+    firstName: 'Антон',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Martyanov.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'SessB'),
+
+  },
+
+  {
+
+    topicName: 'Как изменилась логистика европейских производителей и ритейлеров в 2020 г.?',
+    lastName: 'VAL',
+    firstName: 'Susana',
+    statusInCompany: 'prof. Dr., Director',
+    company: 'Zaragoza Logistics Center (ZLC)',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Val.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessB'),
+
+  },
+
+  {
+
+    topicName: 'Управление потоками товаров в ритейле',
+    lastName: 'ФИЛИМОНОВА',
+    firstName: 'Наталья',
+    statusInCompany: 'директор департамента по операционному планированию',
+    company: 'Х5 Retail Group',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Val.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessB'),
 
   },
 

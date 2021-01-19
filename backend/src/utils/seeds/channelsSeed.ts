@@ -6,6 +6,7 @@ import Channels from '../../entities/channels';
 export const seedMockedChannels = async () => {
   const channelsRepository = await getRepository(Channels);
 
+  // test links now
   const channelsToSeed = [{
     number: 1,
     link: 'https://facecast.net/v/pybh3r',
@@ -13,16 +14,16 @@ export const seedMockedChannels = async () => {
 
   {
     number: 2,
-    link: 'https://facecast.net/v/pybh3r',
+    link: 'https://www.youtube.com/embed/LXb3EKWsInQ',
   },
   {
     number: 3,
-    link: 'https://facecast.net/v/pybh3r',
+    link: 'https://www.youtube.com/embed/BHACKCNDMW8',
   },
 
   {
     number: 4,
-    link: 'https://facecast.net/v/pybh3r',
+    link: 'https://www.youtube.com/embed/pajbM_jJWnI',
   },
 
   ];

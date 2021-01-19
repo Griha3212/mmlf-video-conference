@@ -18,6 +18,8 @@ export const seedMockedSessions = async () => {
     letter: 'Пленарная сессия',
     description: 'Развитие логистики и управление цепями поставок в России и мире: итоги 2020 года, изменения в 2021 г., новые технологии и решения.',
     channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+    nextSessionLetter: 'Сессия A',
+    nextSessionDescription: 'Лучший опыт применения инновационных технологий в логистике',
 
   },
 
@@ -27,6 +29,8 @@ export const seedMockedSessions = async () => {
     letter: 'Сессия A',
     description: 'Лучший опыт применения инновационных технологий в логистике',
     channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+    nextSessionLetter: 'Сессия D',
+    nextSessionDescription: 'Опыт создания и оптимизации работы складов и логистических центров',
 
   },
   {
@@ -35,6 +39,30 @@ export const seedMockedSessions = async () => {
     letter: 'Сессия B',
     description: 'Комплексные логистические решения для ритейлеров и производителей',
     channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
+    nextSessionLetter: 'Сессия E',
+    nextSessionDescription: 'Специальная сессия партнера Форума – компании SAP Жизнестойкие цепи поставок: 5 трендов 2021 года',
+
+  },
+
+  {
+
+    name: 'SessC',
+    letter: 'Сессия C',
+    description: 'Цифровой транспорт: прозрачное управление затратами и создание конкурентных преимуществ для бизнеса',
+    channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
+    nextSessionLetter: 'Сессия F',
+    nextSessionDescription: 'Опыт оптимизации транспортно-логистического обеспечения компании',
+
+  },
+
+  {
+
+    name: 'WMS1',
+    letter: 'WMS DAY-1',
+    description: 'Панельная дискуссия директоров по логистике об условиях успеха внедрения WMS',
+    channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
+    nextSessionLetter: 'WMS DAY-2',
+    nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
 
   },
 

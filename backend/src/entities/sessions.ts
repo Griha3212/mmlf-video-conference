@@ -38,4 +38,12 @@ export default class Sessions extends BaseEntity {
   @ManyToOne(() => Channels,
     (channelForShowing) => channelForShowing.id, { cascade: true })
   channelForShowing: Channels;
+
+  @Index()
+  @Column({ nullable: true })
+  nextSessionLetter: string;
+
+  @Index()
+  @Column({ nullable: true })
+  nextSessionDescription: string;
 }
