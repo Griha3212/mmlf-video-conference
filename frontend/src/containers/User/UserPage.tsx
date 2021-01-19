@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-nested-ternary */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-lone-blocks */
@@ -283,7 +286,13 @@ const UserPage: FC = () => {
     if (channel.number !== dataForUser!.channelUserInfo.number) {
       return (
 
-        <Grid item container className={classes.channelContainer}>
+        <Grid
+          item
+          container
+          className={classes.channelContainer}
+          id={channel.number}
+          onClick={(e) => console.log('object :>> ', e.currentTarget.id)}
+        >
 
           <Grid item xs={12}>
             {' '}
@@ -291,7 +300,10 @@ const UserPage: FC = () => {
           </Grid>
           <Grid item xs={12} className={classes.channelContainerBottomPart}>
 
-            <p>Сессия #</p>
+            <p>
+              {' '}
+              {`${channel.break ? 'Перерыв' : channel.activeSession ? channel.activeSession.letter : 'Перерыв'}`}
+            </p>
             <p>
               Название сессии
               до 70 символов

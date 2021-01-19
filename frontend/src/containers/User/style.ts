@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
   channelContainer: {
 
     maxWidth: '29%',
+    cursor: 'pointer',
 
   },
 
