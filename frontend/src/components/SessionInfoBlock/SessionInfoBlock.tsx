@@ -123,6 +123,7 @@ const SessionInfoBlock = (props: any) => {
 
           <p className={classes.textCenter}>
             <Button
+              disabled={closedAccess}
               onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank')}
               className={classes.loadPresenationButton}
             >
@@ -135,6 +136,7 @@ const SessionInfoBlock = (props: any) => {
             currentSpeakerInfo && currentSpeakerInfo.linkToZoom ? (
               <p className={classes.textCenter}>
                 <Button
+                  disabled={closedAccess}
                   onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToZoom}`, '_blank')}
                   className={classes.goToZoomButton}
                 >
