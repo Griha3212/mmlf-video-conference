@@ -30,7 +30,7 @@ const VideoPlayerMain = (props: any) => {
           // test url https://facecast.net/v/pybh3r?nolabel&noanimation&autorun=true&t=30
           url={props.videoURL}
           width="100%"
-          height="290px"
+          height={props.height}
           position="relative"
           allow="fullscreen"
           onLoad={playVideo()}

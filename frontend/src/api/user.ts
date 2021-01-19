@@ -92,3 +92,25 @@ export const apiGetAllChannels = async (
     return error.response;
   }
 };
+
+export const apiUserChangeActiveChannel = async (
+  channelNumber: number,
+  userId: number,
+  token: {
+    accessToken: string | null;
+    refreshToken: string | null;
+  },
+): Promise<any> => {
+  const url = `${process.env.REACT_APP_API_URL}${api.changeActiveChannel}`;
+
+  try {
+    const { data } = await axios.post(url, { channelNumber, userId }, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};

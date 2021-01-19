@@ -44,11 +44,6 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
 
       const finalInfoForUser = { foundUser, channelUserInfo };
 
-      // const sessionUserInfo = await sessionsRepository.findOne({
-      //   where: { name: foundUser.adminOfTheSessionName },
-      //   relations: ['speakers', 'channelForShowing'],
-      // });
-
       res.status(200).send(finalInfoForUser);
     }
   } catch (error) {
@@ -63,8 +58,6 @@ export const voteForSpeaker = async (req: Request, res: Response, next: NextFunc
 
   try {
     const { userId, speakerId, rate } = req.body;
-
-    console.log('here :>> ');
 
     const foundUser = await usersRepository.findOne(
       { where: { id: userId } },
@@ -117,7 +110,6 @@ export const voteForSpeaker = async (req: Request, res: Response, next: NextFunc
 export const updateWatchedSpeakers = async (req: Request, res: Response, next: NextFunction) => {
   const usersRepository = await getRepository(Users);
   const speakersRepository = await getRepository(Speakers);
-  const votesRepository = await getRepository(Votes);
 
   try {
     const { userId, speakerId } = req.body;
@@ -144,8 +136,6 @@ export const updateWatchedSpeakers = async (req: Request, res: Response, next: N
 
 export const getAllChannels = async (req: Request, res: Response, next: NextFunction) => {
   const usersRepository = await getRepository(Users);
-  const speakersRepository = await getRepository(Speakers);
-  const votesRepository = await getRepository(Votes);
   const channelsRepository = await getRepository(Channels);
 
   try {
@@ -160,6 +150,35 @@ export const getAllChannels = async (req: Request, res: Response, next: NextFunc
     const foundAllChannels = await channelsRepository.find({ relations: ['activeSession'] });
 
     res.status(200).send(foundAllChannels);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const changeActiveChannel = async (req: Request, res: Response, next: NextFunction) => {
+  const usersRepository = await getRepository(Users);
+  const channelsRepository = await getRepository(Channels);
+
+  try {
+    const { userId, channelNumber } = req.body;
+
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId } },
+    );
+
+    if (!foundUser) throw new Error(allErrors.userNotFound);
+
+    const foundChannel = await channelsRepository.findOne(
+      { where: { number: channelNumber } },
+    );
+
+    if (!foundChannel) throw new Error(allErrors.channelNotFound);
+
+    foundUser.activeChannel = foundChannel.number;
+
+    await usersRepository.save(foundUser);
+
+    res.status(200).send(foundUser);
   } catch (error) {
     next(error);
   }

@@ -31,7 +31,9 @@ import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
 import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock';
 import topMMLFLogo from '../../img/mmlfLogo2021.svg';
 import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/SpeakersSessionInfoBlock';
-import { apiGetUser, apiUserUpdateWatchedSpeakers, apiGetAllChannels } from '../../api/user';
+import {
+  apiGetUser, apiUserUpdateWatchedSpeakers, apiGetAllChannels, apiUserChangeActiveChannel,
+} from '../../api/user';
 
 type DataForUser = {
   channelUserInfo: {
@@ -282,6 +284,11 @@ const UserPage: FC = () => {
 
   // const sendLoginDataToServer =
 
+  const changeActiveChannel = async (channelNumber: number) => {
+    await apiUserChangeActiveChannel(channelNumber, userData.id, token);
+    loadDataForUser();
+  };
+
   const renderOtherSessions = (channel: any) => {
     if (channel.number !== dataForUser!.channelUserInfo.number) {
       return (
@@ -291,18 +298,18 @@ const UserPage: FC = () => {
           container
           className={classes.channelContainer}
           id={channel.number}
-          onClick={(e) => console.log('object :>> ', e.currentTarget.id)}
+          onClick={(e) => changeActiveChannel(+e.currentTarget.id)}
         >
 
           <Grid item xs={12}>
             {' '}
-            <VideoPlayerMain classNameInner="channelVideoContainer" videoURL={channel.link} />
+            <VideoPlayerMain height="290px" classNameInner="channelVideoContainer" videoURL={channel.link} />
           </Grid>
           <Grid item xs={12} className={classes.channelContainerBottomPart}>
 
             <p>
               {' '}
-              {`${channel.break ? 'Перерыв' : channel.activeSession ? channel.activeSession.letter : 'Перерыв'}`}
+              {`${channel.activeSession ? channel.activeSession.letter : 'Перерыв'}`}
             </p>
             <p>
               Название сессии
@@ -362,40 +369,39 @@ const UserPage: FC = () => {
 
       </Grid>
 
-      <Grid container xl justify="center">
+      <Grid container className={classes.mainVideoContainer} xl justify="center">
 
-        <VideoPlayerMain videoURL="https://facecast.net/v/pybh3r" />
+        <VideoPlayerMain height="720px" classNameInner="mainVideoContainerBig" videoURL={dataForUser && dataForUser.channelUserInfo.link} />
 
       </Grid>
 
-      <Grid className={classes.redBckgContainer} container item justify="center">
+      <Grid className={classes.redBckgContainer} container item justify="center" />
 
-        <Grid item className={classes.innerContainer} justify="center">
-          {/* first block (active speaker) info */}
-          <SessionInfoBlock
-            currentSessionLetter={activeSessionLetter}
-            currentSessionDescription={activeSessionDescription}
-            currentSpeakerInfo={activeSpeakerInfo}
-            token={token}
-            userId={user.id}
-            currentSpeakerRate={activeSpeakerRate}
+      <Grid item className={classes.innerContainer} justify="center">
+        {/* first block (active speaker) info */}
+        <SessionInfoBlock
+          currentSessionLetter={activeSessionLetter}
+          currentSessionDescription={activeSessionDescription}
+          currentSpeakerInfo={activeSpeakerInfo}
+          token={token}
+          userId={user.id}
+          currentSpeakerRate={activeSpeakerRate}
 
-          />
+        />
 
-        </Grid>
+      </Grid>
 
-        <Grid item className={classes.innerContainer} justify="center">
-          {console.log('activeSessionSpeakersAllRates :>> ', activeSessionSpeakersAllRates)}
-          {/* block with all speakers in session */}
-          <SpeakersSessionInfoBlock
-            currentModeratorInfo={activeModeratorInfo}
-            currentSessionSpeakersInfo={activeSessionSpeakersInfo}
-            currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
-            dataForUser={dataForUser}
-            key={activeSessionSpeakersAllRates}
-          />
+      <Grid item className={classes.innerContainer} justify="center">
+        {console.log('activeSessionSpeakersAllRates :>> ', activeSessionSpeakersAllRates)}
+        {/* block with all speakers in session */}
+        <SpeakersSessionInfoBlock
+          currentModeratorInfo={activeModeratorInfo}
+          currentSessionSpeakersInfo={activeSessionSpeakersInfo}
+          currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
+          dataForUser={dataForUser}
+          key={activeSessionSpeakersAllRates}
+        />
 
-        </Grid>
       </Grid>
 
       <Grid container className={classes.changeSessionMainContainer} xl>

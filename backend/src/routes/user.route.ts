@@ -11,6 +11,7 @@ const {
   voteForSpeaker,
   updateWatchedSpeakers,
   getAllChannels,
+  changeActiveChannel,
   // updateToken,
 
 } = authController;
@@ -37,6 +38,12 @@ router.get(
   '/get_all_channels/:userId',
   passport.authenticate('jwt', { session: false }),
   getAllChannels,
+);
+
+router.post(
+  '/change_active_channel',
+  passport.authenticate('jwt', { session: false }),
+  changeActiveChannel,
 );
 
 export { router };

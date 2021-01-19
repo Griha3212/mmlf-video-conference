@@ -3,6 +3,12 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  mainVideoContainer: {
+
+    height: '720px',
+
+  },
+
   channelContainer: {
 
     maxWidth: '29%',
@@ -33,7 +39,7 @@ const useStyles = makeStyles((theme) => ({
 
   changeSessionMainContainer: {
 
-    marginTop: '720px',
+    marginTop: '510px',
 
   },
   innerContainer: {
@@ -41,6 +47,8 @@ const useStyles = makeStyles((theme) => ({
     paddingLeft: '120px',
     paddingRight: '120px',
     width: '100%',
+    position: 'relative',
+    zIndex: 2,
 
   },
 
@@ -48,6 +56,8 @@ const useStyles = makeStyles((theme) => ({
 
     backgroundColor: '#FF414A',
     height: '1034px',
+    position: 'absolute',
+    zIndex: 1,
 
   },
 
