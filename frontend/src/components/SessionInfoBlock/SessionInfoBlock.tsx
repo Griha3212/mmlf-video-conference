@@ -15,11 +15,10 @@ import { apiVoteForSpeaker } from '../../api/user';
 const SessionInfoBlock = (props: any) => {
   const { currentSpeakerInfo, currentSpeakerRate, activeSessionSpeakersAllRates } = props;
   const classes = useStyles();
-  const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || null);
+  const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || 4);
   const [closedAccess, setClosedAccess] = React.useState(true);
 
-  console.log('closedAccess :>> ', closedAccess);
-
+  // check timers logic-----------------------------------------------
   useEffect(() => {
     setRate(currentSpeakerRate);
   }, [currentSpeakerRate]);
@@ -52,6 +51,8 @@ const SessionInfoBlock = (props: any) => {
     }, 1000);
     return () => clearInterval(interval);
   }, [currentSpeakerInfo]);
+
+  //-------------------------------------------------------------------
 
   const sendVoteForSpeaker = async (rateDirectlyFromUI: number | null) => {
     const response = await apiVoteForSpeaker(

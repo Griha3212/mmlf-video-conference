@@ -26,7 +26,7 @@ import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
 import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock';
 import topMMLFLogo from '../../img/mmlfLogo2021.svg';
 import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/SpeakersSessionInfoBlock';
-import { apiGetUser } from '../../api/user';
+import { apiGetUser, apiUserUpdateWatchedSpeakers } from '../../api/user';
 
 type DataForUser = {
   channelForShowing: {
@@ -139,7 +139,7 @@ const UserPage: FC = () => {
       const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
         === activeSpeakerInfo.id);
 
-      setActiveSessionSpeakersRate(currentSpeakerRate2.rate);
+      setActiveSessionSpeakersRate(currentSpeakerRate2 && currentSpeakerRate2.rate);
     }
   };
 
@@ -172,6 +172,11 @@ const UserPage: FC = () => {
     }
   };
 
+  const updateWatchedSpeakers = async (speakerId: number) => {
+    await apiUserUpdateWatchedSpeakers(speakerId, userData.id, token);
+    loadDataForUser();
+  };
+
   // watch timer functional
 
   // if there is active speaker, update timer every seconds,
@@ -186,9 +191,10 @@ const UserPage: FC = () => {
           localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, '0');
         } else {
           if (initialValueCurrentSpeaker !== 'viewed') {
-            if (initialValueCurrentSpeaker === '20') {
+            if (initialValueCurrentSpeaker === '5') {
               localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, 'viewed');
               // TO DO, send to back viewed status
+              updateWatchedSpeakers(activeSpeakerInfo.id);
             } else {
               initialValueCurrentSpeaker = String(+initialValueCurrentSpeaker + 1);
               localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, initialValueCurrentSpeaker);
@@ -211,8 +217,9 @@ const UserPage: FC = () => {
       }
 
       if (data.message === 'update current speakers votes') {
-        setActiveSessionSpeakersAllRates(data.votes);
         loadDataForUser();
+        setActiveSessionSpeakersAllRates(data.votes);
+
         // findAndSetCurrentSpeakerRate(data.votes);
         // forceUpdate();
       }
@@ -225,6 +232,7 @@ const UserPage: FC = () => {
   useEffect(() => {
     socket.on('connectToChannelRoom', (data: any) => {
       setActiveSpeakerInfo(data.updatedSpeaker);
+      loadDataForUser();
     });
     return () => {
       socket.off('connectToChannelRoom');
@@ -319,6 +327,8 @@ const UserPage: FC = () => {
             currentModeratorInfo={activeModeratorInfo}
             currentSessionSpeakersInfo={activeSessionSpeakersInfo}
             currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
+            dataForUser={dataForUser}
+            key={activeSessionSpeakersAllRates}
           />
 
         </Grid>
