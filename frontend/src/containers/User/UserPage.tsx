@@ -411,6 +411,8 @@ const UserPage: FC = () => {
           currentSessionSpeakersInfo={activeSessionSpeakersInfo}
           currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
           currentUserData={dataForUser}
+          token={token}
+          userId={user.id}
           key={activeSessionSpeakersAllRates}
         />
 

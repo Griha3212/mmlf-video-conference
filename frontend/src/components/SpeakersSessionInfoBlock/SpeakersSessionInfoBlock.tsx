@@ -13,6 +13,7 @@ import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import PDF from '../../img/pdf_icon.svg';
 import Zoom from '../../img/zoomfondo-blanco-vertical-seeklogo.svg';
+import { apiVoteForSpeaker } from '../../api/user';
 
 type Vote = {
 
@@ -246,6 +247,19 @@ const SpeakersSessionInfoBlock = (props: any) => {
     </>
   );
 
+  const sendVoteForSpeaker = async (
+    rateDirectlyFromUI: number | null,
+    currentSpeakerId: number,
+  ) => {
+    console.log('1 :>> ');
+    await apiVoteForSpeaker(
+      currentSpeakerId,
+      props.userId,
+      props.token,
+      rateDirectlyFromUI,
+    );
+  };
+
   const renderSessionSpeakers = () => (
 
     currentSessionSpeakersInfo.map((element: any) => {
@@ -262,11 +276,15 @@ const SpeakersSessionInfoBlock = (props: any) => {
               <p className={classes.textCenter}>
                 <Box component="fieldset" mb={3} borderColor="transparent">
                   <Rating
+                    id={element.id}
                     className={classes.smallScoreStarImg}
-                    name="read-only"
+                    name={element.id}
                     disabled={checkIsWatched(element.id)}
                     value={renderSpeakersRates(element) || 0}
-                    readOnly
+                    readOnly={checkIsWatched(element.id)}
+                    onChange={async (name, newValue) => {
+                      sendVoteForSpeaker(newValue, +element.id);
+                    }}
                   />
                 </Box>
 
