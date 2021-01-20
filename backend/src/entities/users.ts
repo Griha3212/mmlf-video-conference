@@ -81,4 +81,8 @@ export default class Users extends BaseEntity {
   @Index()
   @Column({ nullable: true })
   activeChannel: number;
+
+  @Index()
+  @Column({ default: false })
+  showOtherChannelsBlock: boolean;
 }
