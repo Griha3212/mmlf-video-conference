@@ -312,21 +312,54 @@ const SpeakersSessionInfoBlock = (props: any) => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        console.log('5 :>> ');
         return renderMockedSessionSpeakers();
       }
 
       if (currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        console.log('6 :>> ');
         return renderMockedSessionSpeakers();
       }
 
       if (props.currentSessionSpeakersInfo) {
-        console.log('7 :>> ');
         return renderSessionSpeakers();
       } else renderMockedSessionSpeakers();
     } else renderMockedSessionSpeakers();
+  };
+
+  const renderModeratorImgSrc = () => {
+    if (currentUserData) {
+      if (!currentUserData.channelUserInfo.activeSession
+        && currentUserData.channelUserInfo.break) {
+        return noAvatar;
+      }
+
+      if (currentUserData.channelUserInfo.activeSession
+        && currentUserData.channelUserInfo.break) {
+        return noAvatar;
+      }
+
+      if (currentModeratorInfo) {
+        return currentModeratorInfo.linkToImg;
+      } else return noAvatar;
+    } else return noAvatar;
+  };
+
+  const renderModeratorFullName = () => {
+    if (currentUserData) {
+      if (!currentUserData.channelUserInfo.activeSession
+        && currentUserData.channelUserInfo.break) {
+        return 'ФАМИЛИЯ Имя';
+      }
+
+      if (currentUserData.channelUserInfo.activeSession
+        && currentUserData.channelUserInfo.break) {
+        return 'ФАМИЛИЯ Имя';
+      }
+
+      if (currentModeratorInfo) {
+        return `${currentModeratorInfo.lastName} ${currentModeratorInfo.firstName}`;
+      } else return 'ФАМИЛИЯ Имя';
+    } else return 'ФАМИЛИЯ Имя';
   };
 
   return (
@@ -339,13 +372,13 @@ const SpeakersSessionInfoBlock = (props: any) => {
         <Grid item className={classes.moderatorContainerInfoBlock} container xs={4}>
 
           <Grid item xs={3}>
-            <img width="100%" src={currentModeratorInfo && currentModeratorInfo.linkToImg || noAvatar} alt="" />
+            <img width="100%" src={renderModeratorImgSrc()} alt="" />
 
           </Grid>
           <Grid className={classes.moderatorInfoBlock} item xs={8}>
             <div>
               <p className={classes.moderatorHeaderText}>Модератор</p>
-              <p className={classes.moderatorFullName}>{`${currentModeratorInfo && currentModeratorInfo.lastName || 'ФАМИЛИЯ'} ${currentModeratorInfo && currentModeratorInfo.firstName || 'Имя'}`}</p>
+              <p className={classes.moderatorFullName}>{renderModeratorFullName()}</p>
             </div>
           </Grid>
 
