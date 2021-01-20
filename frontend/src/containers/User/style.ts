@@ -13,6 +13,8 @@ const useStyles = makeStyles((theme) => ({
 
     maxWidth: '29%',
     cursor: 'pointer',
+    flexDirection: 'column',
+    flexWrap: 'nowrap',
 
   },
 
@@ -20,12 +22,18 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 700,
-    fontSize: '48px',
-    lineHeight: '65px',
     color: 'black',
     marginTop: '0px',
     marginBottom: '0px',
     textAlign: 'center',
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '31px',
+      lineHeight: '42px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '48px',
+      lineHeight: '65px',
+    },
 
   },
 
@@ -33,14 +41,22 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 400,
-    fontSize: '25px',
-    lineHeight: '34px',
+
     color: 'black',
     marginTop: '0px',
     marginBottom: '0px',
     textAlign: 'center',
-    paddingLeft: '40px',
-    paddingRight: '40px',
+    paddingLeft: '20px',
+    paddingRight: '20px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '16px',
+      lineHeight: '22px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '25px',
+      lineHeight: '34px',
+    },
 
   },
 
@@ -48,7 +64,6 @@ const useStyles = makeStyles((theme) => ({
 
     backgroundColor: '#ECF1F1',
     padding: '44px 0px',
-    minHeight: '357px',
 
   },
 

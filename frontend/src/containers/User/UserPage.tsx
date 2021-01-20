@@ -10,7 +10,8 @@ import React, {
   ChangeEvent,
   useReducer,
 } from 'react';
-
+import { useMediaQuery } from '@material-ui/core';
+import { useTheme } from '@material-ui/core/styles';
 // import ContentContainer from '../ContentContainer/ContentContainer';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -319,6 +320,18 @@ const UserPage: FC = () => {
     } else return 'Назавание сессии';
   };
 
+  const theme = useTheme();
+  const isXl = useMediaQuery(theme.breakpoints.up('xl'));
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'));
+  const isMd = useMediaQuery(theme.breakpoints.up('md'));
+  const isSm = useMediaQuery(theme.breakpoints.up('sm'));
+  const isXs = useMediaQuery(theme.breakpoints.up('xs'));
+
+  const calculateHeightOfSmallChannelWindow = () => {
+    if (isXl) return '290px';
+    if (isLg) return '193px';
+  };
+
   const renderOtherSessions = (channel: any) => {
     if (channel.number !== dataForUser!.channelUserInfo.number) {
       return (
@@ -331,9 +344,8 @@ const UserPage: FC = () => {
           onClick={(e) => changeActiveChannel(+e.currentTarget.id)}
         >
 
-          <Grid item xs={12}>
-            <VideoPlayerMain height="290px" classNameInner="channelVideoContainer" videoURL={channel.link} />
-          </Grid>
+          <VideoPlayerMain height={calculateHeightOfSmallChannelWindow()} classNameInner="channelVideoContainer" videoURL={channel.link} />
+
           <Grid item xs={12} className={classes.channelContainerBottomPart}>
 
             <p className={classes.chooseChannelSessionLetter}>
