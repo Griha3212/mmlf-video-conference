@@ -53,6 +53,7 @@ type DataForUser = {
   foundUser: {
     votes: Array<Vote>
     id: number;
+    showOtherChannelsBlock: boolean
   }
 
 };
@@ -240,9 +241,11 @@ const UserPage: FC = () => {
       if (data.message === 'update current speakers votes') {
         loadDataForUser();
         setActiveSessionSpeakersAllRates(data.votes);
+      }
 
-        // findAndSetCurrentSpeakerRate(data.votes);
-        // forceUpdate();
+      if (data.message === 'update') {
+        loadDataForUser();
+        // setActiveSessionSpeakersAllRates(data.votes);
       }
     });
     return () => {
@@ -284,6 +287,22 @@ const UserPage: FC = () => {
     loadDataForUser();
   };
 
+  const renderSessionDescriptionOfTheSessionInChannel = (channel: any) => {
+    if (channel) {
+      if (!channel.activeSession && channel.break) {
+        return channel.startChannelSessionLetter;
+      }
+
+      if (channel.activeSession && channel.break) {
+        return channel.nextSessionLetter;
+      }
+
+      if (channel.activeSession.letter) {
+        return channel.activeSession.letter;
+      } else return 'Сессия #';
+    } else return 'Сессия #';
+  };
+
   const renderOtherSessions = (channel: any) => {
     if (channel.number !== dataForUser!.channelUserInfo.number) {
       return (
@@ -304,7 +323,7 @@ const UserPage: FC = () => {
 
             <p>
               {' '}
-              {`${channel.activeSession ? channel.activeSession.letter : 'Перерыв'}`}
+              {renderSessionDescriptionOfTheSessionInChannel(channel)}
             </p>
             <p>
               Название сессии
@@ -370,8 +389,8 @@ const UserPage: FC = () => {
 
       <Grid className={classes.redBckgContainer} container item justify="center" />
 
+      {/* first block (active speaker) info ---------------------------*/}
       <Grid item className={classes.innerContainer} justify="center">
-        {/* first block (active speaker) info */}
         <SessionInfoBlock
           currentSessionLetter={activeSessionLetter}
           currentSessionDescription={activeSessionDescription}
@@ -379,38 +398,41 @@ const UserPage: FC = () => {
           token={token}
           userId={user.id}
           currentSpeakerRate={activeSpeakerRate}
-
+          currentUserData={dataForUser}
+          key={dataForUser}
         />
 
       </Grid>
-
+      {/* block with all speakers in session--------------------------------------------------- */}
       <Grid item className={classes.innerContainer} justify="center">
-        {/* block with all speakers in session */}
+
         <SpeakersSessionInfoBlock
           currentModeratorInfo={activeModeratorInfo}
           currentSessionSpeakersInfo={activeSessionSpeakersInfo}
           currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
-          dataForUser={dataForUser}
+          currentUserData={dataForUser}
           key={activeSessionSpeakersAllRates}
         />
 
       </Grid>
+      {/* show/hide OtherChannelsBlock-------------------------------------------------------- */}
+      {dataForUser && dataForUser.foundUser.showOtherChannelsBlock ? (
+        <Grid container className={classes.changeSessionMainContainer} xl>
 
-      <Grid container className={classes.changeSessionMainContainer} xl>
+          <Grid item className={classes.innerContainer}>
+            <Grid xs={12} item container className={classes.mainContainerBckg}>
+              <p className={classes.speakersBlockHeader}>Сменить сессию</p>
+            </Grid>
 
-        <Grid item className={classes.innerContainer}>
-          <Grid xs={12} item container className={classes.mainContainerBckg}>
-            <p className={classes.speakersBlockHeader}>Сменить сессию</p>
-          </Grid>
+            <Grid xs={12} item justify="space-between" container className={classes.mainContainerBckg}>
+              {allChannelsInfo && dataForUser
+                && allChannelsInfo.map((element) => renderOtherSessions(element))}
+            </Grid>
 
-          <Grid xs={12} item justify="space-between" container className={classes.mainContainerBckg}>
-            {allChannelsInfo && dataForUser
-              && allChannelsInfo.map((element) => renderOtherSessions(element))}
           </Grid>
 
         </Grid>
-
-      </Grid>
+      ) : null}
 
     </>
   );

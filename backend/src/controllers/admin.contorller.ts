@@ -60,16 +60,13 @@ export const setBreakBetweenSessions = async (
   try {
     const { channelForShowingNumber } = req.body;
 
+    console.log('channelForShowingNumber :>> ', channelForShowingNumber);
+
     const foundChannelToUpdateInfo = await channelsRepository.findOne(
       { where: { number: channelForShowingNumber }, relations: ['activeSession'] },
     );
 
     if (!foundChannelToUpdateInfo) throw new Error(allErrors.channelNotFound);
-
-    // foundChannelToUpdateInfo.activeSession = null;
-    // foundChannelToUpdateInfo.activeSpeaker = null;
-    foundChannelToUpdateInfo.break = true;
-    await channelsRepository.save(foundChannelToUpdateInfo);
 
     // if plenar session, activate OtherChannelsBlock in UI
     if (foundChannelToUpdateInfo.activeSession?.name === 'Plenar') {
@@ -91,6 +88,11 @@ export const setBreakBetweenSessions = async (
       io.to(String(foundChannelToUpdateInfo.number)).emit('connectToChannelRoom', data);
       console.log(chalk.green('Activate OtherChannelsBlock'));
     }
+
+    // foundChannelToUpdateInfo.activeSession = null;
+    foundChannelToUpdateInfo.activeSpeaker = null;
+    foundChannelToUpdateInfo.break = true;
+    await channelsRepository.save(foundChannelToUpdateInfo);
 
     res.status(200).send(foundChannelToUpdateInfo);
   } catch (error) {

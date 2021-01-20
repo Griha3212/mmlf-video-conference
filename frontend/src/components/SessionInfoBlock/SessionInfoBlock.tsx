@@ -13,7 +13,10 @@ import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 const SessionInfoBlock = (props: any) => {
-  const { currentSpeakerInfo, currentSpeakerRate, activeSessionSpeakersAllRates } = props;
+  const {
+    currentSpeakerInfo, currentSpeakerRate, activeSessionSpeakersAllRates, currentUserData,
+  } = props;
+
   const classes = useStyles();
   const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || 0);
   const [closedAccess, setClosedAccess] = React.useState(true);
@@ -55,7 +58,7 @@ const SessionInfoBlock = (props: any) => {
   //-------------------------------------------------------------------
 
   const sendVoteForSpeaker = async (rateDirectlyFromUI: number | null) => {
-    const response = await apiVoteForSpeaker(
+    await apiVoteForSpeaker(
       props.currentSpeakerInfo.id,
       props.userId,
       props.token,
@@ -63,21 +66,55 @@ const SessionInfoBlock = (props: any) => {
     );
   };
 
+  const renderSessionLetter = () => {
+    if (currentUserData) {
+      if (!currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
+        return currentUserData.channelUserInfo.startChannelSessionLetter;
+      }
+
+      if (currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
+        return currentUserData.channelUserInfo.activeSession.nextSessionLetter;
+      }
+
+      if (props.currentSessionLetter) {
+        return props.currentSessionLetter;
+      } else return 'Сессия #';
+    } else return 'Сессия #';
+  };
+
+  const renderSessionDescription = () => {
+    if (currentUserData) {
+      if (!currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
+        return `Перерыв... Скоро здесь начнётся сессия: ${currentUserData.channelUserInfo.startChannelSessionDescription}`;
+      }
+
+      if (currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
+        return `Перерыв... Скоро здесь начнётся сессия: ${currentUserData.channelUserInfo.activeSession.nextSessionDescription}`;
+      }
+
+      if (props.currentSessionDescription) {
+        return props.currentSessionDescription;
+      } else return 'Сессия #';
+    } else return 'Сессия #';
+  };
+
+  // const renderCurrentSpeaker
+
   return (
     <>
 
       <Grid item container className={classes.darkBlueBckg}>
         <Grid item xs={12}>
-          <p className={props.currentSessionLetter && props.currentSessionLetter.length > 10
+          <p className={renderSessionLetter().length > 10
             ? classes.sessionLetterTextLong : classes.sessionLetterText}
           >
-            {props.currentSessionLetter || 'Сессия #'}
+            {renderSessionLetter()}
           </p>
 
         </Grid>
 
         <p className={classes.sessionNameText}>
-          {props.currentSessionDescription || 'Тема сессии'}
+          {renderSessionDescription()}
         </p>
 
       </Grid>

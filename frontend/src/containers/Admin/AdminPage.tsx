@@ -108,6 +108,10 @@ const AdminPage: FC = () => {
   };
 
   const setBreakBetweenSessions = async () => {
+    const response = await apiSetBrakeInChannel(
+      token,
+      Number(dataForAdmin && dataForAdmin.channelForShowing.number),
+    );
     setActiveSpeaker('');
   };
 

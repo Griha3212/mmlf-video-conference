@@ -145,6 +145,12 @@ const useStyles = makeStyles(() => ({
 
   },
 
+  mxAuto: {
+
+    margin: '0 auto',
+
+  },
+
   textCenter: {
 
     textAlign: 'center',

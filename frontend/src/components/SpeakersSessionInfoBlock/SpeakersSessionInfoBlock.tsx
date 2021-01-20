@@ -46,7 +46,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
     currentModeratorInfo,
     currentSessionSpeakersInfo,
     currentSessionSpeakersAllRates,
-    dataForUser,
+    currentUserData,
+
   } = props;
 
   const [currentSessionSpeakersAllRatesState,
@@ -58,8 +59,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
   }, [currentSessionSpeakersAllRates]);
 
   const checkIsWatched = (speakerId: number) => {
-    if (dataForUser && dataForUser.foundUser && dataForUser.foundUser.watchedSpeakers) {
-      const foundWtchedSpeaker = dataForUser.foundUser.watchedSpeakers.find(
+    if (currentUserData && currentUserData.foundUser && currentUserData.foundUser.watchedSpeakers) {
+      const foundWtchedSpeaker = currentUserData.foundUser.watchedSpeakers.find(
         (speaker: any) => speaker.id === speakerId,
       );
 
@@ -80,7 +81,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         if (foundRate) {
           return foundRate.rate;
-        } else return 4;
+        } else return 0;
       }
     }
   };
@@ -251,27 +252,27 @@ const SpeakersSessionInfoBlock = (props: any) => {
       if (!element.isModerator) {
         return (
           <>
-            <Grid item>
+            <Grid xs={2} item>
 
               <p className={classes.speakerAvatarInsideSessionParagraph}>
                 <img className={classes.speakerAvatarInsideSession} src={element.linkToImg} alt="" />
               </p>
               <p className={classes.speakerNameInsideSession}>{element.lastName}</p>
               <p className={classes.speakerNameInsideSession}>{element.firstName}</p>
-              <p>
+              <p className={classes.textCenter}>
                 <Box component="fieldset" mb={3} borderColor="transparent">
                   <Rating
                     className={classes.smallScoreStarImg}
                     name="read-only"
                     disabled={checkIsWatched(element.id)}
-                    value={renderSpeakersRates(element) || 4}
+                    value={renderSpeakersRates(element) || 0}
                     readOnly
                   />
                 </Box>
 
               </p>
 
-              <Grid container justify="space-around">
+              <Grid xs={10} container className={classes.mxAuto} justify="space-around">
                 <Grid item>
 
                   <img
@@ -307,6 +308,27 @@ const SpeakersSessionInfoBlock = (props: any) => {
     })
   );
 
+  const renderSpeakers = () => {
+    if (currentUserData) {
+      if (!currentUserData.channelUserInfo.activeSession
+        && currentUserData.channelUserInfo.break) {
+        console.log('5 :>> ');
+        return renderMockedSessionSpeakers();
+      }
+
+      if (currentUserData.channelUserInfo.activeSession
+        && currentUserData.channelUserInfo.break) {
+        console.log('6 :>> ');
+        return renderMockedSessionSpeakers();
+      }
+
+      if (props.currentSessionSpeakersInfo) {
+        console.log('7 :>> ');
+        return renderSessionSpeakers();
+      } else renderMockedSessionSpeakers();
+    } else renderMockedSessionSpeakers();
+  };
+
   return (
     <>
 
@@ -332,7 +354,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
         <Grid justify="space-around" container xs={12}>
 
           {
-            currentSessionSpeakersInfo ? renderSessionSpeakers() : renderMockedSessionSpeakers()
+            renderSpeakers()
+            // currentSessionSpeakersInfo ? renderSessionSpeakers() : renderMockedSessionSpeakers()
           }
 
         </Grid>
