@@ -46,4 +46,8 @@ export default class Sessions extends BaseEntity {
   @Index()
   @Column({ nullable: true })
   nextSessionDescription: string;
+
+  @Index()
+  @Column({ default: false })
+  voteFoAllSession: boolean;
 }

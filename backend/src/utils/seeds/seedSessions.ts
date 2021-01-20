@@ -63,7 +63,7 @@ export const seedMockedSessions = async () => {
     channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
     nextSessionLetter: 'WMS DAY-2',
     nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
-
+    voteFoAllSession: true,
   },
 
   ];
@@ -77,6 +77,9 @@ export const seedMockedSessions = async () => {
     newSession.letter = session.letter;
     newSession.description = session.description;
     newSession.channelForShowing = session.channelForShowing[0];
+    newSession.nextSessionLetter = session.nextSessionLetter;
+    newSession.nextSessionDescription = session.nextSessionDescription;
+    newSession.voteFoAllSession = session.voteFoAllSession || false;
 
     results.push(newSession);
   }
