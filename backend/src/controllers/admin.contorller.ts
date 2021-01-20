@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/prefer-default-export */
@@ -41,7 +42,7 @@ export const changeActiveSpeakerInChannel = async (
 
     const data = { message: 'update speaker in channel', updatedSpeaker: foundSpeaker };
 
-    io.to(String(foundChannelToUpdateInfo.number)).emit('connectToChannelRoom', data);
+    io.to(`channel${String(foundChannelToUpdateInfo.number)}`).emit('connectToChannelRoom', data);
 
     res.status(200).send(foundSpeaker);
   } catch (error) {
@@ -59,8 +60,6 @@ export const setBreakBetweenSessions = async (
 
   try {
     const { channelForShowingNumber } = req.body;
-
-    console.log('channelForShowingNumber :>> ', channelForShowingNumber);
 
     const foundChannelToUpdateInfo = await channelsRepository.findOne(
       { where: { number: channelForShowingNumber }, relations: ['activeSession'] },
@@ -85,7 +84,8 @@ export const setBreakBetweenSessions = async (
       // socket update
       const data = { message: 'update' };
 
-      io.to(String(foundChannelToUpdateInfo.number)).emit('connectToChannelRoom', data);
+      io.to(String('channel1')).to('channel2').to('channel3').to('channel4')
+        .emit('connectToChannelRoom', data);
       console.log(chalk.green('Activate OtherChannelsBlock'));
     }
 
@@ -96,7 +96,7 @@ export const setBreakBetweenSessions = async (
 
     const data = { message: 'update' };
 
-    io.to(String(foundChannelToUpdateInfo.number)).emit('connectToChannelRoom', data);
+    io.to(`channel${String(foundChannelToUpdateInfo.number)}`).emit('connectToChannelRoom', data);
     console.log(chalk.green('Activate OtherChannelsBlock'));
 
     res.status(200).send(foundChannelToUpdateInfo);

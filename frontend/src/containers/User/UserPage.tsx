@@ -242,11 +242,6 @@ const UserPage: FC = () => {
         loadDataForUser();
         setActiveSessionSpeakersAllRates(data.votes);
       }
-
-      if (data.message === 'update') {
-        loadDataForUser();
-        // setActiveSessionSpeakersAllRates(data.votes);
-      }
     });
     return () => {
       socket.off('connectToPersonalRoom');
@@ -257,6 +252,11 @@ const UserPage: FC = () => {
     socket.on('connectToChannelRoom', (data: any) => {
       setActiveSpeakerInfo(data.updatedSpeaker);
       loadDataForUser();
+
+      if (data.message === 'update') {
+        loadDataForUser();
+        // setActiveSessionSpeakersAllRates(data.votes);
+      }
     });
     return () => {
       socket.off('connectToChannelRoom');
@@ -294,7 +294,7 @@ const UserPage: FC = () => {
       }
 
       if (channel.activeSession && channel.break) {
-        return channel.nextSessionLetter;
+        return channel.activeSession.nextSessionLetter;
       }
 
       if (channel.activeSession.letter) {

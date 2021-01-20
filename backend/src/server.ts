@@ -1,8 +1,9 @@
+/* eslint-disable import/no-cycle */
 /* eslint-disable import/prefer-default-export */
 import http from 'http';
 // import * as io from 'socket.io';
 import chalk from 'chalk';
-import { Server, Socket } from 'socket.io';
+import { Server } from 'socket.io';
 import { app } from './app';
 /* eslint-disable no-console */
 
@@ -54,14 +55,12 @@ io.on('connection', (socket) => {
     const room = id;
     socket.join(String(id));
     console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
-    // socket.emit('connectToPersonalRoom', ('hello225'));
   });
 
   socket.on('connectToChannelRoom', (numberOfChannelToCoonect: number) => {
     const room = numberOfChannelToCoonect;
-    socket.join(String(numberOfChannelToCoonect));
-    console.log(chalk.blue.underline(`connectedToChannelRoom: ${room}`));
-    // socket.emit('connectToPersonalRoom', ('hello225'));
+    socket.join(`channel${String(numberOfChannelToCoonect)}`);
+    console.log(chalk.blue.underline(`connectedToChannelRoom: channel${room}`));
   });
 
   // socket.on('sendMessage', async (data) => {

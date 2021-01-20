@@ -25,9 +25,9 @@ export const userLogin = async (req: Request, res: Response) => {
     passport.authenticate(
       'localSignIn',
       { session: false },
+      // eslint-disable-next-line consistent-return
       (error: any, user: any) => {
         if (error || !user) {
-          console.log('error :>> ', error);
           return res.status(500).send(allErrors.wrongLoginCode);
         }
         req.login(user, { session: false }, async (err: any) => {
@@ -66,8 +66,7 @@ export const userLogin = async (req: Request, res: Response) => {
           const room = foundUserByLoginCodeInDatabase.id;
 
           const data = { message: 'disconnect current user' };
-
-          await io.to(String(room)).emit('connectToPersonalRoom', data);
+          await io.sockets.in(String(room)).emit('connectToPersonalRoom', data);
           // await global.socketServer.sockets.in(String(room)).emit('connectToPersonalRoom', data);
 
           res.status(200).send({ token, refreshToken });

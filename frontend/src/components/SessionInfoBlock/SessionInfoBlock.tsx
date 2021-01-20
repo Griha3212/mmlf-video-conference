@@ -1,20 +1,16 @@
 import React, { memo, useEffect } from 'react';
 import {
-  Grid, CircularProgress, Typography, Button,
+  Grid, Typography, Button,
 } from '@material-ui/core';
-import Iframe from 'react-iframe';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
-import Divider from '@material-ui/core/Divider';
 import useStyles from './style';
-import VideoPlayerMain from '../VideoPlayerMain/VideoPlayerMain';
-import ModeratorCard from '../ModeratorCard/ModeratorCard';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 const SessionInfoBlock = (props: any) => {
   const {
-    currentSpeakerInfo, currentSpeakerRate, activeSessionSpeakersAllRates, currentUserData,
+    currentSpeakerInfo, currentSpeakerRate, currentUserData,
   } = props;
 
   const classes = useStyles();
