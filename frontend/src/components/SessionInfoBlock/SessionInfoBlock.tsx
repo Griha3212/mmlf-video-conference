@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 import React, { memo, useEffect } from 'react';
 import {
   Grid, Typography, Button,
@@ -96,6 +97,21 @@ const SessionInfoBlock = (props: any) => {
 
   // const renderCurrentSpeaker
 
+  const showSecondBlock = () => {
+    if (currentUserData) {
+      if (!currentUserData.channelUserInfo.activeSession) {
+        return true;
+      }
+
+      if (currentUserData.channelUserInfo.activeSession &&
+        !currentUserData.channelUserInfo.activeSession.voteFoAllSession) {
+        return true;
+      }
+      return false;
+    }
+    return true;
+  };
+
   return (
     <>
 
@@ -115,82 +131,78 @@ const SessionInfoBlock = (props: any) => {
 
       </Grid>
 
-      <Grid item container justify="space-between" className={classes.lightBlueBckg}>
+      {showSecondBlock() ? (
+        <Grid item container justify="space-between" className={classes.lightBlueBckg}>
 
-        <Grid item className={classes.speakerInfoBlock} xs={8}>
-          <p className={classes.speakerTheme}>
-            {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
-          </p>
+          <Grid item className={classes.speakerInfoBlock} xs={8}>
+            <p className={classes.speakerTheme}>
+              {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
+            </p>
 
-          <Grid container spacing={5}>
+            <Grid container spacing={5}>
 
-            <Grid item xs={2}>
-              <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
+              <Grid item xs={2}>
+                <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
 
+              </Grid>
+              <Grid item xs={8}>
+                <p className={classes.speakerHeaderText}>Спикер</p>
+                <p className={classes.speakerFullNameText}>{`${currentSpeakerInfo && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo && currentSpeakerInfo.firstName || 'Имя'}`}</p>
+                <p className={classes.speakerFullCompanyText}>{`${currentSpeakerInfo && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo && currentSpeakerInfo.statusInCompany || 'должность'}`}</p>
+              </Grid>
             </Grid>
-            <Grid item xs={8}>
-              <p className={classes.speakerHeaderText}>Спикер</p>
-              <p className={classes.speakerFullNameText}>{`${currentSpeakerInfo && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo && currentSpeakerInfo.firstName || 'Имя'}`}</p>
-              <p className={classes.speakerFullCompanyText}>{`${currentSpeakerInfo && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo && currentSpeakerInfo.statusInCompany || 'должность'}`}</p>
-            </Grid>
+
+          </Grid>
+
+          <Grid alignItems="center" alignContent="center" xs={3}>
+
+            <p className={classes.textCenter}>
+              <Box component="fieldset" mb={3} borderColor="transparent">
+                <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
+                <Rating
+                  className={classes.rateSpeakerStarsImg}
+                  name="simple-controlled"
+                  value={rate}
+                  disabled={closedAccess}
+                  onChange={async (event, newValue) => {
+                    setRate(newValue);
+                    sendVoteForSpeaker(newValue);
+                  }}
+                />
+              </Box>
+            </p>
+
+            <p className={classes.textCenter}>
+              <Button
+                disabled={closedAccess}
+                onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank')}
+                className={classes.loadPresenationButton}
+              >
+                Скачать презентацию
+
+              </Button>
+            </p>
+
+            {
+              currentSpeakerInfo && currentSpeakerInfo.linkToZoom ? (
+                <p className={classes.textCenter}>
+                  <Button
+                    disabled={closedAccess}
+                    onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToZoom}`, '_blank')}
+                    className={classes.goToZoomButton}
+                  >
+                    Перейти в Zoom
+
+                  </Button>
+                </p>
+              ) : null
+            }
+
           </Grid>
 
         </Grid>
-
-        <Grid alignItems="center" alignContent="center" xs={3}>
-
-          <p className={classes.textCenter}>
-            <Box component="fieldset" mb={3} borderColor="transparent">
-              <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
-              <Rating
-                className={classes.rateSpeakerStarsImg}
-                name="simple-controlled"
-                value={rate}
-                disabled={closedAccess}
-                onChange={async (event, newValue) => {
-                  setRate(newValue);
-                  sendVoteForSpeaker(newValue);
-                }}
-              />
-            </Box>
-          </p>
-
-          <p className={classes.textCenter}>
-            <Button
-              disabled={closedAccess}
-              onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank')}
-              className={classes.loadPresenationButton}
-            >
-              Скачать презентацию
-
-            </Button>
-          </p>
-
-          {
-            currentSpeakerInfo && currentSpeakerInfo.linkToZoom ? (
-              <p className={classes.textCenter}>
-                <Button
-                  disabled={closedAccess}
-                  onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToZoom}`, '_blank')}
-                  className={classes.goToZoomButton}
-                >
-                  Перейти в Zoom
-
-                </Button>
-              </p>
-            ) : null
-          }
-
-        </Grid>
-
-        {/* <p className={classes.speakerTheme}>
-          {props.currentSpeakerTheme || 'Тема доклада'}
-        </p>
-        <p className={classes.sessionNameText}>
-          {props.currentSessionName || 'Тема сессии'}
-        </p> */}
-
-      </Grid>
+      )
+        : null}
 
     </>
   );
