@@ -3,6 +3,7 @@
 /* eslint-disable import/prefer-default-export */
 import { Request, Response, NextFunction } from 'express';
 import { getRepository } from 'typeorm';
+import chalk from 'chalk';
 import Channels from '../entities/channels';
 import Speakers from '../entities/speakers';
 import allErrors from '../utils/errors';
@@ -88,6 +89,7 @@ export const setBreakBetweenSessions = async (
       const data = { message: 'update' };
 
       io.to(String(foundChannelToUpdateInfo.number)).emit('connectToChannelRoom', data);
+      console.log(chalk.green('Activate OtherChannelsBlock'));
     }
 
     res.status(200).send(foundChannelToUpdateInfo);
