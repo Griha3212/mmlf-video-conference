@@ -16,9 +16,39 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  chooseChannelSessionLetter: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 700,
+    fontSize: '48px',
+    lineHeight: '65px',
+    color: 'black',
+    marginTop: '0px',
+    marginBottom: '0px',
+    textAlign: 'center',
+
+  },
+
+  chooseChannelSessionDescription: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 400,
+    fontSize: '25px',
+    lineHeight: '34px',
+    color: 'black',
+    marginTop: '0px',
+    marginBottom: '0px',
+    textAlign: 'center',
+    paddingLeft: '40px',
+    paddingRight: '40px',
+
+  },
+
   channelContainerBottomPart: {
 
     backgroundColor: '#ECF1F1',
+    padding: '44px 0px',
+    minHeight: '357px',
 
   },
 

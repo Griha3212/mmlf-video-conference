@@ -287,7 +287,7 @@ const UserPage: FC = () => {
     loadDataForUser();
   };
 
-  const renderSessionDescriptionOfTheSessionInChannel = (channel: any) => {
+  const renderSessionLetterOfTheSessionInChannel = (channel: any) => {
     if (channel) {
       if (!channel.activeSession && channel.break) {
         return channel.startChannelSessionLetter;
@@ -303,6 +303,22 @@ const UserPage: FC = () => {
     } else return 'Сессия #';
   };
 
+  const renderSessionDescriptionOfTheSessionInChannel = (channel: any) => {
+    if (channel) {
+      if (!channel.activeSession && channel.break) {
+        return channel.startChannelSessionDescription;
+      }
+
+      if (channel.activeSession && channel.break) {
+        return channel.activeSession.nextSessionDescription;
+      }
+
+      if (channel.activeSession.description) {
+        return channel.activeSession.description;
+      } else return 'Назавание сессии';
+    } else return 'Назавание сессии';
+  };
+
   const renderOtherSessions = (channel: any) => {
     if (channel.number !== dataForUser!.channelUserInfo.number) {
       return (
@@ -316,19 +332,15 @@ const UserPage: FC = () => {
         >
 
           <Grid item xs={12}>
-            {' '}
             <VideoPlayerMain height="290px" classNameInner="channelVideoContainer" videoURL={channel.link} />
           </Grid>
           <Grid item xs={12} className={classes.channelContainerBottomPart}>
 
-            <p>
-              {' '}
-              {renderSessionDescriptionOfTheSessionInChannel(channel)}
+            <p className={classes.chooseChannelSessionLetter}>
+              {renderSessionLetterOfTheSessionInChannel(channel)}
             </p>
-            <p>
-              Название сессии
-              до 70 символов
-
+            <p className={classes.chooseChannelSessionDescription}>
+              {renderSessionDescriptionOfTheSessionInChannel(channel)}
             </p>
 
           </Grid>
