@@ -14,7 +14,7 @@ import { router as authRouter } from './routes/auth.route';
 import { router as userRouter } from './routes/user.route';
 import { router as adminRouter } from './routes/admin.route';
 import { jwtStrategy, jwtStrategyIsAdmin, localSignInStrategy } from './passportStrategy';
-import { seedMockedChannels } from './utils/seeds/channelsSeed';
+import { seedMockedChannels } from './utils/seeds/seedChannels';
 import { seedMockedSessions } from './utils/seeds/seedSessions';
 import { seedMockedSpeakers } from './utils/seeds/seedSpeakers';
 

@@ -19,7 +19,7 @@ export default class Channels extends BaseEntity {
   //   @Column({ nullable: true })
   //   sessionsAmount: number;
 
-  @Column({ default: false })
+  @Column({ default: true })
   break: boolean;
 
   // @Index()
@@ -37,4 +37,12 @@ export default class Channels extends BaseEntity {
   @Index()
   @Column({ nullable: true })
   link: string;
+
+  @Index()
+  @Column({ nullable: true })
+  startChannelSessionLetter: string;
+
+  @Index()
+  @Column({ nullable: true })
+  startChannelSessionDescription: string;
 }

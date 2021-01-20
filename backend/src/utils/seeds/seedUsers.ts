@@ -25,10 +25,10 @@ export const seedMockedUsers = async () => {
   },
   {
 
-    firstName: 'test3',
-    lastName: 'testovich3',
-    company: 'companyTest3',
-    loginCode: 'admin',
+    firstName: 'admin',
+    lastName: 'Plenaer',
+    company: 'CCL',
+    loginCode: 'adminPlenar',
     adminOfTheSessionName: 'Plenar',
     isAdmin: true,
 
@@ -36,11 +36,44 @@ export const seedMockedUsers = async () => {
 
   {
 
-    firstName: 'test3',
-    lastName: 'testovich3',
-    company: 'companyTest3',
-    loginCode: 'admin2',
+    firstName: 'admin',
+    lastName: 'A',
+    company: 'CCL',
+    loginCode: 'adminA',
+    adminOfTheSessionName: 'SessA',
+    isAdmin: true,
+
+  },
+
+  {
+
+    firstName: 'admin',
+    lastName: 'B',
+    company: 'CCL',
+    loginCode: 'adminB',
     adminOfTheSessionName: 'SessB',
+    isAdmin: true,
+
+  },
+
+  {
+
+    firstName: 'admin',
+    lastName: 'C',
+    company: 'CCL',
+    loginCode: 'adminC',
+    adminOfTheSessionName: 'SessC',
+    isAdmin: true,
+
+  },
+
+  {
+
+    firstName: 'admin',
+    lastName: 'WMS1',
+    company: 'CCL',
+    loginCode: 'adminWMS1',
+    adminOfTheSessionName: 'WMS1',
     isAdmin: true,
 
   },
