@@ -15,16 +15,8 @@ export default class Channels extends BaseEntity {
   @JoinColumn()
   activeSession: Sessions | null;
 
-  //   @Index()
-  //   @Column({ nullable: true })
-  //   sessionsAmount: number;
-
   @Column({ default: true })
   break: boolean;
-
-  // @Index()
-  // @Column({ nullable: true })
-  // sessions: number;
 
   @OneToOne(() => Speakers, (speakers) => speakers)
   @JoinColumn()

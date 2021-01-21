@@ -16,8 +16,4 @@ export default class SessionsBlocks extends BaseEntity {
   @Index()
   @Column({ nullable: true })
   sessionsAmount: number;
-
-  // @Index()
-  // @Column({ nullable: true })
-  // sessions: number;
 }

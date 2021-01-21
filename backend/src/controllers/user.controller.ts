@@ -140,7 +140,6 @@ export const updateWatchedSpeakersAll = async (
   req: Request, res: Response, next: NextFunction,
 ) => {
   const usersRepository = await getRepository(Users);
-  const speakersRepository = await getRepository(Speakers);
   const sessionsRepository = await getRepository(Sessions);
 
   try {

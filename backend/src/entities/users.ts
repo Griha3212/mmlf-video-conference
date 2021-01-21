@@ -1,9 +1,8 @@
 /* eslint-disable import/no-cycle */
 import {
   Entity, PrimaryGeneratedColumn, Column, BaseEntity,
-  Index, OneToMany, ManyToMany, JoinTable, OneToOne,
+  Index, OneToMany, ManyToMany, JoinTable,
 } from 'typeorm';
-import Channels from './channels';
 import Speakers from './speakers';
 import Votes from './votes';
 
@@ -66,14 +65,6 @@ export default class Users extends BaseEntity {
     (watchedSpeakers) => watchedSpeakers.usersWhoWatchedSpeaker, { cascade: true })
   @JoinTable()
   watchedSpeakers: Speakers[];
-
-  // @Index()
-  // @Column({ default: false })
-  // currentSessionBlock
-
-  // @Index()
-  // @Column({ default: false })
-  // currentSession
 
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
