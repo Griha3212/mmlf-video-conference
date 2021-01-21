@@ -15,6 +15,7 @@ export const getStats = async (req: Request, res: Response, next: NextFunction) 
   const usersRepository = await getRepository(Users);
   const sessionsRepository = await getRepository(Sessions);
   const channelsRepository = await getRepository(Channels);
+  const speakersRepository = await getRepository(Speakers);
 
   try {
     const { userId } = req.params;
@@ -30,7 +31,11 @@ export const getStats = async (req: Request, res: Response, next: NextFunction) 
 
     if (!foundUser.hasAccessToStatisticPage) throw new Error(allErrors.notStatsAccount);
 
-    res.status(200).send(foundUser);
+    const foundSpeakers = await speakersRepository.find({ relations: ['usersWhoWatchedSpeaker', 'votes', 'votes.user'] });
+
+    console.log('foundSpeakers :>> ', foundSpeakers);
+
+    res.status(200).send(foundSpeakers);
   } catch (error) {
     next(error);
   }

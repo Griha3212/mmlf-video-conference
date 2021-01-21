@@ -13,6 +13,7 @@ import { seedMockedUsers } from './utils/seeds/seedUsers';
 import { router as authRouter } from './routes/auth.route';
 import { router as userRouter } from './routes/user.route';
 import { router as adminRouter } from './routes/admin.route';
+import { router as statsRouter } from './routes/stats.route';
 import { jwtStrategy, jwtStrategyIsAdmin, localSignInStrategy } from './passportStrategy';
 import { seedMockedChannels } from './utils/seeds/seedChannels';
 import { seedMockedSessions } from './utils/seeds/seedSessions';
@@ -37,6 +38,7 @@ app.use(compression());
 app.use('/api/auth', authRouter);
 app.use('/api/user', userRouter);
 app.use('/api/admin', adminRouter);
+app.use('/api/stats', statsRouter);
 
 app.get('/', (req: Request, res: Response) => {
   res.send('Hello World!');
