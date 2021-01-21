@@ -35,22 +35,24 @@ const SessionInfoBlock = (props: any) => {
     }
   }, [currentSpeakerInfo]);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (currentSpeakerInfo) {
-        const currentSpeakerLocalStorageData = localStorage.getItem(
-          `${String(currentSpeakerInfo && currentSpeakerInfo.id)}`,
-        );
+  // useEffect(() => {
+  //   const interval = setInterval(() => {
+  //     if (isVisible) {
+  //       if (currentSpeakerInfo) {
+  //         const currentSpeakerLocalStorageData = localStorage.getItem(
+  //           `${String(currentSpeakerInfo && currentSpeakerInfo.id)}`,
+  //         );
 
-        if (currentSpeakerLocalStorageData === 'viewed') {
-          setClosedAccess(false);
-        } else {
-          setClosedAccess(true);
-        }
-      }
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [currentSpeakerInfo]);
+  //         if (currentSpeakerLocalStorageData === 'viewed') {
+  //           setClosedAccess(false);
+  //         } else {
+  //           setClosedAccess(true);
+  //         }
+  //       }
+  //     }
+  //   }, 1000);
+  //   return () => clearInterval(interval);
+  // }, [currentSpeakerInfo]);
 
   //-------------------------------------------------------------------
 

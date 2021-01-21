@@ -18,9 +18,10 @@
     "resolveJsonModule": true,
     "isolatedModules": true,
     "noEmit": true,
-    "jsx": "react-jsx"
+    "jsx": "react-jsx",
+    "typeRoots": ["./types", "./node_modules/@types", "./node_modules/@jest"]
   },
   "include": [
-    "src"
-, "src/components/ModeratorCard/.tsx"  ]
+    "src", "src/components/ModeratorCard/.tsx"
+  ]
 }

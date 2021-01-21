@@ -1,3 +1,4 @@
+/* eslint-disable no-restricted-syntax */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable no-nested-ternary */
@@ -12,6 +13,7 @@ import React, {
 } from 'react';
 import { useMediaQuery } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
+// import { usePageVisibility } from 'react-page-visibility';
 // import ContentContainer from '../ContentContainer/ContentContainer';
 
 import Avatar from '@material-ui/core/Avatar';
@@ -145,6 +147,9 @@ const UserPage: FC = () => {
   // all channels info
 
   const [allChannelsInfo, setAllChannelsInfo] = React.useState<Channel[]>();
+  // const isVisible = usePageVisibility();
+
+  // console.log('isVisible :>> ', isVisible);
 
   // will start hook again if user will be changed
   useEffect(() => {

@@ -19,6 +19,8 @@ const api = {
 
   changeActiveChannel: 'api/user/change_active_channel',
 
+  getStats: 'api/stats/get_stats/',
+
 };
 
 export default api;

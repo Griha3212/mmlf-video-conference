@@ -90,9 +90,9 @@ export const seedMockedUsers = async () => {
 
   {
 
-    firstName: 'test5',
-    lastName: 'testovich5',
-    company: 'companyTest5',
+    firstName: 'stats',
+    lastName: 'stats',
+    company: 'CCL',
     loginCode: 'stats',
     hasAccessToStatisticPage: true,
 
@@ -112,6 +112,7 @@ export const seedMockedUsers = async () => {
     newUser.isFreeSessionAccessOnly = !!user.isFreeSessionAccessOnly;
     newUser.loginCode = user.loginCode;
     newUser.adminOfTheSessionName = user.adminOfTheSessionName || '';
+    newUser.hasAccessToStatisticPage = user.hasAccessToStatisticPage || false;
     // newUser.activeChannel = foundFirstChannel;
     // all users except free have default first channel active
 
