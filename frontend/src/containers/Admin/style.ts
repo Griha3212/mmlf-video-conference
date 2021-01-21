@@ -3,6 +3,33 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  activateSelectedSpeakerP: {
+
+    marginTop: '0px',
+
+  },
+
+  activeSpeakerText: {
+
+    fontSize: '22px',
+    marginTop: '0px',
+
+  },
+
+  sessionLetter: {
+
+    fontSize: '24px',
+    marginTop: '5px',
+  },
+
+  speakerButtonActive: {
+
+    marginBottom: '30px',
+    backgroundColor: 'green',
+    color: 'white',
+
+  },
+
   textCenter: {
 
     textAlign: 'center',

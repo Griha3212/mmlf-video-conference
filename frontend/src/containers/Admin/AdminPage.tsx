@@ -15,10 +15,8 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import { useForm } from 'react-hook-form';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
-import clsx from 'clsx';
 import useStyles from './style';
 import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
@@ -53,10 +51,6 @@ type DataForAdmin = {
 
 };
 
-type FormData = {
-  loginCode: string;
-};
-
 function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
@@ -66,16 +60,15 @@ const AdminPage: FC = () => {
   const { token } = getLocalStorageData();
   const [userData] = useState(parseToken(token.accessToken as string));
 
-  const [loading, setLoading] = React.useState(false);
-  const [success, setSuccess] = React.useState(false);
-  const [error]: [string, (error: string) => void] = React.useState('');
-  const [open, setOpen] = React.useState(false);
+  const [error]: [string, (error: string) => void] = useState('');
+  const [open, setOpen] = useState(false);
 
-  const [activeSpeaker, setActiveSpeaker] = React.useState('');
+  const [activeSpeaker, setActiveSpeaker] = useState('');
 
-  const [selectedSpeakerToActivate, setSelectedSpeakerToActivate] = React.useState('');
+  const [selectedSpeakerToActivate, setSelectedSpeakerToActivate] = useState('');
 
-  const [dataForAdmin, setDataForAdmin] = React.useState<DataForAdmin>();
+  const [dataForAdmin, setDataForAdmin] = useState<DataForAdmin>();
+  const [activeButtonId, setActiveButtonId] = useState<number>();
 
   const loadDataForAdmin = async () => {
     const response = await apiGetUser(userData.id, token);
@@ -83,6 +76,7 @@ const AdminPage: FC = () => {
 
     if (response && response.channelForShowing && response.channelForShowing.activeSpeaker) {
       setActiveSpeaker(`${response.channelForShowing.activeSpeaker.lastName} ${response.channelForShowing.activeSpeaker.firstName}`);
+      setActiveButtonId(response.channelForShowing.activeSpeaker.id);
     }
   };
 
@@ -108,10 +102,6 @@ const AdminPage: FC = () => {
   };
 
   const setBreakBetweenSessions = async () => {
-    const response = await apiSetBrakeInChannel(
-      token,
-      Number(dataForAdmin && dataForAdmin.channelForShowing.number),
-    );
     setActiveSpeaker('');
   };
 
@@ -121,10 +111,14 @@ const AdminPage: FC = () => {
 
         <Grid container xs={12} justify="center">
           <Button
-            onClick={(e) => { setSelectedSpeakerToActivate(e.currentTarget.value); }}
+            onClick={(e) => {
+              setSelectedSpeakerToActivate(e.currentTarget.value);
+              setActiveButtonId(Number(e.currentTarget.value));
+            }}
             value={element.id}
             data-id=""
-            className={classes.speakerButton}
+            className={activeButtonId === element.id ?
+              classes.speakerButtonActive : classes.speakerButton}
             variant="outlined"
             color="primary"
           >
@@ -153,10 +147,8 @@ const AdminPage: FC = () => {
           </Avatar>
           <Typography component="h1" variant="h5">
             Страница Администратора
-
           </Typography>
-          <p>
-            {' '}
+          <p className={classes.sessionLetter}>
             {dataForAdmin && dataForAdmin.letter}
           </p>
 
@@ -164,34 +156,28 @@ const AdminPage: FC = () => {
 
       </Container>
 
-      <Grid container>
-        <Grid item container xs={6}>
+      <Grid container justify="space-around">
 
-          <Grid item xs={6}>
-            {
-              dataForAdmin && dataForAdmin.speakers.map(
-                (element) => renderSpeakersDataForAdmin(element),
-              )
-            }
-          </Grid>
-
-          <Grid item justify="center" xs={6}>
-            <p className={classes.textCenter}>
-              {' '}
-              <Button onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
-            </p>
-
-            <p className={classes.textCenter}>
-              {' '}
-              <Button onClick={() => setBreakBetweenSessions()} variant="contained" color="primary">Активировать перерыв</Button>
-              {' '}
-            </p>
-          </Grid>
-
+        <Grid item xs={4}>
+          {
+            dataForAdmin && dataForAdmin.speakers.map(
+              (element) => renderSpeakersDataForAdmin(element),
+            )
+          }
         </Grid>
 
-        <Grid item xs={6}>
-          <p>
+        <Grid item justify="center" xs={4}>
+          <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP}`}>
+            <Button onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
+          </p>
+
+          <p className={classes.textCenter}>
+            <Button onClick={() => setBreakBetweenSessions()} variant="contained" color="primary">Активировать перерыв</Button>
+          </p>
+        </Grid>
+
+        <Grid item xs={4}>
+          <p className={classes.activeSpeakerText}>
             Активный спикер:
             {' '}
             {`${activeSpeaker}`}
