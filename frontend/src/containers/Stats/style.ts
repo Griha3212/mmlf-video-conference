@@ -3,6 +3,19 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  pageNameContainer: {
+
+    marginBottom: '20px',
+
+  },
+
+  root: {
+    '& > *': {
+      borderBottom: 'unset',
+    },
+    margin: '0 100px',
+  },
+
   activateSelectedSpeakerP: {
 
     marginTop: '0px',

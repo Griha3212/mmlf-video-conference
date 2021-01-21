@@ -3,22 +3,18 @@
 /* eslint-disable @typescript-eslint/ban-types */
 import React, {
   FC, memo, useState, useEffect,
-  ChangeEvent,
 } from 'react';
 
 // import ContentContainer from '../ContentContainer/ContentContainer';
 
 import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
-import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
 
-import { makeStyles } from '@material-ui/core/styles';
 import Box from '@material-ui/core/Box';
 import Collapse from '@material-ui/core/Collapse';
 import IconButton from '@material-ui/core/IconButton';
@@ -36,40 +32,7 @@ import { Checkbox } from '@material-ui/core';
 import { apiGetStats } from '../../api/stats';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 import parseToken from '../../utils/parseToken';
-import { apiGetUser } from '../../api/user';
 import useStyles from './style';
-
-type Speaker = {
-
-  company: string;
-  firstName: string;
-  id: number;
-  innerSystemName: string;
-  isModerator: boolean;
-  lastName: string;
-  linkToImg: string;
-  linkToPresentation: string;
-  linkToZoom: string;
-  topicName: string;
-
-};
-
-type DataForAdmin = {
-  channelForShowing: {
-    break: boolean, id: number, link: string,
-    number: number
-  },
-  description: string;
-  id: number;
-  letter: string;
-  name: string;
-  speakers: Array<Speaker>
-
-};
-
-function Alert(props: any) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
 
 type User = {
 
@@ -83,6 +46,7 @@ type User = {
 type Vote = {
   rate: number;
   user: User;
+  createdAt: Date;
 };
 
 type DataForStats = {
@@ -108,56 +72,16 @@ const StatsPage: FC = () => {
   const { token } = getLocalStorageData();
   const [userData] = useState(parseToken(token.accessToken as string));
 
-  const [error]: [string, (error: string) => void] = useState('');
-
-  const [activeSpeaker, setActiveSpeaker] = useState('');
-
-  const [selectedSpeakerToActivate, setSelectedSpeakerToActivate] = useState('');
-
   const [dataForStatsViewer, setDataForStatsViewer] = useState<DataForStats[]>();
-  const [activeButtonId, setActiveButtonId] = useState<number>();
 
   const loadDataForStatsViewer = async () => {
     const response = await apiGetStats(userData.id, token);
     setDataForStatsViewer(response);
-
-    console.log('response :>> ', response);
   };
 
   useEffect(() => {
     loadDataForStatsViewer();
   }, []);
-
-  const renderStatsData = () => (
-
-    <>
-      <Grid />
-
-    </>
-
-  );
-
-  // function createData(
-  //   name: string,
-  //   calories: number,
-  //   fat: number,
-  //   carbs: number,
-  //   protein: number,
-  //   price: number,
-  // ) {
-  //   return {
-  //     name,
-  //     calories,
-  //     fat,
-  //     carbs,
-  //     protein,
-  //     price,
-  //     history: [
-  //       { date: '2020-01-05', customerId: '11091700', amount: 3 },
-  //       { date: '2020-01-02', customerId: 'Anonymous', amount: 1 },
-  //     ],
-  //   };
-  // }
 
   const Row = (props: { row: DataForStats }) => {
     const { row } = props;
@@ -176,15 +100,13 @@ const StatsPage: FC = () => {
         (element: any) => element.user.id === historyRow.id,
       );
 
-      console.log('row :>> ', row);
-      console.log('historyRow :>> ', historyRow);
-
-      return currentRate && currentRate.rate || 0;
+      if (currentRate && currentRate.createdAt && !currentRate.rate) return '0';
+      return currentRate && currentRate.rate || 'без оценки';
     };
 
     return (
       <>
-        <TableRow>
+        <TableRow className={classes.root}>
           <TableCell align="center">
             <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
               {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
@@ -239,17 +161,9 @@ const StatsPage: FC = () => {
     );
   };
 
-  // const rows = [
-  //   createData('Frozen yoghurt', 159, 6.0, 24, 4.0, 3.99),
-  //   createData('Ice cream sandwich', 237, 9.0, 37, 4.3, 4.99),
-  //   createData('Eclair', 262, 16.0, 24, 6.0, 3.79),
-  //   createData('Cupcake', 305, 3.7, 67, 4.3, 2.5),
-  //   createData('Gingerbread', 356, 16.0, 49, 3.9, 1.5),
-  // ];
-
   return (
     <>
-      <Container component="main" maxWidth="xs">
+      <Container className={classes.pageNameContainer} component="main" maxWidth="xs">
 
         <CssBaseline />
         <div className={classes.paper}>
@@ -264,8 +178,7 @@ const StatsPage: FC = () => {
 
       </Container>
 
-      <Grid container justify="space-around">
-
+      <div className={classes.root}>
         <TableContainer component={Paper}>
           <Table aria-label="collapsible table">
             <TableHead>
@@ -284,9 +197,7 @@ const StatsPage: FC = () => {
             </TableBody>
           </Table>
         </TableContainer>
-
-      </Grid>
-
+      </div>
     </>
   );
 };

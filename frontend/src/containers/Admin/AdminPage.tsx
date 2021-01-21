@@ -68,7 +68,7 @@ const AdminPage: FC = () => {
   const [selectedSpeakerToActivate, setSelectedSpeakerToActivate] = useState('');
 
   const [dataForAdmin, setDataForAdmin] = useState<DataForAdmin>();
-  const [activeButtonId, setActiveButtonId] = useState<number>();
+  const [activeButtonId, setActiveButtonId] = useState<number | undefined>();
 
   const loadDataForAdmin = async () => {
     const response = await apiGetUser(userData.id, token);
@@ -102,7 +102,12 @@ const AdminPage: FC = () => {
   };
 
   const setBreakBetweenSessions = async () => {
+    await apiSetBrakeInChannel(
+      token,
+      Number(dataForAdmin && dataForAdmin.channelForShowing.number),
+    );
     setActiveSpeaker('');
+    setActiveButtonId(undefined);
   };
 
   const renderSpeakersDataForAdmin = (element: Speaker) => {
