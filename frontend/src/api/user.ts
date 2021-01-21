@@ -71,6 +71,28 @@ export const apiUserUpdateWatchedSpeakers = async (
   }
 };
 
+export const apiUserUpdateWatchedSpeakersAllInSession = async (
+  sessionId: number,
+  userId: number,
+  token: {
+    accessToken: string | null;
+    refreshToken: string | null;
+  },
+): Promise<any> => {
+  const url = `${process.env.REACT_APP_API_URL}${api.userUpdateWatchedSpeakersAll}`;
+
+  try {
+    const { data } = await axios.post(url, { sessionId, userId }, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};
+
 export const apiGetAllChannels = async (
   userId: string,
   token: {

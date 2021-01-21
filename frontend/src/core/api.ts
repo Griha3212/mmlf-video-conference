@@ -13,6 +13,7 @@ const api = {
   voteForSpeaker: 'api/user/vote_for_speaker',
 
   userUpdateWatchedSpeakers: 'api/user/update_watched_speakers',
+  userUpdateWatchedSpeakersAll: 'api/user/update_watched_speakers_all',
 
   getAllChannels: 'api/user/get_all_channels/',
 

@@ -4,6 +4,7 @@ const allErrors = {
   userNotFound: 'Пользователь не найден',
   channelNotFound: 'Канал не найден',
   speakerNotFound: 'Спикер не найден',
+  sessionNotFound: 'Сессия не найден',
 };
 
 export default allErrors;

@@ -10,7 +10,8 @@ const {
 
   getUser,
   voteForSpeaker,
-  updateWatchedSpeakers,
+  updateWatchedSpeakersSingle,
+  updateWatchedSpeakersAll,
   getAllChannels,
   changeActiveChannel,
   // updateToken,
@@ -32,7 +33,13 @@ router.post(
 router.post(
   '/update_watched_speakers',
   passport.authenticate('jwt', { session: false }),
-  updateWatchedSpeakers,
+  updateWatchedSpeakersSingle,
+);
+
+router.post(
+  '/update_watched_speakers_all',
+  passport.authenticate('jwt', { session: false }),
+  updateWatchedSpeakersAll,
 );
 
 router.get(

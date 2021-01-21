@@ -33,14 +33,21 @@ import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock
 import topMMLFLogo from '../../img/mmlfLogo2021.svg';
 import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/SpeakersSessionInfoBlock';
 import {
-  apiGetUser, apiUserUpdateWatchedSpeakers, apiGetAllChannels, apiUserChangeActiveChannel,
+  apiGetUser, apiUserUpdateWatchedSpeakers,
+  apiGetAllChannels, apiUserChangeActiveChannel, apiUserUpdateWatchedSpeakersAllInSession,
 } from '../../api/user';
 
 type DataForUser = {
   channelUserInfo: {
     break: boolean, id: number, link: string,
-    number: number
+    number: number,
+    activeSession: {
+      voteFoAllSession: boolean,
+      name: string,
+      id: number,
+    },
   },
+
   channelForShowing: {
     break: boolean, id: number, link: string,
     number: number
@@ -198,8 +205,13 @@ const UserPage: FC = () => {
     }
   };
 
-  const updateWatchedSpeakers = async (speakerId: number) => {
+  const updateWatchedSpeakersSingleSpeaker = async (speakerId: number) => {
     await apiUserUpdateWatchedSpeakers(speakerId, userData.id, token);
+    loadDataForUser();
+  };
+
+  const updateWatchedSpeakersAllSpeakersInSession = async (sessionId: number) => {
+    await apiUserUpdateWatchedSpeakersAllInSession(sessionId, userData.id, token);
     loadDataForUser();
   };
 
@@ -207,9 +219,12 @@ const UserPage: FC = () => {
 
   // if there is active speaker, update timer every seconds,
   // until 10, then speaker status set to viewed
+  // if type of session voteForAllSession another logic
   useEffect(() => {
     const interval = setInterval(() => {
-      if (activeSpeakerInfo) {
+      // count for single speaker
+      if (activeSpeakerInfo && dataForUser &&
+        !dataForUser.channelUserInfo.activeSession.voteFoAllSession) {
         let initialValueCurrentSpeaker = localStorage.getItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`);
 
         if (!initialValueCurrentSpeaker) {
@@ -218,11 +233,34 @@ const UserPage: FC = () => {
           if (initialValueCurrentSpeaker !== 'viewed') {
             if (initialValueCurrentSpeaker === '5') {
               localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, 'viewed');
-              // TO DO, send to back viewed status
-              updateWatchedSpeakers(activeSpeakerInfo.id);
+              // send to back viewed status
+              updateWatchedSpeakersSingleSpeaker(activeSpeakerInfo.id);
             } else {
               initialValueCurrentSpeaker = String(+initialValueCurrentSpeaker + 1);
               localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, initialValueCurrentSpeaker);
+            }
+          }
+        }
+      }
+
+      // count for complete session
+      if (activeSpeakerInfo && dataForUser &&
+        dataForUser.channelUserInfo.activeSession.voteFoAllSession) {
+        let initialValueCurrentSession = localStorage.getItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`);
+
+        if (!initialValueCurrentSession) {
+          localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, '0');
+        } else {
+          if (initialValueCurrentSession !== 'viewed') {
+            if (initialValueCurrentSession === '5') {
+              localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, 'viewed');
+              // send to back viewed status
+              updateWatchedSpeakersAllSpeakersInSession(
+                dataForUser.channelUserInfo.activeSession.id,
+              );
+            } else {
+              initialValueCurrentSession = String(+initialValueCurrentSession + 1);
+              localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, initialValueCurrentSession);
             }
           }
         }

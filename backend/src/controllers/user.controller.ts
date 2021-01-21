@@ -107,7 +107,9 @@ export const voteForSpeaker = async (req: Request, res: Response, next: NextFunc
   }
 };
 
-export const updateWatchedSpeakers = async (req: Request, res: Response, next: NextFunction) => {
+export const updateWatchedSpeakersSingle = async (
+  req: Request, res: Response, next: NextFunction,
+) => {
   const usersRepository = await getRepository(Users);
   const speakersRepository = await getRepository(Speakers);
 
@@ -125,6 +127,44 @@ export const updateWatchedSpeakers = async (req: Request, res: Response, next: N
     if (!foundSpeaker) throw new Error(allErrors.speakerNotFound);
 
     foundUser.watchedSpeakers.push(foundSpeaker);
+
+    await usersRepository.save(foundUser);
+
+    res.status(200).send(foundUser);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const updateWatchedSpeakersAll = async (
+  req: Request, res: Response, next: NextFunction,
+) => {
+  const usersRepository = await getRepository(Users);
+  const speakersRepository = await getRepository(Speakers);
+  const sessionsRepository = await getRepository(Sessions);
+
+  try {
+    const { userId, sessionId } = req.body;
+
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId }, relations: ['watchedSpeakers'] },
+    );
+
+    if (!foundUser) throw new Error(allErrors.userNotFound);
+
+    const foundSession = await sessionsRepository.findOne(
+      {
+        where: { id: sessionId },
+        relations: ['speakers'],
+      },
+    );
+
+    if (!foundSession) throw new Error(allErrors.sessionNotFound);
+
+    await foundSession.speakers.map((speaker) => {
+      foundUser.watchedSpeakers.push(speaker);
+      return speaker;
+    });
 
     await usersRepository.save(foundUser);
 
