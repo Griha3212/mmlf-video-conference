@@ -3,6 +3,46 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  footerTextDate: {
+
+    fontFamily: 'Gotham Pro Light',
+    fontSize: '24px',
+    lineHeight: '27px',
+    marginTop: '0px',
+    marginBottom: '0px',
+
+    color: 'white',
+
+  },
+
+  footerContainerInner: {
+
+    padding: '0 220px',
+
+  },
+
+  footerContainer: {
+
+    backgroundColor: '#00124D',
+    borderTop: '33px solid #FF414A',
+    marginTop: '100px',
+    height: '220px',
+
+  },
+
+  imgFluid: {
+
+    width: '100%',
+    height: 'auto',
+
+  },
+
+  partnersContainer: {
+
+    marginTop: '120px',
+
+  },
+
   mainVideoContainer: {
 
     height: '720px',
@@ -84,7 +124,7 @@ const useStyles = makeStyles((theme) => ({
 
   changeSessionMainContainer: {
 
-    marginTop: '100px',
+    marginTop: '120px',
 
   },
   innerContainer: {

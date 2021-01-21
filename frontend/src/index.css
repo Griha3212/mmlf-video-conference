@@ -35,6 +35,16 @@
   font-display: swap;
 }
 
+
+@font-face {
+  font-family: "Gotham Pro Light";
+  src: url("./fonts/GothamPro-Light.woff") format("truetype");
+  font-style: normal;
+
+  font-weight: normal;
+  font-display: swap;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

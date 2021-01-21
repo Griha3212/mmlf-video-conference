@@ -8,23 +8,11 @@
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, {
   FC, memo, useState, useEffect,
-  ChangeEvent,
-  useReducer,
 } from 'react';
-import { useMediaQuery } from '@material-ui/core';
+import {
+  useMediaQuery, Grid, Typography, Button,
+} from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
-// import { usePageVisibility } from 'react-page-visibility';
-// import ContentContainer from '../ContentContainer/ContentContainer';
-
-import Avatar from '@material-ui/core/Avatar';
-import Button from '@material-ui/core/Button';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import Grid from '@material-ui/core/Grid';
-import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
-import Typography from '@material-ui/core/Typography';
-import Container from '@material-ui/core/Container';
-import Snackbar from '@material-ui/core/Snackbar';
-import MuiAlert from '@material-ui/lab/Alert';
 import { Redirect, useHistory } from 'react-router-dom';
 import { io } from 'socket.io-client';
 import useStyles from './style';
@@ -38,6 +26,10 @@ import {
   apiGetUser, apiUserUpdateWatchedSpeakers,
   apiGetAllChannels, apiUserChangeActiveChannel, apiUserUpdateWatchedSpeakersAllInSession,
 } from '../../api/user';
+import lerua from '../../img/partnersImg/lerua.svg';
+import severstal from '../../img/partnersImg/severstal.svg';
+import cocalCola from '../../img/partnersImg/coca-cola.svg';
+import footerMMLFLogo from '../../img/footerMMLFLogo.svg';
 
 type DataForUser = {
   channelUserInfo: {
@@ -99,10 +91,6 @@ type Channel = {
 
 };
 
-function Alert(props: any) {
-  return <MuiAlert elevation={6} variant="filled" {...props} />;
-}
-
 const socket = io(`${process.env.REACT_APP_API_URL}`);
 
 const UserPage: FC = () => {
@@ -124,8 +112,6 @@ const UserPage: FC = () => {
   const [user] = useState(parseToken(token.accessToken as string));
   const history = useHistory();
 
-  const [error]: [string, (error: string) => void] = React.useState('');
-  const [open, setOpen] = React.useState(false);
   const [dataForUser, setDataForUser] = React.useState<DataForUser>();
 
   // active session info
@@ -169,9 +155,9 @@ const UserPage: FC = () => {
     };
   }, []);
 
-  const findAndSetCurrentSpeakerRate = (votes: any) => {
+  const findAndSetCurrentSpeakerRate = (votes: Vote[] | undefined) => {
     if (activeSpeakerInfo && votes) {
-      const currentSpeakerRate2 = votes.find((element: any) => element.speaker.id
+      const currentSpeakerRate2 = votes.find((element: Vote) => element.speaker.id
         === activeSpeakerInfo.id);
 
       setActiveSessionSpeakersRate(currentSpeakerRate2 && currentSpeakerRate2.rate);
@@ -307,13 +293,6 @@ const UserPage: FC = () => {
     };
   });
 
-  const handleClose = async (event: ChangeEvent<unknown>, reason: string) => {
-    if (reason === 'clickaway') {
-      return;
-    }
-    await setOpen(false);
-  };
-
   useEffect(() => {
     loadDataForUser();
   }, []);
@@ -378,30 +357,30 @@ const UserPage: FC = () => {
   const renderOtherSessions = (channel: any) => {
     if (channel.number !== dataForUser!.channelUserInfo.number) {
       return (
+        <>
+          <Grid
+            item
+            container
+            className={classes.channelContainer}
+            id={channel.number}
+            onClick={(e) => changeActiveChannel(+e.currentTarget.id)}
+          >
 
-        <Grid
-          item
-          container
-          className={classes.channelContainer}
-          id={channel.number}
-          onClick={(e) => changeActiveChannel(+e.currentTarget.id)}
-        >
+            <VideoPlayerMain height={calculateHeightOfSmallChannelWindow()} classNameInner="channelVideoContainer" videoURL={channel.link} />
 
-          <VideoPlayerMain height={calculateHeightOfSmallChannelWindow()} classNameInner="channelVideoContainer" videoURL={channel.link} />
+            <Grid item xs={12} className={classes.channelContainerBottomPart}>
 
-          <Grid item xs={12} className={classes.channelContainerBottomPart}>
+              <p className={classes.chooseChannelSessionLetter}>
+                {renderSessionLetterOfTheSessionInChannel(channel)}
+              </p>
+              <p className={classes.chooseChannelSessionDescription}>
+                {renderSessionDescriptionOfTheSessionInChannel(channel)}
+              </p>
 
-            <p className={classes.chooseChannelSessionLetter}>
-              {renderSessionLetterOfTheSessionInChannel(channel)}
-            </p>
-            <p className={classes.chooseChannelSessionDescription}>
-              {renderSessionDescriptionOfTheSessionInChannel(channel)}
-            </p>
+            </Grid>
 
           </Grid>
-
-        </Grid>
-
+        </>
       );
     }
   };
@@ -410,27 +389,6 @@ const UserPage: FC = () => {
 
   return (
     <>
-      {/* <Container component="main" maxWidth="xs">
-
-        <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
-          <Alert onClose={handleClose} severity="error">
-            {error}
-          </Alert>
-        </Snackbar>
-
-        <CssBaseline />
-        <div className={classes.paper}>
-          <Avatar className={classes.avatar}>
-            <LockOutlinedIcon />
-          </Avatar>
-          <Typography component="h1" variant="h5">
-            Страница Пользователя
-          </Typography>
-
-        </div>
-
-      </Container> */}
-
       {/* header */}
       <Grid container xl justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
 
@@ -502,6 +460,55 @@ const UserPage: FC = () => {
 
         </Grid>
       ) : null}
+
+      <Grid container className={classes.partnersContainer} justify="space-around">
+
+        <Grid item className={classes.innerContainer}>
+          <Grid xs={12} item container className={classes.mainContainerBckg}>
+            <p className={classes.speakersBlockHeader}>Партнеры сессии</p>
+          </Grid>
+
+          <Grid justify="space-between" container item className={classes.mainContainerBckg}>
+            <Grid className={classes.myAuto} item xs={12} xl={3} lg={3}>
+
+              <img className={`${classes.imgFluid}`} src={lerua} alt="" />
+
+            </Grid>
+
+            <Grid className={classes.myAuto} item xs={12} xl={3} lg={3}>
+
+              <img className={classes.imgFluid} src={severstal} alt="" />
+
+            </Grid>
+
+            <Grid className={classes.myAuto} item xs={12} xl={3} lg={3}>
+
+              <img className={classes.imgFluid} src={cocalCola} alt="" />
+
+            </Grid>
+          </Grid>
+        </Grid>
+
+      </Grid>
+
+      <Grid container>
+
+        <Grid item container justify="space-around" className={classes.footerContainer}>
+
+          <Grid justify="space-between" container item className={classes.footerContainerInner}>
+
+            <Grid className={classes.myAuto} item><img src={footerMMLFLogo} alt="" /></Grid>
+            <Grid className={classes.myAuto} item>
+              <p className={classes.footerTextDate}>15-19 февраля 2021</p>
+            </Grid>
+            <Grid className={classes.myAuto} item><img src={footerMMLFLogo} alt="" /></Grid>
+            <Grid className={classes.myAuto} item><img src={footerMMLFLogo} alt="" /></Grid>
+
+          </Grid>
+
+        </Grid>
+
+      </Grid>
 
     </>
   );
