@@ -13,6 +13,8 @@ import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import PDF from '../../img/pdf_icon.svg';
 import Zoom from '../../img/zoomfondo-blanco-vertical-seeklogo.svg';
+import PDFDisabled from '../../img/pdf_icon_black_and_white.svg';
+import ZoomDisabled from '../../img/zoomfondo_black_and_white.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 type Vote = {
@@ -277,6 +279,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
                 <Box component="fieldset" mb={3} borderColor="transparent">
                   <Rating
                     id={element.id}
+                    classes={{ iconEmpty: 'rateSmallDefault' }}
                     className={classes.smallScoreStarImg}
                     name={element.id}
                     disabled={checkIsWatched(element.id)}
@@ -294,8 +297,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
                 <Grid item>
 
                   <img
-                    className={classes.pointerImg}
-                    src={PDF}
+                    className={`${classes.pointerImg} ${classes.loadPDFImg}`}
+                    src={checkIsWatched(element.id) ? PDFDisabled : PDF}
                     onClick={() => window.open(`${element.linkToPresentation}`, '_blank')}
                     alt=""
                   />
@@ -307,8 +310,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
                     <Grid item>
 
                       <img
-                        src={Zoom}
-                        className={classes.pointerImg}
+                        src={checkIsWatched(element.id) ? ZoomDisabled : Zoom}
+                        className={`${classes.pointerImg} ${classes.loadZoomImg}`}
                         onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
                         alt=""
                       />

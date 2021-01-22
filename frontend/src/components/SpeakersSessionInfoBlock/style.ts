@@ -2,6 +2,32 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 
+  loadZoomImg: {
+
+    [theme.breakpoints.up('lg')]: {
+      width: '40px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: 'auto',
+
+    },
+
+  },
+
+  loadPDFImg: {
+
+    [theme.breakpoints.up('lg')]: {
+      width: '33px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: 'auto',
+
+    },
+
+  },
+
   pointerImg: {
 
     cursor: 'pointer',
@@ -18,12 +44,22 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 700,
-    fontSize: '22px',
-    lineHeight: '30px',
+
     color: 'black',
     marginBottom: '0px',
     marginTop: '0px',
     textAlign: 'center',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.4vw',
+      lineHeight: '1.8vw',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '22px',
+      lineHeight: '30px',
+
+    },
 
   },
 

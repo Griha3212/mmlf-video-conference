@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
+   sodipodi:docname="pdf_icon_black_and_white.svg"
+   id="svg6"
+   version="1.1"
+   viewBox="0 0 47.427 54.203"
+   height="54.203"
+   width="47.427">
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs10" />
+  <sodipodi:namedview
+     inkscape:current-layer="Сгруппировать_156"
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="1912"
+     inkscape:cy="26.719323"
+     inkscape:cx="20.807785"
+     inkscape:zoom="11.088699"
+     showgrid="false"
+     id="namedview8"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     guidetolerance="10"
+     gridtolerance="10"
+     objecttolerance="10"
+     borderopacity="1"
+     bordercolor="#666666"
+     pagecolor="#ffffff" />
+  <g
+     transform="translate(0 0)"
+     data-name="Сгруппировать 156"
+     id="Сгруппировать_156">
+    <path
+       style="fill:#808080"
+       fill="#ff414a"
+       transform="translate(-19.329 0)"
+       d="M22.717,0H51.5L66.756,15.2V50.815A3.388,3.388,0,0,1,63.369,54.2H22.717a3.388,3.388,0,0,1-3.388-3.388V3.388A3.388,3.388,0,0,1,22.717,0Z"
+       data-name="Контур 3373"
+       id="Контур_3373" />
+    <path
+       style="fill:#4d4d4d"
+       fill="#b50d15"
+       transform="translate(-170.774 -0.159)"
+       d="M218.152,15.4H206.345a3.389,3.389,0,0,1-3.388-3.388V.193Z"
+       data-name="Контур 3374"
+       id="Контур_3374" />
+    <path
+       fill="#fff"
+       transform="translate(-75.204 -111.686)"
+       d="M109.924,137.37a.985.985,0,0,0,0-1.95h-3.232a1.01,1.01,0,0,0-.984,1.1v7.942c0,.708.4,1.1.949,1.1s.947-.393.947-1.1v-2.18h1.955a.918.918,0,0,0,.91-.989.9.9,0,0,0-.91-.962H107.6V137.37ZM99,135.42H96.636a1.046,1.046,0,0,0-1.1,1.094v7.956a1.042,1.042,0,0,0,1.125,1.065h2.482a4.6,4.6,0,0,0,4.876-4.916C104.02,137.466,102.194,135.42,99,135.42Zm.114,8.154H97.673v-6.193h1.3c1.967,0,2.822,1.32,2.822,3.14C101.794,142.226,100.954,143.574,99.114,143.574Zm-8.662-8.154H88.11a.985.985,0,0,0-1.032,1.1v7.942a1,1,0,1,0,1.985,0v-2.319h1.469A3.207,3.207,0,0,0,93.84,138.8,3.244,3.244,0,0,0,90.452,135.42Zm-.039,4.861h-1.35v-3h1.35a1.5,1.5,0,0,1,0,3Z"
+       data-name="Контур 3375"
+       id="Контур_3375" />
+  </g>
+</svg>
