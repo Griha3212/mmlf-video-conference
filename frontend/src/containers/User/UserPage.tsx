@@ -357,6 +357,7 @@ const UserPage: FC = () => {
   const calculateHeightOfSmallChannelWindow = () => {
     if (isXl) return '290px';
     if (isLg) return '193px';
+    if (isXs) return '227px';
   };
 
   const renderOtherSessions = (channel: any) => {
@@ -506,11 +507,11 @@ const UserPage: FC = () => {
         <Grid container className={classes.changeSessionMainContainer} xl>
 
           <Grid item className={classes.innerContainer}>
-            <Grid xs={12} item container className={classes.mainContainerBckg}>
+            <Grid xs={12} item container className={`${classes.mainContainerBckgChangeSession} ${classes.mainContainerBckgChangeSessionFirst}`}>
               <p className={classes.speakersBlockHeader}>Сменить сессию</p>
             </Grid>
 
-            <Grid xs={12} item justify="space-between" container className={classes.mainContainerBckg}>
+            <Grid xs={12} item justify="space-between" container className={classes.mainContainerBckgChangeSession}>
               {allChannelsInfo && dataForUser
                 && allChannelsInfo.map((element) => renderOtherSessions(element))}
             </Grid>
@@ -523,11 +524,11 @@ const UserPage: FC = () => {
       <Grid container className={classes.partnersContainer} justify="space-around">
 
         <Grid item className={classes.innerContainer}>
-          <Grid xs={12} item container className={classes.mainContainerBckg}>
+          <Grid xs={12} item container className={classes.mainContainerBckgChangeSession}>
             <p className={classes.speakersBlockHeader}>Партнеры сессии</p>
           </Grid>
 
-          <Grid justify="space-between" container item className={classes.mainContainerBckg}>
+          <Grid justify="space-between" container item className={classes.mainContainerBckgChangeSession}>
             <Grid className={classes.myAuto} item xs={12} xl={3} lg={3}>
 
               <img className={`${classes.imgFluid}`} src={lerua} alt="" />

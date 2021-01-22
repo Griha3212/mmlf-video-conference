@@ -96,6 +96,11 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     flexWrap: 'nowrap',
 
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: '100%',
+      marginBottom: '20px',
+    },
+
   },
 
   chooseChannelSessionLetter: {
@@ -164,8 +169,24 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  mainContainerBckg: {
+  mainContainerBckgChangeSession: {
+
+    [theme.breakpoints.down('xs')]: {
+      padding: '0px',
+      marginTop: '0px',
+    },
+
     padding: '0 110px',
+  },
+
+  mainContainerBckgChangeSessionFirst: {
+
+    [theme.breakpoints.down('xs')]: {
+      padding: '0px',
+      marginTop: '55px',
+      textAlign: 'center',
+    },
+
   },
 
   speakersBlockHeader: {
@@ -177,9 +198,11 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     color: '#00124D',
 
-    [theme.breakpoints.up('xs')]: {
-      fontSize: '3.3vw',
-
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '6.7vw',
+      lineHeight: '6.8vw',
+      marginLeft: 'auto',
+      marginRight: 'auto',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -197,6 +220,11 @@ const useStyles = makeStyles((theme) => ({
   changeSessionMainContainer: {
 
     marginTop: '120px',
+
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '0px',
+
+    },
 
   },
   innerContainer: {

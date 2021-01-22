@@ -164,6 +164,13 @@ const useStyles = makeStyles((theme) => ({
 
     // maxHeight: '120px',
 
+    [theme.breakpoints.up('xs')]: {
+      marginTop: 'auto',
+      marginBottom: 'auto',
+      marginLeft: '0px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       marginTop: '10px',
       marginBottom: 'auto',
@@ -247,7 +254,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#00124D',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '6.3vw',
+      fontSize: '6.7vw',
       textAlign: 'center',
       marginTop: '40px',
 
