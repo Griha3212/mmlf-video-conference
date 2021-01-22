@@ -225,6 +225,12 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: 'white',
     // height: '827px',
 
+    [theme.breakpoints.up('xs')]: {
+
+      marginTop: '20px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       padding: '0 106px',
       paddingTop: '68px',
