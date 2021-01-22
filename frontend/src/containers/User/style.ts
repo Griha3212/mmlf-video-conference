@@ -28,12 +28,30 @@ const useStyles = makeStyles((theme) => ({
   footerTextDate: {
 
     fontFamily: 'Gotham Pro Light',
-    fontSize: '24px',
-    lineHeight: '27px',
+
     marginTop: '0px',
     marginBottom: '0px',
 
     color: 'white',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.2vw',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '24px',
+      lineHeight: '27px',
+    },
+
+  },
+
+  socialFooterImg: {
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.2vw',
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: 'auto',
+    },
 
   },
 
@@ -89,8 +107,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '0px',
     textAlign: 'center',
     [theme.breakpoints.up('lg')]: {
-      fontSize: '31px',
-      lineHeight: '42px',
+      fontSize: '2.4vw',
+      lineHeight: '3.3vw',
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '48px',
@@ -112,8 +130,8 @@ const useStyles = makeStyles((theme) => ({
     paddingRight: '20px',
 
     [theme.breakpoints.up('lg')]: {
-      fontSize: '16px',
-      lineHeight: '22px',
+      fontSize: '1.1vw',
+      lineHeight: '1.5vw',
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '25px',
@@ -122,10 +140,27 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  mmlfFooterLogo: {
+
+    [theme.breakpoints.up('lg')]: {
+      width: '11.5vw',
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: 'auto',
+    },
+
+  },
+
   channelContainerBottomPart: {
 
     backgroundColor: '#ECF1F1',
-    padding: '44px 0px',
+
+    [theme.breakpoints.up('lg')]: {
+      padding: '30px 0px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      padding: '44px 0px',
+    },
 
   },
 

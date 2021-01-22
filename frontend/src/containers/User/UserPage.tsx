@@ -506,6 +506,7 @@ const UserPage: FC = () => {
 
       </Grid>
 
+      {/* footer--------------------------------------------------------------------------- */}
       <Grid container>
 
         <Grid item container justify="space-around" className={classes.footerContainer}>
@@ -515,7 +516,7 @@ const UserPage: FC = () => {
             <Grid xl={3} lg={3} className={classes.myAuto} item>
               <img
                 onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
-                className={classes.cursorPointer}
+                className={`${classes.cursorPointer} ${classes.mmlfFooterLogo}`}
                 src={footerMMLFLogo}
                 alt=""
               />
@@ -529,7 +530,7 @@ const UserPage: FC = () => {
                 <Grid item>
                   <img
                     onClick={() => { window.open('https://vk.com/ccl_logistics', '_blank'); }}
-                    className={classes.cursorPointer}
+                    className={`${classes.cursorPointer} ${classes.socialFooterImg}`}
                     src={vk}
                     alt=""
                   />
@@ -537,7 +538,7 @@ const UserPage: FC = () => {
                 <Grid item>
                   <img
                     onClick={() => { window.open('https://www.facebook.com/logcouncil/', '_blank'); }}
-                    className={classes.cursorPointer}
+                    className={`${classes.cursorPointer} ${classes.socialFooterImg}`}
                     src={facebook}
                     alt=""
                   />
@@ -545,7 +546,7 @@ const UserPage: FC = () => {
                 <Grid item>
                   <img
                     onClick={() => { window.open('https://www.youtube.com/channel/UCtWoEZ_O5QBtBQHg4Z5OM2A', '_blank'); }}
-                    className={classes.cursorPointer}
+                    className={`${classes.cursorPointer} ${classes.socialFooterImg}`}
                     src={youtube}
                     alt=""
                   />
