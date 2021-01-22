@@ -4,7 +4,7 @@
 /* eslint-disable array-callback-return */
 import React, { memo, useEffect } from 'react';
 import {
-  Grid,
+  Grid, Hidden,
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
@@ -392,25 +392,41 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       <Grid item container className={classes.mainContainerBckg}>
 
-        <Grid item xs={8} lg={8} xl={8}>
+        <Hidden only={['sm', 'lg', 'xl', 'md']}>
+          <Grid justify="space-between" item className={classes.moderatorContainerInfoBlock} container xs={4} lg={4} xl={4}>
+
+            <Grid item xs={3} xl={3}>
+              <img width="100%" src={renderModeratorImgSrc()} alt="" />
+
+            </Grid>
+            <Grid className={classes.moderatorInfoBlock} item xs={8} xl={8} lg={8}>
+
+              <p className={classes.moderatorHeaderText}>Модератор</p>
+              <p className={classes.moderatorFullName}>{renderModeratorFullName()}</p>
+
+            </Grid>
+
+          </Grid>
+        </Hidden>
+        <Grid item xs={12} lg={8} xl={8}>
           <p className={classes.speakersBlockHeader}>Спикеры сессии</p>
         </Grid>
+        <Hidden xsDown>
+          <Grid justify="space-between" item className={classes.moderatorContainerInfoBlock} container xs={4} lg={4} xl={4}>
 
-        <Grid justify="space-between" item className={classes.moderatorContainerInfoBlock} container xs={4} lg={4} xl={4}>
+            <Grid item xs={3} xl={3}>
+              <img width="100%" src={renderModeratorImgSrc()} alt="" />
 
-          <Grid item xs={3} xl={3}>
-            <img width="100%" src={renderModeratorImgSrc()} alt="" />
+            </Grid>
+            <Grid className={classes.moderatorInfoBlock} item xs={8} xl={8} lg={8}>
+
+              <p className={classes.moderatorHeaderText}>Модератор</p>
+              <p className={classes.moderatorFullName}>{renderModeratorFullName()}</p>
+
+            </Grid>
 
           </Grid>
-          <Grid className={classes.moderatorInfoBlock} item xs={8} xl={8} lg={8}>
-
-            <p className={classes.moderatorHeaderText}>Модератор</p>
-            <p className={classes.moderatorFullName}>{renderModeratorFullName()}</p>
-
-          </Grid>
-
-        </Grid>
-
+        </Hidden>
         <Grid className={classes.sessionSpeakersBlock} justify="space-around" container xs={12}>
 
           {

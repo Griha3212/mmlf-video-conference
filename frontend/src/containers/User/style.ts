@@ -182,6 +182,16 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '3.3vw',
+
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '70px',
+
+    },
+
   },
 
   changeSessionMainContainer: {
@@ -197,7 +207,7 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     zIndex: 2,
 
-    [theme.breakpoints.up('xs')]: {
+    [theme.breakpoints.down('xs')]: {
       paddingLeft: '24px',
       paddingRight: '24px',
 
@@ -242,11 +252,13 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.8vw',
+      textAlign: 'center',
       // lineHeight: '56px',
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '4vw',
       lineHeight: '6vw',
+      textAlign: 'center',
     },
 
   },
@@ -292,7 +304,7 @@ const useStyles = makeStyles((theme) => ({
     // marginLeft: '6vw',
     marginTop: '6px',
     transition: '0.2s',
-    left: '2vw',
+
     '&:hover': {
       backgroundColor: '#00124D',
       border: '1px solid #FF414A',
@@ -312,13 +324,14 @@ const useStyles = makeStyles((theme) => ({
       height: '3vw',
       fontSize: '1.1vw',
       lineHeight: '16px',
-
+      left: '0px',
     },
     [theme.breakpoints.up('xl')]: {
       width: '340px',
       height: '60px',
       fontSize: '24px',
       lineHeight: '27px',
+      left: '0px',
     },
 
   },

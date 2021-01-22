@@ -360,6 +360,7 @@ const useStyles = makeStyles((theme) => ({
       height: '3.5vw',
       width: '100%',
       marginTop: '0px',
+      marginBottom: '0px',
 
     },
     [theme.breakpoints.up('xl')]: {
@@ -368,6 +369,8 @@ const useStyles = makeStyles((theme) => ({
       height: '53px',
       width: '302px',
       marginTop: '15px',
+      marginBottom: '0px',
+
     },
 
     '&:hover': {
