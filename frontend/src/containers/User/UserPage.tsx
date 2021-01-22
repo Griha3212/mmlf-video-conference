@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable jsx-a11y/click-events-have-key-events */
@@ -30,6 +31,10 @@ import lerua from '../../img/partnersImg/lerua.svg';
 import severstal from '../../img/partnersImg/severstal.svg';
 import cocalCola from '../../img/partnersImg/coca-cola.svg';
 import footerMMLFLogo from '../../img/footerMMLFLogo.svg';
+import vk from '../../img/socialImg/vk.svg';
+import facebook from '../../img/socialImg/facebook.svg';
+import youtube from '../../img/socialImg/youtube.svg';
+import cclFooter from '../../img/ccl_footer.svg';
 
 type DataForUser = {
   channelUserInfo: {
@@ -393,7 +398,12 @@ const UserPage: FC = () => {
       <Grid container xl justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
 
         <Grid item className={classes.myAuto} xl={3}>
-          <img className={classes.mmlfTopLogoImg} src={topMMLFLogo} alt="" />
+          <img
+            onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
+            className={classes.mmlfTopLogoImg}
+            src={topMMLFLogo}
+            alt=""
+          />
         </Grid>
 
         <Grid item className={classes.myAuto} xl={6}>
@@ -401,7 +411,12 @@ const UserPage: FC = () => {
         </Grid>
 
         <Grid item className={classes.myAuto} xl={3}>
-          <Button className={classes.loadProgramButton}>Скачать программу</Button>
+          <Button
+            onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
+            className={classes.loadProgramButton}
+          >
+            Скачать программу
+          </Button>
         </Grid>
 
       </Grid>
@@ -497,13 +512,61 @@ const UserPage: FC = () => {
 
           <Grid justify="space-between" container item className={classes.footerContainerInner}>
 
-            <Grid className={classes.myAuto} item><img src={footerMMLFLogo} alt="" /></Grid>
-            <Grid className={classes.myAuto} item>
+            <Grid xl={3} lg={3} className={classes.myAuto} item>
+              <img
+                onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
+                className={classes.cursorPointer}
+                src={footerMMLFLogo}
+                alt=""
+              />
+
+            </Grid>
+            <Grid xl={3} lg={3} className={classes.myAuto} item>
               <p className={classes.footerTextDate}>15-19 февраля 2021</p>
             </Grid>
-            <Grid className={classes.myAuto} item><img src={footerMMLFLogo} alt="" /></Grid>
-            <Grid className={classes.myAuto} item><img src={footerMMLFLogo} alt="" /></Grid>
+            <Grid xl={2} lg={2} className={classes.myAuto} item>
+              <Grid container item justify="space-around">
+                <Grid item>
+                  <img
+                    onClick={() => { window.open('https://vk.com/ccl_logistics', '_blank'); }}
+                    className={classes.cursorPointer}
+                    src={vk}
+                    alt=""
+                  />
+                </Grid>
+                <Grid item>
+                  <img
+                    onClick={() => { window.open('https://www.facebook.com/logcouncil/', '_blank'); }}
+                    className={classes.cursorPointer}
+                    src={facebook}
+                    alt=""
+                  />
+                </Grid>
+                <Grid item>
+                  <img
+                    onClick={() => { window.open('https://www.youtube.com/channel/UCtWoEZ_O5QBtBQHg4Z5OM2A', '_blank'); }}
+                    className={classes.cursorPointer}
+                    src={youtube}
+                    alt=""
+                  />
+                </Grid>
 
+              </Grid>
+
+            </Grid>
+            <Grid xl={3} lg={3} className={`${classes.myAuto} ${classes.textAlignRight}`} item>
+              <p>
+                <img
+                  onClick={() => { window.open('https://ccl-logistics.ru/', '_blank'); }}
+                  className={classes.cursorPointer}
+                  src={cclFooter}
+                  alt=""
+                />
+
+              </p>
+              <p><a className={classes.bottomLink} href="tel:+7 (495) 763-91-95">+7 (495) 763-91-95</a></p>
+
+            </Grid>
           </Grid>
 
         </Grid>

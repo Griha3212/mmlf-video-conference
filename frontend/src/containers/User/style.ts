@@ -3,6 +3,28 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  cursorPointer: {
+
+    cursor: 'pointer',
+
+  },
+
+  bottomLink: {
+
+    color: 'white',
+    textDecoration: 'none',
+    '&:hover': {
+      textDecoration: 'underline',
+    },
+
+  },
+
+  textAlignRight: {
+
+    textAlign: 'right',
+
+  },
+
   footerTextDate: {
 
     fontFamily: 'Gotham Pro Light',
@@ -161,12 +183,19 @@ const useStyles = makeStyles((theme) => ({
 
   conferenceTopText: {
 
-    fontSize: '4vw',
-    lineHeight: '6vw',
     fontFamily: 'Gotham Pro Bold',
     textTransform: 'uppercase',
     color: 'white',
-    marginLeft: '7vw',
+    // marginLeft: '7vw',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '3.8vw',
+      // lineHeight: '56px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '4vw',
+      lineHeight: '6vw',
+    },
 
   },
   darkBlueBckg: {
@@ -174,10 +203,18 @@ const useStyles = makeStyles((theme) => ({
   },
   mmlfTopLogoImg: {
 
-    width: '374px',
-    height: '61px',
     position: 'relative',
     top: '5px',
+    cursor: 'pointer',
+
+    [theme.breakpoints.up('lg')]: {
+      width: '18vw',
+      // height: '38px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '374px',
+      height: '61px',
+    },
 
   },
 
@@ -187,17 +224,15 @@ const useStyles = makeStyles((theme) => ({
     // borderColor: '#707070 !important',
     borderRadius: '0px',
     fontFamily: 'Gotham Pro Medium',
-    fontSize: '24px',
-    lineHeight: '27px',
+
     whiteSpace: 'nowrap',
     backgroundColor: '#FF414A',
     color: 'white',
     border: 'none',
-    width: '340px',
-    height: '60px',
+
     // textTransform: 'capitalize',
     textTransform: 'initial',
-    marginLeft: '6vw',
+    // marginLeft: '6vw',
     marginTop: '6px',
     transition: '0.2s',
     left: '2vw',
@@ -207,6 +242,21 @@ const useStyles = makeStyles((theme) => ({
       color: '#FF414A',
       transition: '0.2s',
     },
+
+    [theme.breakpoints.up('lg')]: {
+      width: '16.4vw',
+      height: '3vw',
+      fontSize: '1.1vw',
+      lineHeight: '16px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '340px',
+      height: '60px',
+      fontSize: '24px',
+      lineHeight: '27px',
+    },
+
   },
   mainContainer: {
 

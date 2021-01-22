@@ -1,17 +1,15 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
 
   rateSpeakerStarsImg: {
 
-    fontSize: '2rem',
+    fontSize: '2.5rem',
     color: '#FF414A',
 
   },
 
   speakerInfoBlock: {
-
-    marginTop: 'auto',
 
   },
 
@@ -76,14 +74,26 @@ const useStyles = makeStyles(() => ({
 
     marginTop: '0px',
     fontFamily: 'Gotham Pro Bold',
-    fontSize: '22px',
-    lineHeight: '31px',
+
     backgroundColor: '#FF414A',
-    height: '34px',
-    width: '250px',
+
     color: 'white',
     textAlign: 'center',
     marginBottom: '0px',
+
+    [theme.breakpoints.up('lg')]: {
+      width: '145px',
+      height: '22px',
+      fontSize: '13px',
+      lineHeight: '21px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '250px',
+      height: '34px',
+      fontSize: '22px',
+      lineHeight: '31px',
+    },
 
   },
 
@@ -139,6 +149,7 @@ const useStyles = makeStyles(() => ({
     lineHeight: '51px',
     color: 'white',
     marginTop: '0px',
+    marginBottom: '60px',
 
   },
 
@@ -146,10 +157,11 @@ const useStyles = makeStyles(() => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 300,
-    fontSize: '15px',
+    fontSize: '21px',
     lineHeight: '28px',
     color: 'white',
     marginTop: '0px',
+    marginBottom: '28px',
 
   },
 
@@ -164,6 +176,8 @@ const useStyles = makeStyles(() => ({
     color: 'white',
     textAlign: 'center',
     borderRadius: '0px',
+    textTransform: 'initial',
+    marginTop: '15px',
 
   },
 
@@ -178,6 +192,8 @@ const useStyles = makeStyles(() => ({
     color: 'white',
     textAlign: 'center',
     borderRadius: '0px',
+    textTransform: 'initial',
+    marginTop: '11px',
 
   },
 

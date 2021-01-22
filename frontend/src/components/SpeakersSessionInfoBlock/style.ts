@@ -196,20 +196,6 @@ const useStyles = makeStyles(() => ({
 
   },
 
-  loadPresenationButton: {
-
-    fontFamily: 'Gotham Pro Medium',
-    fontSize: '21px',
-    lineHeight: '23px',
-    backgroundColor: '#FF414A',
-    height: '53px',
-    width: '302px',
-    color: 'white',
-    textAlign: 'center',
-    borderRadius: '0px',
-
-  },
-
   goToZoomButton: {
 
     fontFamily: 'Gotham Pro Medium',
