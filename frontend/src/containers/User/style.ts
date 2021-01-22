@@ -250,7 +250,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
   },
-  darkBlueBckg: {
+  darkBlueBckgTop: {
     backgroundColor: '#00124D',
   },
   mmlfTopLogoImg: {

@@ -390,13 +390,16 @@ const UserPage: FC = () => {
     }
   };
 
-  // null
-
   return (
     <>
-      {/* header */}
+      {/* header pc */}
       <Hidden xsDown>
-        <Grid container xl={12} justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
+        <Grid
+          container
+          xl={12}
+          justify="space-between"
+          className={`${classes.mainContainer} ${classes.darkBlueBckgTop} ${classes.topPart}`}
+        >
 
           <Grid item className={classes.myAuto} xl={3} sm={12}>
             <img
@@ -423,8 +426,14 @@ const UserPage: FC = () => {
         </Grid>
       </Hidden>
 
+      {/* header mobile */}
       <Hidden only={['sm', 'lg', 'xl', 'md']}>
-        <Grid container xl={12} justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
+        <Grid
+          container
+          xl={12}
+          justify="space-between"
+          className={`${classes.mainContainer} ${classes.darkBlueBckgTop} ${classes.topPart}`}
+        >
 
           <Grid item className={classes.myAuto} xs={6}>
             <p>

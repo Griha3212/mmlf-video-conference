@@ -122,6 +122,13 @@ const useStyles = makeStyles((theme) => ({
 
     marginBottom: '38px',
 
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '6vw',
+      lineHeight: '6.9vw',
+      marginTop: '17px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '2vw',
       lineHeight: '2.4vw',
@@ -147,6 +154,14 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     marginBottom: '0px',
 
+    [theme.breakpoints.up('xs')]: {
+      width: '48vw',
+      height: '4.8vw',
+      fontSize: '4vw',
+      lineHeight: '4.8vw',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       width: '14vw',
       height: '1.8vw',
@@ -154,6 +169,7 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: '1.8vw',
 
     },
+
     [theme.breakpoints.up('xl')]: {
       width: '250px',
       height: '34px',
@@ -213,6 +229,11 @@ const useStyles = makeStyles((theme) => ({
     height: 'auto',
     minHeight: '190px',
     width: '100%',
+
+    [theme.breakpoints.up('xs')]: {
+      padding: '0 22px',
+      paddingTop: '14px',
+    },
 
     [theme.breakpoints.up('lg')]: {
       padding: '0 67px',
