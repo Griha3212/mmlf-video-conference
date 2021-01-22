@@ -268,7 +268,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
       if (!element.isModerator) {
         return (
           <>
-            <Grid xs={12} lg={2} xl={2} item>
+            <Grid className={classes.singleSpeakerBlock} xs={12} lg={2} xl={2} item>
 
               <p className={classes.speakerAvatarInsideSessionParagraph}>
                 <img className={classes.speakerAvatarInsideSession} src={element.linkToImg} alt="" />
@@ -293,7 +293,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
               </p>
 
-              <Grid xs={10} container className={classes.mxAuto} justify="space-around">
+              <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
                 <Grid item>
 
                   <img
@@ -390,16 +390,16 @@ const SpeakersSessionInfoBlock = (props: any) => {
   return (
     <>
 
-      <Grid item container className={classes.mainContainerBckg}>
-
+      <Grid xs={12} item container className={classes.mainContainerBckg}>
+        {/* mobile */}
         <Hidden only={['sm', 'lg', 'xl', 'md']}>
-          <Grid justify="space-between" item className={classes.moderatorContainerInfoBlock} container xs={4} lg={4} xl={4}>
+          <Grid justify="space-around" item className={classes.moderatorContainerInfoBlock} container xs={12} lg={4} xl={4}>
 
-            <Grid item xs={3} xl={3}>
+            <Grid item xs={4} xl={3}>
               <img width="100%" src={renderModeratorImgSrc()} alt="" />
 
             </Grid>
-            <Grid className={classes.moderatorInfoBlock} item xs={8} xl={8} lg={8}>
+            <Grid className={classes.moderatorInfoBlock} item xs={6} xl={8} lg={8}>
 
               <p className={classes.moderatorHeaderText}>Модератор</p>
               <p className={classes.moderatorFullName}>{renderModeratorFullName()}</p>

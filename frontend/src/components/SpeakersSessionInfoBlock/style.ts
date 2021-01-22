@@ -2,7 +2,30 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 
+  singleSpeakerBlock: {
+
+    [theme.breakpoints.up('xs')]: {
+      marginBottom: '35px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      marginBottom: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      marginBottom: '0px',
+
+    },
+
+  },
+
   loadZoomImg: {
+
+    [theme.breakpoints.up('xs')]: {
+      width: '40px',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       width: '40px',
@@ -16,6 +39,11 @@ const useStyles = makeStyles((theme) => ({
   },
 
   loadPDFImg: {
+
+    [theme.breakpoints.up('xs')]: {
+      width: '33px',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       width: '33px',
@@ -161,6 +189,14 @@ const useStyles = makeStyles((theme) => ({
 
     height: '120px',
 
+    [theme.breakpoints.down('xs')]: {
+      height: 'auto',
+      paddingLeft: '10px',
+      paddingRight: '10px',
+      paddingTop: '20px',
+
+    },
+
   },
 
   moderatorHeaderText: {
@@ -176,6 +212,14 @@ const useStyles = makeStyles((theme) => ({
 
     color: 'white',
     textAlign: 'center',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '4vw',
+      lineHeight: '5.7vw',
+      width: '28.7vw',
+      height: '5.6vw',
+      marginBottom: '13px',
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
@@ -199,23 +243,26 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Gotham Pro Black',
 
-    marginTop: '0px',
     textTransform: 'uppercase',
     color: '#00124D',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '3.3vw',
+      fontSize: '6.3vw',
+      textAlign: 'center',
+      marginTop: '40px',
 
     },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.3vw',
-
+      textAlign: 'left',
+      marginTop: '0px',
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '70px',
       lineHeight: '79px',
-
+      textAlign: 'left',
+      marginTop: '0px',
     },
 
   },
