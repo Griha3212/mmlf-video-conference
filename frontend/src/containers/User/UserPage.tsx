@@ -525,25 +525,25 @@ const UserPage: FC = () => {
 
         <Grid item className={classes.innerContainer}>
           <Grid xs={12} item container className={classes.mainContainerBckgChangeSession}>
-            <p className={classes.speakersBlockHeader}>Партнеры сессии</p>
+            <p className={`${classes.speakersBlockHeader} ${classes.partnersHeader}`}>Партнеры сессии</p>
           </Grid>
 
-          <Grid justify="space-between" container item className={classes.mainContainerBckgChangeSession}>
-            <Grid className={classes.myAuto} item xs={12} xl={3} lg={3}>
+          <Grid justify="space-between" container item className={`${classes.mainContainerBckgChangeSession} ${classes.partnersContainerImg}`}>
+            <Grid className={classes.myAuto} item xs={8} xl={3} lg={3}>
 
-              <img className={`${classes.imgFluid}`} src={lerua} alt="" />
-
-            </Grid>
-
-            <Grid className={classes.myAuto} item xs={12} xl={3} lg={3}>
-
-              <img className={classes.imgFluid} src={severstal} alt="" />
+              <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={lerua} alt="" />
 
             </Grid>
 
-            <Grid className={classes.myAuto} item xs={12} xl={3} lg={3}>
+            <Grid className={classes.myAuto} item xs={8} xl={3} lg={3}>
 
-              <img className={classes.imgFluid} src={cocalCola} alt="" />
+              <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={severstal} alt="" />
+
+            </Grid>
+
+            <Grid className={classes.myAuto} item xs={8} xl={3} lg={3}>
+
+              <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={cocalCola} alt="" />
 
             </Grid>
           </Grid>
@@ -558,7 +558,7 @@ const UserPage: FC = () => {
 
           <Grid justify="space-between" container item className={classes.footerContainerInner}>
 
-            <Grid xl={3} lg={3} className={classes.myAuto} item>
+            <Grid xs={12} xl={3} lg={3} className={`${classes.myAuto} ${classes.footerLogoContainer}`} item>
               <img
                 onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
                 className={`${classes.cursorPointer} ${classes.mmlfFooterLogo}`}
@@ -567,10 +567,10 @@ const UserPage: FC = () => {
               />
 
             </Grid>
-            <Grid xl={3} lg={3} className={classes.myAuto} item>
+            <Grid xs={12} xl={3} lg={3} className={classes.myAuto} item>
               <p className={classes.footerTextDate}>15-19 февраля 2021</p>
             </Grid>
-            <Grid xl={2} lg={2} className={classes.myAuto} item>
+            <Grid xs={8} xl={2} lg={2} className={classes.myAuto} item>
               <Grid container item justify="space-around">
                 <Grid item>
                   <img
@@ -600,7 +600,7 @@ const UserPage: FC = () => {
               </Grid>
 
             </Grid>
-            <Grid xl={3} lg={3} className={`${classes.myAuto} ${classes.textAlignRight}`} item>
+            <Grid xs={12} xl={3} lg={3} className={`${classes.myAuto} ${classes.footerLogoAndPhone}`} item>
               <p>
                 <img
                   onClick={() => { window.open('https://ccl-logistics.ru/', '_blank'); }}

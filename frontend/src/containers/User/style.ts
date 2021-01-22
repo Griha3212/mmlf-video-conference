@@ -3,6 +3,30 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  imgPartner: {
+
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '73px',
+    },
+
+  },
+
+  partnersContainerImg: {
+
+    [theme.breakpoints.down('xs')]: {
+      justifyContent: 'center',
+    },
+
+  },
+
+  partnersHeader: {
+
+    [theme.breakpoints.down('xs')]: {
+      marginBottom: '47px',
+    },
+
+  },
+
   cursorPointer: {
 
     cursor: 'pointer',
@@ -19,9 +43,15 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  textAlignRight: {
+  footerLogoAndPhone: {
 
     textAlign: 'right',
+
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'center',
+      marginTop: '12px !important',
+      marginBottom: '22px !important',
+    },
 
   },
 
@@ -33,6 +63,11 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '0px',
 
     color: 'white',
+
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'center',
+      marginBottom: '22px !important',
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.2vw',
@@ -55,9 +90,24 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  footerLogoContainer: {
+
+    [theme.breakpoints.down('xs')]: {
+      textAlign: 'center',
+      marginBottom: '22px !important',
+      marginTop: '32px !important',
+    },
+
+  },
+
   footerContainerInner: {
 
     padding: '0 220px',
+    [theme.breakpoints.down('xs')]: {
+      padding: '0 0px',
+      justifyContent: 'center',
+
+    },
 
   },
 
@@ -67,6 +117,11 @@ const useStyles = makeStyles((theme) => ({
     borderTop: '33px solid #FF414A',
     marginTop: '100px',
     height: '220px',
+
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '0px',
+      height: 'auto',
+    },
 
   },
 
@@ -80,6 +135,10 @@ const useStyles = makeStyles((theme) => ({
   partnersContainer: {
 
     marginTop: '120px',
+
+    [theme.breakpoints.down('xs')]: {
+      marginTop: '70px',
+    },
 
   },
 
@@ -98,7 +157,11 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('xs')]: {
       maxWidth: '100%',
-      marginBottom: '20px',
+
+      '&:not(:last-child)': {
+
+        marginBottom: '20px',
+      },
     },
 
   },
