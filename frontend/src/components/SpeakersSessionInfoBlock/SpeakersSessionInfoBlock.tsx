@@ -91,7 +91,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   const renderMockedSessionSpeakers = () => (
     <>
-      <Grid item>
+      <Grid xs={12} lg={2} xl={2} item>
 
         <p className={classes.speakerAvatarInsideSessionParagraph}>
           <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
@@ -268,7 +268,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
       if (!element.isModerator) {
         return (
           <>
-            <Grid xs={2} lg={2} xl={2} item>
+            <Grid xs={12} lg={2} xl={2} item>
 
               <p className={classes.speakerAvatarInsideSessionParagraph}>
                 <img className={classes.speakerAvatarInsideSession} src={element.linkToImg} alt="" />

@@ -177,6 +177,11 @@ const useStyles = makeStyles((theme) => ({
     textTransform: 'uppercase',
     color: '#00124D',
 
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '3.3vw',
+
+    },
+
   },
 
   changeSessionMainContainer: {
@@ -191,6 +196,12 @@ const useStyles = makeStyles((theme) => ({
     width: '100%',
     position: 'relative',
     zIndex: 2,
+
+    [theme.breakpoints.up('xs')]: {
+      paddingLeft: '24px',
+      paddingRight: '24px',
+
+    },
 
   },
 
@@ -223,6 +234,12 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     // marginLeft: '7vw',
 
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '3.8vw',
+      textAlign: 'left',
+      // lineHeight: '56px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.8vw',
       // lineHeight: '56px',
@@ -241,6 +258,11 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     top: '5px',
     cursor: 'pointer',
+
+    [theme.breakpoints.up('xs')]: {
+      width: '31vw',
+      // height: '38px',
+    },
 
     [theme.breakpoints.up('lg')]: {
       width: '18vw',
@@ -295,11 +317,31 @@ const useStyles = makeStyles((theme) => ({
   },
   mainContainer: {
 
-    paddingLeft: '120px',
-    paddingRight: '120px',
     // marginTop: '20px',
     borderTop: '1px solid #707070',
     borderBottom: '1px solid #707070',
+
+    [theme.breakpoints.up('xs')]: {
+      paddingLeft: '35px',
+      paddingRight: '35px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      paddingLeft: '35px',
+      paddingRight: '35px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: '120px',
+      paddingRight: '120px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: '120px',
+      paddingRight: '120px',
+    },
 
   },
   paper: {

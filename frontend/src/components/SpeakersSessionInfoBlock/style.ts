@@ -84,8 +84,16 @@ const useStyles = makeStyles((theme) => ({
 
   smallScoreStarImg: {
 
-    fontSize: '22px',
     color: '#FF414A',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '22px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '25px',
+
+    },
 
   },
 
@@ -208,6 +216,11 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '0px',
     textTransform: 'uppercase',
     color: '#00124D',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '3.3vw',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.3vw',

@@ -11,7 +11,7 @@ import React, {
   FC, memo, useState, useEffect,
 } from 'react';
 import {
-  useMediaQuery, Grid, Typography, Button,
+  useMediaQuery, Grid, Typography, Button, Hidden,
 } from '@material-ui/core';
 import { useTheme } from '@material-ui/core/styles';
 import { Redirect, useHistory } from 'react-router-dom';
@@ -395,31 +395,63 @@ const UserPage: FC = () => {
   return (
     <>
       {/* header */}
-      <Grid container xl justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
+      <Hidden xsDown>
+        <Grid container xl={12} justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
 
-        <Grid item className={classes.myAuto} xl={3}>
-          <img
-            onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
-            className={classes.mmlfTopLogoImg}
-            src={topMMLFLogo}
-            alt=""
-          />
+          <Grid item className={classes.myAuto} xl={3} sm={12}>
+            <img
+              onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
+              className={classes.mmlfTopLogoImg}
+              src={topMMLFLogo}
+              alt=""
+            />
+          </Grid>
+
+          <Grid item className={classes.myAuto} xl={6} sm={12}>
+            <Typography className={classes.conferenceTopText} align="center">Конференция</Typography>
+          </Grid>
+
+          <Grid item className={classes.myAuto} xl={3} sm={12}>
+            <Button
+              onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
+              className={classes.loadProgramButton}
+            >
+              Скачать программу
+            </Button>
+          </Grid>
+
         </Grid>
+      </Hidden>
 
-        <Grid item className={classes.myAuto} xl={6}>
-          <Typography className={classes.conferenceTopText} align="center">Конференция</Typography>
+      <Hidden only={['sm', 'lg', 'xl', 'md']}>
+        <Grid container xl={12} justify="space-between" className={`${classes.mainContainer} ${classes.darkBlueBckg} ${classes.topPart}`}>
+
+          <Grid item className={classes.myAuto} xs={6}>
+            <p>
+              {' '}
+              <img
+                onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
+                className={classes.mmlfTopLogoImg}
+                src={topMMLFLogo}
+                alt=""
+              />
+
+            </p>
+            <p><Typography className={classes.conferenceTopText} align="center">Конференция</Typography></p>
+
+          </Grid>
+
+          <Grid item className={classes.myAuto} xl={3} sm={12}>
+            <Button
+              onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
+              className={classes.loadProgramButton}
+            >
+              Скачать программу
+            </Button>
+          </Grid>
+
         </Grid>
-
-        <Grid item className={classes.myAuto} xl={3}>
-          <Button
-            onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
-            className={classes.loadProgramButton}
-          >
-            Скачать программу
-          </Button>
-        </Grid>
-
-      </Grid>
+      </Hidden>
 
       <Grid container className={classes.mainVideoContainer} xl justify="center">
 
