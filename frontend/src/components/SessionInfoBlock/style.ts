@@ -210,6 +210,14 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#1B3074',
     width: '100%',
 
+    [theme.breakpoints.up('xs')]: {
+      padding: '0 22px',
+      paddingTop: '18px',
+      paddingBottom: '42px',
+      position: 'relative',
+      top: '-1px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       padding: '0 67px',
       paddingTop: '35px',
@@ -253,6 +261,13 @@ const useStyles = makeStyles((theme) => ({
 
     color: 'white',
     marginTop: '0px',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '5vw',
+      lineHeight: '5.8vw',
+      marginBottom: '50px',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.9vw',

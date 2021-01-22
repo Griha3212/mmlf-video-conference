@@ -97,8 +97,6 @@ const SessionInfoBlock = (props: any) => {
     } else return 'Сессия #';
   };
 
-  // const renderCurrentSpeaker
-
   const showSecondBlock = () => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession) {
@@ -136,7 +134,7 @@ const SessionInfoBlock = (props: any) => {
       {showSecondBlock() ? (
         <Grid item container justify="space-between" className={classes.lightBlueBckg}>
 
-          <Grid item className={classes.speakerInfoBlock} xs={8}>
+          <Grid item className={classes.speakerInfoBlock} xl={8} lg={8} xs={12}>
             <p className={classes.speakerTheme}>
               {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
             </p>

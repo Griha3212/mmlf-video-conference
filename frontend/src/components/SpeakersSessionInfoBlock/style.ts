@@ -298,15 +298,6 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  lightBlueBckg: {
-
-    backgroundColor: '#1B3074',
-    width: '100%',
-    padding: '0 110px',
-    paddingTop: '61px',
-
-  },
-
   rateSpeakerText: {
 
     fontFamily: 'Open Sans',
