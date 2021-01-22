@@ -34,6 +34,12 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  disabledImg: {
+
+    pointerEvents: 'none',
+
+  },
+
   speakerAvatarInsideSessionParagraph: {
 
     textAlign: 'center',

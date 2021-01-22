@@ -297,7 +297,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
                 <Grid item>
 
                   <img
-                    className={`${classes.pointerImg} ${classes.loadPDFImg}`}
+                    className={checkIsWatched(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
+                      : `${classes.pointerImg} ${classes.loadPDFImg}`}
                     src={checkIsWatched(element.id) ? PDFDisabled : PDF}
                     onClick={() => window.open(`${element.linkToPresentation}`, '_blank')}
                     alt=""
@@ -311,7 +312,10 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
                       <img
                         src={checkIsWatched(element.id) ? ZoomDisabled : Zoom}
-                        className={`${classes.pointerImg} ${classes.loadZoomImg}`}
+                        className={
+                          checkIsWatched(element.id) ? `${classes.loadZoomImg} ${classes.disabledImg}`
+                            : `${classes.pointerImg} ${classes.loadZoomImg}`
+                        }
                         onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
                         alt=""
                       />
