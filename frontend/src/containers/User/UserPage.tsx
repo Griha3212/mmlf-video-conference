@@ -436,8 +436,7 @@ const UserPage: FC = () => {
         >
 
           <Grid item className={classes.myAuto} xs={6}>
-            <p>
-              {' '}
+            <p style={{ marginBottom: '0px' }}>
               <img
                 onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
                 className={classes.mmlfTopLogoImg}
@@ -446,11 +445,11 @@ const UserPage: FC = () => {
               />
 
             </p>
-            <p><Typography className={classes.conferenceTopText} align="center">Конференция</Typography></p>
+            <p style={{ marginTop: '5px' }}><Typography className={classes.conferenceTopText} align="center">Конференция</Typography></p>
 
           </Grid>
 
-          <Grid item className={classes.myAuto} xl={3} sm={12}>
+          <Grid item className={classes.myAuto} xl={3} sm={12} xs={6}>
             <Button
               onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
               className={classes.loadProgramButton}
@@ -464,7 +463,11 @@ const UserPage: FC = () => {
 
       <Grid container className={classes.mainVideoContainer} xl justify="center">
 
-        <VideoPlayerMain height="720px" classNameInner="mainVideoContainerBig" videoURL={dataForUser && dataForUser.channelUserInfo.link} />
+        <VideoPlayerMain
+          height="720px"
+          classNameInner="mainVideoContainerBig"
+          videoURL={dataForUser && dataForUser.channelUserInfo.link}
+        />
 
       </Grid>
 

@@ -235,7 +235,7 @@ const useStyles = makeStyles((theme) => ({
     // marginLeft: '7vw',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '3.8vw',
+      fontSize: '5.4vw',
       textAlign: 'left',
       // lineHeight: '56px',
     },
@@ -260,7 +260,7 @@ const useStyles = makeStyles((theme) => ({
     cursor: 'pointer',
 
     [theme.breakpoints.up('xs')]: {
-      width: '31vw',
+      width: '34vw',
       // height: '38px',
     },
 
@@ -298,6 +298,13 @@ const useStyles = makeStyles((theme) => ({
       border: '1px solid #FF414A',
       color: '#FF414A',
       transition: '0.2s',
+    },
+
+    [theme.breakpoints.up('xs')]: {
+      width: '29vw',
+      height: '5.5vw',
+      fontSize: '2.1vw',
+      left: '11vw',
     },
 
     [theme.breakpoints.up('lg')]: {
