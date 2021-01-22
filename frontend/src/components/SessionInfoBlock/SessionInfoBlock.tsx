@@ -141,11 +141,11 @@ const SessionInfoBlock = (props: any) => {
 
             <Grid container spacing={5}>
 
-              <Grid item xs={2} xl={2} lg={2}>
+              <Grid item xs={4} xl={2} lg={2}>
                 <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
 
               </Grid>
-              <Grid item xs={8} xl={8} lg={8}>
+              <Grid className={classes.noLeftPadding} item xs={8} xl={8} lg={8}>
                 <p className={classes.speakerHeaderText}>Спикер</p>
                 <p className={classes.speakerFullNameText}>
                   {`${currentSpeakerInfo
@@ -163,7 +163,7 @@ const SessionInfoBlock = (props: any) => {
 
           </Grid>
 
-          <Grid alignItems="center" alignContent="center" xs={3}>
+          <Grid alignItems="center" alignContent="center" xs={12} lg={3} xl={3}>
 
             <p className={classes.textCenter}>
               <Box component="fieldset" mb={3} borderColor="transparent">

@@ -163,20 +163,6 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  speakerHeaderText: {
-
-    marginTop: '0px',
-    fontFamily: 'Gotham Pro Bold',
-    fontSize: '20px',
-    lineHeight: '30px',
-    backgroundColor: '#FF414A',
-    height: '31px',
-    width: '135px',
-    color: 'white',
-    textAlign: 'center',
-
-  },
-
   moderatorHeaderText: {
 
     marginTop: '0px',

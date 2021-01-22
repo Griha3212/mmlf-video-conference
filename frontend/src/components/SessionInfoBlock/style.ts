@@ -2,6 +2,15 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 
+  noLeftPadding: {
+
+    [theme.breakpoints.up('xs')]: {
+      paddingLeft: '0px !important',
+
+    },
+
+  },
+
   MuiRating: {
 
     '&root': {
@@ -15,6 +24,11 @@ const useStyles = makeStyles((theme) => ({
   rateSpeakerStarsImg: {
 
     color: '#FF414A',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '2.2rem',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.6rem',
@@ -96,6 +110,14 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     textAlign: 'center',
     marginBottom: '0px',
+
+    [theme.breakpoints.up('xs')]: {
+
+      width: '15.5vw',
+      height: '5.3vw',
+      fontSize: '3vw',
+      lineHeight: '5.7vw',
+    },
 
     [theme.breakpoints.up('lg')]: {
 
@@ -291,6 +313,13 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     marginTop: '0px',
 
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      lineHeight: '20px',
+      marginBottom: '24px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.3vw',
       lineHeight: '1.7vw',
@@ -316,6 +345,15 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: '0px',
     textTransform: 'initial',
     transition: '0.2s',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      height: '56px',
+      width: '250px',
+      marginTop: '0px',
+      marginBottom: '15px',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
@@ -351,6 +389,14 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
     borderRadius: '0px',
     textTransform: 'initial',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      height: '56px',
+      width: '250px',
+      marginTop: '0px',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
