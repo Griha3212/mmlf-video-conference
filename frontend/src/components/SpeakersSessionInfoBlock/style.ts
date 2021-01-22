@@ -1,6 +1,6 @@
 import { makeStyles } from '@material-ui/core';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles((theme) => ({
 
   pointerImg: {
 
@@ -44,22 +44,48 @@ const useStyles = makeStyles(() => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 600,
-    fontSize: '30px',
-    lineHeight: '41px',
+
     color: 'black',
     marginBottom: '0px',
     marginTop: '0px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.3vw',
+      lineHeight: '1.8vw',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '30px',
+      lineHeight: '41px',
+
+    },
 
   },
 
   moderatorInfoBlock: {
 
-    marginTop: 'auto',
-    marginBottom: 'auto',
-    marginLeft: '30px',
     // maxHeight: '120px',
 
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '10px',
+      marginBottom: 'auto',
+      marginLeft: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      marginTop: 'auto',
+      marginBottom: 'auto',
+      marginLeft: '30px',
+
+    },
+
   },
+
+  // speakersBlockHeaderContainer: {
+
+  //   height: '3.7vw',
+
+  // },
 
   moderatorContainerInfoBlock: {
 
@@ -85,24 +111,52 @@ const useStyles = makeStyles(() => ({
 
     marginTop: '0px',
     fontFamily: 'Gotham Pro Bold',
+
+    backgroundColor: '#FF414A',
     fontSize: '20px',
     lineHeight: '30px',
-    backgroundColor: '#FF414A',
-    height: '31px',
     width: '135px',
+    height: '31px',
+
     color: 'white',
     textAlign: 'center',
-    marginBottom: '20px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vw',
+      lineHeight: '1.7vw',
+      width: '6.7vw',
+      height: '1.6vw',
+      marginBottom: '13px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '20px',
+      lineHeight: '30px',
+      width: '135px',
+      height: '31px',
+      marginBottom: '20px',
+
+    },
+
   },
 
   speakersBlockHeader: {
 
     fontFamily: 'Gotham Pro Black',
-    fontSize: '70px',
-    lineHeight: '79px',
+
     marginTop: '0px',
     textTransform: 'uppercase',
     color: '#00124D',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '3.3vw',
+      lineHeight: '3.7vw',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '70px',
+      lineHeight: '79px',
+
+    },
 
   },
 
@@ -110,9 +164,20 @@ const useStyles = makeStyles(() => ({
     boxShadow: '0px 3px 60px #00000029',
     backgroundColor: 'white',
     height: '827px',
-    marginTop: '72px',
-    padding: '0 110px',
-    paddingTop: '107px',
+
+    [theme.breakpoints.up('lg')]: {
+      padding: '0 106px',
+      paddingTop: '68px',
+      marginTop: '45px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      padding: '0 110px',
+      paddingTop: '107px',
+      marginTop: '72px',
+
+    },
+
   },
 
   sessionNameText: {
@@ -172,17 +237,6 @@ const useStyles = makeStyles(() => ({
     backgroundColor: '#00124D',
     height: '190px',
     width: '100%',
-  },
-
-  speakerTheme: {
-
-    fontFamily: 'Open Sans',
-    fontWeight: 400,
-    fontSize: '36px',
-    lineHeight: '51px',
-    color: 'white',
-    marginTop: '0px',
-
   },
 
   rateSpeakerText: {

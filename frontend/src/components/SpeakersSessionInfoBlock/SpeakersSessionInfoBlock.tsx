@@ -385,19 +385,21 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       <Grid item container className={classes.mainContainerBckg}>
 
-        <Grid item xs={8}><p className={classes.speakersBlockHeader}>Спикеры сессии</p></Grid>
+        <Grid item xs={8} lg={8} xl={8}>
+          <p className={classes.speakersBlockHeader}>Спикеры сессии</p>
+        </Grid>
 
-        <Grid item className={classes.moderatorContainerInfoBlock} container xs={4}>
+        <Grid justify="space-between" item className={classes.moderatorContainerInfoBlock} container xs={4} lg={4} xl={4}>
 
-          <Grid item xs={3}>
+          <Grid item xs={3} xl={3}>
             <img width="100%" src={renderModeratorImgSrc()} alt="" />
 
           </Grid>
-          <Grid className={classes.moderatorInfoBlock} item xs={8}>
-            <div>
-              <p className={classes.moderatorHeaderText}>Модератор</p>
-              <p className={classes.moderatorFullName}>{renderModeratorFullName()}</p>
-            </div>
+          <Grid className={classes.moderatorInfoBlock} item xs={8} xl={8} lg={8}>
+
+            <p className={classes.moderatorHeaderText}>Модератор</p>
+            <p className={classes.moderatorFullName}>{renderModeratorFullName()}</p>
+
           </Grid>
 
         </Grid>
@@ -406,7 +408,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
           {
             renderSpeakers()
-            // currentSessionSpeakersInfo ? renderSessionSpeakers() : renderMockedSessionSpeakers()
+            // currentSessionSpeakersInfo ?
+            //  renderSessionSpeakers() : renderMockedSessionSpeakers()
           }
 
         </Grid>

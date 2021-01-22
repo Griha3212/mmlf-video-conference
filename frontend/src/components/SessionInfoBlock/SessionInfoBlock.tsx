@@ -143,14 +143,23 @@ const SessionInfoBlock = (props: any) => {
 
             <Grid container spacing={5}>
 
-              <Grid item xs={2}>
+              <Grid item xs={2} xl={2} lg={2}>
                 <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
 
               </Grid>
-              <Grid item xs={8}>
+              <Grid item xs={8} xl={8} lg={8}>
                 <p className={classes.speakerHeaderText}>Спикер</p>
-                <p className={classes.speakerFullNameText}>{`${currentSpeakerInfo && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo && currentSpeakerInfo.firstName || 'Имя'}`}</p>
-                <p className={classes.speakerFullCompanyText}>{`${currentSpeakerInfo && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo && currentSpeakerInfo.statusInCompany || 'должность'}`}</p>
+                <p className={classes.speakerFullNameText}>
+                  {`${currentSpeakerInfo
+                    && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo
+                    && currentSpeakerInfo.firstName || 'Имя'}`}
+
+                </p>
+                <p className={classes.speakerFullCompanyText}>
+                  {`${currentSpeakerInfo
+                  && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo
+                  && currentSpeakerInfo.statusInCompany || 'должность'}`}
+                </p>
               </Grid>
             </Grid>
 

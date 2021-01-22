@@ -4,8 +4,15 @@ const useStyles = makeStyles((theme) => ({
 
   rateSpeakerStarsImg: {
 
-    fontSize: '2.5rem',
     color: '#FF414A',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.6rem',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '2.5rem',
+    },
 
   },
 
@@ -17,17 +24,34 @@ const useStyles = makeStyles((theme) => ({
 
     borderRadius: '50%',
     border: '4px solid white',
+
+    [theme.breakpoints.up('lg')]: {
+      width: '6vw',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: '100%',
+    },
+
   },
 
   speakerFullCompanyText: {
 
     fontFamily: 'Open Sans',
     fontWeight: 400,
-    fontSize: '15px',
-    lineHeight: '20px',
+
     color: 'white',
     marginTop: '5px',
-    // marginBottom: '38px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '0.8vw',
+      lineHeight: '1vw',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '15px',
+      lineHeight: '20px',
+    },
 
   },
 
@@ -35,11 +59,20 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 600,
-    fontSize: '30px',
-    lineHeight: '41px',
+
     color: 'white',
     marginTop: '5px',
     marginBottom: '0px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.4vw',
+      lineHeight: '1.8vw',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '30px',
+      lineHeight: '41px',
+    },
 
   },
 
@@ -47,14 +80,26 @@ const useStyles = makeStyles((theme) => ({
 
     marginTop: '0px',
     fontFamily: 'Gotham Pro Bold',
-    fontSize: '20px',
-    lineHeight: '30px',
+
     backgroundColor: '#FF414A',
-    height: '31px',
-    width: '93px',
+
     color: 'white',
     textAlign: 'center',
     marginBottom: '0px',
+
+    [theme.breakpoints.up('lg')]: {
+
+      width: '4.5vw',
+      height: '1.6vw',
+      fontSize: '1vw',
+      lineHeight: '1.7vw',
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '20px',
+      lineHeight: '30px',
+      height: '31px',
+      width: '93px',
+    },
 
   },
 
@@ -62,11 +107,22 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 700,
-    fontSize: '42px',
-    lineHeight: '51px',
+
     color: 'white',
-    marginTop: '32px',
+
     marginBottom: '38px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2vw',
+      lineHeight: '2.4vw',
+      marginTop: '17px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '42px',
+      lineHeight: '51px',
+      marginTop: '32px',
+    },
 
   },
 
@@ -82,10 +138,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '0px',
 
     [theme.breakpoints.up('lg')]: {
-      width: '145px',
-      height: '22px',
-      fontSize: '13px',
-      lineHeight: '21px',
+      width: '14vw',
+      height: '1.8vw',
+      fontSize: '1vw',
+      lineHeight: '1.8vw',
 
     },
     [theme.breakpoints.up('xl')]: {
@@ -97,6 +153,7 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  // TO DO
   sessionLetterText: {
 
     marginTop: '0px',
@@ -126,30 +183,57 @@ const useStyles = makeStyles((theme) => ({
 
     backgroundColor: '#1B3074',
     width: '100%',
-    padding: '0 110px',
-    paddingTop: '61px',
-    paddingBottom: '80px',
+
+    [theme.breakpoints.up('lg')]: {
+      padding: '0 67px',
+      paddingTop: '35px',
+      paddingBottom: '30px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      padding: '0 110px',
+      paddingTop: '61px',
+      paddingBottom: '80px',
+    },
 
   },
 
   darkBlueBckg: {
-    paddingTop: '34px',
-    padding: '0 110px',
+
     backgroundColor: '#00124D',
     height: 'auto',
     minHeight: '190px',
     width: '100%',
+
+    [theme.breakpoints.up('lg')]: {
+      padding: '0 67px',
+      paddingTop: '34px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      padding: '0 110px',
+      paddingTop: '34px',
+    },
+
   },
 
   speakerTheme: {
 
     fontFamily: 'Open Sans',
     fontWeight: 400,
-    fontSize: '36px',
-    lineHeight: '51px',
+
     color: 'white',
     marginTop: '0px',
-    marginBottom: '60px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.9vw',
+      lineHeight: '2.8vw',
+      marginBottom: '50px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '36px',
+      lineHeight: '51px',
+      marginBottom: '60px',
+    },
 
   },
 
@@ -157,43 +241,92 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Open Sans',
     fontWeight: 300,
-    fontSize: '21px',
-    lineHeight: '28px',
+
     color: 'white',
     marginTop: '0px',
-    marginBottom: '28px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.3vw',
+      lineHeight: '1.7vw',
+      marginBottom: '18px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '21px',
+      lineHeight: '28px',
+      marginBottom: '28px',
+    },
 
   },
 
   loadPresenationButton: {
 
     fontFamily: 'Gotham Pro Medium',
-    fontSize: '21px',
-    lineHeight: '23px',
+
     backgroundColor: '#FF414A',
-    height: '53px',
-    width: '302px',
+
     color: 'white',
     textAlign: 'center',
     borderRadius: '0px',
     textTransform: 'initial',
-    marginTop: '15px',
+    transition: '0.2s',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vw',
+      height: '3.5vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '21px',
+      lineHeight: '23px',
+      height: '53px',
+      width: '302px',
+      marginTop: '15px',
+    },
+
+    '&:hover': {
+      backgroundColor: '#1B3074',
+      border: '1px solid #FF414A',
+      color: '#FF414A',
+      transition: '0.2s',
+    },
 
   },
 
   goToZoomButton: {
 
     fontFamily: 'Gotham Pro Medium',
-    fontSize: '21px',
-    lineHeight: '23px',
+
     backgroundColor: '#2D8CFF',
-    height: '53px',
-    width: '302px',
+
     color: 'white',
     textAlign: 'center',
     borderRadius: '0px',
     textTransform: 'initial',
-    marginTop: '11px',
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vw',
+      height: '3.5vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '21px',
+      lineHeight: '23px',
+      height: '53px',
+      width: '302px',
+      marginTop: '11px',
+    },
+
+    '&:hover': {
+      backgroundColor: '#1B3074',
+      border: '1px solid #2D8CFF',
+      color: '#2D8CFF',
+      transition: '0.2s',
+    },
 
   },
 
