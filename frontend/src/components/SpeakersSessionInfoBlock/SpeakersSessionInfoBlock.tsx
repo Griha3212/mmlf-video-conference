@@ -266,7 +266,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
       if (!element.isModerator) {
         return (
           <>
-            <Grid xs={2} item>
+            <Grid xs={2} lg={2} xl={2} item>
 
               <p className={classes.speakerAvatarInsideSessionParagraph}>
                 <img className={classes.speakerAvatarInsideSession} src={element.linkToImg} alt="" />
@@ -404,7 +404,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </Grid>
 
-        <Grid justify="space-around" container xs={12}>
+        <Grid className={classes.sessionSpeakersBlock} justify="space-around" container xs={12}>
 
           {
             renderSpeakers()

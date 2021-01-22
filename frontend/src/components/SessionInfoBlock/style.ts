@@ -2,6 +2,16 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 
+  MuiRating: {
+
+    '&root': {
+
+      color: '#F8F9F9',
+
+    },
+
+  },
+
   rateSpeakerStarsImg: {
 
     color: '#FF414A',

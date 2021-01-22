@@ -157,8 +157,8 @@ const SessionInfoBlock = (props: any) => {
                 </p>
                 <p className={classes.speakerFullCompanyText}>
                   {`${currentSpeakerInfo
-                  && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo
-                  && currentSpeakerInfo.statusInCompany || 'должность'}`}
+                    && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo
+                    && currentSpeakerInfo.statusInCompany || 'должность'}`}
                 </p>
               </Grid>
             </Grid>
@@ -171,6 +171,7 @@ const SessionInfoBlock = (props: any) => {
               <Box component="fieldset" mb={3} borderColor="transparent">
                 <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
                 <Rating
+                  classes={{ iconEmpty: 'rateBigDefault' }}
                   className={classes.rateSpeakerStarsImg}
                   name="simple-controlled"
                   value={rate}

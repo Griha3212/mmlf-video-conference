@@ -29,7 +29,14 @@ const useStyles = makeStyles((theme) => ({
 
   speakerAvatarInsideSession: {
 
-    maxWidth: '117px',
+    [theme.breakpoints.up('lg')]: {
+      maxWidth: '79px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      maxWidth: '117px',
+
+    },
 
   },
 
@@ -57,6 +64,19 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xl')]: {
       fontSize: '30px',
       lineHeight: '41px',
+
+    },
+
+  },
+
+  sessionSpeakersBlock: {
+
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '30px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      marginTop: '120px',
 
     },
 
@@ -149,7 +169,6 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.3vw',
-      lineHeight: '3.7vw',
 
     },
     [theme.breakpoints.up('xl')]: {
@@ -163,17 +182,19 @@ const useStyles = makeStyles((theme) => ({
   mainContainerBckg: {
     boxShadow: '0px 3px 60px #00000029',
     backgroundColor: 'white',
-    height: '827px',
+    // height: '827px',
 
     [theme.breakpoints.up('lg')]: {
       padding: '0 106px',
       paddingTop: '68px',
       marginTop: '45px',
+      paddingBottom: '63px',
 
     },
     [theme.breakpoints.up('xl')]: {
       padding: '0 110px',
       paddingTop: '107px',
+      paddingBottom: '153px',
       marginTop: '72px',
 
     },
