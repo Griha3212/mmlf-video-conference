@@ -313,6 +313,17 @@ const useStyles = makeStyles((theme) => ({
     position: 'absolute',
     zIndex: 1,
 
+    [theme.breakpoints.up('xs')]: {
+      height: '1109px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      height: '50.5vw',
+    },
+    [theme.breakpoints.up('xl')]: {
+      height: '1034px',
+    },
+
   },
 
   myAuto: {
