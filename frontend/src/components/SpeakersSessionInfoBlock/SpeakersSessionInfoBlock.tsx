@@ -91,31 +91,30 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   const renderMockedSessionSpeakers = () => (
     <>
-      <Grid xs={12} lg={2} xl={2} item>
+      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
 
         <p className={classes.speakerAvatarInsideSessionParagraph}>
           <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
         </p>
         <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
         <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p>
-          {' '}
+        <p className={classes.textCenter}>
           <Box component="fieldset" mb={3} borderColor="transparent">
             <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
           </Box>
 
         </p>
 
-        <Grid container justify="space-around">
-          <Grid item>
+        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid className={classes.zoomPdfIconsItem} item>
 
-            <img src={PDF} alt="" />
+            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
 
-          <Grid item>
+          <Grid className={classes.zoomPdfIconsItem} item>
 
-            <img src={Zoom} alt="" />
+            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
 
           </Grid>
 
@@ -123,30 +122,30 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       </Grid>
 
-      <Grid item>
+      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
 
         <p className={classes.speakerAvatarInsideSessionParagraph}>
           <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
         </p>
         <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
         <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p>
-          {' '}
+        <p className={classes.textCenter}>
           <Box component="fieldset" mb={3} borderColor="transparent">
             <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
           </Box>
 
         </p>
 
-        <Grid container justify="space-around">
-          <Grid item>
+        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid className={classes.zoomPdfIconsItem} item>
 
-            <img src={PDF} alt="" />
+            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
-          <Grid item>
 
-            <img src={Zoom} alt="" />
+          <Grid className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
 
           </Grid>
 
@@ -154,30 +153,30 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       </Grid>
 
-      <Grid item>
+      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
 
         <p className={classes.speakerAvatarInsideSessionParagraph}>
           <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
         </p>
         <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
         <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p>
-          {' '}
+        <p className={classes.textCenter}>
           <Box component="fieldset" mb={3} borderColor="transparent">
             <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
           </Box>
 
         </p>
 
-        <Grid container justify="space-around">
-          <Grid item>
+        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid className={classes.zoomPdfIconsItem} item>
 
-            <img src={PDF} alt="" />
+            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
-          <Grid item>
 
-            <img src={Zoom} alt="" />
+          <Grid className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
 
           </Grid>
 
@@ -185,30 +184,30 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       </Grid>
 
-      <Grid item>
+      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
 
         <p className={classes.speakerAvatarInsideSessionParagraph}>
           <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
         </p>
         <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
         <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p>
-          {' '}
+        <p className={classes.textCenter}>
           <Box component="fieldset" mb={3} borderColor="transparent">
             <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
           </Box>
 
         </p>
 
-        <Grid container justify="space-around">
-          <Grid item>
+        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid className={classes.zoomPdfIconsItem} item>
 
-            <img src={PDF} alt="" />
+            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
-          <Grid item>
 
-            <img src={Zoom} alt="" />
+          <Grid className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
 
           </Grid>
 
@@ -216,36 +215,68 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       </Grid>
 
-      <Grid item>
+      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
 
         <p className={classes.speakerAvatarInsideSessionParagraph}>
           <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
         </p>
         <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
         <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p>
-          {' '}
+        <p className={classes.textCenter}>
           <Box component="fieldset" mb={3} borderColor="transparent">
             <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
           </Box>
 
         </p>
 
-        <Grid container justify="space-around">
-          <Grid item>
+        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid className={classes.zoomPdfIconsItem} item>
 
-            <img src={PDF} alt="" />
+            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
-          <Grid item>
 
-            <img src={Zoom} alt="" />
+          <Grid className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
 
           </Grid>
 
         </Grid>
 
       </Grid>
+
+      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
+
+        <p className={classes.speakerAvatarInsideSessionParagraph}>
+          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+        </p>
+        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
+        <p className={classes.speakerNameInsideSession}>Имя</p>
+        <p className={classes.textCenter}>
+          <Box component="fieldset" mb={3} borderColor="transparent">
+            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+          </Box>
+
+        </p>
+
+        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
+
+          </Grid>
+
+          <Grid className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+
+          </Grid>
+
+        </Grid>
+
+      </Grid>
+
     </>
   );
 
@@ -253,7 +284,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
     rateDirectlyFromUI: number | null,
     currentSpeakerId: number,
   ) => {
-    console.log('1 :>> ');
     await apiVoteForSpeaker(
       currentSpeakerId,
       props.userId,
@@ -294,7 +324,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
               </p>
 
               <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-                <Grid item>
+                <Grid className={classes.zoomPdfIconsItem} item>
 
                   <img
                     className={checkIsWatched(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
@@ -308,7 +338,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
                 {
                   element.linkToZoom ? (
-                    <Grid item>
+                    <Grid className={classes.zoomPdfIconsItem} item>
 
                       <img
                         src={checkIsWatched(element.id) ? ZoomDisabled : Zoom}
@@ -431,8 +461,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
           {
             renderSpeakers()
-            // currentSessionSpeakersInfo ?
-            //  renderSessionSpeakers() : renderMockedSessionSpeakers()
           }
 
         </Grid>

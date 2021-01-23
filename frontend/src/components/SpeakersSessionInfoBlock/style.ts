@@ -246,6 +246,13 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  zoomPdfIconsItem: {
+
+    display: 'flex',
+    justifyContent: 'flex-end',
+
+  },
+
   speakersBlockHeader: {
 
     fontFamily: 'Gotham Pro Black',

@@ -201,19 +201,38 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  // TO DO
   sessionLetterText: {
 
     marginTop: '0px',
     fontFamily: 'Gotham Pro Bold',
-    fontSize: '22px',
-    lineHeight: '31px',
+
     backgroundColor: '#FF414A',
-    height: '34px',
-    width: '163px',
+
     color: 'white',
     textAlign: 'center',
     marginBottom: '0px',
+
+    [theme.breakpoints.up('xs')]: {
+      width: '30vw',
+      height: '4.8vw',
+      fontSize: '4vw',
+      lineHeight: '4.8vw',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      width: '8vw',
+      height: '1.8vw',
+      fontSize: '1vw',
+      lineHeight: '1.8vw',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '22px',
+      lineHeight: '31px',
+      height: '34px',
+      width: '163px',
+    },
 
   },
 
