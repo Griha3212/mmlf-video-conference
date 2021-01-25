@@ -25,7 +25,8 @@ import topMMLFLogo from '../../img/mmlfLogo2021.svg';
 import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/SpeakersSessionInfoBlock';
 import {
   apiGetUser, apiUserUpdateWatchedSpeakers,
-  apiGetAllChannels, apiUserChangeActiveChannel, apiUserUpdateWatchedSpeakersAllInSession,
+  apiGetAllChannels, apiUserChangeActiveChannel,
+  apiUserUpdateWatchedSpeakersAllInSession, apiUserUpdateContactedSpeakers,
 } from '../../api/user';
 import lerua from '../../img/partnersImg/lerua.svg';
 import severstal from '../../img/partnersImg/severstal.svg';
@@ -211,6 +212,13 @@ const UserPage: FC = () => {
     loadDataForUser();
   };
 
+  const updateContactedSpeaker = async (speakerId: number) => {
+    await apiUserUpdateContactedSpeakers(
+      speakerId, userData.id, token,
+    );
+    loadDataForUser();
+  };
+
   // watch timer functional
 
   // if there is active speaker, update timer every seconds,
@@ -276,6 +284,10 @@ const UserPage: FC = () => {
       if (data.message === 'update current speakers votes') {
         loadDataForUser();
         setActiveSessionSpeakersAllRates(data.votes);
+      }
+
+      if (data.message === 'update user info') {
+        loadDataForUser();
       }
     });
     return () => {

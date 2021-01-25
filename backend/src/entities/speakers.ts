@@ -39,6 +39,9 @@ export default class Speakers extends BaseEntity {
   @ManyToMany(() => Users, (users) => users.watchedSpeakers)
   usersWhoWatchedSpeaker: Users[];
 
+  @ManyToMany(() => Users, (users) => users.speakersToWhomContactsWereSent)
+  usersWhoSendContacts: Users[];
+
   @OneToMany(() => Votes, (votes) => votes.speaker)
   @JoinColumn()
   votes: Votes[];

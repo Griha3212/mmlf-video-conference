@@ -61,6 +61,12 @@ export default class Users extends BaseEntity {
   @JoinTable()
   watchedSpeakers: Speakers[];
 
+  @ManyToMany(() => Speakers,
+    (speakersToWhomContactsWereSent) => speakersToWhomContactsWereSent.usersWhoSendContacts,
+    { cascade: true })
+  @JoinTable()
+  speakersToWhomContactsWereSent: Speakers[];
+
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
 

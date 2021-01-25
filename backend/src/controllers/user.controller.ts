@@ -236,3 +236,37 @@ export const changeActiveChannel = async (req: Request, res: Response, next: Nex
     next(error);
   }
 };
+
+export const updateSpeakersToWhomContactsWereSent = async (
+  req: Request, res: Response, next: NextFunction,
+) => {
+  const usersRepository = await getRepository(Users);
+  const speakersRepository = await getRepository(Speakers);
+
+  try {
+    const { userId, speakerId } = req.body;
+
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId }, relations: ['speakersToWhomContactsWereSent'] },
+    );
+
+    if (!foundUser) throw new Error(allErrors.userNotFound);
+
+    const foundSpeaker = await speakersRepository.findOne({ where: { id: speakerId } });
+
+    if (!foundSpeaker) throw new Error(allErrors.speakerNotFound);
+
+    foundUser.speakersToWhomContactsWereSent.push(foundSpeaker);
+
+    await usersRepository.save(foundUser);
+
+    res.status(200).send(foundUser);
+
+    const room = foundUser.id;
+    const data = { message: 'update user info' };
+
+    await io.to(String(room)).emit('connectToPersonalRoom', data);
+  } catch (error) {
+    next(error);
+  }
+};

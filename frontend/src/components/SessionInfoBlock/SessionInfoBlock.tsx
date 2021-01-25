@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
 import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
-import { apiVoteForSpeaker } from '../../api/user';
+import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 
 const SessionInfoBlock = (props: any) => {
   const {
@@ -112,8 +112,12 @@ const SessionInfoBlock = (props: any) => {
     return true;
   };
 
-  const sendContacts = () => {
-
+  const sendContacts = async () => {
+    await apiUserUpdateContactedSpeakers(
+      props.currentSpeakerInfo.id,
+      props.userId,
+      props.token,
+    );
   };
 
   return (
