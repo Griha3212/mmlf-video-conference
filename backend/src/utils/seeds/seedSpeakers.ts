@@ -86,6 +86,7 @@ export const seedMockedSpeakers = async () => {
     innerSystemName: 'Demin_Plenar',
 
     session: foundSessions.filter((session: any) => session.name === 'Plenar'),
+    hasSendContactsButton: true,
 
   },
 
@@ -521,6 +522,7 @@ export const seedMockedSpeakers = async () => {
     newSpeaker.isModerator = speaker.isModerator || false;
     newSpeaker.sessions = speaker.session[0];
     newSpeaker.statusInCompany = speaker.statusInCompany || '';
+    newSpeaker.hasSendContactsButton = speaker.hasSendContactsButton || false;
 
     results.push(newSpeaker);
   }

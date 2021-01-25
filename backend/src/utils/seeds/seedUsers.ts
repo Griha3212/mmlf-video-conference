@@ -73,7 +73,6 @@ export const seedMockedUsers = async () => {
     lastName: 'testovich4',
     company: 'companyTest4',
     loginCode: 'freeUser',
-    isFreeSessionAccessOnly: true,
 
   },
 
@@ -98,19 +97,11 @@ export const seedMockedUsers = async () => {
     newUser.lastName = user.lastName;
     newUser.company = user.company;
     newUser.isAdmin = !!user.isAdmin;
-    newUser.isFreeSessionAccessOnly = !!user.isFreeSessionAccessOnly;
     newUser.loginCode = user.loginCode;
     newUser.adminOfTheChannelNumber = user.adminOfTheChannelNumber || 0;
     newUser.hasAccessToStatisticPage = user.hasAccessToStatisticPage || false;
-    // newUser.activeChannel = foundFirstChannel;
-    // all users except free have default first channel active
-
-    if (user.isFreeSessionAccessOnly) {
-      // TO DO ask for free session channel
-      newUser.activeChannel = 2;
-    } else {
-      newUser.activeChannel = 1;
-    }
+    // all users have default first channel active
+    newUser.activeChannel = 1;
 
     results.push(newUser);
   }

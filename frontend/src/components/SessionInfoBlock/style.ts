@@ -19,6 +19,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('xl')]: {
+      '&root': {
+
+        margingBottom: '10px',
+
+      },
+    },
+
   },
 
   rateSpeakerStarsImg: {
@@ -266,8 +274,8 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xl')]: {
       padding: '0 110px',
-      paddingTop: '61px',
-      paddingBottom: '80px',
+      paddingTop: '41px',
+      paddingBottom: '41px',
     },
 
   },
@@ -348,7 +356,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xl')]: {
       fontSize: '21px',
       lineHeight: '28px',
-      marginBottom: '28px',
+      marginBottom: '11px',
     },
 
   },
@@ -383,10 +391,10 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      fontSize: '21px',
-      lineHeight: '23px',
+      fontSize: '17px',
+      lineHeight: '19px',
       height: '53px',
-      width: '302px',
+      width: '286px',
       marginTop: '15px',
       marginBottom: '0px',
 
@@ -396,6 +404,49 @@ const useStyles = makeStyles((theme) => ({
       backgroundColor: '#1B3074',
       border: '1px solid #FF414A',
       color: '#FF414A',
+      transition: '0.2s',
+    },
+
+  },
+
+  sendContactsButton: {
+
+    fontFamily: 'Gotham Pro Medium',
+
+    backgroundColor: '#8A8A8A',
+
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: '0px',
+    textTransform: 'initial',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      height: '56px',
+      width: '250px',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vw',
+      height: '3.5vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '17px',
+      lineHeight: '19px',
+      height: '53px',
+      width: '286px',
+      marginTop: '11px',
+    },
+
+    '&:hover': {
+      backgroundColor: '#1B3074',
+      border: '1px solid #8A8A8A',
+      color: '#8A8A8A',
       transition: '0.2s',
     },
 
@@ -428,10 +479,10 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      fontSize: '21px',
-      lineHeight: '23px',
+      fontSize: '17px',
+      lineHeight: '19px',
       height: '53px',
-      width: '302px',
+      width: '286px',
       marginTop: '11px',
     },
 

@@ -112,6 +112,10 @@ const SessionInfoBlock = (props: any) => {
     return true;
   };
 
+  const sendContacts = () => {
+
+  };
+
   return (
     <>
 
@@ -166,7 +170,7 @@ const SessionInfoBlock = (props: any) => {
           <Grid alignItems="center" alignContent="center" xs={12} lg={3} xl={3}>
 
             <p className={classes.textCenter}>
-              <Box component="fieldset" mb={3} borderColor="transparent">
+              <Box component="fieldset" mb={1} borderColor="transparent">
                 <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
                 <Rating
                   classes={{ iconEmpty: 'rateBigDefault' }}
@@ -202,6 +206,21 @@ const SessionInfoBlock = (props: any) => {
                     className={classes.goToZoomButton}
                   >
                     Перейти в Zoom
+
+                  </Button>
+                </p>
+              ) : null
+            }
+
+            {
+              currentSpeakerInfo && currentSpeakerInfo.hasSendContactsButton ? (
+                <p className={classes.textCenter}>
+                  <Button
+                    disabled={closedAccess}
+                    onClick={() => sendContacts()}
+                    className={classes.sendContactsButton}
+                  >
+                    Поделиться контактами
 
                   </Button>
                 </p>

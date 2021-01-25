@@ -23,11 +23,6 @@ export default class Users extends BaseEntity {
   @Column({ nullable: true })
   company: string;
 
-  // access only for one Free Session
-  @Index()
-  @Column({ default: false })
-  isFreeSessionAccessOnly: boolean;
-
   // uniq login code
   @Index()
   @Column({ nullable: true })

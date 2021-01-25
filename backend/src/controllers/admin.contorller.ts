@@ -71,13 +71,11 @@ export const setBreakBetweenSessions = async (
 
     // if plenar session, activate OtherChannelsBlock in UI
     if (foundChannelToUpdateInfo.activeSession?.name === 'Plenar') {
-      const foundNotFreeAccessUsers = await usersRepository.find(
-        { where: { isFreeSessionAccessOnly: false } },
-      );
+      const foundUsers = await usersRepository.find();
 
       const results = [];
 
-      for (const user of foundNotFreeAccessUsers) {
+      for (const user of foundUsers) {
         user.showOtherChannelsBlock = true;
         results.push(user);
       }
