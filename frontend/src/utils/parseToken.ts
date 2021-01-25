@@ -9,7 +9,6 @@ type JsonPayload = {
   iat: number;
   id: number;
   isAdmin: boolean;
-  isFreeSessionAccessOnly: boolean;
   jwtRefreshToken: string;
   jwtRefreshTokenValidUntilDate: Date;
   jwtToken: string | null;
