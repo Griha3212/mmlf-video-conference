@@ -1,22 +1,4 @@
 @font-face {
-  font-family: "FuturaPTBold";
-  src: url("./fonts/FuturaPT-Bold.woff2") format("truetype");
-  font-style: normal;
-
-  font-weight: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "FuturaPTBook";
-  src: url("./fonts/FuturaPT-Book.woff2") format("truetype");
-  font-style: normal;
-
-  font-weight: normal;
-  font-display: swap;
-}
-
-@font-face {
   font-family: "Gotham Pro Bold";
   src: url("./fonts/GothamPro-Bold.woff2") format("truetype");
   font-style: normal;
