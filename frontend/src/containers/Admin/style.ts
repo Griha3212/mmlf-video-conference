@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 
     fontSize: '24px',
     marginTop: '5px',
+    textAlign: 'center',
   },
 
   speakerButtonActive: {

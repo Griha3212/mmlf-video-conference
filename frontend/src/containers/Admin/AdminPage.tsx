@@ -189,12 +189,16 @@ const AdminPage: FC = () => {
           {
             dataForAdmin && dataForAdmin.foundAllSessionsInAdminChannel.map(
               (session: Session) => (
-
-                <p>
-                  {session.letter}
-
-                  {session.speakers.map((speaker: Speaker) => renderSpeakersDataForAdmin(speaker))}
-                </p>
+                <>
+                  <p className={classes.sessionLetter}>
+                    {session.letter}
+                  </p>
+                  <p>
+                    {session.speakers.map(
+                      (speaker: Speaker) => renderSpeakersDataForAdmin(speaker),
+                    )}
+                  </p>
+                </>
               ),
             )
           }
