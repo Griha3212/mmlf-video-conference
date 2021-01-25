@@ -3,7 +3,7 @@ import axios from 'axios';
 import api from '../core/api';
 
 export const apiGetStats = async (
-  userId: string,
+  userId: number,
   token: {
     accessToken: string | null;
     refreshToken: string | null;

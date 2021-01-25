@@ -190,7 +190,7 @@ const UserPage: FC = () => {
       setActiveModeratorInfo(response && response.channelUserInfo
         && response.channelUserInfo.activeSession &&
         response.channelUserInfo.activeSession.speakers.find(
-          (element: any) => element.isModerator,
+          (element: Speaker) => element.isModerator,
         ));
 
       setActiveSessionSpeakersInfo(response && response.channelUserInfo

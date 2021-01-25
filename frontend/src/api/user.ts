@@ -5,7 +5,7 @@ import api from '../core/api';
 
 // Login
 export const apiGetUser = async (
-  userId: string,
+  userId: number,
   token: {
     accessToken: string | null;
     refreshToken: string | null;
@@ -94,7 +94,7 @@ export const apiUserUpdateWatchedSpeakersAllInSession = async (
 };
 
 export const apiGetAllChannels = async (
-  userId: string,
+  userId: number,
   token: {
     accessToken: string | null;
     refreshToken: string | null;

@@ -12,9 +12,11 @@ import Rating from '@material-ui/lab/Rating';
 import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import PDF from '../../img/pdf_icon.svg';
-import Zoom from '../../img/zoomfondo-blanco-vertical-seeklogo.svg';
-import PDFDisabled from '../../img/pdf_icon_black_and_white.svg';
-import ZoomDisabled from '../../img/zoomfondo_black_and_white.svg';
+import Zoom from '../../img/zoom_icon.svg';
+import ShareContacts from '../../img/contact_icon.svg';
+import PDFDisabled from '../../img/pdf_icon_disabled.svg';
+import ZoomDisabled from '../../img/zoom_icon_disabled.svg';
+import ShareContactsDisabled from '../../img/contact_icon_disabled.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 type Vote = {

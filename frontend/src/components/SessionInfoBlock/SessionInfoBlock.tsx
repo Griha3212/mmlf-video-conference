@@ -167,9 +167,9 @@ const SessionInfoBlock = (props: any) => {
 
           </Grid>
 
-          <Grid alignItems="center" alignContent="center" xs={12} lg={3} xl={3}>
+          <Grid xs={12} lg={3} xl={3}>
 
-            <p className={classes.textCenter}>
+            <div className={classes.textCenter}>
               <Box component="fieldset" mb={1} borderColor="transparent">
                 <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
                 <Rating
@@ -184,7 +184,7 @@ const SessionInfoBlock = (props: any) => {
                   }}
                 />
               </Box>
-            </p>
+            </div>
 
             <p className={classes.textCenter}>
               <Button
