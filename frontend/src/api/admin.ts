@@ -31,11 +31,12 @@ export const apiSetBrakeInChannel = async (
     refreshToken: string | null;
   },
   channelForShowingNumber: number,
+  prevSpeakerid: number,
 ): Promise<any> => {
   const url = `${process.env.REACT_APP_API_URL}${api.setBrakeInChannel}`;
 
   try {
-    const { data } = await axios.post(url, { channelForShowingNumber }, {
+    const { data } = await axios.post(url, { channelForShowingNumber, prevSpeakerid }, {
       headers: {
         Authorization: `Bearer ${token.accessToken}`,
       },

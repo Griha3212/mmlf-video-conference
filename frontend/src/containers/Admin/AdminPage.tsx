@@ -39,21 +39,40 @@ type Speaker = {
 };
 
 type DataForAdmin = {
-  channelForShowing: {
-    break: boolean, id: number, link: string,
-    number: number
-  },
-  description: string;
-  id: number;
-  letter: string;
-  name: string;
-  speakers: Array<Speaker>
+  // channelAdminInfo: {
+  //   break: boolean, id: number, link: string,
+  //   number: number
+  // },
+  // description: string;
+  // id: number;
+  // letter: string;
+  // name: string;
+  // speakers: Array<Speaker>
+
+  channelAdminInfo: {
+    number: number,
+  }
+
+  foundAllSessionsInAdminChannel: Array<Session>
 
 };
 
 function Alert(props: any) {
   return <MuiAlert elevation={6} variant="filled" {...props} />;
 }
+
+type Session = {
+
+  description: string;
+  id: number;
+  letter: string;
+  name: string;
+  nextSessionDescription: string;
+  nextSessionLetter: string;
+  speakers: Array<Speaker>;
+  voteFoAllSession: boolean;
+
+};
 
 const AdminPage: FC = () => {
   const classes = useStyles();
@@ -74,9 +93,9 @@ const AdminPage: FC = () => {
     const response = await apiGetUser(userData.id, token);
     setDataForAdmin(response);
 
-    if (response && response.channelForShowing && response.channelForShowing.activeSpeaker) {
-      setActiveSpeaker(`${response.channelForShowing.activeSpeaker.lastName} ${response.channelForShowing.activeSpeaker.firstName}`);
-      setActiveButtonId(response.channelForShowing.activeSpeaker.id);
+    if (response && response.channelAdminInfo && response.channelAdminInfo.activeSpeaker) {
+      setActiveSpeaker(`${response.channelAdminInfo.activeSpeaker.lastName} ${response.channelAdminInfo.activeSpeaker.firstName}`);
+      setActiveButtonId(response.channelAdminInfo.activeSpeaker.id);
     }
   };
 
@@ -95,7 +114,7 @@ const AdminPage: FC = () => {
     const response = await apiChangeActiveSpeakerInChannel(
       token,
       Number(speakerId),
-      Number(dataForAdmin && dataForAdmin.channelForShowing.number),
+      Number(dataForAdmin && dataForAdmin.channelAdminInfo.number),
     );
 
     setActiveSpeaker(`${response.lastName} ${response.firstName}`);
@@ -104,7 +123,8 @@ const AdminPage: FC = () => {
   const setBreakBetweenSessions = async () => {
     await apiSetBrakeInChannel(
       token,
-      Number(dataForAdmin && dataForAdmin.channelForShowing.number),
+      Number(dataForAdmin && dataForAdmin.channelAdminInfo.number),
+      Number(activeButtonId),
     );
     setActiveSpeaker('');
     setActiveButtonId(undefined);
@@ -154,7 +174,8 @@ const AdminPage: FC = () => {
             Страница Администратора
           </Typography>
           <p className={classes.sessionLetter}>
-            {dataForAdmin && dataForAdmin.letter}
+            Канал №
+            {dataForAdmin && String(dataForAdmin.channelAdminInfo.number)}
           </p>
 
         </div>
@@ -164,11 +185,25 @@ const AdminPage: FC = () => {
       <Grid container justify="space-around">
 
         <Grid item xs={4}>
+
           {
-            dataForAdmin && dataForAdmin.speakers.map(
-              (element) => renderSpeakersDataForAdmin(element),
+            dataForAdmin && dataForAdmin.foundAllSessionsInAdminChannel.map(
+              (session: Session) => (
+
+                <p>
+                  {session.letter}
+
+                  {session.speakers.map((speaker: Speaker) => renderSpeakersDataForAdmin(speaker))}
+                </p>
+              ),
             )
           }
+
+          {/* {
+            dataForAdmin && dataForAdmin.foundAllSessionsInAdminChannel.map(
+              (element: Session) => renderSpeakersDataForAdmin(element),
+            )
+          } */}
         </Grid>
 
         <Grid item justify="center" xs={4}>

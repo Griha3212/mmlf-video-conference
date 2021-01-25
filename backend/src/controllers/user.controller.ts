@@ -28,12 +28,26 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
     if (!foundUser) throw new Error(allErrors.userNotFound);
 
     if (foundUser.isAdmin) {
-      const sessionAdminInfo = await sessionsRepository.findOne({
-        where: { name: foundUser.adminOfTheSessionName },
-        relations: ['speakers', 'channelForShowing', 'channelForShowing.activeSpeaker'],
-      });
+      const channelAdminInfo = await channelsRepository.findOne(
+        {
+          where: { number: foundUser.adminOfTheChannelNumber },
+          relations: ['activeSession', 'activeSession.speakers', 'activeSpeaker'],
+        },
+      );
 
-      res.status(200).send(sessionAdminInfo);
+      if (!channelAdminInfo) throw new Error(allErrors.channelNotFound);
+
+      const foundAllSessionsInAdminChannel = await sessionsRepository.find(
+        { where: { channelForShowing: channelAdminInfo.number }, relations: ['speakers'] },
+      );
+
+      // old version
+      // const sessionAdminInfo = await sessionsRepository.findOne({
+      //   where: { name: foundUser.adminOfTheChannelNumber },
+      //   relations: ['speakers', 'channelForShowing', 'channelForShowing.activeSpeaker'],
+      // });
+
+      res.status(200).send({ channelAdminInfo, foundAllSessionsInAdminChannel });
     } else {
       const channelUserInfo = await channelsRepository.findOne(
         {

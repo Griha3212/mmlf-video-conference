@@ -28,8 +28,8 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'Plenaer',
     company: 'CCL',
-    loginCode: 'adminPlenar',
-    adminOfTheSessionName: 'Plenar',
+    loginCode: 'admin1',
+    adminOfTheChannelNumber: 1,
     isAdmin: true,
 
   },
@@ -39,8 +39,8 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'A',
     company: 'CCL',
-    loginCode: 'adminA',
-    adminOfTheSessionName: 'SessA',
+    loginCode: 'admin2',
+    adminOfTheChannelNumber: 2,
     isAdmin: true,
 
   },
@@ -50,8 +50,8 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'B',
     company: 'CCL',
-    loginCode: 'adminB',
-    adminOfTheSessionName: 'SessB',
+    loginCode: 'admin3',
+    adminOfTheChannelNumber: 3,
     isAdmin: true,
 
   },
@@ -61,19 +61,8 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'C',
     company: 'CCL',
-    loginCode: 'adminC',
-    adminOfTheSessionName: 'SessC',
-    isAdmin: true,
-
-  },
-
-  {
-
-    firstName: 'admin',
-    lastName: 'WMS1',
-    company: 'CCL',
-    loginCode: 'adminWMS1',
-    adminOfTheSessionName: 'WMS1',
+    loginCode: 'admin4',
+    adminOfTheChannelNumber: 4,
     isAdmin: true,
 
   },
@@ -111,7 +100,7 @@ export const seedMockedUsers = async () => {
     newUser.isAdmin = !!user.isAdmin;
     newUser.isFreeSessionAccessOnly = !!user.isFreeSessionAccessOnly;
     newUser.loginCode = user.loginCode;
-    newUser.adminOfTheSessionName = user.adminOfTheSessionName || '';
+    newUser.adminOfTheChannelNumber = user.adminOfTheChannelNumber || 0;
     newUser.hasAccessToStatisticPage = user.hasAccessToStatisticPage || false;
     // newUser.activeChannel = foundFirstChannel;
     // all users except free have default first channel active

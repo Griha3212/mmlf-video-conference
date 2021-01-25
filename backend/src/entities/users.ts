@@ -55,7 +55,7 @@ export default class Users extends BaseEntity {
 
   @Index()
   @Column({ nullable: true })
-  adminOfTheSessionName: string;
+  adminOfTheChannelNumber: number;
 
   @Index()
   @Column({ default: false })
