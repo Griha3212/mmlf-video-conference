@@ -5,9 +5,6 @@ import { ThemeProvider } from '@material-ui/core';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { theme } from './indexTheme';
-import './fonts/GothamPro-Bold.woff2';
-import './fonts/GothamPro-Light.woff';
-import './fonts/GothamProBlack.woff';
 
 ReactDOM.render(
   <App />,

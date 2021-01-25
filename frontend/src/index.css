@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Gotham Pro Bold";
-  src: url("./fonts/GothamPro-Bold.woff2") format("truetype");
+  src: url("./fonts/GothamPro-Bold.woff2") format("woff2");
   font-style: normal;
 
   font-weight: normal;
@@ -10,7 +10,7 @@
 
 @font-face {
   font-family: "Gotham Pro Black";
-  src: url("./fonts/GothamProBlack.woff") format("truetype");
+  src: url("./fonts/GothamProBlack.woff") format("woff");
   font-style: normal;
 
   font-weight: normal;
@@ -20,7 +20,7 @@
 
 @font-face {
   font-family: "Gotham Pro Light";
-  src: url("./fonts/GothamPro-Light.woff") format("truetype");
+  src: url("./fonts/GothamPro-Light.woff") format("woff");
   font-style: normal;
 
   font-weight: normal;
