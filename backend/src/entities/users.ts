@@ -21,6 +21,10 @@ export default class Users extends BaseEntity {
 
   @Index()
   @Column({ nullable: true })
+  email: string;
+
+  @Index()
+  @Column({ nullable: true })
   company: string;
 
   // uniq login code
