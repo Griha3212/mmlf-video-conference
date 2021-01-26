@@ -38,6 +38,7 @@ type User = {
   firstName: string;
   id: number;
   lastName: string;
+  email: string;
 
 };
 
@@ -61,6 +62,7 @@ type DataForStats = {
   topicName: string;
 
   usersWhoWatchedSpeaker: Array<User>;
+  usersWhoSendContacts: Array<User>;
   votes: Array<Vote>;
 
 };
@@ -102,6 +104,18 @@ const StatsPage: FC = () => {
       return currentRate && currentRate.rate || 'без оценки';
     };
 
+    const renderContactCheckbox = (historyRow: any) => {
+      console.log('row :>> ', row);
+
+      const currentContact = row && row!.usersWhoSendContacts.find(
+        (element: any) => element.id === historyRow.id,
+      );
+
+      if (currentContact) return true;
+
+      return false;
+    };
+
     return (
       <>
         <TableRow className={classes.root}>
@@ -129,6 +143,8 @@ const StatsPage: FC = () => {
                     <TableRow>
                       <TableCell align="center">Имя Фамилия участника</TableCell>
                       <TableCell align="center">Просмотрел</TableCell>
+                      <TableCell align="center">Хочет отправить контакты</TableCell>
+                      <TableCell align="center">Email</TableCell>
                       <TableCell align="center">Оценка</TableCell>
                     </TableRow>
                   </TableHead>
@@ -146,6 +162,15 @@ const StatsPage: FC = () => {
                             inputProps={{ 'aria-label': 'secondary checkbox' }}
                           />
                         </TableCell>
+                        <TableCell align="center">
+                          <Checkbox
+                            checked={renderContactCheckbox(historyRow)}
+                            color="primary"
+                            disabled
+                            inputProps={{ 'aria-label': 'secondary checkbox' }}
+                          />
+                        </TableCell>
+                        <TableCell align="center">{`${historyRow.email || '-'}`}</TableCell>
                         <TableCell align="center">{renderRate(historyRow)}</TableCell>
                       </TableRow>
                     ))}
