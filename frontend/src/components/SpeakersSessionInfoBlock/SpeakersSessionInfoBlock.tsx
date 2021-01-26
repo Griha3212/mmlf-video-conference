@@ -134,16 +134,22 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-          <Grid className={classes.zoomPdfIconsItem} item>
+        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
 
-          <Grid className={classes.zoomPdfIconsItem} item>
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+
+          </Grid>
+
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
 
           </Grid>
 
@@ -165,16 +171,22 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-          <Grid className={classes.zoomPdfIconsItem} item>
+        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
 
-          <Grid className={classes.zoomPdfIconsItem} item>
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+
+          </Grid>
+
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
 
           </Grid>
 
@@ -196,16 +208,22 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-          <Grid className={classes.zoomPdfIconsItem} item>
+        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
 
-          <Grid className={classes.zoomPdfIconsItem} item>
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+
+          </Grid>
+
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
 
           </Grid>
 
@@ -227,16 +245,22 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-          <Grid className={classes.zoomPdfIconsItem} item>
+        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
 
-          <Grid className={classes.zoomPdfIconsItem} item>
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+
+          </Grid>
+
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
 
           </Grid>
 
@@ -258,16 +282,22 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-          <Grid className={classes.zoomPdfIconsItem} item>
+        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
 
-          <Grid className={classes.zoomPdfIconsItem} item>
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+
+          </Grid>
+
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
 
           </Grid>
 
@@ -289,16 +319,22 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-          <Grid className={classes.zoomPdfIconsItem} item>
+        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
 
           </Grid>
 
-          <Grid className={classes.zoomPdfIconsItem} item>
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+
+          </Grid>
+
+          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+
+            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
 
           </Grid>
 
