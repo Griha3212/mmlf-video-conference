@@ -21,7 +21,8 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
     const foundUser = await usersRepository.findOne(
       {
         where: { id: userId },
-        relations: ['votes', 'votes.speaker', 'watchedSpeakers'],
+        relations: ['votes', 'votes.speaker',
+          'watchedSpeakers', 'speakersToWhomContactsWereSent'],
       },
     );
 

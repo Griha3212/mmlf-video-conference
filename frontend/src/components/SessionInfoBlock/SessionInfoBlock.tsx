@@ -120,6 +120,21 @@ const SessionInfoBlock = (props: any) => {
     );
   };
 
+  const checkAlreadySentContact = () => {
+    if (currentUserData && currentUserData.foundUser &&
+      currentUserData.foundUser.speakersToWhomContactsWereSent) {
+      const foundContactedSpeakers = currentUserData.foundUser.speakersToWhomContactsWereSent.find(
+        (speaker: any) => speaker.id === props.currentSpeakerInfo.id,
+      );
+
+      if (foundContactedSpeakers) {
+        return true;
+      } else {
+        return false;
+      }
+    } else return false;
+  };
+
   return (
     <>
 
@@ -222,9 +237,10 @@ const SessionInfoBlock = (props: any) => {
                   <Button
                     disabled={closedAccess}
                     onClick={() => sendContacts()}
-                    className={classes.sendContactsButton}
+                    className={checkAlreadySentContact()
+                      ? classes.sendContactsButtonDisabled : classes.sendContactsButton}
                   >
-                    Поделиться контактами
+                    {checkAlreadySentContact() ? 'Контакты отправлены' : 'Поделиться контактами'}
 
                   </Button>
                 </p>

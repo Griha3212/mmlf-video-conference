@@ -452,6 +452,43 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  sendContactsButtonDisabled: {
+
+    fontFamily: 'Gotham Pro Medium',
+
+    backgroundColor: '#247719',
+
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: '0px',
+    textTransform: 'initial',
+    pointerEvents: 'none',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      height: '56px',
+      width: '250px',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vw',
+      height: '3.5vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '17px',
+      lineHeight: '19px',
+      height: '53px',
+      width: '286px',
+      marginTop: '11px',
+    },
+
+  },
+
   goToZoomButton: {
 
     fontFamily: 'Gotham Pro Medium',
