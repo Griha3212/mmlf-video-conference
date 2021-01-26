@@ -23,12 +23,30 @@ const useStyles = makeStyles((theme) => ({
   loadZoomImg: {
 
     [theme.breakpoints.up('xs')]: {
-      width: '40px',
+      width: 'auto',
 
     },
 
     [theme.breakpoints.up('lg')]: {
-      width: '40px',
+      width: 'auto',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      width: 'auto',
+
+    },
+
+  },
+
+  sendContactsImg: {
+
+    [theme.breakpoints.up('xs')]: {
+      width: 'auto',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      width: 'auto',
 
     },
     [theme.breakpoints.up('xl')]: {
@@ -41,12 +59,12 @@ const useStyles = makeStyles((theme) => ({
   loadPDFImg: {
 
     [theme.breakpoints.up('xs')]: {
-      width: '33px',
+      width: 'auto',
 
     },
 
     [theme.breakpoints.up('lg')]: {
-      width: '33px',
+      width: 'auto',
 
     },
     [theme.breakpoints.up('xl')]: {
@@ -90,8 +108,8 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      fontSize: '22px',
-      lineHeight: '30px',
+      fontSize: '30px',
+      lineHeight: '41px',
 
     },
 
@@ -119,7 +137,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      fontSize: '25px',
+      fontSize: '30px',
 
     },
 
@@ -249,7 +267,7 @@ const useStyles = makeStyles((theme) => ({
   zoomPdfIconsItem: {
 
     display: 'flex',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
 
   },
 

@@ -17,6 +17,7 @@ import ShareContacts from '../../img/contact_icon.svg';
 import PDFDisabled from '../../img/pdf_icon_disabled.svg';
 import ZoomDisabled from '../../img/zoom_icon_disabled.svg';
 import ShareContactsDisabled from '../../img/contact_icon_disabled.svg';
+import ShareContactsCompleted from '../../img/contact_icon_completed.svg';
 import { apiVoteForSpeaker } from '../../api/user';
 
 type Vote = {
@@ -75,6 +76,32 @@ const SpeakersSessionInfoBlock = (props: any) => {
         return true;
       }
     } else return true;
+  };
+
+  const checkIsWatchedAndSent = (speakerId: number, type: string) => {
+    if (currentUserData && currentUserData.foundUser && currentUserData.foundUser.watchedSpeakers) {
+      const foundWtchedSpeaker = currentUserData.foundUser.watchedSpeakers.find(
+        (speaker: any) => speaker.id === speakerId,
+      );
+
+      if (foundWtchedSpeaker) {
+        if (currentUserData && currentUserData.foundUser &&
+          currentUserData.foundUser.speakersToWhomContactsWereSent) {
+          const foundContactedSpeakers = currentUserData.foundUser
+            .speakersToWhomContactsWereSent.find(
+              (speaker: any) => speaker.id === speakerId,
+            );
+
+          if (foundContactedSpeakers) {
+            return type === 'src' ? ShareContactsCompleted : `${classes.sendContactsImg} ${classes.disabledImg}`;
+          } else {
+            return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
+          }
+        } else return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
+      } else {
+        return type === 'src' ? ShareContactsDisabled : `${classes.sendContactsImg} ${classes.disabledImg}`;
+      }
+    } else return type === 'src' ? ShareContactsDisabled : `${classes.sendContactsImg} ${classes.disabledImg}`;
   };
 
   const renderSpeakersRates = (element: any) => {
@@ -325,8 +352,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
               </p>
 
-              <Grid xs={6} lg={10} xl={10} container className={classes.mxAuto} justify="space-around">
-                <Grid className={classes.zoomPdfIconsItem} item>
+              <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
+                <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
                   <img
                     className={checkIsWatched(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
@@ -340,13 +367,30 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
                 {
                   element.linkToZoom ? (
-                    <Grid className={classes.zoomPdfIconsItem} item>
+                    <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
                       <img
                         src={checkIsWatched(element.id) ? ZoomDisabled : Zoom}
                         className={
                           checkIsWatched(element.id) ? `${classes.loadZoomImg} ${classes.disabledImg}`
                             : `${classes.pointerImg} ${classes.loadZoomImg}`
+                        }
+                        onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
+                        alt=""
+                      />
+
+                    </Grid>
+                  ) : null
+                }
+
+                {
+                  element.hasSendContactsButton ? (
+                    <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+
+                      <img
+                        src={checkIsWatchedAndSent(element.id, 'src')}
+                        className={
+                          checkIsWatchedAndSent(element.id, 'className')
                         }
                         onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
                         alt=""
