@@ -178,8 +178,8 @@ const SessionInfoBlock = (props: any) => {
                 </p>
                 <p className={classes.speakerFullCompanyText}>
                   {`${currentSpeakerInfo
-                    && currentSpeakerInfo.company || 'Компания'}, ${currentSpeakerInfo
-                    && currentSpeakerInfo.statusInCompany || 'должность'}`}
+                    && currentSpeakerInfo.statusInCompany || 'должность'}, ${currentSpeakerInfo
+                    && currentSpeakerInfo.company || 'Компания'}`}
                 </p>
               </Grid>
             </Grid>

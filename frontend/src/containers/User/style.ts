@@ -3,18 +3,48 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  partnerImgContainer: {
+
+    [theme.breakpoints.up('sm')]: {
+      textAlign: 'center',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      textAlign: 'left',
+    },
+
+  },
+
   imgPartner: {
 
     [theme.breakpoints.down('xs')]: {
       marginBottom: '73px',
     },
 
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: '73px',
+      width: '40% !important',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      marginBottom: '0px',
+      width: '100% !important',
+    },
+
   },
 
   partnersContainerImg: {
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
       justifyContent: 'center',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      justifyContent: 'center',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      justifyContent: 'space-between',
     },
 
   },
@@ -45,12 +75,22 @@ const useStyles = makeStyles((theme) => ({
 
   footerLogoAndPhone: {
 
-    textAlign: 'right',
-
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
       marginTop: '12px !important',
       marginBottom: '22px !important',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      textAlign: 'center',
+      marginTop: '12px !important',
+      marginBottom: '22px !important',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      textAlign: 'right',
+      marginTop: 'auto !important',
+      marginBottom: 'auto !important',
     },
 
   },
@@ -60,21 +100,30 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Gotham Pro Light',
 
     marginTop: '0px',
-    marginBottom: '0px',
 
     color: 'white',
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
+      textAlign: 'center',
+      marginBottom: '22px !important',
+    },
+
+    [theme.breakpoints.up('sm')]: {
       textAlign: 'center',
       marginBottom: '22px !important',
     },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.2vw',
+      marginBottom: '0px !important',
+      marginTop: '0px !important',
+
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '24px',
       lineHeight: '27px',
+      marginBottom: '0px !important',
+      marginTop: '0px !important',
     },
 
   },
@@ -92,20 +141,42 @@ const useStyles = makeStyles((theme) => ({
 
   footerLogoContainer: {
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
       textAlign: 'center',
       marginBottom: '22px !important',
       marginTop: '32px !important',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      textAlign: 'center',
+      marginBottom: '22px !important',
+      marginTop: '32px !important',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      marginBottom: 'auto !important',
+      marginTop: 'auto !important',
     },
 
   },
 
   footerContainerInner: {
 
-    padding: '0 220px',
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
       padding: '0 0px',
       justifyContent: 'center',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      padding: '0 0px',
+      justifyContent: 'center',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      padding: '0 220px',
+      justifyContent: 'space-between',
 
     },
 
@@ -115,12 +186,20 @@ const useStyles = makeStyles((theme) => ({
 
     backgroundColor: '#00124D',
     borderTop: '33px solid #FF414A',
-    marginTop: '100px',
-    height: '220px',
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
       marginTop: '0px',
       height: 'auto',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      marginTop: '0px',
+      height: 'auto',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '100px',
+      height: '220px',
     },
 
   },
@@ -144,7 +223,22 @@ const useStyles = makeStyles((theme) => ({
 
   mainVideoContainer: {
 
-    height: '720px',
+    [theme.breakpoints.up('xs')]: {
+      height: '300px',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      height: '300px',
+    },
+    [theme.breakpoints.up('md')]: {
+      height: '720px',
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: '720px',
+    },
+    [theme.breakpoints.up('xl')]: {
+      height: '720px',
+    },
 
   },
 
@@ -234,12 +328,20 @@ const useStyles = makeStyles((theme) => ({
 
   mainContainerBckgChangeSession: {
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
       padding: '0px',
       marginTop: '0px',
     },
 
-    padding: '0 110px',
+    [theme.breakpoints.up('sm')]: {
+      padding: '0px',
+      marginTop: '0px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      padding: '0 110px',
+    },
+
   },
 
   mainContainerBckgChangeSessionFirst: {
@@ -256,26 +358,37 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Gotham Pro Black',
     fontSize: '70px',
-    lineHeight: '79px',
-    marginTop: '0px',
+
     textTransform: 'uppercase',
     color: '#00124D',
 
-    [theme.breakpoints.down('xs')]: {
+    [theme.breakpoints.up('xs')]: {
       fontSize: '6.7vw',
       lineHeight: '6.8vw',
       marginLeft: 'auto',
       marginRight: 'auto',
     },
 
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '4.7vw',
+      lineHeight: '4.8vw',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.3vw',
+      lineHeight: '79px',
+      marginTop: '0px',
+      marginLeft: '0px',
 
     },
 
     [theme.breakpoints.up('xl')]: {
       fontSize: '70px',
-
+      lineHeight: '79px',
+      marginTop: '0px',
+      marginLeft: '0px',
     },
 
   },
@@ -299,6 +412,12 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 2,
 
     [theme.breakpoints.down('xs')]: {
+      paddingLeft: '24px',
+      paddingRight: '24px',
+
+    },
+
+    [theme.breakpoints.down('sm')]: {
       paddingLeft: '24px',
       paddingRight: '24px',
 

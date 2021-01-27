@@ -363,7 +363,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
       if (!element.isModerator) {
         return (
           <>
-            <Grid className={classes.singleSpeakerBlock} xs={12} lg={2} xl={2} item>
+            <Grid className={classes.singleSpeakerBlock} sm={6} xs={12} lg={2} xl={2} item>
 
               <p className={classes.speakerAvatarInsideSessionParagraph}>
                 <img className={classes.speakerAvatarInsideSession} src={element.linkToImg} alt="" />

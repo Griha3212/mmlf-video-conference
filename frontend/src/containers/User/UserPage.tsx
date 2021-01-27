@@ -372,6 +372,14 @@ const UserPage: FC = () => {
     if (isXs) return '227px';
   };
 
+  const calculateHeightOfBigChannelWindow = () => {
+    if (isXl) return '720px';
+    if (isLg) return '720px';
+    if (isMd) return '720px';
+    if (isSm) return '300px';
+    if (isXs) return '300px';
+  };
+
   const renderOtherSessions = (channel: any) => {
     if (channel.number !== dataForUser!.channelUserInfo.number) {
       return (
@@ -406,7 +414,7 @@ const UserPage: FC = () => {
   return (
     <>
       {/* header pc */}
-      <Hidden xsDown>
+      <Hidden smDown>
         <Grid
           container
           xl={12}
@@ -440,7 +448,7 @@ const UserPage: FC = () => {
       </Hidden>
 
       {/* header mobile */}
-      <Hidden only={['sm', 'lg', 'xl', 'md']}>
+      <Hidden only={['lg', 'xl', 'md']}>
         <Grid
           container
           xl={12}
@@ -462,7 +470,7 @@ const UserPage: FC = () => {
 
           </Grid>
 
-          <Grid item className={classes.myAuto} xl={3} sm={12} xs={6}>
+          <Grid item className={classes.myAuto} sm={6} xs={6}>
             <Button
               onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
               className={classes.loadProgramButton}
@@ -477,7 +485,7 @@ const UserPage: FC = () => {
       <Grid container className={classes.mainVideoContainer} xl justify="center">
 
         <VideoPlayerMain
-          height="720px"
+          height={calculateHeightOfBigChannelWindow()}
           classNameInner="mainVideoContainerBig"
           videoURL={dataForUser && dataForUser.channelUserInfo.link}
         />
@@ -541,19 +549,40 @@ const UserPage: FC = () => {
           </Grid>
 
           <Grid justify="space-between" container item className={`${classes.mainContainerBckgChangeSession} ${classes.partnersContainerImg}`}>
-            <Grid className={classes.myAuto} item xs={8} xl={3} lg={3}>
+            <Grid
+              className={`${classes.myAuto} ${classes.partnerImgContainer}`}
+              item
+              xs={8}
+              sm={12}
+              xl={3}
+              lg={3}
+            >
 
               <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={lerua} alt="" />
 
             </Grid>
 
-            <Grid className={classes.myAuto} item xs={8} xl={3} lg={3}>
+            <Grid
+              className={`${classes.myAuto} ${classes.partnerImgContainer}`}
+              item
+              xs={8}
+              sm={12}
+              xl={3}
+              lg={3}
+            >
 
               <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={severstal} alt="" />
 
             </Grid>
 
-            <Grid className={classes.myAuto} item xs={8} xl={3} lg={3}>
+            <Grid
+              className={`${classes.myAuto} ${classes.partnerImgContainer}`}
+              item
+              xs={8}
+              sm={12}
+              xl={3}
+              lg={3}
+            >
 
               <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={cocalCola} alt="" />
 
@@ -582,7 +611,7 @@ const UserPage: FC = () => {
             <Grid xs={12} xl={3} lg={3} className={classes.myAuto} item>
               <p className={classes.footerTextDate}>15-19 февраля 2021</p>
             </Grid>
-            <Grid xs={8} xl={2} lg={2} className={classes.myAuto} item>
+            <Grid xs={8} sm={6} xl={2} lg={2} className={classes.myAuto} item>
               <Grid container item justify="space-around">
                 <Grid item>
                   <img
@@ -612,7 +641,7 @@ const UserPage: FC = () => {
               </Grid>
 
             </Grid>
-            <Grid xs={12} xl={3} lg={3} className={`${classes.myAuto} ${classes.footerLogoAndPhone}`} item>
+            <Grid xs={12} xl={2} lg={2} className={`${classes.myAuto} ${classes.footerLogoAndPhone}`} item>
               <p>
                 <img
                   onClick={() => { window.open('https://ccl-logistics.ru/', '_blank'); }}

@@ -285,6 +285,13 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '4.7vw',
+      lineHeight: '4.8vw',
+      marginLeft: 'auto',
+      marginRight: 'auto',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.3vw',
       textAlign: 'left',
