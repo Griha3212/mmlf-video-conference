@@ -61,7 +61,7 @@ export const seedMockedSessions = async () => {
       voteFoAllSession: true,
       isSessionForSecondDay: false,
     },
-
+    // LogistOfTheYear---------------
     {
 
       name: 'LogistOfTheYear',
@@ -70,43 +70,121 @@ export const seedMockedSessions = async () => {
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Экскурсия',
       nextSessionDescription: 'Вручение премии "Логист года"',
-      voteFoAllSession: true,
       isSessionForSecondDay: false,
     },
+    // Excursions---------------
+    {
 
-    // TO DO, add all excursions in first channel
-    /// channel 1 ----------------------------------------------------------------------------------
+      name: 'Exc1',
+      letter: 'Экскурсия',
+      description: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      nextSessionLetter: 'Экскурсия',
+      nextSessionDescription: 'Распределительный центр «Софьино» торговой сети «Перекресток» Компании X5 Retail Group',
+      isSessionForSecondDay: true,
+    },
+
+    {
+
+      name: 'Exc2',
+      letter: 'Экскурсия',
+      description: 'Распределительный центр «Софьино» торговой сети «Перекресток» Компании X5 Retail Group',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      nextSessionLetter: 'Экскурсия',
+      nextSessionDescription: 'Инновационный складской комплекс Группы компаний «Дамате»',
+      isSessionForSecondDay: true,
+    },
+
+    {
+
+      name: 'Exc3',
+      letter: 'Экскурсия',
+      description: 'Инновационный складской комплекс Группы компаний «Дамате»',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      nextSessionLetter: 'Экскурсия',
+      nextSessionDescription: 'Распределительный центр Онлайн ритейлера «Утконос»',
+      isSessionForSecondDay: true,
+    },
+
+    {
+
+      name: 'Exc4',
+      letter: 'Экскурсия',
+      description: 'Распределительный центр Онлайн ритейлера «Утконос»',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      nextSessionLetter: 'Экскурсия',
+      nextSessionDescription: 'Централизованная складская система НЛМК',
+      isSessionForSecondDay: true,
+    },
+
+    {
+
+      name: 'Exc5',
+      letter: 'Экскурсия',
+      description: 'Централизованная складская система НЛМК',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      nextSessionLetter: 'Экскурсия',
+      nextSessionDescription: '',
+      isSessionForSecondDay: true,
+    },
+
+    // channel 2 --------------------------------------------------------------------------------
 
     {
 
       name: 'SessA',
       letter: 'Сессия A',
       description: 'Лучший опыт применения инновационных технологий в логистике',
-      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
       nextSessionLetter: 'Сессия D',
       nextSessionDescription: 'Опыт создания и оптимизации работы складов и логистических центров',
 
     },
     {
 
-      name: 'SessB',
-      letter: 'Сессия B',
-      description: 'Комплексные логистические решения для ритейлеров и производителей',
+      name: 'SessD',
+      letter: 'Сессия D',
+      description: 'Опыт создания и оптимизации складов и логистических центров',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
-      nextSessionLetter: 'Сессия E',
-      nextSessionDescription: 'Специальная сессия партнера Форума – компании SAP Жизнестойкие цепи поставок: 5 трендов 2021 года',
+      nextSessionLetter: 'Сессия G',
+      nextSessionDescription: 'Организация логистики при развитии e-com продаж',
 
     },
 
     {
 
-      name: 'SessC',
-      letter: 'Сессия C',
-      description: 'Цифровой транспорт: прозрачное управление затратами и создание конкурентных преимуществ для бизнеса',
-      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
-      nextSessionLetter: 'Сессия F',
-      nextSessionDescription: 'Опыт оптимизации транспортно-логистического обеспечения компании',
+      name: 'SessG',
+      letter: 'Сессия G',
+      description: 'Организация логистики при развитии e-com продаж',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
+      nextSessionLetter: 'Логист года',
+      nextSessionDescription: 'Вручение премии "Логист года"',
 
+    },
+
+    // channel 3 --------------------------------------------------------------------------------
+
+    {
+
+      name: 'SessB',
+      letter: 'Сессия B',
+      description: 'Комплексные логистические решения для ритейлеров и производителей',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
+      nextSessionLetter: 'WMS DAY-2',
+      nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
+
+    },
+
+    {
+
+      name: 'WMS2',
+      letter: 'WMS DAY-2',
+      description: 'Лучшая практика внедрения и эксплуатации WMS',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
+      nextSessionLetter: 'Сессия E',
+      nextSessionDescription: 'Специальная сессия партнера Форума – компании SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года',
+      voteFoAllSession: true,
+      isSessionForSecondDay: false,
     },
 
   ];
