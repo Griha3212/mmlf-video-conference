@@ -10,6 +10,7 @@ import Speakers from '../entities/speakers';
 import allErrors from '../utils/errors';
 import { io } from '../server';
 import Users from '../entities/users';
+import Sessions from '../entities/sessions';
 
 export const changeActiveSpeakerInChannel = async (
   req: Request,
@@ -100,6 +101,88 @@ export const setBreakBetweenSessions = async (
     console.log(chalk.green('Activate OtherChannelsBlock'));
 
     res.status(200).send(foundChannelToUpdateInfo);
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const setLogistOfTheYear = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const usersRepository = await getRepository(Users);
+  const sessionsRepository = await getRepository(Sessions);
+  const channelsRepository = await getRepository(Channels);
+
+  try {
+    const foundLogistOfTheYearSession = await sessionsRepository.findOne(
+      {
+        where: { name: 'LogistOfTheYear' },
+      },
+    );
+
+    if (!foundLogistOfTheYearSession) throw new Error(allErrors.sessionNotFound);
+
+    const foundFirstChannel = await channelsRepository.findOne({ where: { number: 1 } });
+
+    if (!foundFirstChannel) throw new Error(allErrors.channelNotFound);
+
+    const foundUsers = await usersRepository.find();
+
+    const results = [];
+
+    for (const user of foundUsers) {
+      user.showOtherChannelsBlock = false;
+      user.activeChannel = 1;
+      results.push(user);
+    }
+    await usersRepository.save(results);
+
+    foundFirstChannel.activeSession = foundLogistOfTheYearSession;
+    foundFirstChannel.break = false;
+
+    await channelsRepository.save(foundFirstChannel);
+
+    // socket update
+    const data = { message: 'update' };
+
+    io.to(String('channel1')).to('channel2').to('channel3').to('channel4')
+      .emit('connectToChannelRoom', data);
+    console.log(chalk.green('Activate Logist Of The Year'));
+
+    res.status(200).send('Activate Logist Of The Year');
+  } catch (error) {
+    next(error);
+  }
+};
+
+export const disableLogistOfTheYear = async (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const usersRepository = await getRepository(Users);
+
+  try {
+    const foundUsers = await usersRepository.find();
+
+    const results = [];
+
+    for (const user of foundUsers) {
+      user.showOtherChannelsBlock = true;
+      results.push(user);
+    }
+    await usersRepository.save(results);
+
+    // socket update
+    const data = { message: 'update' };
+
+    io.to(String('channel1')).to('channel2').to('channel3').to('channel4')
+      .emit('connectToChannelRoom', data);
+    console.log(chalk.green('Activate Logist Of The Year'));
+
+    res.status(200).send('Activate Logist Of The Year');
   } catch (error) {
     next(error);
   }

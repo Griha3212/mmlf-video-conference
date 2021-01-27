@@ -46,3 +46,24 @@ export const apiSetBrakeInChannel = async (
     return error.response;
   }
 };
+
+export const apiSetLogistOfTheYearSession = async (
+  token: {
+    accessToken: string | null;
+    refreshToken: string | null;
+  },
+
+): Promise<any> => {
+  const url = `${process.env.REACT_APP_API_URL}${api.setLogistOfTheYear}`;
+
+  try {
+    const { data } = await axios.post(url, {}, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};

@@ -19,6 +19,7 @@ import ZoomDisabled from '../../img/zoom_icon_disabled.svg';
 import ShareContactsDisabled from '../../img/contact_icon_disabled.svg';
 import ShareContactsCompleted from '../../img/contact_icon_completed.svg';
 import { apiVoteForSpeaker } from '../../api/user';
+import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 
 type Vote = {
 
@@ -125,8 +126,9 @@ const SpeakersSessionInfoBlock = (props: any) => {
         <p className={classes.speakerAvatarInsideSessionParagraph}>
           <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
         </p>
-        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
         <p className={classes.speakerNameInsideSession}>Имя</p>
+        <p className={classes.speakerNameInsideSession}>Фамилия</p>
+
         <p className={classes.textCenter}>
           <Box component="fieldset" mb={3} borderColor="transparent">
             <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
@@ -368,8 +370,11 @@ const SpeakersSessionInfoBlock = (props: any) => {
               <p className={classes.speakerAvatarInsideSessionParagraph}>
                 <img className={classes.speakerAvatarInsideSession} src={element.linkToImg} alt="" />
               </p>
-              <p className={classes.speakerNameInsideSession}>{element.lastName}</p>
+
               <p className={classes.speakerNameInsideSession}>{element.firstName}</p>
+              <p className={classes.speakerNameInsideSession}>
+                {capitalizeFirstLetter(element.lastName)}
+              </p>
               <p className={classes.textCenter}>
                 <Box component="fieldset" mb={3} borderColor="transparent">
                   <Rating
@@ -485,18 +490,18 @@ const SpeakersSessionInfoBlock = (props: any) => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return 'ФАМИЛИЯ Имя';
+        return 'Имя Фамилия';
       }
 
       if (currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return 'ФАМИЛИЯ Имя';
+        return 'Имя Фамилия';
       }
 
       if (currentModeratorInfo) {
-        return `${currentModeratorInfo.lastName} ${currentModeratorInfo.firstName}`;
-      } else return 'ФАМИЛИЯ Имя';
-    } else return 'ФАМИЛИЯ Имя';
+        return `${capitalizeFirstLetter(currentModeratorInfo.lastName)} ${currentModeratorInfo.firstName}`;
+      } else return 'Имя Фамилия';
+    } else return 'Имя Фамилия';
   };
 
   return (

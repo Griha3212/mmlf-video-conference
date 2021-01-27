@@ -492,7 +492,14 @@ const UserPage: FC = () => {
 
       </Grid>
 
-      <Grid className={classes.redBckgContainer} container item justify="center" />
+      <Grid
+        className={dataForUser && dataForUser.channelUserInfo.activeSession
+        && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear' ?
+          classes.redBckgContainerShort : classes.redBckgContainer}
+        container
+        item
+        justify="center"
+      />
 
       {/* first block (active speaker) info ---------------------------*/}
       <Grid item className={classes.innerContainer} justify="center">
@@ -508,20 +515,26 @@ const UserPage: FC = () => {
         />
 
       </Grid>
-      {/* block with all speakers in session--------------------------------------------------- */}
-      <Grid item className={classes.innerContainer} justify="center">
 
-        <SpeakersSessionInfoBlock
-          currentModeratorInfo={activeModeratorInfo}
-          currentSessionSpeakersInfo={activeSessionSpeakersInfo}
-          currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
-          currentUserData={dataForUser}
-          token={token}
-          userId={user.id}
-          key={activeSessionSpeakersAllRates}
-        />
+      {/* block with all speakers in session---------------------------------------------------
+      render if not LogistOfTheYear */}
+      {dataForUser && dataForUser.channelUserInfo.activeSession
+        && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear' ? null : (
+          <Grid item className={classes.innerContainer} justify="center">
 
-      </Grid>
+            <SpeakersSessionInfoBlock
+              currentModeratorInfo={activeModeratorInfo}
+              currentSessionSpeakersInfo={activeSessionSpeakersInfo}
+              currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
+              currentUserData={dataForUser}
+              token={token}
+              userId={user.id}
+              key={activeSessionSpeakersAllRates}
+            />
+
+          </Grid>
+        )}
+
       {/* show/hide OtherChannelsBlock-------------------------------------------------------- */}
       {dataForUser && dataForUser.foundUser.showOtherChannelsBlock ? (
         <Grid container className={classes.changeSessionMainContainer} xl>

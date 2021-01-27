@@ -8,7 +8,11 @@ const api = {
 
   changeActiveSpeakerInChannel: 'api/admin/change_active_speaker_in_channel',
 
-  setBrakeInChannel: 'api/admin/set_brake_in_cahnnel',
+  setBrakeInChannel: 'api/admin/set_brake_in_channel',
+
+  setLogistOfTheYear: 'api/admin/set_logist_of_the_year',
+
+  disableLogistOfTheYear: 'api/admin/disable_logist_of_the_year',
 
   voteForSpeaker: 'api/user/vote_for_speaker',
 

@@ -178,12 +178,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '2vw',
       lineHeight: '2.4vw',
       marginTop: '17px',
+      width: '80%',
 
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '42px',
       lineHeight: '51px',
       marginTop: '32px',
+      width: '80%',
     },
 
   },

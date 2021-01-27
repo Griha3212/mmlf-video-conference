@@ -21,7 +21,7 @@ import useStyles from './style';
 import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
-import { apiChangeActiveSpeakerInChannel, apiSetBrakeInChannel } from '../../api/admin';
+import { apiChangeActiveSpeakerInChannel, apiSetBrakeInChannel, apiSetLogistOfTheYearSession } from '../../api/admin';
 
 type Speaker = {
 
@@ -130,6 +130,14 @@ const AdminPage: FC = () => {
     setActiveButtonId(undefined);
   };
 
+  const setLogistOfTheYearSession = async () => {
+    await apiSetLogistOfTheYearSession(
+      token,
+    );
+    setActiveSpeaker('Логист Года активирован');
+    setActiveButtonId(undefined);
+  };
+
   const renderSpeakersDataForAdmin = (element: Speaker) => {
     if (!element.isModerator) {
       return (
@@ -218,6 +226,13 @@ const AdminPage: FC = () => {
           <p className={classes.textCenter}>
             <Button onClick={() => setBreakBetweenSessions()} variant="contained" color="primary">Активировать перерыв</Button>
           </p>
+
+          {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
+            <p className={classes.textCenter}>
+              <Button onClick={() => setLogistOfTheYearSession()} variant="contained" color="primary">Активировать награждение Логист Года</Button>
+            </p>
+          ) : null}
+
         </Grid>
 
         <Grid item xs={4}>

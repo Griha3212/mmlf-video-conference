@@ -445,6 +445,34 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  redBckgContainerShort: {
+
+    backgroundColor: '#FF414A',
+
+    position: 'absolute',
+    zIndex: 1,
+
+    [theme.breakpoints.up('xs')]: {
+      height: '260px',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      height: '260px',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      height: '24.5vw',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      height: '16.5vw',
+    },
+    [theme.breakpoints.up('xl')]: {
+      height: '250px',
+    },
+
+  },
+
   myAuto: {
 
     marginTop: 'auto',

@@ -8,6 +8,7 @@ import Rating from '@material-ui/lab/Rating';
 import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
+import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 
 const SessionInfoBlock = (props: any) => {
   const {
@@ -88,6 +89,9 @@ const SessionInfoBlock = (props: any) => {
       }
 
       if (currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
+        if (currentUserData.channelUserInfo.activeSession.name === 'LogistOfTheYear') {
+          return 'Завтра здесь будут проходить Онлайн-экскурсии на крупнейшие логистические объекты';
+        }
         return `Перерыв... Скоро здесь начнётся сессия: ${currentUserData.channelUserInfo.activeSession.nextSessionDescription}`;
       }
 
@@ -101,6 +105,12 @@ const SessionInfoBlock = (props: any) => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession) {
         return true;
+      }
+
+      if (currentUserData.channelUserInfo.activeSession &&
+        currentUserData.channelUserInfo.activeSession &&
+        currentUserData.channelUserInfo.activeSession.name === 'LogistOfTheYear') {
+        return false;
       }
 
       if (currentUserData.channelUserInfo.activeSession &&
@@ -137,22 +147,24 @@ const SessionInfoBlock = (props: any) => {
 
   return (
     <>
+      {currentUserData && currentUserData.channelUserInfo.activeSession &&
+        currentUserData.channelUserInfo.activeSession.isSessionForSecondDay ? null : (
+          <Grid item container className={classes.darkBlueBckg}>
+            <Grid item xs={12}>
+              <p className={renderSessionLetter().length > 10
+                ? classes.sessionLetterTextLong : classes.sessionLetterText}
+              >
+                {renderSessionLetter()}
+              </p>
 
-      <Grid item container className={classes.darkBlueBckg}>
-        <Grid item xs={12}>
-          <p className={renderSessionLetter().length > 10
-            ? classes.sessionLetterTextLong : classes.sessionLetterText}
-          >
-            {renderSessionLetter()}
-          </p>
+            </Grid>
 
-        </Grid>
+            <p className={classes.sessionNameText}>
+              {renderSessionDescription()}
+            </p>
 
-        <p className={classes.sessionNameText}>
-          {renderSessionDescription()}
-        </p>
-
-      </Grid>
+          </Grid>
+        )}
 
       {showSecondBlock() ? (
         <Grid item container justify="space-between" className={classes.lightBlueBckg}>
@@ -172,8 +184,8 @@ const SessionInfoBlock = (props: any) => {
                 <p className={classes.speakerHeaderText}>Спикер</p>
                 <p className={classes.speakerFullNameText}>
                   {`${currentSpeakerInfo
-                    && currentSpeakerInfo.lastName || 'ФАМИЛИЯ'} ${currentSpeakerInfo
-                    && currentSpeakerInfo.firstName || 'Имя'}`}
+                    && currentSpeakerInfo.firstName || 'Имя'} ${currentSpeakerInfo
+                    && capitalizeFirstLetter(currentSpeakerInfo.lastName) || 'Фамилия'} `}
 
                 </p>
                 <p className={classes.speakerFullCompanyText}>
