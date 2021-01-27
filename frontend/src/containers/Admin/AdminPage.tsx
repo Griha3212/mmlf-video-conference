@@ -21,7 +21,10 @@ import useStyles from './style';
 import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
 import getLocalStorageData from '../../utils/helpers/localStorage.helper';
-import { apiChangeActiveSpeakerInChannel, apiSetBrakeInChannel, apiSetLogistOfTheYearSession } from '../../api/admin';
+import {
+  apiChangeActiveSpeakerInChannel, apiDisableLogistOfTheYearSession,
+  apiSetBrakeInChannel, apiSetLogistOfTheYearSession,
+} from '../../api/admin';
 
 type Speaker = {
 
@@ -138,6 +141,14 @@ const AdminPage: FC = () => {
     setActiveButtonId(undefined);
   };
 
+  const disableLogistOfTheYearSession = async () => {
+    await apiDisableLogistOfTheYearSession(
+      token,
+    );
+    setActiveSpeaker('');
+    setActiveButtonId(undefined);
+  };
+
   const renderSpeakersDataForAdmin = (element: Speaker) => {
     if (!element.isModerator) {
       return (
@@ -230,6 +241,12 @@ const AdminPage: FC = () => {
           {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
             <p className={classes.textCenter}>
               <Button onClick={() => setLogistOfTheYearSession()} variant="contained" color="primary">Активировать награждение Логист Года</Button>
+            </p>
+          ) : null}
+
+          {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
+            <p className={classes.textCenter}>
+              <Button onClick={() => disableLogistOfTheYearSession()} variant="contained" color="primary">Деактивировать награждение Логист Года</Button>
             </p>
           ) : null}
 

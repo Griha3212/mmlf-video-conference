@@ -42,6 +42,8 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
         { where: { channelForShowing: channelAdminInfo.number }, relations: ['speakers'] },
       );
 
+      foundAllSessionsInAdminChannel.sort((a, b) => a.id - b.id);
+
       // old version
       // const sessionAdminInfo = await sessionsRepository.findOne({
       //   where: { name: foundUser.adminOfTheChannelNumber },

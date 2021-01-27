@@ -11,6 +11,7 @@ const {
   changeActiveSpeakerInChannel,
   setBreakBetweenSessions,
   setLogistOfTheYear,
+  disableLogistOfTheYear,
 
 } = adminController;
 
@@ -26,8 +27,8 @@ router.post('/set_logist_of_the_year',
   passport.authenticate('jwt', { session: false }),
   setLogistOfTheYear);
 
-// router.post('/disable_logist_of_the_year',
-//   passport.authenticate('jwt', { session: false }),
-//   setBreakBetweenSessions);
+router.post('/disable_logist_of_the_year',
+  passport.authenticate('jwt', { session: false }),
+  disableLogistOfTheYear);
 
 export { router };
