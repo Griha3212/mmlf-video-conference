@@ -1,14 +1,18 @@
+/* eslint-disable import/no-unresolved */
+console.log('process.env.NODE_ENV', process.env.NODE_ENV);
+const config = require('./build/config/config')[process.env.NODE_ENV];
+
 // if port exists, staging version started, else it's a local version
 if (process.env.PORT) {
   // stage dataBase connection
   module.exports = {
     type: 'postgres',
-    host: process.env.POSTGRES_HOST,
+    host: config.POSTGRES_HOST,
     port: 5432,
-    username: process.env.POSTGRES_USER,
-    password: process.env.POSTGRES_PASSWORD,
-    database: process.env.POSTGRES_DB,
-    synchronize: false,
+    username: config.POSTGRES_USER,
+    password: config.POSTGRES_PASSWORD,
+    database: config.POSTGRES_DB,
+    synchronize: true,
     logging: false,
     entities: [
       'build/entities/**/*.js',
