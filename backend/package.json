@@ -1,7 +1,7 @@
 {
   "scripts": {
     "start": "env-cmd -f .env.local tsc-watch -p tsconfig.json --onSuccess \"node ./build/server.js\"",
-    "prod": "rm -rf ./build/* && env-cmd -f .env.prod tsc && node ./build/app.js",
+    "prod": "rm -rf ./build/* && env-cmd -f .env.prod && tsc && node ./build/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "tsc": "tsc"
   },
