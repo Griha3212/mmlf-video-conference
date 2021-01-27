@@ -297,12 +297,10 @@ const UserPage: FC = () => {
 
   useEffect(() => {
     socket.on('connectToChannelRoom', (data: any) => {
-      setActiveSpeakerInfo(data.updatedSpeaker);
       loadDataForUser();
 
       if (data.message === 'update') {
         loadDataForUser();
-        // setActiveSessionSpeakersAllRates(data.votes);
       }
     });
     return () => {

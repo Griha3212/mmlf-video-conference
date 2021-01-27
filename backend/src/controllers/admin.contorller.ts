@@ -68,8 +68,6 @@ export const setBreakBetweenSessions = async (
 
     if (!foundChannelToUpdateInfo) throw new Error(allErrors.channelNotFound);
 
-    console.log('foundChannelToUpdateInfo :>> ', foundChannelToUpdateInfo);
-
     // if plenar session, activate OtherChannelsBlock in UI
     if (foundChannelToUpdateInfo.activeSession?.name === 'Plenar') {
       const foundUsers = await usersRepository.find();
