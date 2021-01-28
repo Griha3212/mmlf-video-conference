@@ -42,15 +42,6 @@ type Speaker = {
 };
 
 type DataForAdmin = {
-  // channelAdminInfo: {
-  //   break: boolean, id: number, link: string,
-  //   number: number
-  // },
-  // description: string;
-  // id: number;
-  // letter: string;
-  // name: string;
-  // speakers: Array<Speaker>
 
   channelAdminInfo: {
     number: number,
@@ -209,9 +200,12 @@ const AdminPage: FC = () => {
             dataForAdmin && dataForAdmin.foundAllSessionsInAdminChannel.map(
               (session: Session) => (
                 <>
-                  <p className={classes.sessionLetter}>
-                    {session.letter}
-                  </p>
+
+                  {session.letter === 'Экскурсия' ? <p className={classes.sessionLetter}>{session.description}</p> : (
+                    <p className={classes.sessionLetter}>
+                      {session.letter}
+                    </p>
+                  )}
                   <p>
                     {session.speakers.map(
                       (speaker: Speaker) => renderSpeakersDataForAdmin(speaker),
