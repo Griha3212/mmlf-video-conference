@@ -46,7 +46,7 @@ services:
       - ./frontend:/app
       - /app/node_modules
     ports:
-      - 80:80
+      - 8080:8080
     depends_on:
       - backend
     command: ["npm", "run", "start:prod"]
