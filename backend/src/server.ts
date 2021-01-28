@@ -47,7 +47,7 @@ httpsServer.listen(httpsPort, () => {
 // console.log('process.env.UI_URL :>> ', process.env.UI_URL);
 
 // sockets
-export const io = new Server(server, {
+export const io = new Server(process.env.PORT ? httpsServer : server, {
   pingInterval: 5000,
   pingTimeout: 10000,
   cookie: false,
