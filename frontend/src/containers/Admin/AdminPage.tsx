@@ -224,26 +224,27 @@ const AdminPage: FC = () => {
         </Grid>
 
         <Grid item justify="center" xs={4}>
-          <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP}`}>
-            <Button onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
-          </p>
-
-          <p className={classes.textCenter}>
-            <Button onClick={() => setBreakBetweenSessions()} variant="contained" color="primary">Активировать перерыв</Button>
-          </p>
-
-          {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
-            <p className={classes.textCenter}>
-              <Button onClick={() => setLogistOfTheYearSession()} variant="contained" color="primary">Активировать награждение Логист Года</Button>
+          <div className={classes.stickyCentralMenu}>
+            <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP}`}>
+              <Button className={classes.speakerButton} onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
             </p>
-          ) : null}
 
-          {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
             <p className={classes.textCenter}>
-              <Button onClick={() => disableLogistOfTheYearSession()} variant="contained" color="primary">Деактивировать награждение Логист Года</Button>
+              <Button className={classes.speakerButton} onClick={() => setBreakBetweenSessions()} variant="contained" color="primary">Активировать перерыв</Button>
             </p>
-          ) : null}
 
+            {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
+              <p className={classes.textCenter}>
+                <Button className={classes.speakerButton} onClick={() => setLogistOfTheYearSession()} variant="contained" color="primary">Активировать награждение Логист Года</Button>
+              </p>
+            ) : null}
+
+            {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
+              <p className={classes.textCenter}>
+                <Button className={classes.speakerButton} onClick={() => disableLogistOfTheYearSession()} variant="contained" color="primary">Деактивировать награждение Логист Года</Button>
+              </p>
+            ) : null}
+          </div>
         </Grid>
 
         <Grid item xs={4}>

@@ -3,6 +3,15 @@ import { green } from '@material-ui/core/colors';
 
 const useStyles = makeStyles((theme) => ({
 
+  stickyCentralMenu: {
+
+    position: 'fixed',
+    left: '50%',
+    top: '40%',
+    transform: 'translate(-50%, -50%);',
+
+  },
+
   activateSelectedSpeakerP: {
 
     marginTop: '0px',
@@ -13,6 +22,8 @@ const useStyles = makeStyles((theme) => ({
 
     fontSize: '22px',
     marginTop: '0px',
+    position: 'fixed',
+    left: '68%',
 
   },
 
