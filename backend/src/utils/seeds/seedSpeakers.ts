@@ -76,7 +76,7 @@ export const seedMockedSpeakers = async () => {
     topicName: 'Формирование стратегии логистики компании: конкурентные преимущества и лучшие решения',
     lastName: 'ДЕМИН',
     firstName: 'Василий',
-    statusInCompany: 'д.т.н., заместитель директора,',
+    statusInCompany: 'д.т.н., заместитель директора',
     company: 'Координационный совет по логистике',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
 

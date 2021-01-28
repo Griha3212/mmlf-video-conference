@@ -18,7 +18,7 @@ import PDFDisabled from '../../img/pdf_icon_disabled.svg';
 import ZoomDisabled from '../../img/zoom_icon_disabled.svg';
 import ShareContactsDisabled from '../../img/contact_icon_disabled.svg';
 import ShareContactsCompleted from '../../img/contact_icon_completed.svg';
-import { apiVoteForSpeaker } from '../../api/user';
+import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 
 type Vote = {
@@ -359,6 +359,14 @@ const SpeakersSessionInfoBlock = (props: any) => {
     );
   };
 
+  const sendContacts = async (currentSpeakerId: number) => {
+    await apiUserUpdateContactedSpeakers(
+      currentSpeakerId,
+      props.userId,
+      props.token,
+    );
+  };
+
   const renderSessionSpeakers = () => (
 
     currentSessionSpeakersInfo.map((element: any) => {
@@ -433,7 +441,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
                         className={
                           checkIsWatchedAndSent(element.id, 'className')
                         }
-                        onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
+                        onClick={() => sendContacts(element.id)}
                         alt=""
                       />
 
