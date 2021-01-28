@@ -97,7 +97,7 @@ type Channel = {
 
 };
 
-const socket = io(`${process.env.REACT_APP_API_URL}`);
+const socket = io(`${process.env.REACT_APP_API_URL}`, { transports: ['websocket'] });
 
 const UserPage: FC = () => {
   const [isAuth] = useState(!!getLocalStorageData().token.accessToken);
@@ -492,7 +492,7 @@ const UserPage: FC = () => {
 
       <Grid
         className={dataForUser && dataForUser.channelUserInfo.activeSession
-        && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear' ?
+          && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear' ?
           classes.redBckgContainerShort : classes.redBckgContainer}
         container
         item
