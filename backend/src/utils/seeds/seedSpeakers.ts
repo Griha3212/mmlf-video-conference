@@ -1292,6 +1292,214 @@ export const seedMockedSpeakers = async () => {
 
   },
 
+  // --------------------------------------------------------------------- Session J
+
+  {
+
+    lastName: 'БОГАЧЕВ',
+    firstName: 'Игорь',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bogachev.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
+
+  },
+
+  {
+
+    topicName: 'Опыт внедрения инновационных технологий в логистике ООО "СИБУР"',
+    lastName: 'АГАРКОВА',
+    firstName: 'Ирина',
+    statusInCompany: 'руководитель функции Логистика',
+    company: 'ООО "СИБУР"',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
+
+  },
+
+  {
+
+    topicName: 'Трансформация системы управления запасами ПАО «Северсталь» за 2020 год',
+    lastName: 'ЛУЧИН',
+    firstName: 'Владимир',
+    statusInCompany: 'начальник управления по ремонтам и инвестициям',
+    company: 'ПАО «Северсталь»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
+
+  },
+
+  {
+
+    topicName: 'Опыт внедрения централизованной системы управления складским хозяйством на промышленном предприятии',
+    lastName: 'АБДРАХМАНОВ',
+    firstName: 'Артур',
+    statusInCompany: 'советник управляющего директора',
+    company: 'ПАО «Мосэнерго»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Abdrahmanov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
+
+  },
+
+  {
+
+    topicName: 'Как изменится внутренняя логистика по обеспечению ремонтных служб ПАО «НЛМК» в 2021 г. Результаты пилотного проекта по обеспечению ремонтных служб через пункты выдачи минуя промежуточные склады реализованного в 2020 г.',
+    lastName: 'НОВИКОВ',
+    firstName: 'Дмитрий',
+    statusInCompany: '',
+    company: 'ПАО «НЛМК»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Novikov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
+
+  },
+
+  {
+
+    topicName: 'Карта предотвращения рисков при доставке проектных грузов на промышленные предприятия',
+    lastName: 'ХЛЕБНИКОВ',
+    firstName: 'Алексей',
+    statusInCompany: 'генеральный директор',
+    company: 'EMAX Logistics',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
+
+  },
+
+  // --------------------------------------------------------------------- Exc1
+
+  {
+
+    lastName: 'ДЕМИН',
+    firstName: 'Василий',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'Exc1'),
+
+  },
+
+  {
+
+    topicName: 'Опыт внедрения инновационных технологий в логистике ООО "СИБУР"',
+    lastName: 'АГАРКОВА',
+    firstName: 'Ирина',
+    statusInCompany: 'руководитель функции Логистика',
+    company: 'ООО "СИБУР"',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Exc1'),
+
+  },
+
+  {
+
+    topicName: 'Трансформация системы управления запасами ПАО «Северсталь» за 2020 год',
+    lastName: 'ЛУЧИН',
+    firstName: 'Владимир',
+    statusInCompany: 'начальник управления по ремонтам и инвестициям',
+    company: 'ПАО «Северсталь»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Exc1'),
+
+  },
+
+  {
+
+    topicName: 'Опыт внедрения централизованной системы управления складским хозяйством на промышленном предприятии',
+    lastName: 'АБДРАХМАНОВ',
+    firstName: 'Артур',
+    statusInCompany: 'советник управляющего директора',
+    company: 'ПАО «Мосэнерго»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Abdrahmanov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Exc1'),
+
+  },
+
+  {
+
+    topicName: 'Как изменится внутренняя логистика по обеспечению ремонтных служб ПАО «НЛМК» в 2021 г. Результаты пилотного проекта по обеспечению ремонтных служб через пункты выдачи минуя промежуточные склады реализованного в 2020 г.',
+    lastName: 'НОВИКОВ',
+    firstName: 'Дмитрий',
+    statusInCompany: '',
+    company: 'ПАО «НЛМК»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Novikov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Exc1'),
+
+  },
+
+  {
+
+    topicName: 'Карта предотвращения рисков при доставке проектных грузов на промышленные предприятия',
+    lastName: 'ХЛЕБНИКОВ',
+    firstName: 'Алексей',
+    statusInCompany: 'генеральный директор',
+    company: 'EMAX Logistics',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'Exc1'),
+
+  },
+
   ];
 
   const results = [];
