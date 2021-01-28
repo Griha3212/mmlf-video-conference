@@ -504,6 +504,794 @@ export const seedMockedSpeakers = async () => {
 
   },
 
+  // --------------------------------------------------------------------- Session D
+
+  {
+
+    lastName: 'МАКСИМОВСКИЙ',
+    firstName: 'Александр',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Maksimovskiy.jpg`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'SessD'),
+
+  },
+
+  {
+
+    topicName: 'Опыт развития региональных складов',
+    lastName: 'КАЗАНОВСКИЙ',
+    firstName: 'Павел',
+    statusInCompany: 'директор по логистике',
+    company: 'Галацентр',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazanovskiy.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessD'),
+
+  },
+
+  {
+
+    topicName: 'Оптимизация складских издержек за счет модернизации существующего оборудования',
+    lastName: 'ФАТУЛЛАЕВ',
+    firstName: 'Роман',
+    statusInCompany: 'генеральный директор',
+    company: 'ООО «Новейшие Технологии ЛС»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Fatullaev.jpg`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessD'),
+
+  },
+
+  {
+
+    topicName: 'Подходы к реализации технологий современной концепции Dark Store',
+    lastName: 'КОБЫЛИН',
+    firstName: 'Александр',
+    statusInCompany: 'директор по развитию',
+    company: 'ОАО «ПКБ «ТЕХНОПРИБОР»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Kobylin.jpg`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessD'),
+
+  },
+
+  {
+
+    topicName: 'Реализованный кейс. Применение различных технологий хранения и обработки грузов на одном складе',
+    lastName: 'ИВАНУШКИНА',
+    firstName: 'Светлана',
+    statusInCompany: 'бренд-менеджер',
+    company: 'FirstLogistik',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ivanushkina.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessD'),
+
+  },
+
+  {
+
+    topicName: 'Как на современном складе оптимизировать учет выдачи, сдачи и хранения ТСД с помощью Инлокер',
+    lastName: 'КАЗАРЦЕВ',
+    firstName: 'Кирилл',
+    statusInCompany: 'генеральный директор',
+    company: 'Инфотех',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazarcev.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessD'),
+
+  },
+
+  // --------------------------------------------------------------------- Session E
+
+  {
+
+    lastName: 'ТРОИЦКИЙ',
+    firstName: 'Андрей',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Troickiy.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ШАПОЧКА',
+    firstName: 'Максим',
+    statusInCompany: 'начальник управления по стратегическому развитию Дирекции по логистике',
+    company: 'АО «Объединенная металлургическая компания»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'МАШКОВ',
+    firstName: 'Александр',
+    statusInCompany: 'директор по логистике',
+    company: 'ПАО «Ростелеком»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Mashkov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'КЛИМОВА',
+    firstName: 'Светлана',
+    statusInCompany: 'директор по логистике',
+    company: 'АО «Прогресс» (Фруто-Няня)',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Klimova.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ШИРЯЕВ',
+    firstName: 'Равшан',
+    statusInCompany: 'управляющий сетью СЗФО',
+    company: 'СТД «Петрович»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ПОЛКОВНИКОВ',
+    firstName: 'Вячеслав',
+    statusInCompany: 'директор по логистике',
+    company: 'ГК «Армтек»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+
+  },
+
+  // --------------------------------------------------------------------- Session F
+
+  {
+
+    lastName: 'УСМАНОВ',
+    firstName: 'Эльдар',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Troickiy.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'SessF'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ШАПОЧКА',
+    firstName: 'Максим',
+    statusInCompany: 'начальник управления по стратегическому развитию Дирекции по логистике',
+    company: 'АО «Объединенная металлургическая компания»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessF'),
+
+  },
+
+  {
+
+    topicName: 'Как грамотно выстроить процессы транспортной логистики и сократить затраты на грузоперевозку',
+    lastName: 'ЛОГВИН',
+    firstName: 'Александр',
+    statusInCompany: 'генеральный директор',
+    company: 'S2B',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.jpg`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessF'),
+
+  },
+
+  {
+
+    topicName: 'Тема уточняется',
+    lastName: 'ПЬЯНКОВ',
+    firstName: 'Александр',
+    statusInCompany: 'директор по 3PL',
+    company: 'FESCO',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessF'),
+
+  },
+
+  {
+
+    topicName: 'Тема уточняется',
+    lastName: 'Представитель',
+    firstName: 'компании',
+    statusInCompany: '',
+    company: 'ГАЗ',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessF'),
+
+  },
+
+  {
+
+    topicName: 'Оптимизация затрат в цепи поставок с распределением грузов через международный транспортно-логистический и производственный хаб на базе аэропортов Красноярск и Черемшанка',
+    lastName: 'НИКОЛАЕВ',
+    firstName: 'Алексей',
+    statusInCompany: 'директор по развитию',
+    company: 'корпорация «Енисейская Сибирь»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessF'),
+
+  },
+
+  // --------------------------------------------------------------------- Session WMS DAY-2
+
+  {
+
+    lastName: 'ЗВЕРЕВ',
+    firstName: 'Александр',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Troickiy.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'WMS2'),
+
+  },
+
+  {
+
+    topicName: 'Обязательные условия и мероприятия для удачного выбора и внедрения WMS',
+    lastName: 'САНЧЕНКО',
+    firstName: 'Никита',
+    statusInCompany: 'директор',
+    company: 'PSI Logistics Moscow',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sanchenko.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'WMS2'),
+
+  },
+
+  {
+
+    topicName: 'Продвинутый инструментарий оптимизации затрат в WMS',
+    lastName: 'БЛИНОВ',
+    firstName: 'Дмитрий',
+    statusInCompany: 'технический директор',
+    company: 'LogistiX',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Blinov.jpg`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'WMS2'),
+
+  },
+
+  {
+
+    topicName: 'Тема уточняется',
+    lastName: 'Представитель',
+    firstName: 'компании',
+    statusInCompany: '',
+    company: 'Solvo',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'WMS2'),
+
+  },
+
+  {
+
+    topicName: 'Тема уточняется',
+    lastName: 'Представитель',
+    firstName: 'компании',
+    statusInCompany: '',
+    company: 'КорусКонсалтинг',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'WMS2'),
+
+  },
+
+  {
+
+    topicName: 'Технология goods-to-person на примере роя роботов',
+    lastName: 'ПИВОВАР',
+    firstName: 'Александр',
+    statusInCompany: '',
+    company: 'Solvo',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'WMS2'),
+
+  },
+
+  // --------------------------------------------------------------------- Session G
+
+  {
+
+    lastName: 'СОКОЛОВ',
+    firstName: 'Алексей',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sokolov.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  {
+
+    topicName: 'Как e-commerce теряет клиентов из-за логистики?',
+    lastName: 'ШИРЯЕВ',
+    firstName: 'Равшан',
+    statusInCompany: 'управляющий сетью СЗФО',
+    company: 'СТД «Петрович»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  {
+
+    topicName: 'E-comerсe: автоматизация мезонина',
+    lastName: 'ГОРСКИЙ',
+    firstName: 'Виталий',
+    statusInCompany: '',
+    company: 'COMITAS',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  {
+
+    topicName: 'Изменение форматов логистики в условиях роста онлайн продаж',
+    lastName: 'ОБРАЗЦОВА',
+    firstName: 'Елена',
+    statusInCompany: 'директор по операциям',
+    company: 'Утконос',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  {
+
+    topicName: 'Концепт microfullfilment центра на примере кейса commonsense',
+    lastName: 'ШУЛЬЦ',
+    firstName: 'Александр',
+    statusInCompany: 'директор по логистике',
+    company: 'DECATHLON',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shulz.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  {
+
+    topicName: 'Оптимизации процессов для сокращения срока запуска фулфилмент-центра',
+    lastName: 'ДИБРОВА',
+    firstName: 'Алексей',
+    statusInCompany: 'руководитель инжиниринговой группы',
+    company: 'Ozon',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dibrova.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  {
+
+    topicName: 'Логистическая поддержка при развитии e-com продаж',
+    lastName: 'Представитель',
+    firstName: 'компании',
+    statusInCompany: 'руководитель инжиниринговой группы',
+    company: 'Сберлогистика',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  // --------------------------------------------------------------------- Session H
+
+  {
+
+    lastName: 'ДЕМИН',
+    firstName: 'Василий',
+
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ЯНКОВИЧ',
+    firstName: 'Антонина',
+    statusInCompany: 'директор по логистике',
+    company: 'Mercury',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Yankovich.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ФАРАФОНОВ',
+    firstName: 'Алексей',
+    statusInCompany: '',
+    company: '',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pharaphonov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'БЕРТОВА',
+    firstName: 'Татьяна',
+    statusInCompany: '',
+    company: '',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bertova.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ШТЫКОВ',
+    firstName: 'Павел',
+    statusInCompany: '',
+    company: '',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ХРИСТЕНКО',
+    firstName: 'Леонид',
+    statusInCompany: '',
+    company: '',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'СУРМАЧ',
+    firstName: 'Сергей',
+    statusInCompany: '',
+    company: '',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ВОЙТИКОВ',
+    firstName: 'Константин',
+    statusInCompany: '',
+    company: '',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'РАБАЕВ',
+    firstName: 'Роман',
+    statusInCompany: '',
+    company: '',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Rabaev.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  // --------------------------------------------------------------------- Session I
+
+  {
+
+    topicName: '',
+    lastName: 'АДУШЕВ',
+    firstName: 'Дмитрий',
+    statusInCompany: 'директор по логистике',
+    company: 'Mercury',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'УРИН',
+    firstName: 'Вадим',
+    statusInCompany: 'директор по логистике',
+    company: 'Mercury',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Urin.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'КЛИМОВА',
+    firstName: 'Светлана',
+    statusInCompany: 'директор по логистике',
+    company: 'Mercury',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ВЕДЕНЕЕВ',
+    firstName: 'Денис',
+    statusInCompany: 'директор по логистике',
+    company: 'Mercury',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'Представитель',
+    firstName: 'компании',
+    statusInCompany: 'директор по логистике',
+    company: 'Mercury',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
   ];
 
   const results = [];

@@ -223,7 +223,7 @@ export const seedMockedSessions = async () => {
 
     {
 
-      name: 'SessF',
+      name: 'SessI',
       letter: 'Специальная сессия I',
       description: 'Workshop решения задач участников Форума с лидерами КСЛ.Experts',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
