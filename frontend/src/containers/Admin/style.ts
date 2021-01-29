@@ -6,9 +6,7 @@ const useStyles = makeStyles((theme) => ({
   stickyCentralMenu: {
 
     position: 'fixed',
-    left: '50%',
-    top: '40%',
-    transform: 'translate(-50%, -50%);',
+    left: '36%',
 
   },
 
