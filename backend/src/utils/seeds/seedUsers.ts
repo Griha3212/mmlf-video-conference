@@ -23,6 +23,165 @@ export const seedMockedUsers = async () => {
     loginCode: 'bbb',
 
   },
+
+  {
+
+    firstName: 'test3',
+    lastName: 'testovich3',
+    company: 'companyTest3',
+    loginCode: 'ccc',
+
+  },
+  {
+
+    firstName: 'test10',
+    lastName: 'testovich10',
+    company: 'companyTest10',
+    loginCode: 'ddd',
+
+  },
+  {
+
+    firstName: 'test11',
+    lastName: 'testovich11',
+    company: 'companyTest11',
+    loginCode: 'eee',
+
+  },
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'fff',
+
+  },
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'ggg',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'hhh',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'iii',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'jjj',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'kkk',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'lll',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'mmm',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'nnn',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'ooo',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'ppp',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'qqq',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'rrr',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'sss',
+
+  },
+
+  {
+
+    firstName: 'test12',
+    lastName: 'testovich12',
+    company: 'companyTest12',
+    loginCode: 'ttt',
+
+  },
+
   {
 
     firstName: 'admin',
@@ -64,15 +223,6 @@ export const seedMockedUsers = async () => {
     loginCode: 'admin4',
     adminOfTheChannelNumber: 4,
     isAdmin: true,
-
-  },
-
-  {
-
-    firstName: 'test4',
-    lastName: 'testovich4',
-    company: 'companyTest4',
-    loginCode: 'freeUser',
 
   },
 
