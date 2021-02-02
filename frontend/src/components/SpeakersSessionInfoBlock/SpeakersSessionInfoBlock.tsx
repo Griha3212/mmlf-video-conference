@@ -552,7 +552,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
           </Grid>
         </Hidden>
-        <Grid className={classes.sessionSpeakersBlock} justify="space-around" container xs={12}>
+        <Grid className={classes.sessionSpeakersBlock} container xs={12}>
 
           {
             renderSpeakers()

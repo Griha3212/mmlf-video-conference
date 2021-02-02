@@ -6,15 +6,28 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('xs')]: {
       marginBottom: '35px',
+      marginRight: '35px',
+      flex: '0 0 100% !important',
+      maxWidth: '100% !important',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: '0px',
+      marginRight: '0px',
+      flex: '0 0 100% !important',
+      maxWidth: '16.666667% !important',
 
     },
 
     [theme.breakpoints.up('lg')]: {
       marginBottom: '0px',
+      marginRight: '0px',
 
     },
     [theme.breakpoints.up('xl')]: {
       marginBottom: '0px',
+      marginRight: '0px',
 
     },
 
@@ -167,12 +180,36 @@ const useStyles = makeStyles((theme) => ({
 
   sessionSpeakersBlock: {
 
+    [theme.breakpoints.up('xs')]: {
+      marginTop: '30px',
+      display: 'flex',
+      overflow: 'auto',
+      flexDirection: 'row',
+      flexWrap: 'nowrap',
+      // overflowX: 'scroll',
+
+      '&::-webkit-scrollbar': {
+        height: '15px',
+
+      },
+
+      '&::-webkit-scrollbar-track': {
+        backgroundColor: '#e3e3e3',
+      },
+
+      '&::-webkit-scrollbar-thumb': {
+        backgroundColor: '#ff414a',
+      },
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       marginTop: '30px',
 
     },
     [theme.breakpoints.up('xl')]: {
       marginTop: '120px',
+      justify: 'space-around',
 
     },
 
