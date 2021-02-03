@@ -441,20 +441,6 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  sessionLetterText: {
-
-    marginTop: '0px',
-    fontFamily: 'Gotham Pro Bold',
-    fontSize: '22px',
-    lineHeight: '31px',
-    backgroundColor: '#FF414A',
-    height: '34px',
-    width: '163px',
-    color: 'white',
-    textAlign: 'center',
-
-  },
-
   mainSessionInfoContainer: {
 
   },

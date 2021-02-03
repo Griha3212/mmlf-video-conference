@@ -38,6 +38,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.4rem',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.6rem',
 
@@ -84,6 +89,12 @@ const useStyles = makeStyles((theme) => ({
 
     color: 'white',
     marginTop: '5px',
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.4vw',
+      lineHeight: '1.8vw',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '0.8vw',
@@ -139,10 +150,10 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('sm')]: {
 
-      width: '13.5vw',
-      height: '3.3vw',
-      fontSize: '2.5vw',
-      lineHeight: '3.7vw',
+      width: '11vw',
+      height: '3vw',
+      fontSize: '1.7vw',
+      lineHeight: '3.3vw',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -263,6 +274,14 @@ const useStyles = makeStyles((theme) => ({
       height: '4.8vw',
       fontSize: '4vw',
       lineHeight: '4.8vw',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      width: '16vw',
+      height: '3.8vw',
+      fontSize: '2vw',
+      lineHeight: '4vw',
 
     },
 
@@ -436,6 +455,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.9vw',
+      height: '7.7vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
       height: '3.5vw',
@@ -478,6 +505,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '15px',
       height: '56px',
       width: '250px',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.9vw',
+      height: '7.7vw',
+      width: '100%',
       marginTop: '0px',
 
     },
@@ -526,6 +561,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.9vw',
+      height: '7.7vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
       height: '3.5vw',
@@ -558,6 +601,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '15px',
       height: '56px',
       width: '250px',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.9vw',
+      height: '7.7vw',
+      width: '100%',
       marginTop: '0px',
 
     },

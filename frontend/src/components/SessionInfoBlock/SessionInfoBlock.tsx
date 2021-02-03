@@ -176,11 +176,11 @@ const SessionInfoBlock = (props: any) => {
 
             <Grid container spacing={5}>
 
-              <Grid item xs={4} sm={3} xl={2} lg={2}>
+              <Grid item xs={4} sm={4} xl={2} lg={2}>
                 <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
 
               </Grid>
-              <Grid className={classes.noLeftPadding} item xs={8} xl={8} lg={8}>
+              <Grid className={classes.noLeftPadding} item xs={8} sm={7} xl={8} lg={8}>
                 <p className={classes.speakerHeaderText}>Спикер</p>
                 <p className={classes.speakerFullNameText}>
                   {`${currentSpeakerInfo
