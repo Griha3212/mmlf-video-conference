@@ -36,72 +36,9 @@ import vk from '../../img/socialImg/vk.svg';
 import facebook from '../../img/socialImg/facebook.svg';
 import youtube from '../../img/socialImg/youtube.svg';
 import cclFooter from '../../img/ccl_footer.svg';
-
-interface DataForUser {
-  channelUserInfo: {
-    break: boolean, id: number, link: string,
-    number: number,
-    activeSession: {
-      voteFoAllSession: boolean,
-      name: string,
-      id: number,
-    },
-  },
-
-  channelForShowing: {
-    break: boolean, id: number, link: string,
-    number: number
-  },
-  description: string;
-  id: number;
-  letter: string;
-  name: string;
-  speakers: Array<Speaker>
-
-  foundUser: {
-    votes: Array<Vote>
-    id: number;
-    showOtherChannelsBlock: boolean
-  }
-
-}
-
-interface Vote {
-
-  createdAt: Date;
-  id: number;
-  rate: number;
-  speaker: Speaker
-
-}
-
-interface Speaker {
-
-  company: string;
-  firstName: string;
-  id: number;
-  innerSystemName: string;
-  isModerator: boolean;
-  lastName: string;
-  linkToImg: string;
-  linkToPresentation: string;
-  linkToZoom: string;
-  topicName: string;
-
-}
-
-interface Channel {
-
-  break: boolean, id: number, link: string,
-  number: number
-
-}
-
-interface DataFromSocket {
-
-  message: string,
-
-}
+import {
+  DataForUser, Vote, Channel, Speaker, DataFromSocket,
+} from '../../interfaces/allInterfaces';
 
 const socket = io(`${process.env.REACT_APP_API_URL}`, { transports: ['websocket'] });
 
