@@ -212,13 +212,6 @@ const UserPage: FC = () => {
     loadDataForUser();
   };
 
-  const updateContactedSpeaker = async (speakerId: number) => {
-    await apiUserUpdateContactedSpeakers(
-      speakerId, userData.id, token,
-    );
-    loadDataForUser();
-  };
-
   // watch timer functional
 
   // if there is active speaker, update timer every seconds,
@@ -283,7 +276,7 @@ const UserPage: FC = () => {
 
       if (data.message === 'update current speakers votes') {
         loadDataForUser();
-        setActiveSessionSpeakersAllRates(data.votes);
+        // setActiveSessionSpeakersAllRates(data.votes);
       }
 
       if (data.message === 'update user info') {

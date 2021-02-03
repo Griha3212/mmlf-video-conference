@@ -393,7 +393,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
                     disabled={checkIsWatched(element.id)}
                     value={renderSpeakersRates(element) || 0}
                     readOnly={checkIsWatched(element.id)}
-                    onChange={async (name, newValue) => {
+                    onChange={(name, newValue) => {
                       sendVoteForSpeaker(newValue, +element.id);
                     }}
                   />

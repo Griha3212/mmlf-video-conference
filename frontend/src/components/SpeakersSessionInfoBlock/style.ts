@@ -194,9 +194,9 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       marginTop: '30px',
       display: 'flex',
-      overflow: 'auto',
       flexDirection: 'row',
       flexWrap: 'nowrap',
+      overflow: 'auto',
       // overflowX: 'scroll',
 
       '&::-webkit-scrollbar': {
@@ -241,12 +241,13 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '30px',
       justifyContent: 'center',
       flexWrap: 'wrap',
+      overflow: 'visible',
 
     },
     [theme.breakpoints.up('xl')]: {
       marginTop: '120px',
       justifyContent: 'center',
-
+      overflow: 'visible',
     },
 
   },
