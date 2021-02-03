@@ -26,7 +26,7 @@ import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/
 import {
   apiGetUser, apiUserUpdateWatchedSpeakers,
   apiGetAllChannels, apiUserChangeActiveChannel,
-  apiUserUpdateWatchedSpeakersAllInSession, apiUserUpdateContactedSpeakers,
+  apiUserUpdateWatchedSpeakersAllInSession,
 } from '../../api/user';
 import lerua from '../../img/partnersImg/lerua.svg';
 import severstal from '../../img/partnersImg/severstal.svg';
@@ -37,7 +37,7 @@ import facebook from '../../img/socialImg/facebook.svg';
 import youtube from '../../img/socialImg/youtube.svg';
 import cclFooter from '../../img/ccl_footer.svg';
 
-type DataForUser = {
+interface DataForUser {
   channelUserInfo: {
     break: boolean, id: number, link: string,
     number: number,
@@ -64,18 +64,18 @@ type DataForUser = {
     showOtherChannelsBlock: boolean
   }
 
-};
+}
 
-type Vote = {
+interface Vote {
 
   createdAt: Date;
   id: number;
   rate: number;
   speaker: Speaker
 
-};
+}
 
-type Speaker = {
+interface Speaker {
 
   company: string;
   firstName: string;
@@ -88,14 +88,20 @@ type Speaker = {
   linkToZoom: string;
   topicName: string;
 
-};
+}
 
-type Channel = {
+interface Channel {
 
   break: boolean, id: number, link: string,
   number: number
 
-};
+}
+
+interface DataFromSocket {
+
+  message: string,
+
+}
 
 const socket = io(`${process.env.REACT_APP_API_URL}`, { transports: ['websocket'] });
 
@@ -139,9 +145,6 @@ const UserPage: FC = () => {
   // all channels info
 
   const [allChannelsInfo, setAllChannelsInfo] = React.useState<Channel[]>();
-  // const isVisible = usePageVisibility();
-
-  // console.log('isVisible :>> ', isVisible);
 
   // will start hook again if user will be changed
   useEffect(() => {
@@ -267,19 +270,19 @@ const UserPage: FC = () => {
   }, [activeSpeakerInfo]);
 
   useEffect(() => {
-    socket.on('connectToPersonalRoom', (data: any) => {
-      if (data.message === 'disconnect current user') {
+    socket.on('connectToPersonalRoom', (dataFromSocket: DataFromSocket) => {
+      if (dataFromSocket.message === 'disconnect current user') {
         localStorage.removeItem('token');
         localStorage.removeItem('refreshToken');
         history.push('/');
       }
 
-      if (data.message === 'update current speakers votes') {
+      if (dataFromSocket.message === 'update current speakers votes') {
         loadDataForUser();
         // setActiveSessionSpeakersAllRates(data.votes);
       }
 
-      if (data.message === 'update user info') {
+      if (dataFromSocket.message === 'update user info') {
         loadDataForUser();
       }
     });
@@ -289,10 +292,10 @@ const UserPage: FC = () => {
   });
 
   useEffect(() => {
-    socket.on('connectToChannelRoom', (data: any) => {
+    socket.on('connectToChannelRoom', (dataFromSocket: DataFromSocket) => {
       loadDataForUser();
 
-      if (data.message === 'update') {
+      if (dataFromSocket.message === 'update') {
         loadDataForUser();
       }
     });
@@ -493,7 +496,7 @@ const UserPage: FC = () => {
       />
 
       {/* first block (active speaker) info ---------------------------*/}
-      <Grid item className={classes.innerContainer} justify="center">
+      <Grid item className={classes.innerContainer}>
         <SessionInfoBlock
           currentSessionLetter={activeSessionLetter}
           currentSessionDescription={activeSessionDescription}
@@ -511,7 +514,7 @@ const UserPage: FC = () => {
       render if not LogistOfTheYear */}
       {dataForUser && dataForUser.channelUserInfo.activeSession
         && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear' ? null : (
-          <Grid item className={classes.innerContainer} justify="center">
+          <Grid item className={classes.innerContainer}>
 
             <SpeakersSessionInfoBlock
               currentModeratorInfo={activeModeratorInfo}

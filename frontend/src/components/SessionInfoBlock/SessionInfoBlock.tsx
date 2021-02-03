@@ -10,6 +10,11 @@ import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 
+// type sessionInfoProps= {
+//   currentSpeakerInfo
+
+// }
+
 const SessionInfoBlock = (props: any) => {
   const {
     currentSpeakerInfo, currentSpeakerRate, currentUserData,

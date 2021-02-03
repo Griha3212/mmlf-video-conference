@@ -107,8 +107,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   const renderSpeakersRates = (element: any) => {
     if (currentSessionSpeakersAllRatesState) {
-      if (currentSessionSpeakersAllRatesState!.length > 0) {
-        const foundRate = currentSessionSpeakersAllRatesState!.find(
+      if (currentSessionSpeakersAllRatesState.length > 0) {
+        const foundRate = currentSessionSpeakersAllRatesState.find(
           (vote: any) => vote.speaker.id === element.id,
         );
 
@@ -284,7 +284,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+        <Grid xs={8} lg={12} xl={10} container item className={classes.mxAuto} justify="space-around">
           <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
@@ -364,7 +364,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
               </p>
 
-              <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
+              <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
                 <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
                   <img
@@ -515,7 +515,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
           </Grid>
         </Hidden>
-        <Grid className={classes.sessionSpeakersBlock} container xs={12}>
+        <Grid className={classes.sessionSpeakersBlock} container item xs={12}>
 
           {
             renderSpeakers()
