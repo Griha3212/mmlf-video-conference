@@ -50,12 +50,22 @@ const useStyles = makeStyles((theme) => ({
 
   speakerInfoBlock: {
 
+    [theme.breakpoints.down('sm')]: {
+      marginBottom: '47px',
+
+    },
+
   },
 
   speakerAvatarImg: {
 
     borderRadius: '50%',
     border: '4px solid white',
+
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '20vw',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       width: '6vw',
@@ -168,10 +178,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      fontSize: '4vw',
-      lineHeight: '4.9vw',
-      marginTop: '17px',
-
+      fontSize: '2.8vw',
+      lineHeight: '3.5vw',
+      marginTop: '11px',
+      width: '80%',
+      marginBottom: '17px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -179,13 +190,15 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: '2.4vw',
       marginTop: '17px',
       width: '80%',
+      marginBottom: '38px',
 
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '42px',
       lineHeight: '51px',
-      marginTop: '32px',
+      marginTop: '27px',
       width: '80%',
+      marginBottom: '38px',
     },
 
   },
@@ -210,10 +223,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      width: '38vw',
-      height: '4.8vw',
-      fontSize: '3vw',
-      lineHeight: '4.8vw',
+      width: '23vw',
+      height: '3.8vw',
+      fontSize: '2vw',
+      lineHeight: '4vw',
 
     },
 
@@ -309,7 +322,7 @@ const useStyles = makeStyles((theme) => ({
 
     backgroundColor: '#00124D',
     height: 'auto',
-    minHeight: '190px',
+
     width: '100%',
 
     [theme.breakpoints.up('xs')]: {
@@ -320,10 +333,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       padding: '0 67px',
       paddingTop: '34px',
+      minHeight: '190px',
     },
     [theme.breakpoints.up('xl')]: {
       padding: '0 110px',
       paddingTop: '34px',
+      minHeight: '190px',
     },
 
   },
@@ -344,8 +359,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      fontSize: '4vw',
-      lineHeight: '4.8vw',
+      fontSize: '2.4vw',
+      lineHeight: '3.5vw',
       marginBottom: '50px',
 
     },
@@ -360,6 +375,7 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '36px',
       lineHeight: '51px',
       marginBottom: '60px',
+
     },
 
   },
@@ -375,7 +391,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       fontSize: '15px',
       lineHeight: '20px',
-      marginBottom: '24px',
+      marginBottom: '14px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '2vw',
+      lineHeight: '2.5vw',
+      marginBottom: '7px',
 
     },
 

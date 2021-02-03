@@ -2,6 +2,10 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 
+  moderatorAvatarImg: {
+
+  },
+
   singleSpeakerBlock: {
 
     [theme.breakpoints.up('xs')]: {
@@ -13,16 +17,18 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      marginBottom: '0px',
+      marginBottom: '35px',
       marginRight: '0px',
-      flex: '0 0 100% !important',
-      maxWidth: '16.666667% !important',
+      flex: '0 0 50% !important',
+      maxWidth: '50% !important',
 
     },
 
     [theme.breakpoints.up('lg')]: {
       marginBottom: '0px',
       marginRight: '0px',
+      flex: '0 0 100% !important',
+      maxWidth: '16.666667% !important',
 
     },
     [theme.breakpoints.up('xl')]: {
@@ -462,17 +468,6 @@ const useStyles = makeStyles((theme) => ({
   textCenter: {
 
     textAlign: 'center',
-
-  },
-
-  rateSpeakerText: {
-
-    fontFamily: 'Open Sans',
-    fontWeight: 300,
-    fontSize: '15px',
-    lineHeight: '28px',
-    color: 'white',
-    marginTop: '0px',
 
   },
 

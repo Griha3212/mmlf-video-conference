@@ -521,7 +521,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
           <Grid justify="space-around" item className={classes.moderatorContainerInfoBlock} container xs={12} lg={4} xl={4}>
 
             <Grid item xs={4} sm={3} xl={3}>
-              <img width="100%" src={renderModeratorImgSrc()} alt="" />
+              <img className={classes.moderatorAvatarImg} width="100%" src={renderModeratorImgSrc()} alt="" />
 
             </Grid>
             <Grid className={classes.moderatorInfoBlock} item xs={6} sm={5} xl={8} lg={8}>

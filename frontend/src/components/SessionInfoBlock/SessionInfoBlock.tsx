@@ -169,14 +169,14 @@ const SessionInfoBlock = (props: any) => {
       {showSecondBlock() ? (
         <Grid item container justify="space-between" className={classes.lightBlueBckg}>
 
-          <Grid item className={classes.speakerInfoBlock} xl={8} lg={8} xs={12}>
+          <Grid item className={classes.speakerInfoBlock} sm={7} xl={8} lg={8} xs={12}>
             <p className={classes.speakerTheme}>
               {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
             </p>
 
             <Grid container spacing={5}>
 
-              <Grid item xs={4} xl={2} lg={2}>
+              <Grid item xs={4} sm={3} xl={2} lg={2}>
                 <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
 
               </Grid>
@@ -198,7 +198,7 @@ const SessionInfoBlock = (props: any) => {
 
           </Grid>
 
-          <Grid xs={12} lg={3} xl={3}>
+          <Grid xs={12} sm={5} lg={3} xl={3}>
 
             <div className={classes.textCenter}>
               <Box component="fieldset" mb={1} borderColor="transparent">

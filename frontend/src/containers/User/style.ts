@@ -411,13 +411,13 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     zIndex: 2,
 
-    [theme.breakpoints.down('xs')]: {
-      paddingLeft: '24px',
-      paddingRight: '24px',
+    [theme.breakpoints.down('sm')]: {
+      paddingLeft: '50px',
+      paddingRight: '50px',
 
     },
 
-    [theme.breakpoints.down('sm')]: {
+    [theme.breakpoints.down('xs')]: {
       paddingLeft: '24px',
       paddingRight: '24px',
 
@@ -499,6 +499,12 @@ const useStyles = makeStyles((theme) => ({
       // lineHeight: '56px',
     },
 
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '4.4vw',
+      textAlign: 'left',
+      // lineHeight: '56px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.8vw',
       textAlign: 'center',
@@ -522,6 +528,11 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('xs')]: {
       width: '34vw',
+      // height: '38px',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      width: '25vw',
       // height: '38px',
     },
 
@@ -568,6 +579,14 @@ const useStyles = makeStyles((theme) => ({
       left: '11vw',
     },
 
+    [theme.breakpoints.up('sm')]: {
+      width: '18vw',
+      height: '95%',
+      fontSize: '1.5vw',
+      marginTop: '0px',
+      left: '11vw',
+    },
+
     [theme.breakpoints.up('lg')]: {
       width: '16.4vw',
       height: '3vw',
@@ -597,8 +616,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      paddingLeft: '35px',
-      paddingRight: '35px',
+      paddingLeft: '34px',
+      paddingRight: '34px',
 
     },
 

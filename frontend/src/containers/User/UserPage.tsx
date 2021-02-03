@@ -412,7 +412,7 @@ const UserPage: FC = () => {
   return (
     <>
       {/* header pc */}
-      <Hidden smDown>
+      <Hidden xsDown>
         <Grid
           container
           xl={12}
@@ -420,7 +420,7 @@ const UserPage: FC = () => {
           className={`${classes.mainContainer} ${classes.darkBlueBckgTop} ${classes.topPart}`}
         >
 
-          <Grid item className={classes.myAuto} lg={3} xl={3} sm={12}>
+          <Grid item className={classes.myAuto} lg={3} xl={3} sm={4}>
             <img
               onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
               className={classes.mmlfTopLogoImg}
@@ -429,11 +429,11 @@ const UserPage: FC = () => {
             />
           </Grid>
 
-          <Grid item className={classes.myAuto} xl={6} lg={6} sm={12}>
+          <Grid item className={classes.myAuto} xl={6} lg={6} sm={4}>
             <Typography className={classes.conferenceTopText} align="center">Конференция</Typography>
           </Grid>
 
-          <Grid item className={classes.myAuto} xl={3} lg={3} sm={12}>
+          <Grid item className={classes.myAuto} xl={3} lg={3} sm={4}>
             <Button
               onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
               className={classes.loadProgramButton}
@@ -446,7 +446,7 @@ const UserPage: FC = () => {
       </Hidden>
 
       {/* header mobile */}
-      <Hidden only={['lg', 'xl', 'md']}>
+      <Hidden only={['lg', 'xl', 'md', 'sm']}>
         <Grid
           container
           xl={12}
