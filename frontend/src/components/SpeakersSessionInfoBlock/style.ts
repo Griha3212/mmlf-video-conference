@@ -205,11 +205,12 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       marginTop: '30px',
+      justifyContent: 'space-around',
 
     },
     [theme.breakpoints.up('xl')]: {
       marginTop: '120px',
-      justify: 'space-around',
+      justifyContent: 'space-around',
 
     },
 
