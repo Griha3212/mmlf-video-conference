@@ -25,15 +25,20 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-      marginBottom: '0px',
+
       marginRight: '0px',
-      flex: '0 0 100% !important',
-      maxWidth: '16.666667% !important',
+
+      marginBottom: '35px',
+      flex: '0 0 20% !important',
+      maxWidth: '20% !important',
 
     },
     [theme.breakpoints.up('xl')]: {
-      marginBottom: '0px',
+
       marginRight: '0px',
+      marginBottom: '35px',
+      flex: '0 0 20% !important',
+      maxWidth: '20% !important',
 
     },
 
@@ -234,12 +239,13 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       marginTop: '30px',
-      justifyContent: 'space-around',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
 
     },
     [theme.breakpoints.up('xl')]: {
       marginTop: '120px',
-      justifyContent: 'space-around',
+      justifyContent: 'center',
 
     },
 
