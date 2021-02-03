@@ -410,7 +410,6 @@ const useStyles = makeStyles((theme) => ({
       height: '56px',
       width: '250px',
       marginTop: '0px',
-      marginBottom: '15px',
 
     },
 

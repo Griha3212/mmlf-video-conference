@@ -203,6 +203,29 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('sm')]: {
+      marginTop: '30px',
+      display: 'flex',
+      overflow: 'auto',
+      flexDirection: 'row',
+      flexWrap: 'nowrap',
+      // overflowX: 'scroll',
+
+      '&::-webkit-scrollbar': {
+        height: '15px',
+
+      },
+
+      '&::-webkit-scrollbar-track': {
+        backgroundColor: '#e3e3e3',
+      },
+
+      '&::-webkit-scrollbar-thumb': {
+        backgroundColor: '#ff414a',
+      },
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       marginTop: '30px',
       justifyContent: 'space-around',
@@ -227,16 +250,26 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('sm')]: {
+      marginTop: 'auto',
+      marginBottom: 'auto',
+      marginLeft: '0px',
+      paddingLeft: '20px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       marginTop: '10px',
       marginBottom: 'auto',
       marginLeft: '0px',
+      paddingLeft: '0px',
 
     },
     [theme.breakpoints.up('xl')]: {
       marginTop: 'auto',
       marginBottom: 'auto',
       marginLeft: '30px',
+      paddingLeft: '0px',
 
     },
 
@@ -252,11 +285,21 @@ const useStyles = makeStyles((theme) => ({
 
     height: '120px',
 
+    [theme.breakpoints.down('sm')]: {
+      height: 'auto',
+      paddingLeft: '10px',
+      paddingRight: '10px',
+      paddingTop: '20px',
+      justifyContent: 'center',
+
+    },
+
     [theme.breakpoints.down('xs')]: {
       height: 'auto',
       paddingLeft: '10px',
       paddingRight: '10px',
       paddingTop: '20px',
+      justifyContent: 'space-around',
 
     },
 
@@ -282,6 +325,14 @@ const useStyles = makeStyles((theme) => ({
       width: '28.7vw',
       height: '5.6vw',
       marginBottom: '13px',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '3vw',
+      lineHeight: '3.7vw',
+      width: '19.7vw',
+      height: '3.6vw',
+      marginBottom: '5px',
     },
 
     [theme.breakpoints.up('lg')]: {
