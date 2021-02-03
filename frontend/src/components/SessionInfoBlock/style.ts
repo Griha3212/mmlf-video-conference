@@ -196,6 +196,14 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '17px',
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2.2vw',
+      lineHeight: '2.5vw',
+      marginTop: '14px',
+      width: '80%',
+      marginBottom: '21px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '2vw',
       lineHeight: '2.4vw',
@@ -238,6 +246,14 @@ const useStyles = makeStyles((theme) => ({
       height: '3.8vw',
       fontSize: '2vw',
       lineHeight: '4vw',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      width: '17vw',
+      height: '2.8vw',
+      fontSize: '1.5vw',
+      lineHeight: '3vw',
 
     },
 
@@ -285,6 +301,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      width: '12vw',
+      height: '2.8vw',
+      fontSize: '1.5vw',
+      lineHeight: '3vw',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       width: '8vw',
       height: '1.8vw',
@@ -324,9 +348,15 @@ const useStyles = makeStyles((theme) => ({
       top: '-1px',
     },
 
+    [theme.breakpoints.up('md')]: {
+      padding: '0 56px',
+      paddingTop: '35px',
+      paddingBottom: '23px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       padding: '0 67px',
-      paddingTop: '35px',
+      paddingTop: '31px',
       paddingBottom: '30px',
     },
     [theme.breakpoints.up('xl')]: {
@@ -347,6 +377,11 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       padding: '0 22px',
       paddingTop: '14px',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      padding: '0 56px',
+      paddingTop: '17px',
     },
 
     [theme.breakpoints.up('lg')]: {

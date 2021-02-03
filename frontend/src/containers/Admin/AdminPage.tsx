@@ -226,22 +226,54 @@ const AdminPage: FC = () => {
         <Grid item justify="center" xs={4}>
           <div className={classes.stickyCentralMenu}>
             <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP}`}>
-              <Button className={classes.speakerButton} onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)} variant="contained" color="primary">Активировать выбранного спикера</Button>
+              <Button
+                className={classes.speakerButton}
+                onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)}
+                variant="contained"
+                color="primary"
+              >
+                Активировать выбранного спикера
+
+              </Button>
             </p>
 
             <p className={classes.textCenter}>
-              <Button className={classes.speakerButton} onClick={() => setBreakBetweenSessions()} variant="contained" color="primary">Активировать перерыв</Button>
+              <Button
+                className={classes.speakerButtonBigMargin}
+                onClick={() => setBreakBetweenSessions()}
+                variant="contained"
+                color="primary"
+              >
+                Активировать перерыв
+
+              </Button>
             </p>
 
             {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
               <p className={classes.textCenter}>
-                <Button className={classes.speakerButton} onClick={() => setLogistOfTheYearSession()} variant="contained" color="primary">Активировать награждение Логист Года</Button>
+                <Button
+                  className={classes.speakerButton}
+                  onClick={() => setLogistOfTheYearSession()}
+                  variant="contained"
+                  color="primary"
+                >
+                  Активировать награждение Логист Года
+
+                </Button>
               </p>
             ) : null}
 
             {dataForAdmin && dataForAdmin.channelAdminInfo.number === 1 ? (
               <p className={classes.textCenter}>
-                <Button className={classes.speakerButton} onClick={() => disableLogistOfTheYearSession()} variant="contained" color="primary">Деактивировать награждение Логист Года</Button>
+                <Button
+                  className={classes.speakerButton}
+                  onClick={() => disableLogistOfTheYearSession()}
+                  variant="contained"
+                  color="secondary"
+                >
+                  Деактивировать награждение Логист Года
+
+                </Button>
               </p>
             ) : null}
           </div>

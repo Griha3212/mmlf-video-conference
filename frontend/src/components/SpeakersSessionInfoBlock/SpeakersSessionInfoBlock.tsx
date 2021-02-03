@@ -136,7 +136,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
           <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
@@ -173,7 +173,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
           <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
@@ -210,7 +210,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
           <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
@@ -247,44 +247,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
         </p>
 
-        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
-
-          </Grid>
-
-        </Grid>
-
-      </Grid>
-
-      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
-
-        <p className={classes.speakerAvatarInsideSessionParagraph}>
-          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
-        </p>
-        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
-        <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p className={classes.textCenter}>
-          <Box component="fieldset" mb={3} borderColor="transparent">
-            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
-          </Box>
-
-        </p>
-
-        <Grid xs={8} lg={12} xl={10} container className={classes.mxAuto} justify="space-around">
+        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
           <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
             <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
@@ -520,7 +483,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
         <Hidden only={['lg', 'xl', 'md']}>
           <Grid justify="space-around" item className={classes.moderatorContainerInfoBlock} container xs={12} lg={4} xl={4}>
 
-            <Grid item xs={4} sm={3} xl={3}>
+            <Grid item xs={4} sm={2} xl={3}>
               <img className={classes.moderatorAvatarImg} width="100%" src={renderModeratorImgSrc()} alt="" />
 
             </Grid>
@@ -533,13 +496,13 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
           </Grid>
         </Hidden>
-        <Grid item xs={12} lg={8} xl={8}>
+        <Grid item xs={12} md={8} lg={8} xl={8}>
           <p className={classes.speakersBlockHeader}>Спикеры сессии</p>
         </Grid>
         <Hidden smDown>
           <Grid justify="space-between" item className={classes.moderatorContainerInfoBlock} container xs={4} lg={4} xl={4}>
 
-            <Grid item xs={3} xl={3}>
+            <Grid item xs={3} md={3} xl={3}>
               <img width="100%" src={renderModeratorImgSrc()} alt="" />
 
             </Grid>

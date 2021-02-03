@@ -10,6 +10,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
+      textAlign: 'center',
+    },
+
+    [theme.breakpoints.up('lg')]: {
       textAlign: 'left',
     },
 
@@ -23,10 +27,15 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('sm')]: {
       marginBottom: '73px',
-      width: '40% !important',
+      width: '30% !important',
     },
 
     [theme.breakpoints.up('md')]: {
+      marginBottom: '73px',
+      width: '30% !important',
+    },
+
+    [theme.breakpoints.up('lg')]: {
       marginBottom: '0px',
       width: '100% !important',
     },
@@ -439,6 +448,12 @@ const useStyles = makeStyles((theme) => ({
     position: 'relative',
     zIndex: 2,
 
+    [theme.breakpoints.down('md')]: {
+      paddingLeft: '64px',
+      paddingRight: '64px',
+
+    },
+
     [theme.breakpoints.down('sm')]: {
       paddingLeft: '50px',
       paddingRight: '50px',
@@ -461,7 +476,11 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
 
     [theme.breakpoints.up('xs')]: {
-      height: '1109px',
+      height: '900px',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      height: '735px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -481,7 +500,7 @@ const useStyles = makeStyles((theme) => ({
     zIndex: 1,
 
     [theme.breakpoints.up('xs')]: {
-      height: '260px',
+      height: '175px',
     },
 
     [theme.breakpoints.up('sm')]: {

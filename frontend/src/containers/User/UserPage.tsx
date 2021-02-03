@@ -558,6 +558,7 @@ const UserPage: FC = () => {
               item
               xs={8}
               sm={12}
+              md={12}
               xl={3}
               lg={3}
             >
@@ -571,6 +572,7 @@ const UserPage: FC = () => {
               item
               xs={8}
               sm={12}
+              md={12}
               xl={3}
               lg={3}
             >
@@ -584,6 +586,7 @@ const UserPage: FC = () => {
               item
               xs={8}
               sm={12}
+              md={12}
               xl={3}
               lg={3}
             >
@@ -615,7 +618,7 @@ const UserPage: FC = () => {
             <Grid xs={12} xl={3} lg={3} className={classes.myAuto} item>
               <p className={classes.footerTextDate}>15-19 февраля 2021</p>
             </Grid>
-            <Grid xs={8} sm={6} xl={2} lg={2} className={classes.myAuto} item>
+            <Grid xs={8} sm={4} xl={2} lg={2} className={classes.myAuto} item>
               <Grid container item justify="space-around">
                 <Grid item>
                   <img

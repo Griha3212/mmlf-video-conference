@@ -52,6 +52,12 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  speakerButtonBigMargin: {
+
+    marginBottom: '120px',
+
+  },
+
   paper: {
     marginTop: theme.spacing(8),
     display: 'flex',

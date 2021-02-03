@@ -341,10 +341,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      fontSize: '3vw',
-      lineHeight: '3.7vw',
-      width: '19.7vw',
-      height: '3.6vw',
+      fontSize: '1.7vw',
+      lineHeight: '3.2vw',
+      width: '12vw',
+      height: '3vw',
       marginBottom: '5px',
     },
 
@@ -394,16 +394,26 @@ const useStyles = makeStyles((theme) => ({
       marginRight: 'auto',
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3.4vw',
+      lineHeight: '4.8vw',
+      marginTop: '0px',
+      textAlign: 'left',
+      marginLeft: '4vw',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.3vw',
       textAlign: 'left',
-      marginTop: '0px',
+      marginLeft: '0vw',
+      marginTop: '5px',
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '70px',
       lineHeight: '79px',
       textAlign: 'left',
-      marginTop: '0px',
+      marginTop: '18px',
+      marginLeft: '3vw',
     },
 
   },
@@ -416,6 +426,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
 
       marginTop: '20px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      padding: '0 60px',
+      paddingTop: '68px',
+      marginTop: '37px',
+      paddingBottom: '63px',
 
     },
 
@@ -433,18 +451,6 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '72px',
 
     },
-
-  },
-
-  sessionNameText: {
-
-    fontFamily: 'Open Sans',
-    fontWeight: 700,
-    fontSize: '42px',
-    lineHeight: '27px',
-    color: 'white',
-    marginTop: '32px',
-    marginBottom: '38px',
 
   },
 
