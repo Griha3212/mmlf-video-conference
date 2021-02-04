@@ -62,21 +62,16 @@ io.on('connection', (socket) => {
 
   // id as room
   socket.on('connectToPersonalRoom', async (id: number) => {
-    const room = id;
     socket.join(String(id));
     // console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
+
     const ids = await io.allSockets();
-    console.log(chalk.blueBright.underline(`amount of connected users total${ids.size}`));
+    // console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${id}`));
+    console.log(chalk.blueBright.underline(`amount of connected users total ${ids.size}`));
   });
 
   socket.on('connectToChannelRoom', (numberOfChannelToCoonect: number) => {
-    const room = numberOfChannelToCoonect;
     socket.join(`channel${String(numberOfChannelToCoonect)}`);
     // console.log(chalk.blue.underline(`connectedToChannelRoom: channel${room}`));
   });
-});
-
-io.on('disconnect', async () => {
-  const ids = await io.allSockets();
-  console.log('room.length; :>> ', ids.size);
 });
