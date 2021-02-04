@@ -43,6 +43,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.6rem',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.6rem',
 
@@ -96,6 +101,12 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.2vw',
+      lineHeight: '1.6vw',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '0.8vw',
       lineHeight: '1vw',
@@ -116,6 +127,12 @@ const useStyles = makeStyles((theme) => ({
     color: 'white',
     marginTop: '5px',
     marginBottom: '0px',
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2vw',
+      lineHeight: '2.8vw',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.4vw',
@@ -154,6 +171,14 @@ const useStyles = makeStyles((theme) => ({
       height: '3vw',
       fontSize: '1.7vw',
       lineHeight: '3.3vw',
+    },
+
+    [theme.breakpoints.up('md')]: {
+
+      width: '7vw',
+      height: '2.3vw',
+      fontSize: '1.4vw',
+      lineHeight: '2.3vw',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -350,7 +375,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('md')]: {
       padding: '0 56px',
-      paddingTop: '35px',
+      paddingTop: '31px',
       paddingBottom: '23px',
     },
 
@@ -419,6 +444,13 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2vw',
+      lineHeight: '3vw',
+      marginBottom: '50px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.9vw',
       lineHeight: '2.8vw',
@@ -452,6 +484,13 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       fontSize: '2vw',
       lineHeight: '2.5vw',
+      marginBottom: '7px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.7vw',
+      lineHeight: '2.3vw',
       marginBottom: '7px',
 
     },
@@ -494,6 +533,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1.9vw',
       height: '7.7vw',
       width: '100%',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.3vw',
+      height: '3.7vw',
+      width: '82%',
       marginTop: '0px',
 
     },
@@ -552,6 +599,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.3vw',
+      height: '3.7vw',
+      width: '82%',
+      marginTop: '0px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
       height: '3.5vw',
@@ -604,6 +659,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.3vw',
+      height: '3.7vw',
+      width: '82%',
+      marginTop: '0px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
       height: '3.5vw',
@@ -644,6 +707,14 @@ const useStyles = makeStyles((theme) => ({
       fontSize: '1.9vw',
       height: '7.7vw',
       width: '100%',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.3vw',
+      height: '3.7vw',
+      width: '82%',
       marginTop: '0px',
 
     },

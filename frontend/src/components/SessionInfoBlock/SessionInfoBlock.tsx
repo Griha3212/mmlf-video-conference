@@ -203,7 +203,7 @@ const SessionInfoBlock = (props: any) => {
 
           </Grid>
 
-          <Grid item xs={12} sm={5} lg={3} xl={3}>
+          <Grid item xs={12} sm={5} md={4} lg={3} xl={3}>
 
             <div className={classes.textCenter}>
               <Box component="fieldset" mb={1} borderColor="transparent">

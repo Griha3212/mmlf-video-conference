@@ -271,6 +271,14 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      marginTop: '5px',
+      marginBottom: 'auto',
+      marginLeft: '0px',
+      paddingLeft: '0px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       marginTop: '10px',
       marginBottom: 'auto',
@@ -287,12 +295,6 @@ const useStyles = makeStyles((theme) => ({
     },
 
   },
-
-  // speakersBlockHeaderContainer: {
-
-  //   height: '3.7vw',
-
-  // },
 
   moderatorContainerInfoBlock: {
 
@@ -348,6 +350,14 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '5px',
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.1vw',
+      lineHeight: '2.2vw',
+      width: '7.5vw',
+      height: '2vw',
+      marginBottom: '11px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1vw',
       lineHeight: '1.7vw',
@@ -396,8 +406,8 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('md')]: {
       fontSize: '3.4vw',
-      lineHeight: '4.8vw',
-      marginTop: '0px',
+      lineHeight: '4vw',
+      marginTop: '10px',
       textAlign: 'left',
       marginLeft: '4vw',
     },
