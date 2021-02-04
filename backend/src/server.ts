@@ -10,14 +10,6 @@ import path from 'path';
 import { app } from './app';
 /* eslint-disable no-console */
 
-// declare global {
-//   namespace NodeJS {
-//     interface Global {
-//       socketServer: io.Server
-//     }
-//   }
-// }
-
 // Get port from environment and store in Express.
 const port: Number = parseInt(<string>process.env.PORT, 10) || 3005;
 console.log(chalk.yellow('process.env.PORT', process.env.PORT));
