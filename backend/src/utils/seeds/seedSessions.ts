@@ -22,7 +22,7 @@ export const seedMockedSessions = async () => {
       description: 'Развитие логистики и управления цепями поставок в России и мире: итоги 2020 года, изменения в 2021 г., новые технологии и решения.',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'WMS DAY-1',
-      nextSessionDescription: 'Панельная дискуссия директоров по логистике об условиях успеха внедрения WMS',
+      nextSessionDescription: 'Панельная дискуссия директоров по логистике о внедрении WMS',
 
     },
 
@@ -30,10 +30,10 @@ export const seedMockedSessions = async () => {
 
       name: 'WMS1',
       letter: 'WMS DAY-1',
-      description: 'Панельная дискуссия директоров по логистике об условиях успеха внедрения WMS',
+      description: 'Панельная дискуссия директоров по логистике о внедрении WMS',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Сессия E',
-      nextSessionDescription: 'Специальная сессия партнера Форума – компании SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года',
+      nextSessionDescription: 'Специальная сессия генерального партнера SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года.',
       voteFoAllSession: true,
 
     },
@@ -42,10 +42,10 @@ export const seedMockedSessions = async () => {
 
       name: 'SessE',
       letter: 'Сессия E',
-      description: 'Специальная сессия партнера Форума – компании SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года',
+      description: 'Специальная сессия генерального партнера SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года.',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'WMS DAY-2',
-      nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
+      nextSessionDescription: 'Панельная сессия. Рекомендации по улучшению логистических процессов от директоров по логистике - лидеров рынка',
       voteFoAllSession: true,
 
     },
@@ -77,18 +77,7 @@ export const seedMockedSessions = async () => {
 
       name: 'Exc1',
       letter: 'Экскурсия',
-      description: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
-      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
-      nextSessionLetter: 'Экскурсия',
-      nextSessionDescription: 'Распределительный центр «Софьино» торговой сети «Перекресток» Компании X5 Retail Group',
-      isSessionForSecondDay: true,
-    },
-
-    {
-
-      name: 'Exc2',
-      letter: 'Экскурсия',
-      description: 'Распределительный центр «Софьино» торговой сети «Перекресток» Компании X5 Retail Group',
+      description: 'Автоматизированный распределительный центр компании «ЭТМ»',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Экскурсия',
       nextSessionDescription: 'Инновационный складской комплекс Группы компаний «Дамате»',
@@ -97,12 +86,23 @@ export const seedMockedSessions = async () => {
 
     {
 
-      name: 'Exc3',
+      name: 'Exc2',
       letter: 'Экскурсия',
       description: 'Инновационный складской комплекс Группы компаний «Дамате»',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Экскурсия',
-      nextSessionDescription: 'Распределительный центр Онлайн ритейлера «Утконос»',
+      nextSessionDescription: 'DarkStore Онлайн ритейлера «Утконос»',
+      isSessionForSecondDay: true,
+    },
+
+    {
+
+      name: 'Exc3',
+      letter: 'Экскурсия',
+      description: 'DarkStore Онлайн ритейлера «Утконос»',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      nextSessionLetter: 'Экскурсия',
+      nextSessionDescription: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
       isSessionForSecondDay: true,
     },
 
@@ -110,7 +110,7 @@ export const seedMockedSessions = async () => {
 
       name: 'Exc4',
       letter: 'Экскурсия',
-      description: 'Распределительный центр Онлайн ритейлера «Утконос»',
+      description: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Экскурсия',
       nextSessionDescription: 'Централизованная складская система НЛМК',
@@ -136,15 +136,15 @@ export const seedMockedSessions = async () => {
       letter: 'Сессия A',
       description: 'Лучший опыт применения инновационных технологий в логистике',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
-      nextSessionLetter: 'Сессия D',
-      nextSessionDescription: 'Опыт создания и оптимизации работы складов и логистических центров',
+      nextSessionLetter: 'WMS DAY-2',
+      nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
 
     },
     {
 
-      name: 'SessD',
-      letter: 'Сессия D',
-      description: 'Опыт создания и оптимизации складов и логистических центров',
+      name: 'WMS2',
+      letter: 'WMS DAY-2',
+      description: 'Лучшая практика внедрения и эксплуатации WMS',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
       nextSessionLetter: 'Сессия G',
       nextSessionDescription: 'Организация логистики при развитии e-com продаж',
@@ -170,16 +170,16 @@ export const seedMockedSessions = async () => {
       letter: 'Сессия B',
       description: 'Комплексные логистические решения для ритейлеров и производителей',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
-      nextSessionLetter: 'WMS DAY-2',
-      nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
+      nextSessionLetter: 'Сессия D',
+      nextSessionDescription: 'Опыт создания и оптимизации складов и логистических центров',
 
     },
 
     {
 
-      name: 'WMS2',
-      letter: 'WMS DAY-2',
-      description: 'Лучшая практика внедрения и эксплуатации WMS',
+      name: 'SessD',
+      letter: 'Сессия D',
+      description: 'Опыт создания и оптимизации складов и логистических центров',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
       nextSessionLetter: 'Сессия J',
       nextSessionDescription: 'Логистика промышленных компаний',

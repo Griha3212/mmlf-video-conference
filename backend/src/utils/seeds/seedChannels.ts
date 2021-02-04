@@ -11,27 +11,27 @@ export const seedMockedChannels = async () => {
     number: 1,
     link: 'https://facecast.net/v/pybh3r',
     startChannelSessionLetter: 'Пленарная сессия',
-    startChannelSessionDescription: 'Развитие логистики и управление цепями поставок в России и мире: итоги 2020 года, изменения в 2021 г., новые технологии и решения.',
+    startChannelSessionDescription: 'Развитие логистики и управления цепями поставок в России и мире',
   },
 
   {
     number: 2,
     link: 'https://www.youtube.com/embed/LXb3EKWsInQ',
-    startChannelSessionLetter: 'Сессия B',
-    startChannelSessionDescription: 'Комплексные логистические решения для ритейлеров и производителей',
+    startChannelSessionLetter: 'Сессия A',
+    startChannelSessionDescription: 'Лучший опыт применения инновационных технологий в логистике',
   },
   {
     number: 3,
     link: 'https://www.youtube.com/embed/BHACKCNDMW8',
-    startChannelSessionLetter: 'Сессия C',
-    startChannelSessionDescription: 'Цифровой транспорт: прозрачное управление затратами и создание конкурентных преимуществ для бизнеса',
+    startChannelSessionLetter: 'Сессия B',
+    startChannelSessionDescription: 'Комплексные логистические решения для ритейлеров и производителей',
   },
 
   {
     number: 4,
     link: 'https://www.youtube.com/embed/pajbM_jJWnI',
-    startChannelSessionLetter: 'WMS DAY-1',
-    startChannelSessionDescription: 'Панельная дискуссия директоров по логистике об условиях успеха внедрения WMS',
+    startChannelSessionLetter: 'Сессия С',
+    startChannelSessionDescription: 'Цифровой транспорт',
   },
 
   ];
