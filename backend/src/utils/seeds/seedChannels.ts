@@ -9,7 +9,7 @@ export const seedMockedChannels = async () => {
   // test links now
   const channelsToSeed = [{
     number: 1,
-    link: 'https://facecast.net/v/pybh3r',
+    link: 'https://facecast.net/v/wi346l',
     startChannelSessionLetter: 'Пленарная сессия',
     startChannelSessionDescription: 'Развитие логистики и управления цепями поставок в России и мире',
   },
