@@ -352,11 +352,11 @@ const SpeakersSessionInfoBlock = (props: any) => {
                     id={element.id}
                     classes={{ iconEmpty: 'rateSmallDefault' }}
                     className={classes.smallScoreStarImg}
-                    name={element.id}
+                    name={String(element.id)}
                     disabled={checkIsWatched(element.id)}
                     value={renderSpeakersRates(element) || 0}
                     readOnly={checkIsWatched(element.id)}
-                    onChange={(name, newValue) => {
+                    onChange={(event, newValue: number | null) => {
                       sendVoteForSpeaker(newValue, +element.id);
                     }}
                   />
