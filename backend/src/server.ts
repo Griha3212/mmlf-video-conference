@@ -60,59 +60,23 @@ export const io = new Server(process.env.PORT ? httpsServer : server, {
 io.on('connection', (socket) => {
   socket.emit('giveMeConnectionInfo', ('hello'));
 
-  // dealRoomId as room
-  // socket.on('connectToDealRoom', (dealRoomId) => {
-  //   const room = dealRoomId;
-  //   socket.join(room);
-  //   console.log(`connectedToDealRoom: ${dealRoomId}`);
-  // });
-
   // id as room
-  socket.on('connectToPersonalRoom', (id: number) => {
+  socket.on('connectToPersonalRoom', async (id: number) => {
     const room = id;
     socket.join(String(id));
-    console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
+    // console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
+    const ids = await io.allSockets();
+    console.log(chalk.blueBright.underline(`amount of connected users total${ids.size}`));
   });
 
   socket.on('connectToChannelRoom', (numberOfChannelToCoonect: number) => {
     const room = numberOfChannelToCoonect;
     socket.join(`channel${String(numberOfChannelToCoonect)}`);
-    console.log(chalk.blue.underline(`connectedToChannelRoom: channel${room}`));
+    // console.log(chalk.blue.underline(`connectedToChannelRoom: channel${room}`));
   });
+});
 
-  // socket.on('sendMessage', async (data) => {
-  //   console.log('sending message', data);
-  //   await saveMessageInDataBaseAndSendToDealRoomChat(data);
-  // });
-
-  // // NP sockets
-  // socket.on('changeNP', async (data) => {
-  //   await updateNPInDataBaseAndSendToDealRoom(data);
-  // });
-
-  // socket.on('agreeNP', async (data) => {
-  //   await agreeWithNPInDataBaseAndSendToDealRoom(data);
-  // });
-
-  // // Post trade steps sockets
-  // socket.on('changePTS', async (data) => {
-  //   await updatePTSInDataBaseAndSendToDealRoom(data);
-  // });
-
-  // socket.on('agreePTS', async (data) => {
-  //   await agreeWithPTSInDataBaseAndSendToDealRoom(data);
-  // });
-
-  // // Post trade steps sockets
-  // socket.on('changeTimer', async (data) => {
-  //   await updateDealTimerForBothSides(data);
-  // });
-
-  // socket.on('agreeTimer', async (data) => {
-  //   await agreedDealTimerForBothSides(data);
-  // });
-
-  // socket.on('changeShipToAddress', async (data) => {
-  //   await updateShipToAddress(data);
-  // });
+io.on('disconnect', async () => {
+  const ids = await io.allSockets();
+  console.log('room.length; :>> ', ids.size);
 });
