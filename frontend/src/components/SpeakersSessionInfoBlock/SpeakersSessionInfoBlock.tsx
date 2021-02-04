@@ -20,30 +20,7 @@ import ShareContactsDisabled from '../../img/contact_icon_disabled.svg';
 import ShareContactsCompleted from '../../img/contact_icon_completed.svg';
 import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
-
-type Vote = {
-
-  createdAt: Date;
-  id: number;
-  rate: number;
-  speaker: Speaker
-
-};
-
-type Speaker = {
-
-  company: string;
-  firstName: string;
-  id: number;
-  innerSystemName: string;
-  isModerator: boolean;
-  lastName: string;
-  linkToImg: string;
-  linkToPresentation: string;
-  linkToZoom: string;
-  topicName: string;
-
-};
+import { Vote, Speaker } from '../../interfaces/allInterfaces';
 
 const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
@@ -332,11 +309,11 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   const renderSessionSpeakers = () => (
 
-    currentSessionSpeakersInfo.map((element: any) => {
+    currentSessionSpeakersInfo.map((element: Speaker) => {
       if (!element.isModerator) {
         return (
           <>
-            <Grid className={classes.singleSpeakerBlock} sm={6} xs={12} lg={2} xl={2} item>
+            <Grid className={classes.singleSpeakerBlock} sm={6} md={2} xs={12} lg={2} xl={2} item>
 
               <p className={classes.speakerAvatarInsideSessionParagraph}>
                 <img className={classes.speakerAvatarInsideSession} src={element.linkToImg} alt="" />
@@ -349,7 +326,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
               <p className={classes.textCenter}>
                 <Box component="fieldset" mb={3} borderColor="transparent">
                   <Rating
-                    id={element.id}
+                    id={String(element.id)}
                     classes={{ iconEmpty: 'rateSmallDefault' }}
                     className={classes.smallScoreStarImg}
                     name={String(element.id)}

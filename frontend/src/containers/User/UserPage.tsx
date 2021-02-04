@@ -300,6 +300,7 @@ const UserPage: FC = () => {
   const calculateHeightOfSmallChannelWindow = () => {
     if (isXl) return '290px';
     if (isLg) return '193px';
+    if (isMd) return '160px';
     if (isXs) return '227px';
   };
 
@@ -498,7 +499,7 @@ const UserPage: FC = () => {
               item
               xs={8}
               sm={12}
-              md={12}
+              md={4}
               xl={3}
               lg={3}
             >
@@ -512,7 +513,7 @@ const UserPage: FC = () => {
               item
               xs={8}
               sm={12}
-              md={12}
+              md={4}
               xl={3}
               lg={3}
             >
@@ -526,7 +527,7 @@ const UserPage: FC = () => {
               item
               xs={8}
               sm={12}
-              md={12}
+              md={4}
               xl={3}
               lg={3}
             >
@@ -546,7 +547,7 @@ const UserPage: FC = () => {
 
           <Grid justify="space-between" container item className={classes.footerContainerInner}>
 
-            <Grid xs={12} xl={3} lg={3} className={`${classes.myAuto} ${classes.footerLogoContainer}`} item>
+            <Grid xs={12} md={3} xl={3} lg={3} className={`${classes.myAuto} ${classes.footerLogoContainer}`} item>
               <img
                 onClick={() => { window.open('https://mmlf.ru/', '_blank'); }}
                 className={`${classes.cursorPointer} ${classes.mmlfFooterLogo}`}
@@ -555,10 +556,10 @@ const UserPage: FC = () => {
               />
 
             </Grid>
-            <Grid xs={12} xl={3} lg={3} className={classes.myAuto} item>
+            <Grid xs={12} md={4} xl={3} lg={3} className={classes.myAuto} item>
               <p className={classes.footerTextDate}>15-19 февраля 2021</p>
             </Grid>
-            <Grid xs={8} sm={4} xl={2} lg={2} className={classes.myAuto} item>
+            <Grid xs={8} sm={4} md={2} xl={2} lg={2} className={classes.myAuto} item>
               <Grid container item justify="space-around">
                 <Grid item>
                   <img
@@ -588,7 +589,7 @@ const UserPage: FC = () => {
               </Grid>
 
             </Grid>
-            <Grid xs={12} xl={2} lg={2} className={`${classes.myAuto} ${classes.footerLogoAndPhone}`} item>
+            <Grid xs={12} md={3} xl={2} lg={2} className={`${classes.myAuto} ${classes.footerLogoAndPhone}`} item>
               <p>
                 <img
                   onClick={() => { window.open('https://ccl-logistics.ru/', '_blank'); }}

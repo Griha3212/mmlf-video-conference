@@ -48,7 +48,7 @@ export interface Speaker {
   linkToPresentation: string;
   linkToZoom: string;
   topicName: string;
-
+  hasSendContactsButton: boolean;
 }
 
 export interface Channel {

@@ -32,7 +32,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('md')]: {
       marginBottom: '73px',
-      width: '30% !important',
+      width: '70% !important',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -122,6 +122,13 @@ const useStyles = makeStyles((theme) => ({
       marginBottom: '22px !important',
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.6vw',
+      marginBottom: '0px !important',
+      marginTop: '0px !important',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.2vw',
       marginBottom: '0px !important',
@@ -184,6 +191,12 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
+      padding: '0 70px',
+      justifyContent: 'space-between',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
       padding: '0 220px',
       justifyContent: 'space-between',
 
@@ -223,6 +236,10 @@ const useStyles = makeStyles((theme) => ({
   partnersContainer: {
 
     marginTop: '120px',
+
+    [theme.breakpoints.down('md')]: {
+      marginTop: '40px',
+    },
 
     [theme.breakpoints.down('xs')]: {
       marginTop: '70px',
@@ -290,6 +307,12 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: '0px',
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2.9vw',
+      lineHeight: '4vw',
+      paddingTop: '18px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '2.4vw',
       lineHeight: '3.3vw',
@@ -324,6 +347,12 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('sm')]: {
       fontSize: '1.1vw',
       lineHeight: '1.5vw',
+      paddingBottom: '0px',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.5vw',
+      lineHeight: '2vw',
       paddingBottom: '0px',
     },
 
@@ -375,6 +404,11 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '0px',
     },
 
+    [theme.breakpoints.up('md')]: {
+      padding: '0px 33px',
+      marginTop: '0px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       padding: '0 110px',
     },
@@ -382,6 +416,18 @@ const useStyles = makeStyles((theme) => ({
   },
 
   mainContainerBckgChangeSessionFirst: {
+
+    [theme.breakpoints.down('md')]: {
+      padding: '0px 33px',
+      marginTop: '0px',
+      textAlign: 'left',
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      padding: '0px',
+      marginTop: '55px',
+      textAlign: 'center',
+    },
 
     [theme.breakpoints.down('xs')]: {
       padding: '0px',
@@ -413,6 +459,13 @@ const useStyles = makeStyles((theme) => ({
       marginRight: 'auto',
     },
 
+    [theme.breakpoints.up('md')]: {
+      fontSize: '3.4vw',
+      lineHeight: '3.8vw',
+      marginLeft: '0px',
+      marginRight: '0px',
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '3.3vw',
       lineHeight: '79px',
@@ -433,6 +486,11 @@ const useStyles = makeStyles((theme) => ({
   changeSessionMainContainer: {
 
     marginTop: '120px',
+
+    [theme.breakpoints.down('md')]: {
+      marginTop: '25px',
+
+    },
 
     [theme.breakpoints.down('xs')]: {
       marginTop: '0px',

@@ -24,6 +24,16 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+
+      marginRight: '0px',
+
+      marginBottom: '35px',
+      flex: '0 0 20% !important',
+      maxWidth: '20% !important',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
 
       marginRight: '0px',
@@ -51,6 +61,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      width: '22px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       width: 'auto',
 
@@ -69,6 +84,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      width: '35px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       width: 'auto',
 
@@ -84,6 +104,11 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('xs')]: {
       width: 'auto',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      width: '15px',
 
     },
 
@@ -141,6 +166,11 @@ const useStyles = makeStyles((theme) => ({
 
   speakerAvatarInsideSession: {
 
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '79px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       maxWidth: '79px',
 
@@ -155,6 +185,11 @@ const useStyles = makeStyles((theme) => ({
   smallScoreStarImg: {
 
     color: '#FF414A',
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '15px',
+
+    },
 
     [theme.breakpoints.up('lg')]: {
       fontSize: '22px',
@@ -234,6 +269,14 @@ const useStyles = makeStyles((theme) => ({
       '&::-webkit-scrollbar-thumb': {
         backgroundColor: '#ff414a',
       },
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      marginTop: '30px',
+      justifyContent: 'center',
+      flexWrap: 'wrap',
+      overflow: 'visible',
 
     },
 
