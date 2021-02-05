@@ -137,7 +137,8 @@ const UserPage: FC = () => {
       setActiveSessionSpeakersInfo(response && response.channelUserInfo
         && response.channelUserInfo.activeSession
         && response.channelUserInfo.activeSession.speakers);
-
+      // setActiveSessionSpeakersAllRates(response && response.foundUser.votes);
+      // findAndSetCurrentSpeakerRate(response && response.foundUser.votes);
       socket.emit('connectToChannelRoom', response.foundUser.activeChannel);
     }
   };

@@ -34,13 +34,13 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   } = props;
 
-  const [currentSessionSpeakersAllRatesState,
-    setCurrentSessionSpeakersAllRatesState] =
-    React.useState<Vote[]>(currentSessionSpeakersAllRates);
+  // const [currentSessionSpeakersAllRatesState,
+  //   setCurrentSessionSpeakersAllRatesState] =
+  //   React.useState<Vote[]>(currentSessionSpeakersAllRates);
 
-  useEffect(() => {
-    setCurrentSessionSpeakersAllRatesState(currentSessionSpeakersAllRates);
-  }, [currentSessionSpeakersAllRates]);
+  // useEffect(() => {
+  //   setCurrentSessionSpeakersAllRatesState(currentSessionSpeakersAllRates);
+  // }, [currentSessionSpeakersAllRates]);
 
   const checkIsWatched = (speakerId: number) => {
     if (currentUserData && currentUserData.foundUser && currentUserData.foundUser.watchedSpeakers) {
@@ -83,9 +83,9 @@ const SpeakersSessionInfoBlock = (props: any) => {
   };
 
   const renderSpeakersRates = (element: any) => {
-    if (currentSessionSpeakersAllRatesState) {
-      if (currentSessionSpeakersAllRatesState.length > 0) {
-        const foundRate = currentSessionSpeakersAllRatesState.find(
+    if (currentSessionSpeakersAllRates) {
+      if (currentSessionSpeakersAllRates.length > 0) {
+        const foundRate = currentSessionSpeakersAllRates.find(
           (vote: any) => vote.speaker.id === element.id,
         );
 
@@ -331,7 +331,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
                     className={classes.smallScoreStarImg}
                     name={String(element.id)}
                     disabled={checkIsWatched(element.id)}
-                    value={renderSpeakersRates(element) || 0}
+                    value={renderSpeakersRates(element)}
                     readOnly={checkIsWatched(element.id)}
                     onChange={(event, newValue: number | null) => {
                       sendVoteForSpeaker(newValue, +element.id);

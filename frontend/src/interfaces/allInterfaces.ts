@@ -61,5 +61,6 @@ export interface Channel {
 export interface DataFromSocket {
 
   message: string,
+  votes: Array<Vote>
 
 }

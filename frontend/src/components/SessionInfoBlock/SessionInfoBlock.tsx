@@ -71,6 +71,12 @@ const SessionInfoBlock = (props: any) => {
     );
   };
 
+  const renderSpeakersRate = () => {
+    if (currentSpeakerRate) {
+      return currentSpeakerRate;
+    } else return 0;
+  };
+
   const renderSessionLetter = () => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
@@ -212,7 +218,7 @@ const SessionInfoBlock = (props: any) => {
                   classes={{ iconEmpty: 'rateBigDefault' }}
                   className={classes.rateSpeakerStarsImg}
                   name="simple-controlled"
-                  value={rate}
+                  value={renderSpeakersRate()}
                   disabled={closedAccess}
                   onChange={async (event, newValue) => {
                     setRate(newValue);
