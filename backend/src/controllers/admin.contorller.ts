@@ -96,7 +96,6 @@ export const setBreakBetweenSessions = async (
     const data = { message: 'update' };
 
     io.to(`channel${String(foundChannelToUpdateInfo.number)}`).emit('connectToChannelRoom', data);
-    console.log(chalk.green('Activate OtherChannelsBlock'));
 
     res.status(200).send(foundChannelToUpdateInfo);
   } catch (error) {
