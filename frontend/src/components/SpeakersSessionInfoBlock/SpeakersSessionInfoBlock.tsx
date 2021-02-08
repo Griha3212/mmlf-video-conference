@@ -96,196 +96,42 @@ const SpeakersSessionInfoBlock = (props: any) => {
     }
   };
 
-  const renderMockedSessionSpeakers = () => (
-    <>
-      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
+  const renderMockedSessionSpeakers = () => {
+    const arrayOfMockedSpeakers = [];
+    for (let index = 0; index < 5; index += 1) {
+      arrayOfMockedSpeakers.push(
+        <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
 
-        <p className={classes.speakerAvatarInsideSessionParagraph}>
-          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
-        </p>
-        <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p className={classes.speakerNameInsideSession}>Фамилия</p>
+          <p className={classes.speakerAvatarInsideSessionParagraph}>
+            <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
+          </p>
+          <p className={classes.speakerNameInsideSession}>Имя</p>
+          <p className={classes.speakerNameInsideSession}>Фамилия</p>
 
-        <p className={classes.textCenter}>
-          <Box component="fieldset" mb={3} borderColor="transparent">
-            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
-          </Box>
+          <p className={classes.textCenter}>
+            <Box component="fieldset" mb={3} borderColor="transparent">
+              <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
+            </Box>
+          </p>
 
-        </p>
+          <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
+            <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+              <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
+            </Grid>
 
-        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+            <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+              <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
+            </Grid>
 
-            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
-
+            <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+              <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
+            </Grid>
           </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
-
-          </Grid>
-
-        </Grid>
-
-      </Grid>
-
-      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
-
-        <p className={classes.speakerAvatarInsideSessionParagraph}>
-          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
-        </p>
-        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
-        <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p className={classes.textCenter}>
-          <Box component="fieldset" mb={3} borderColor="transparent">
-            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
-          </Box>
-
-        </p>
-
-        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
-
-          </Grid>
-
-        </Grid>
-
-      </Grid>
-
-      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
-
-        <p className={classes.speakerAvatarInsideSessionParagraph}>
-          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
-        </p>
-        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
-        <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p className={classes.textCenter}>
-          <Box component="fieldset" mb={3} borderColor="transparent">
-            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
-          </Box>
-
-        </p>
-
-        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
-
-          </Grid>
-
-        </Grid>
-
-      </Grid>
-
-      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
-
-        <p className={classes.speakerAvatarInsideSessionParagraph}>
-          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
-        </p>
-        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
-        <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p className={classes.textCenter}>
-          <Box component="fieldset" mb={3} borderColor="transparent">
-            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
-          </Box>
-
-        </p>
-
-        <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify="space-around">
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
-
-          </Grid>
-
-        </Grid>
-
-      </Grid>
-
-      <Grid xs={12} lg={2} xl={2} item className={classes.singleSpeakerBlock}>
-
-        <p className={classes.speakerAvatarInsideSessionParagraph}>
-          <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
-        </p>
-        <p className={classes.speakerNameInsideSession}>ФАМИЛИЯ</p>
-        <p className={classes.speakerNameInsideSession}>Имя</p>
-        <p className={classes.textCenter}>
-          <Box component="fieldset" mb={3} borderColor="transparent">
-            <Rating className={classes.smallScoreStarImg} name="read-only" value={value} readOnly />
-          </Box>
-
-        </p>
-
-        <Grid xs={8} lg={12} xl={10} container item className={classes.mxAuto} justify="space-around">
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadPDFImg}`} src={PDF} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.loadZoomImg}`} src={Zoom} alt="" />
-
-          </Grid>
-
-          <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-            <img className={`${classes.pointerImg} ${classes.sendContactsImg}`} src={ShareContacts} alt="" />
-
-          </Grid>
-
-        </Grid>
-
-      </Grid>
-
-    </>
-  );
+        </Grid>,
+      );
+    }
+    return arrayOfMockedSpeakers;
+  };
 
   const sendVoteForSpeaker = async (
     rateDirectlyFromUI: number | null,
