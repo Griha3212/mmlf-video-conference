@@ -59,7 +59,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
   const checkIsWatchedAndSent = (speakerId: number, type: string) => {
     if (currentUserData && currentUserData.foundUser && currentUserData.foundUser.watchedSpeakers) {
       const foundWtchedSpeaker = currentUserData.foundUser.watchedSpeakers.find(
-        (speaker: any) => speaker.id === speakerId,
+        (speaker: Speaker) => speaker.id === speakerId,
       );
 
       if (foundWtchedSpeaker) {
@@ -67,7 +67,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
           currentUserData.foundUser.speakersToWhomContactsWereSent) {
           const foundContactedSpeakers = currentUserData.foundUser
             .speakersToWhomContactsWereSent.find(
-              (speaker: any) => speaker.id === speakerId,
+              (speaker: Speaker) => speaker.id === speakerId,
             );
 
           if (foundContactedSpeakers) {
@@ -82,11 +82,11 @@ const SpeakersSessionInfoBlock = (props: any) => {
     } else return type === 'src' ? ShareContactsDisabled : `${classes.sendContactsImg} ${classes.disabledImg}`;
   };
 
-  const renderSpeakersRates = (element: any) => {
+  const renderSpeakersRates = (element: Speaker) => {
     if (currentSessionSpeakersAllRates) {
       if (currentSessionSpeakersAllRates.length > 0) {
         const foundRate = currentSessionSpeakersAllRates.find(
-          (vote: any) => vote.speaker.id === element.id,
+          (vote: Vote) => vote.speaker.id === element.id,
         );
 
         if (foundRate) {
