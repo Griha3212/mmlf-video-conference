@@ -83,23 +83,18 @@ const UserPage: FC = () => {
 
   const [allChannelsInfo, setAllChannelsInfo] = React.useState<Channel[]>();
 
-  // will start hook again if user will be changed
-  useEffect(() => {
-    socket.emit('connectToPersonalRoom', user.id);
-  }, []);
-
   // on reconnect of socket
-  useEffect(() => {
-    socket.on('giveMeConnectionInfo', () => {
-      // connect to personalRoom
-      socket.emit('connectToPersonalRoom', user.id);
-      // connect to channelRoom
-      socket.emit('connectToChannelRoom', user.activeChannel);
-    });
-    return () => {
-      socket.off('giveMeConnectionInfo');
-    };
-  }, []);
+  // useEffect(() => {
+  //   socket.on('giveMeConnectionInfo', () => {
+  //     // connect to personalRoom
+  //     socket.emit('connectToPersonalRoom', user.id);
+  //     // connect to channelRoom
+  //     socket.emit('connectToChannelRoom', user.activeChannel);
+  //   });
+  //   return () => {
+  //     socket.off('giveMeConnectionInfo');
+  //   };
+  // }, []);
 
   const findAndSetCurrentSpeakerRate = (votes: Vote[] | undefined) => {
     if (activeSpeakerInfo && votes) {
@@ -241,6 +236,7 @@ const UserPage: FC = () => {
   });
 
   useEffect(() => {
+    socket.emit('connectToPersonalRoom', user.id);
     loadDataForUser();
   }, []);
 

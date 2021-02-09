@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint-disable import/no-cycle */
 /* eslint-disable import/prefer-default-export */
 import http from 'http';
@@ -54,6 +55,7 @@ io.on('connection', (socket) => {
 
   // id as room
   socket.on('connectToPersonalRoom', async (id: number) => {
+    socket.leave(String(id));
     socket.join(String(id));
     // console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
 
@@ -64,6 +66,11 @@ io.on('connection', (socket) => {
 
   socket.on('connectToChannelRoom', (numberOfChannelToCoonect: number) => {
     socket.join(`channel${String(numberOfChannelToCoonect)}`);
-    // console.log(chalk.blue.underline(`connectedToChannelRoom: channel${room}`));
+    // console.log(chalk.blue.underline(`connectedToChannelRoom: channel${numberOfChannelToCoonect}`));
+  });
+
+  socket.on('disconnecting', (id: number) => {
+    // console.log(chalk.blue.underline(`disconnected user: ${id}`));
+    socket.leave(String(id));
   });
 });
