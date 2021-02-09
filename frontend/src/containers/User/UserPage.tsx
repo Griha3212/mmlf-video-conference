@@ -137,8 +137,6 @@ const UserPage: FC = () => {
       setActiveSessionSpeakersInfo(response && response.channelUserInfo
         && response.channelUserInfo.activeSession
         && response.channelUserInfo.activeSession.speakers);
-      // setActiveSessionSpeakersAllRates(response && response.foundUser.votes);
-      // findAndSetCurrentSpeakerRate(response && response.foundUser.votes);
       socket.emit('connectToChannelRoom', response.foundUser.activeChannel);
     }
   };
@@ -313,8 +311,37 @@ const UserPage: FC = () => {
     if (isXs) return '300px';
   };
 
+  const renderSpeakersSessionInfoBlock = () => {
+    // if first session and start position, don't show block
+    if (dataForUser && !dataForUser.channelUserInfo.activeSession
+      && dataForUser.channelUserInfo.number === 1) {
+      return null;
+    }
+    // if LogistOfTheYear, don't show block
+    if (dataForUser && dataForUser.channelUserInfo.activeSession
+      && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear') {
+      return null;
+    } else {
+      return (
+        <Grid item className={classes.innerContainer}>
+
+          <SpeakersSessionInfoBlock
+            currentModeratorInfo={activeModeratorInfo}
+            currentSessionSpeakersInfo={activeSessionSpeakersInfo}
+            currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
+            currentUserData={dataForUser}
+            token={token}
+            userId={user.id}
+            key={activeSessionSpeakersAllRates}
+          />
+
+        </Grid>
+      );
+    }
+  };
+
   const renderOtherSessions = (channel: any) => {
-    if (channel.number !== dataForUser!.channelUserInfo.number) {
+    if (channel.number !== dataForUser?.channelUserInfo.number) {
       return (
         <>
           <Grid
@@ -425,10 +452,10 @@ const UserPage: FC = () => {
 
       </Grid>
 
+      {/* red bckg */}
       <Grid
-        className={dataForUser && dataForUser.channelUserInfo.activeSession
-          && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear' ?
-          classes.redBckgContainerShort : classes.redBckgContainer}
+        className={renderSpeakersSessionInfoBlock() ? classes.redBckgContainer :
+          classes.redBckgContainerShort}
         container
         item
         justify="center"
@@ -451,22 +478,7 @@ const UserPage: FC = () => {
 
       {/* block with all speakers in session---------------------------------------------------
       render if not LogistOfTheYear */}
-      {dataForUser && dataForUser.channelUserInfo.activeSession
-        && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear' ? null : (
-          <Grid item className={classes.innerContainer}>
-
-            <SpeakersSessionInfoBlock
-              currentModeratorInfo={activeModeratorInfo}
-              currentSessionSpeakersInfo={activeSessionSpeakersInfo}
-              currentSessionSpeakersAllRates={activeSessionSpeakersAllRates}
-              currentUserData={dataForUser}
-              token={token}
-              userId={user.id}
-              key={activeSessionSpeakersAllRates}
-            />
-
-          </Grid>
-        )}
+      {renderSpeakersSessionInfoBlock()}
 
       {/* show/hide OtherChannelsBlock-------------------------------------------------------- */}
       {dataForUser && dataForUser.foundUser.showOtherChannelsBlock ? (

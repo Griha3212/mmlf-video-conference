@@ -91,6 +91,10 @@ const SessionInfoBlock = (props: any) => {
   const renderSessionDescription = () => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
+        if (currentUserData.channelUserInfo.number === 1) {
+          return 'Вступительное слово Оргкомитета Форума';
+        }
+
         return `Перерыв... Скоро здесь начнётся сессия: ${currentUserData.channelUserInfo.startChannelSessionDescription}`;
       }
 
@@ -110,6 +114,9 @@ const SessionInfoBlock = (props: any) => {
   const showSecondBlock = () => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession) {
+        if (currentUserData.channelUserInfo.number === 1) {
+          return false;
+        }
         return true;
       }
 
