@@ -182,10 +182,27 @@ const SessionInfoBlock = (props: any) => {
       {showSecondBlock() ? (
         <Grid item container justify="space-between" className={classes.lightBlueBckg}>
 
-          <Grid item className={classes.speakerInfoBlock} sm={7} xl={8} lg={8} xs={12}>
-            <p className={classes.speakerTheme}>
-              {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
-            </p>
+          <Grid container item className={classes.speakerInfoBlock} sm={7} xl={8} lg={8} xs={12}>
+            <Grid item xl={12}>
+              <p className={classes.speakerThemeWord}>
+                Доклад:
+              </p>
+            </Grid>
+            <Grid item>
+
+              <p className={classes.redLeftLineP}>
+
+                <hr className={classes.redLeftLine} />
+              </p>
+
+            </Grid>
+
+            <Grid item xl={11}>
+              <p className={classes.speakerTheme}>
+                {`${currentSpeakerInfo && currentSpeakerInfo.topicName}` || 'Тема доклада'}
+              </p>
+
+            </Grid>
 
             <Grid container spacing={5}>
 
@@ -193,7 +210,7 @@ const SessionInfoBlock = (props: any) => {
                 <img className={classes.speakerAvatarImg} width="100%" src={currentSpeakerInfo && currentSpeakerInfo.linkToImg || noAvatar} alt="" />
 
               </Grid>
-              <Grid className={classes.noLeftPadding} item xs={8} sm={7} xl={8} lg={8}>
+              <Grid className={`${classes.noLeftPadding} ${classes.myAuto}`} item xs={8} sm={7} xl={8} lg={8}>
                 <p className={classes.speakerHeaderText}>Спикер</p>
                 <p className={classes.speakerFullNameText}>
                   {`${currentSpeakerInfo

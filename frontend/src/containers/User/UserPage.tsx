@@ -476,6 +476,10 @@ const UserPage: FC = () => {
 
       </Grid>
 
+      <Grid container xl={12}>
+        <img className={classes.greyDecoratedLine} src={greyDecoratedLine} alt="" />
+      </Grid>
+
       {/* red bckg */}
       <Grid
         className={renderSpeakersSessionInfoBlock() ? classes.redBckgContainer :

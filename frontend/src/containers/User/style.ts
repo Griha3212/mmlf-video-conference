@@ -320,6 +320,30 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  greyDecoratedLine: {
+
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+    },
+    [theme.breakpoints.up('md')]: {
+
+    },
+    [theme.breakpoints.up('lg')]: {
+
+    },
+    [theme.breakpoints.up('xl')]: {
+
+      width: '100%',
+      marginBottom: '22px',
+
+    },
+
+  },
+
   topPartnersText: {
     [theme.breakpoints.up('xs')]: {
 

@@ -2,10 +2,22 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 
+  myAuto: {
+
+    marginTop: 'auto',
+    marginBottom: 'auto',
+
+  },
+
   noLeftPadding: {
 
     [theme.breakpoints.up('xs')]: {
       paddingLeft: '0px !important',
+
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      paddingLeft: '10px !important',
 
     },
 
@@ -199,8 +211,8 @@ const useStyles = makeStyles((theme) => ({
 
   sessionNameText: {
 
-    fontFamily: 'Open Sans',
-    fontWeight: 700,
+    fontFamily: 'Gotham Pro Black',
+    // fontWeight: 700,
 
     color: 'white',
 
@@ -238,11 +250,12 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      fontSize: '42px',
+      fontSize: '36px',
       lineHeight: '51px',
-      marginTop: '27px',
+      marginTop: '41px',
       width: '80%',
       marginBottom: '38px',
+      paddingLeft: '33px',
     },
 
   },
@@ -291,10 +304,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('xl')]: {
-      width: '250px',
-      height: '34px',
-      fontSize: '22px',
-      lineHeight: '31px',
+      width: '500px',
+      height: '71px',
+      fontSize: '42px',
+      lineHeight: '71px',
     },
 
   },
@@ -342,10 +355,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('xl')]: {
-      fontSize: '22px',
-      lineHeight: '31px',
-      height: '34px',
-      width: '163px',
+      width: '268px',
+      height: '71px',
+      fontSize: '42px',
+      lineHeight: '71px',
     },
 
   },
@@ -417,15 +430,80 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xl')]: {
       padding: '0 110px',
-      paddingTop: '34px',
+      paddingTop: '39px',
       minHeight: '190px',
+    },
+
+  },
+
+  redLeftLineP: {
+
+    marginTop: '0px',
+
+  },
+
+  redLeftLine: {
+
+    [theme.breakpoints.up('xl')]: {
+      marginRight: '18px',
+      width: '18px',
+      height: '52px',
+      backgroundColor: '#FF414A',
+      border: 'none',
+      marginTop: '0px',
+      position: 'relative',
+      bottom: '3px',
+    },
+
+  },
+
+  speakerThemeWord: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 300,
+
+    color: 'white',
+    marginTop: '0px',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '5vw',
+      lineHeight: '5.8vw',
+      marginBottom: '50px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '2.4vw',
+      lineHeight: '3.5vw',
+      marginBottom: '50px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2vw',
+      lineHeight: '3vw',
+      marginBottom: '50px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.9vw',
+      lineHeight: '2.8vw',
+      marginBottom: '50px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '24px',
+      lineHeight: '33px',
+      marginBottom: '21px',
+
     },
 
   },
 
   speakerTheme: {
 
-    fontFamily: 'Open Sans',
+    fontFamily: 'Gotham Pro Light',
     fontWeight: 400,
 
     color: 'white',
@@ -459,9 +537,9 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      fontSize: '36px',
-      lineHeight: '51px',
-      marginBottom: '60px',
+      fontSize: '29px',
+      lineHeight: '40px',
+      marginBottom: '105px',
 
     },
 
@@ -503,8 +581,8 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      fontSize: '21px',
-      lineHeight: '28px',
+      fontSize: '24px',
+      lineHeight: '33px',
       marginBottom: '11px',
     },
 
