@@ -452,7 +452,7 @@ const useStyles = makeStyles((theme) => ({
       border: 'none',
       marginTop: '0px',
       position: 'relative',
-      bottom: '3px',
+      bottom: '5px',
     },
 
   },

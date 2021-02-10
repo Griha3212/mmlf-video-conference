@@ -322,11 +322,12 @@ const SpeakersSessionInfoBlock = (props: any) => {
         <Grid item xs={12} md={8} lg={8} xl={8}>
           <p className={classes.speakersBlockHeader}>Спикеры сессии</p>
         </Grid>
+        {/* pc */}
         <Hidden smDown>
           <Grid justify="space-between" item className={classes.moderatorContainerInfoBlock} container xs={4} lg={4} xl={4}>
 
             <Grid item xs={3} md={3} xl={3}>
-              <img width="100%" src={renderModeratorImgSrc()} alt="" />
+              <img className={classes.moderatorImg} width="100%" src={renderModeratorImgSrc()} alt="" />
 
             </Grid>
             <Grid className={classes.moderatorInfoBlock} item xs={8} xl={8} lg={8}>

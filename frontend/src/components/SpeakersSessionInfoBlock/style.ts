@@ -176,7 +176,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      maxWidth: '117px',
+      maxWidth: '144px',
 
     },
 
@@ -288,7 +288,7 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      marginTop: '120px',
+      marginTop: '80px',
       justifyContent: 'center',
       overflow: 'visible',
     },
@@ -332,7 +332,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xl')]: {
       marginTop: 'auto',
       marginBottom: 'auto',
-      marginLeft: '30px',
+      marginLeft: '18px',
       paddingLeft: '0px',
 
     },
@@ -413,7 +413,7 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: '30px',
       width: '135px',
       height: '31px',
-      marginBottom: '20px',
+      marginBottom: '8px',
 
     },
 
@@ -500,8 +500,28 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xl')]: {
       padding: '0 110px',
       paddingTop: '107px',
-      paddingBottom: '153px',
-      marginTop: '72px',
+      paddingBottom: '91px',
+      marginTop: '105px',
+
+    },
+
+  },
+
+  moderatorImg: {
+
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      maxWidth: '117px',
 
     },
 

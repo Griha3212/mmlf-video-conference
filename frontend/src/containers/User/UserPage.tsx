@@ -298,14 +298,14 @@ const UserPage: FC = () => {
   const isXs = useMediaQuery(theme.breakpoints.up('xs'));
 
   const calculateHeightOfSmallChannelWindow = () => {
-    if (isXl) return '290px';
+    if (isXl) return '235px';
     if (isLg) return '193px';
     if (isMd) return '160px';
     if (isXs) return '227px';
   };
 
   const calculateHeightOfBigChannelWindow = () => {
-    if (isXl) return '680px';
+    if (isXl) return '720px';
     if (isLg) return '720px';
     if (isMd) return '720px';
     if (isSm) return '300px';
@@ -453,7 +453,7 @@ const UserPage: FC = () => {
 
       </Grid>
 
-      <Grid container className={classes.containerForPartnersTop} xl>
+      {/* <Grid container className={classes.containerForPartnersTop} xl>
         <Grid item xl={4}>
           <img className={classes.multicolorLine} src={multicolorLine} alt="" />
         </Grid>
@@ -474,11 +474,11 @@ const UserPage: FC = () => {
 
         </Grid>
 
-      </Grid>
+      </Grid> */}
 
-      <Grid container xl={12}>
+      {/* <Grid container xl={12}>
         <img className={classes.greyDecoratedLine} src={greyDecoratedLine} alt="" />
-      </Grid>
+      </Grid> */}
 
       {/* red bckg */}
       <Grid
@@ -517,7 +517,14 @@ const UserPage: FC = () => {
               <p className={classes.speakersBlockHeader}>Сменить сессию</p>
             </Grid>
 
-            <Grid xs={12} item justify="space-between" container className={classes.mainContainerBckgChangeSession}>
+            <Grid
+              xs={12}
+              item
+              justify="space-between"
+              container
+              className={`${classes.mainContainerBckgChangeSession}
+             ${classes.otherSessionContainerInner}`}
+            >
               {allChannelsInfo && dataForUser
                 && allChannelsInfo.map((element) => renderOtherSessions(element))}
             </Grid>
@@ -535,6 +542,7 @@ const UserPage: FC = () => {
           </Grid>
 
           <Grid justify="space-between" container item className={`${classes.mainContainerBckgChangeSession} ${classes.partnersContainerImg}`}>
+
             <Grid
               className={`${classes.myAuto} ${classes.partnerImgContainer}`}
               item

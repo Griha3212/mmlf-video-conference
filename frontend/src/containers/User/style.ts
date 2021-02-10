@@ -5,6 +5,8 @@ const useStyles = makeStyles((theme) => ({
 
   partnerImgContainer: {
 
+    boxShadow: '0 0 10px 5px rgb(221 221 221)',
+
     [theme.breakpoints.up('sm')]: {
       textAlign: 'center',
     },
@@ -15,6 +17,12 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       textAlign: 'left',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      textAlign: 'left',
+      height: '22vw',
+      padding: '100px 50px',
     },
 
   },
@@ -369,7 +377,7 @@ const useStyles = makeStyles((theme) => ({
 
   mainVideoContainer: {
 
-    background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);',
+    // background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);',
 
     [theme.breakpoints.up('xs')]: {
       height: '300px',
@@ -386,10 +394,10 @@ const useStyles = makeStyles((theme) => ({
 
     },
     [theme.breakpoints.up('xl')]: {
-      height: '780px',
-      paddingTop: '58px',
-      paddingLeft: '78px',
-      paddingRight: '78px',
+      height: '720px',
+      // paddingTop: '58px',
+      // paddingLeft: '78px',
+      // paddingRight: '78px',
 
     },
 
@@ -447,7 +455,7 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '48px',
-      lineHeight: '65px',
+      lineHeight: '55px',
       paddingTop: '0px',
     },
 
@@ -542,7 +550,30 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  otherSessionContainerInner: {
+
+    [theme.breakpoints.up('xl')]: {
+
+      marginBottom: '235px',
+
+    },
+
+  },
+
   mainContainerBckgChangeSessionFirst: {
+
+    [theme.breakpoints.down('xl')]: {
+
+      marginTop: '150px',
+      marginBottom: '100px',
+
+    },
+
+    [theme.breakpoints.down('lg')]: {
+
+      marginTop: '0px',
+
+    },
 
     [theme.breakpoints.down('md')]: {
       padding: '0px 33px',
@@ -612,7 +643,9 @@ const useStyles = makeStyles((theme) => ({
 
   changeSessionMainContainer: {
 
-    marginTop: '120px',
+    backgroundColor: '#ECF1F1',
+
+    marginTop: '140px',
 
     [theme.breakpoints.down('md')]: {
       marginTop: '25px',
@@ -672,7 +705,7 @@ const useStyles = makeStyles((theme) => ({
       height: '50.5vw',
     },
     [theme.breakpoints.up('xl')]: {
-      height: '1034px',
+      height: '694px',
     },
 
   },
