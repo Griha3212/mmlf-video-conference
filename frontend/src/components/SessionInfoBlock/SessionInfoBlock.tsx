@@ -199,7 +199,7 @@ const SessionInfoBlock = (props: any) => {
 
             <Grid item xl={11}>
               <p className={classes.speakerTheme}>
-                {`${currentSpeakerInfo && currentSpeakerInfo.topicName}` || 'Тема доклада'}
+                {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
               </p>
 
             </Grid>

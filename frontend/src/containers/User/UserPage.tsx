@@ -88,18 +88,18 @@ const UserPage: FC = () => {
 
   const [allChannelsInfo, setAllChannelsInfo] = React.useState<Channel[]>();
 
-  // on reconnect of socket
-  // useEffect(() => {
-  //   socket.on('giveMeConnectionInfo', () => {
-  //     // connect to personalRoom
-  //     socket.emit('connectToPersonalRoom', user.id);
-  //     // connect to channelRoom
-  //     socket.emit('connectToChannelRoom', user.activeChannel);
-  //   });
-  //   return () => {
-  //     socket.off('giveMeConnectionInfo');
-  //   };
-  // }, []);
+  // on reconnect of socket, if server restarts
+  useEffect(() => {
+    socket.on('giveMeConnectionInfo', () => {
+      // connect to personalRoom
+      socket.emit('connectToPersonalRoom', user.id);
+      // connect to channelRoom
+      socket.emit('connectToChannelRoom', user.activeChannel);
+    });
+    return () => {
+      socket.off('giveMeConnectionInfo');
+    };
+  }, []);
 
   const findAndSetCurrentSpeakerRate = (votes: Vote[] | undefined) => {
     if (activeSpeakerInfo && votes) {
@@ -305,7 +305,7 @@ const UserPage: FC = () => {
   };
 
   const calculateHeightOfBigChannelWindow = () => {
-    if (isXl) return '720px';
+    if (isXl) return '680px';
     if (isLg) return '720px';
     if (isMd) return '720px';
     if (isSm) return '300px';

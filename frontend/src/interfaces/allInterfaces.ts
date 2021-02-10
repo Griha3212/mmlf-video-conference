@@ -6,11 +6,14 @@ export interface DataForUser {
       voteFoAllSession: boolean,
       name: string,
       id: number,
+      partnerOfTheSessionImgSrc: string,
     },
   },
 
   channelForShowing: {
-    break: boolean, id: number, link: string,
+    break: boolean,
+    id: number,
+    link: string,
     number: number
   },
   description: string;
