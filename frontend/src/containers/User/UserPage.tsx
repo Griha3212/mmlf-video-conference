@@ -21,7 +21,7 @@ import getLocalStorageData from '../../utils/helpers/localStorage.helper';
 import parseToken from '../../utils/parseToken';
 import VideoPlayerMain from '../../components/VideoPlayerMain/VideoPlayerMain';
 import SessionInfoBlock from '../../components/SessionInfoBlock/SessionInfoBlock';
-import topMMLFLogo from '../../img/mmlfLogo2021.svg';
+import topMMLFLogo from '../../img/mmlf_logo_2021.svg';
 import SpeakersSessionInfoBlock from '../../components/SpeakersSessionInfoBlock/SpeakersSessionInfoBlock';
 import {
   apiGetUser, apiUserUpdateWatchedSpeakers,
@@ -31,7 +31,7 @@ import {
 import lerua from '../../img/partnersImg/lerua.svg';
 import severstal from '../../img/partnersImg/severstal.svg';
 import cocalCola from '../../img/partnersImg/coca-cola.svg';
-import footerMMLFLogo from '../../img/footerMMLFLogo.svg';
+import footerMMLFLogo from '../../img/footer_mmlf_logo.svg';
 import vk from '../../img/socialImg/vk.svg';
 import facebook from '../../img/socialImg/facebook.svg';
 import youtube from '../../img/socialImg/youtube.svg';
@@ -39,6 +39,11 @@ import cclFooter from '../../img/ccl_footer.svg';
 import {
   DataForUser, Vote, Channel, Speaker, DataFromSocket,
 } from '../../interfaces/allInterfaces';
+import multicolorLine from '../../img/multicolor_line.svg';
+import sapTop from '../../img/topPartnersImg/sap.svg';
+import comitasTop from '../../img/topPartnersImg/comitas.svg';
+import smartLogisticsTop from '../../img/topPartnersImg/smart_logistics.svg';
+import greyDecoratedLine from '../../img/grey_decorated_line.svg';
 
 const socket = io(`${process.env.REACT_APP_API_URL}`, { transports: ['websocket'] });
 
@@ -445,6 +450,29 @@ const UserPage: FC = () => {
           classNameInner="mainVideoContainerBig"
           videoURL={dataForUser && dataForUser.channelUserInfo.link}
         />
+
+      </Grid>
+
+      <Grid container className={classes.containerForPartnersTop} xl>
+        <Grid item xl={4}>
+          <img className={classes.multicolorLine} src={multicolorLine} alt="" />
+        </Grid>
+
+        <Grid item container justify="flex-end" xl={8}>
+          <Grid item className={classes.singleTopPartnerContainer}>
+            <p className={classes.topPartnersText}>Генеральный партнер</p>
+            <img src={sapTop} alt="" />
+          </Grid>
+          <Grid item className={classes.singleTopPartnerContainer}>
+            <p className={classes.topPartnersText}>Эксклюзивный партнер</p>
+            <img src={comitasTop} alt="" />
+          </Grid>
+          <Grid item>
+            <p className={classes.topPartnersText}>IT партнер</p>
+            <img src={smartLogisticsTop} alt="" />
+          </Grid>
+
+        </Grid>
 
       </Grid>
 

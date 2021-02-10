@@ -247,7 +247,105 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  containerForPartnersTop: {
+
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+    },
+    [theme.breakpoints.up('md')]: {
+
+    },
+    [theme.breakpoints.up('lg')]: {
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      position: 'relative',
+      zIndex: 2,
+      backgroundColor: 'white',
+      paddingRight: '135px',
+      paddingTop: '26px',
+
+    },
+
+  },
+
+  singleTopPartnerContainer: {
+
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+    },
+    [theme.breakpoints.up('md')]: {
+
+    },
+    [theme.breakpoints.up('lg')]: {
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      marginRight: '116px',
+      marginBottom: '28px',
+
+    },
+
+  },
+
+  multicolorLine: {
+
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+    },
+    [theme.breakpoints.up('md')]: {
+
+    },
+    [theme.breakpoints.up('lg')]: {
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      position: 'absolute',
+      left: '0px',
+      bottom: '0px',
+
+    },
+
+  },
+
+  topPartnersText: {
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+    },
+    [theme.breakpoints.up('md')]: {
+
+    },
+    [theme.breakpoints.up('lg')]: {
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontFamily: 'Gotham Pro Medium',
+      fontSize: '11px',
+      lineHeight: '12px',
+      marginBottom: '16px',
+    },
+
+  },
+
   mainVideoContainer: {
+
+    background: 'linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(235,235,235,1) 100%);',
 
     [theme.breakpoints.up('xs')]: {
       height: '300px',
@@ -261,9 +359,14 @@ const useStyles = makeStyles((theme) => ({
     },
     [theme.breakpoints.up('lg')]: {
       height: '720px',
+
     },
     [theme.breakpoints.up('xl')]: {
       height: '720px',
+      paddingTop: '58px',
+      paddingLeft: '78px',
+      paddingRight: '78px',
+
     },
 
   },
