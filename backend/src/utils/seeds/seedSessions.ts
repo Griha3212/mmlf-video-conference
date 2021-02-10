@@ -35,6 +35,7 @@ export const seedMockedSessions = async () => {
       nextSessionLetter: 'Сессия E',
       nextSessionDescription: 'Специальная сессия генерального партнера SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года.',
       voteFoAllSession: true,
+      partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/cemat.svg`,
 
     },
 
@@ -138,6 +139,7 @@ export const seedMockedSessions = async () => {
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
       nextSessionLetter: 'WMS DAY-2',
       nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
+      partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/veeroute.svg`,
 
     },
     {
@@ -207,7 +209,7 @@ export const seedMockedSessions = async () => {
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
       nextSessionLetter: 'Сессия F',
       nextSessionDescription: 'Опыт оптимизации транспортно-логистического обеспечения компании',
-
+      partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/ati.su.svg`,
     },
 
     {
@@ -248,6 +250,7 @@ export const seedMockedSessions = async () => {
     newSession.nextSessionDescription = session.nextSessionDescription;
     newSession.voteFoAllSession = session.voteFoAllSession || false;
     newSession.isSessionForSecondDay = session.isSessionForSecondDay || false;
+    newSession.partnerOfTheSessionImgSrc = session.partnerOfTheSessionImgSrc || '';
 
     results.push(newSession);
   }

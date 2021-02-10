@@ -46,4 +46,8 @@ export default class Sessions extends BaseEntity {
   @Index()
   @Column({ default: false })
   isSessionForSecondDay: boolean;
+
+  @Index()
+  @Column({ nullable: true })
+  partnerOfTheSessionImgSrc: string;
 }
