@@ -92,6 +92,27 @@ export const apiUserUpdateContactedSpeakers = async (
   }
 };
 
+export const apiUserTakeAPartInRafflePrizes = async (
+  userId: number,
+  token: {
+    accessToken: string | null;
+    refreshToken: string | null;
+  },
+): Promise<any> => {
+  const url = `${process.env.REACT_APP_API_URL}${api.userTakeAPartInRafflePrizes}`;
+
+  try {
+    const { data } = await axios.post(url, { userId }, {
+      headers: {
+        Authorization: `Bearer ${token.accessToken}`,
+      },
+    });
+    return data;
+  } catch (error) {
+    return error.response;
+  }
+};
+
 export const apiUserUpdateWatchedSpeakersAllInSession = async (
   sessionId: number,
   userId: number,

@@ -87,6 +87,7 @@ export const seedMockedSpeakers = async () => {
 
     session: foundSessions.filter((session: any) => session.name === 'Plenar'),
     hasSendContactsButton: true,
+    hasRafflePrizesButton: true,
 
   },
 
@@ -1519,6 +1520,7 @@ export const seedMockedSpeakers = async () => {
     newSpeaker.sessions = speaker.session[0];
     newSpeaker.statusInCompany = speaker.statusInCompany || '';
     newSpeaker.hasSendContactsButton = speaker.hasSendContactsButton || false;
+    newSpeaker.hasRafflePrizesButton = speaker.hasRafflePrizesButton || false;
 
     results.push(newSpeaker);
   }

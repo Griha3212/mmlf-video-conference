@@ -7,7 +7,7 @@ import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
 import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
-import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
+import { apiUserTakeAPartInRafflePrizes, apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 import check from '../../img/check.svg';
 
@@ -144,6 +144,13 @@ const SessionInfoBlock = (props: any) => {
     );
   };
 
+  const takeAPartInRafflePrizes = async () => {
+    await apiUserTakeAPartInRafflePrizes(
+      props.userId,
+      props.token,
+    );
+  };
+
   const checkAlreadySentContact = () => {
     if (currentUserData && currentUserData.foundUser &&
       currentUserData.foundUser.speakersToWhomContactsWereSent) {
@@ -159,23 +166,46 @@ const SessionInfoBlock = (props: any) => {
     } else return false;
   };
 
+  const checkAlreadyTookPart = () => {
+    if (currentUserData && currentUserData.foundUser &&
+      currentUserData.foundUser.wantToTakeAPartInRafflePrizes) {
+      return true;
+    } else {
+      return false;
+    }
+  };
+
   return (
     <>
       {currentUserData && currentUserData.channelUserInfo.activeSession &&
         currentUserData.channelUserInfo.activeSession.isSessionForSecondDay ? null : (
           <Grid item container className={classes.darkBlueBckg}>
-            <Grid item xs={12}>
+            <Grid item xs={12} xl={9}>
               <p className={renderSessionLetter().length > 10
                 ? classes.sessionLetterTextLong : classes.sessionLetterText}
               >
                 {renderSessionLetter()}
               </p>
 
+              <p className={currentUserData && currentUserData.channelUserInfo.activeSession &&
+                currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ?
+                classes.sessionNameText : classes.sessionNameText100}
+              >
+                {renderSessionDescription()}
+              </p>
+
             </Grid>
 
-            <p className={classes.sessionNameText}>
-              {renderSessionDescription()}
-            </p>
+            {currentUserData && currentUserData.channelUserInfo.activeSession
+              && currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ? (
+                <Grid item xl={3}>
+                  <p>Партнер сессии</p>
+                  <p>
+                    <img src={currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc} alt="" />
+                  </p>
+                </Grid>
+
+              ) : null}
 
           </Grid>
         )}
@@ -281,7 +311,7 @@ const SessionInfoBlock = (props: any) => {
                     disabled={closedAccess}
                     onClick={() => sendContacts()}
                     className={checkAlreadySentContact()
-                      ? classes.sendContactsButtonDisabled : classes.sendContactsButton}
+                      ? classes.sendContactsButtonSuccess : classes.sendContactsButton}
                   >
                     {checkAlreadySentContact() ?
 
@@ -292,6 +322,30 @@ const SessionInfoBlock = (props: any) => {
                           Готово
                         </span>
                       ) : 'Поделиться контактами'}
+
+                  </Button>
+                </p>
+              ) : null
+            }
+            {
+              currentSpeakerInfo && currentSpeakerInfo.hasRafflePrizesButton ? (
+                <p className={classes.textCenter}>
+                  <Button
+                    disabled={closedAccess}
+                    onClick={() => takeAPartInRafflePrizes()}
+                    className={checkAlreadyTookPart()
+                      ? classes.takeAPartInRafflePrizesButtonSuccess :
+                      classes.takeAPartInRafflePrizesButton}
+                  >
+                    {checkAlreadyTookPart() ?
+
+                      (
+                        <span>
+                          <img alt="check" src={check} />
+                          {' '}
+                          Готово
+                        </span>
+                      ) : 'Участвовать в розыгрыше'}
 
                   </Button>
                 </p>

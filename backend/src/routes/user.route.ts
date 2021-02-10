@@ -2,7 +2,7 @@
 /* eslint-disable import/prefer-default-export */
 import express from 'express';
 import passport from 'passport';
-import * as authController from '../controllers/user.controller';
+import * as userController from '../controllers/user.controller';
 
 const router = express.Router();
 
@@ -15,9 +15,10 @@ const {
   getAllChannels,
   changeActiveChannel,
   updateSpeakersToWhomContactsWereSent,
+  takeAPartInRafflePrizes,
   // updateToken,
 
-} = authController;
+} = userController;
 
 router.get(
   '/get_user/:userId',
@@ -59,6 +60,12 @@ router.post(
   '/update_contacted_speakers',
   passport.authenticate('jwt', { session: false }),
   updateSpeakersToWhomContactsWereSent,
+);
+
+router.post(
+  '/take_a_part_in_raffle_prizes',
+  passport.authenticate('jwt', { session: false }),
+  takeAPartInRafflePrizes,
 );
 
 export { router };

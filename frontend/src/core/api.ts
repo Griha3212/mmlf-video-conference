@@ -27,6 +27,8 @@ const api = {
 
   getStats: 'api/stats/get_stats/',
 
+  userTakeAPartInRafflePrizes: 'api/user/take_a_part_in_raffle_prizes',
+
 };
 
 export default api;

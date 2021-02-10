@@ -81,4 +81,8 @@ export default class Users extends BaseEntity {
   @Index()
   @Column({ default: false })
   showOtherChannelsBlock: boolean;
+
+  @Index()
+  @Column({ default: false })
+  wantToTakeAPartInRafflePrizes: boolean;
 }

@@ -71,4 +71,8 @@ export default class Speakers extends BaseEntity {
   @Index()
   @Column({ default: false })
   hasSendContactsButton: boolean;
+
+  @Index()
+  @Column({ default: false })
+  hasRafflePrizesButton: boolean;
 }

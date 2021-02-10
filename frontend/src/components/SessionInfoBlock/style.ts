@@ -260,6 +260,57 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  sessionNameText100: {
+
+    fontFamily: 'Gotham Pro Black',
+    // fontWeight: 700,
+
+    color: 'white',
+
+    marginBottom: '38px',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '6vw',
+      lineHeight: '6.9vw',
+      marginTop: '17px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '2.8vw',
+      lineHeight: '3.5vw',
+      marginTop: '11px',
+      width: '100%',
+      marginBottom: '17px',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '2.2vw',
+      lineHeight: '2.5vw',
+      marginTop: '14px',
+      width: '100%',
+      marginBottom: '21px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '2vw',
+      lineHeight: '2.4vw',
+      marginTop: '17px',
+      width: '100%',
+      marginBottom: '38px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '36px',
+      lineHeight: '51px',
+      marginTop: '41px',
+      width: '100%',
+      marginBottom: '38px',
+      paddingLeft: '33px',
+    },
+
+  },
+
   sessionLetterTextLong: {
 
     marginTop: '0px',
@@ -710,7 +761,119 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  sendContactsButtonDisabled: {
+  takeAPartInRafflePrizesButton: {
+
+    fontFamily: 'Gotham Pro Medium',
+
+    backgroundColor: '#8000FF',
+
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: '0px',
+    textTransform: 'initial',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      height: '56px',
+      width: '250px',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.9vw',
+      height: '7.7vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.3vw',
+      height: '3.7vw',
+      width: '82%',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vw',
+      height: '3.5vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '17px',
+      lineHeight: '19px',
+      height: '53px',
+      width: '286px',
+      marginTop: '11px',
+    },
+
+    '&:hover': {
+      backgroundColor: '#1B3074',
+      border: '1px solid #8000FF',
+      color: '#8000FF',
+      transition: '0.2s',
+    },
+
+  },
+
+  sendContactsButtonSuccess: {
+
+    fontFamily: 'Gotham Pro Medium',
+
+    backgroundColor: '#24A553',
+
+    color: 'white',
+    textAlign: 'center',
+    borderRadius: '0px',
+    textTransform: 'initial',
+    pointerEvents: 'none',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      height: '56px',
+      width: '250px',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '1.9vw',
+      height: '7.7vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.3vw',
+      height: '3.7vw',
+      width: '82%',
+      marginTop: '0px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1vw',
+      height: '3.5vw',
+      width: '100%',
+      marginTop: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '17px',
+      lineHeight: '19px',
+      height: '53px',
+      width: '286px',
+      marginTop: '11px',
+    },
+
+  },
+
+  takeAPartInRafflePrizesButtonSuccess: {
 
     fontFamily: 'Gotham Pro Medium',
 

@@ -273,3 +273,32 @@ export const updateSpeakersToWhomContactsWereSent = async (
     next(error);
   }
 };
+
+export const takeAPartInRafflePrizes = async (
+  req: Request, res: Response, next: NextFunction,
+) => {
+  const usersRepository = await getRepository(Users);
+
+  try {
+    const { userId } = req.body;
+
+    const foundUser = await usersRepository.findOne(
+      { where: { id: userId }, relations: ['speakersToWhomContactsWereSent'] },
+    );
+
+    if (!foundUser) throw new Error(allErrors.userNotFound);
+
+    foundUser.wantToTakeAPartInRafflePrizes = true;
+
+    await usersRepository.save(foundUser);
+
+    res.status(200).send(foundUser);
+
+    const room = foundUser.id;
+    const data = { message: 'update user info' };
+
+    await io.to(String(room)).emit('connectToPersonalRoom', data);
+  } catch (error) {
+    next(error);
+  }
+};
