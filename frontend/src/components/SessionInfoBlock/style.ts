@@ -714,7 +714,7 @@ const useStyles = makeStyles((theme) => ({
 
     fontFamily: 'Gotham Pro Medium',
 
-    backgroundColor: '#247719',
+    backgroundColor: '#24A553',
 
     color: 'white',
     textAlign: 'center',

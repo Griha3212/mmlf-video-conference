@@ -9,6 +9,7 @@ import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
+import check from '../../img/check.svg';
 
 const SessionInfoBlock = (props: any) => {
   const {
@@ -282,7 +283,15 @@ const SessionInfoBlock = (props: any) => {
                     className={checkAlreadySentContact()
                       ? classes.sendContactsButtonDisabled : classes.sendContactsButton}
                   >
-                    {checkAlreadySentContact() ? 'Контакты отправлены' : 'Поделиться контактами'}
+                    {checkAlreadySentContact() ?
+
+                      (
+                        <span>
+                          <img alt="check" src={check} />
+                          {' '}
+                          Готово
+                        </span>
+                      ) : 'Поделиться контактами'}
 
                   </Button>
                 </p>
