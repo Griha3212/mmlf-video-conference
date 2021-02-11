@@ -101,15 +101,12 @@ const UserPage: FC = () => {
 
   // on reconnect of socket, if server restarts
   useEffect(() => {
-    socket.on('giveMeConnectionInfo', () => {
+    socket.on('disconnect', () => {
       // connect to personalRoom
       socket.emit('connectToPersonalRoom', user.id);
       // connect to channelRoom
       socket.emit('connectToChannelRoom', user.activeChannel);
     });
-    return () => {
-      socket.off('giveMeConnectionInfo');
-    };
   }, []);
 
   const findAndSetCurrentSpeakerRate = (votes: Vote[] | undefined) => {

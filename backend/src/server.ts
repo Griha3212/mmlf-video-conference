@@ -64,8 +64,8 @@ io.on('connection', (socket) => {
     console.log(chalk.blueBright.underline(`amount of connected users total ${ids.size}`));
   });
 
-  socket.on('connectToChannelRoom', (numberOfChannelToCoonect: number) => {
-    socket.join(`channel${String(numberOfChannelToCoonect)}`);
+  socket.on('connectToChannelRoom', (numberOfChannelToConnect: number) => {
+    socket.join(`channel${String(numberOfChannelToConnect)}`);
     // console.log(chalk.blue.underline(`connectedToChannelRoom: channel${numberOfChannelToCoonect}`));
   });
 
