@@ -41,6 +41,21 @@ import sap from '../../img/partnersImg/sap.svg';
 import comitas from '../../img/partnersImg/comitas.svg';
 import smartLogistics from '../../img/partnersImg/smart_logistics.svg';
 
+import veeroute from '../../img/partnersImg/veeroute_2021.jpg';
+import atiSu from '../../img/partnersImg/ati.su.png';
+import sberlogistika from '../../img/partnersImg/sblogistica.svg';
+import cemat from '../../img/partnersImg/cematrussia.png';
+import spaceCargo from '../../img/partnersImg/space_cargo.svg';
+import firstLogistics from '../../img/partnersImg/first_logistics.png';
+
+import ntls from '../../img/partnersImg/new_tech.png';
+import axelot from '../../img/partnersImg/axelot.svg';
+
+import infoscan from '../../img/partnersImg/infoscan.png';
+import psi from '../../img/partnersImg/psi.png';
+import korusKonsalting from '../../img/partnersImg/korus.jpg';
+import medPoint from '../../img/partnersImg/medpoint_logo.png';
+
 const socket = io(`${process.env.REACT_APP_API_URL}`, { transports: ['websocket'] });
 
 const UserPage: FC = () => {
@@ -598,6 +613,18 @@ const UserPage: FC = () => {
 
             </Grid>
           </Grid>
+
+          <Grid justify="space-between" container item className={`${classes.mainContainerBckgChangeSession} ${classes.partnersContainerImg}`}>
+
+            <Grid item><img src="" alt="" /></Grid>
+            <Grid item><img src="" alt="" /></Grid>
+            <Grid item><img src="" alt="" /></Grid>
+            <Grid item><img src="" alt="" /></Grid>
+            <Grid item><img src="" alt="" /></Grid>
+            <Grid item><img src="" alt="" /></Grid>
+
+          </Grid>
+
         </Grid>
 
       </Grid>
