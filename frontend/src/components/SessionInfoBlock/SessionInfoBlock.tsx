@@ -180,7 +180,7 @@ const SessionInfoBlock = (props: any) => {
       {currentUserData && currentUserData.channelUserInfo.activeSession &&
         currentUserData.channelUserInfo.activeSession.isSessionForSecondDay ? null : (
           <Grid item container className={classes.darkBlueBckg}>
-            <Grid item xs={12} xl={9}>
+            <Grid item xs={12} xl={9} lg={9}>
               <p className={renderSessionLetter().length > 10
                 ? classes.sessionLetterTextLong : classes.sessionLetterText}
               >
@@ -198,10 +198,14 @@ const SessionInfoBlock = (props: any) => {
 
             {currentUserData && currentUserData.channelUserInfo.activeSession
               && currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ? (
-                <Grid item xl={3}>
+                <Grid item xl={3} lg={3}>
                   <p className={classes.sessionPartnerWord}>Партнер сессии</p>
                   <p className={classes.sessionPartnerImgP}>
-                    <img src={currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc} alt="" />
+                    <img
+                      className={classes.imgFluid}
+                      src={currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc}
+                      alt=""
+                    />
                   </p>
                 </Grid>
 
@@ -214,7 +218,7 @@ const SessionInfoBlock = (props: any) => {
         <Grid item container justify="space-between" className={classes.lightBlueBckg}>
 
           <Grid container item className={classes.speakerInfoBlock} sm={7} xl={8} lg={8} xs={12}>
-            <Grid item xl={12}>
+            <Grid item xl={12} lg={12}>
               <p className={classes.speakerThemeWord}>
                 Доклад:
               </p>
@@ -228,7 +232,7 @@ const SessionInfoBlock = (props: any) => {
 
             </Grid>
 
-            <Grid item xl={11}>
+            <Grid item xl={11} lg={11}>
               <p className={classes.speakerTheme}>
                 {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
               </p>

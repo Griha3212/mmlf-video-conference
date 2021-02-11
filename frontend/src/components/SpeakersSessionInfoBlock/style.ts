@@ -172,7 +172,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-      maxWidth: '79px',
+      maxWidth: '90px',
 
     },
     [theme.breakpoints.up('xl')]: {
