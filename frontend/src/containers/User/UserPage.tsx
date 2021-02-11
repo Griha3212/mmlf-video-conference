@@ -614,14 +614,61 @@ const UserPage: FC = () => {
             </Grid>
           </Grid>
 
-          <Grid justify="space-between" container item className={`${classes.mainContainerBckgChangeSession} ${classes.partnersContainerImg}`}>
+          <Grid
+            justify="space-between"
+            container
+            direction="row"
+            item
+            className={`${classes.mainContainerBckgChangeSession} ${classes.partnersContainerImg2}`}
+          >
 
-            <Grid item><img src="" alt="" /></Grid>
-            <Grid item><img src="" alt="" /></Grid>
-            <Grid item><img src="" alt="" /></Grid>
-            <Grid item><img src="" alt="" /></Grid>
-            <Grid item><img src="" alt="" /></Grid>
-            <Grid item><img src="" alt="" /></Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={veeroute} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={atiSu} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={sberlogistika} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={cemat} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={spaceCargo} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={firstLogistics} alt="" />
+            </Grid>
+
+          </Grid>
+
+          <Grid
+            justify="space-between"
+            container
+            direction="row"
+            item
+            className={`${classes.mainContainerBckgChangeSession}`}
+          >
+
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={ntls} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={axelot} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={infoscan} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={psi} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={korusKonsalting} alt="" />
+            </Grid>
+            <Grid className={`${classes.myAuto} ${classes.partnerImgContainerBottom}`} item xs>
+              <img className={`${classes.imgFluid}`} src={medPoint} alt="" />
+            </Grid>
 
           </Grid>
 

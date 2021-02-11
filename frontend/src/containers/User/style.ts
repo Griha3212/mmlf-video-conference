@@ -33,6 +33,17 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
   },
 
+  partnerImgContainerBottom: {
+
+    // maxHeight: '100px',
+    display: 'flex',
+    alignSelf: 'center',
+    textAlign: 'center',
+    marginRight: '15px',
+    marginLeft: '15px',
+
+  },
+
   imgPartner: {
 
     margin: '0 auto',
@@ -102,6 +113,26 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       justifyContent: 'space-between',
+    },
+
+  },
+
+  partnersContainerImg2: {
+
+    [theme.breakpoints.up('xs')]: {
+      justifyContent: 'center',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      justifyContent: 'center',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      justifyContent: 'space-between',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      marginTop: '50px !important',
     },
 
   },
