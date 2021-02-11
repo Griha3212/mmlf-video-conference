@@ -28,9 +28,6 @@ import {
   apiGetAllChannels, apiUserChangeActiveChannel,
   apiUserUpdateWatchedSpeakersAllInSession,
 } from '../../api/user';
-import lerua from '../../img/partnersImg/lerua.svg';
-import severstal from '../../img/partnersImg/severstal.svg';
-import cocalCola from '../../img/partnersImg/coca-cola.svg';
 import footerMMLFLogo from '../../img/footer_mmlf_logo.svg';
 import vk from '../../img/socialImg/vk.svg';
 import facebook from '../../img/socialImg/facebook.svg';
@@ -39,11 +36,10 @@ import cclFooter from '../../img/ccl_footer.svg';
 import {
   DataForUser, Vote, Channel, Speaker, DataFromSocket,
 } from '../../interfaces/allInterfaces';
-import multicolorLine from '../../img/multicolor_line.svg';
-import sapTop from '../../img/topPartnersImg/sap.svg';
-import comitasTop from '../../img/topPartnersImg/comitas.svg';
-import smartLogisticsTop from '../../img/topPartnersImg/smart_logistics.svg';
-import greyDecoratedLine from '../../img/grey_decorated_line.svg';
+
+import sap from '../../img/partnersImg/sap.svg';
+import comitas from '../../img/partnersImg/comitas.svg';
+import smartLogistics from '../../img/partnersImg/smart_logistics.svg';
 
 const socket = io(`${process.env.REACT_APP_API_URL}`, { transports: ['websocket'] });
 
@@ -552,22 +548,15 @@ const UserPage: FC = () => {
               xl={3}
               lg={3}
             >
+              <p className={classes.imgPartnerP}>
+                {' '}
+                <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={sap} alt="" />
+              </p>
 
-              <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={lerua} alt="" />
-
-            </Grid>
-
-            <Grid
-              className={`${classes.myAuto} ${classes.partnerImgContainer}`}
-              item
-              xs={8}
-              sm={12}
-              md={4}
-              xl={3}
-              lg={3}
-            >
-
-              <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={severstal} alt="" />
+              <p className={classes.partnerText}>
+                Генеральный
+                партнер
+              </p>
 
             </Grid>
 
@@ -581,7 +570,31 @@ const UserPage: FC = () => {
               lg={3}
             >
 
-              <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={cocalCola} alt="" />
+              <p className={classes.imgPartnerP}>
+                {' '}
+                <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={comitas} alt="" />
+              </p>
+              <p className={classes.partnerText}>
+                Эксклюзивный
+                партнер
+              </p>
+            </Grid>
+
+            <Grid
+              className={`${classes.myAuto} ${classes.partnerImgContainer}`}
+              item
+              xs={8}
+              sm={12}
+              md={4}
+              xl={3}
+              lg={3}
+            >
+
+              <p className={classes.imgPartnerP}>
+                {' '}
+                <img className={`${classes.imgFluid} ${classes.imgPartner}`} src={smartLogistics} alt="" />
+              </p>
+              <p className={classes.partnerText}>IT-партнер</p>
 
             </Grid>
           </Grid>

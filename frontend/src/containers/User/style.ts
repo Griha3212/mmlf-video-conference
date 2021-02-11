@@ -6,6 +6,7 @@ const useStyles = makeStyles((theme) => ({
   partnerImgContainer: {
 
     boxShadow: '0 0 10px 5px rgb(221 221 221)',
+    textAlign: 'center',
 
     [theme.breakpoints.up('sm')]: {
       textAlign: 'center',
@@ -16,18 +17,25 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-      textAlign: 'left',
     },
 
     [theme.breakpoints.up('xl')]: {
-      textAlign: 'left',
       height: '22vw',
-      padding: '100px 50px',
+      padding: '100px 0px',
     },
 
   },
 
+  imgPartnerP: {
+
+    height: '100px',
+    marginBottom: '105px',
+    display: 'flex',
+  },
+
   imgPartner: {
+
+    margin: '0 auto',
 
     [theme.breakpoints.down('xs')]: {
       marginBottom: '73px',
@@ -46,6 +54,38 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       marginBottom: '0px',
       width: '100% !important',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+
+      width: '75% !important',
+    },
+
+  },
+
+  partnerText: {
+
+    fontFamily: 'Gotham Pro',
+
+    [theme.breakpoints.down('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+
+    },
+
+    [theme.breakpoints.up('xl')]: {
+
+      fontSize: '24px',
     },
 
   },
