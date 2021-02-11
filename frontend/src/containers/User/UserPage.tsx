@@ -307,7 +307,7 @@ const UserPage: FC = () => {
 
   const calculateHeightOfSmallChannelWindow = () => {
     if (isXl) return '235px';
-    if (isLg) return '193px';
+    if (isLg) return '143px';
     if (isMd) return '160px';
     if (isXs) return '227px';
   };
@@ -554,7 +554,7 @@ const UserPage: FC = () => {
             <Grid
               className={`${classes.myAuto} ${classes.partnerImgContainer}`}
               item
-              xs={8}
+              xs={10}
               sm={12}
               md={4}
               xl={3}
@@ -575,7 +575,7 @@ const UserPage: FC = () => {
             <Grid
               className={`${classes.myAuto} ${classes.partnerImgContainer}`}
               item
-              xs={8}
+              xs={10}
               sm={12}
               md={4}
               xl={3}
@@ -595,7 +595,7 @@ const UserPage: FC = () => {
             <Grid
               className={`${classes.myAuto} ${classes.partnerImgContainer}`}
               item
-              xs={8}
+              xs={10}
               sm={12}
               md={4}
               xl={3}

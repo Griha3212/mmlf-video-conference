@@ -8,12 +8,21 @@ const useStyles = makeStyles((theme) => ({
     boxShadow: '0 0 10px 5px rgb(221 221 221)',
     textAlign: 'center',
 
+    [theme.breakpoints.up('xs')]: {
+      textAlign: 'center',
+      marginBottom: '20px !important',
+      paddingTop: '25px',
+    },
+
     [theme.breakpoints.up('sm')]: {
       textAlign: 'center',
+      marginBottom: '20px',
+      paddingTop: '15px',
     },
 
     [theme.breakpoints.up('md')]: {
       textAlign: 'center',
+      marginBottom: '0px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -28,9 +37,19 @@ const useStyles = makeStyles((theme) => ({
 
   imgPartnerP: {
 
-    height: '100px',
-    marginBottom: '105px',
     display: 'flex',
+
+    [theme.breakpoints.up('lg')]: {
+      height: '100px',
+      marginBottom: '55px',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+
+      height: '100px',
+      marginBottom: '105px',
+    },
+
   },
 
   partnerImgContainerBottom: {
@@ -42,6 +61,15 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '15px',
     marginLeft: '15px',
 
+    [theme.breakpoints.down('xs')]: {
+
+      maxWidth: '83.333333%',
+      flexBasis: '83.333333%',
+      margin: '0 auto',
+      marginBottom: '20px !important',
+
+    },
+
   },
 
   imgPartner: {
@@ -50,6 +78,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('xs')]: {
       marginBottom: '73px',
+      width: '75% !important',
     },
 
     [theme.breakpoints.up('sm')]: {
@@ -64,7 +93,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       marginBottom: '0px',
-      width: '100% !important',
+      width: '75% !important',
     },
 
     [theme.breakpoints.up('xl')]: {
@@ -79,7 +108,7 @@ const useStyles = makeStyles((theme) => ({
     fontFamily: 'Gotham Pro',
 
     [theme.breakpoints.down('xs')]: {
-
+      fontSize: '5vw',
     },
 
     [theme.breakpoints.up('sm')]: {
@@ -91,12 +120,13 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-
+      marginBottom: '20px',
     },
 
     [theme.breakpoints.up('xl')]: {
 
       fontSize: '24px',
+      marginBottom: '0px',
     },
 
   },
@@ -129,6 +159,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       justifyContent: 'space-between',
+      marginTop: '30px !important',
     },
 
     [theme.breakpoints.up('xl')]: {
@@ -623,6 +654,12 @@ const useStyles = makeStyles((theme) => ({
 
   otherSessionContainerInner: {
 
+    [theme.breakpoints.up('lg')]: {
+
+      marginBottom: '114px',
+
+    },
+
     [theme.breakpoints.up('xl')]: {
 
       marginBottom: '235px',
@@ -642,7 +679,8 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('lg')]: {
 
-      marginTop: '0px',
+      marginTop: '100px',
+      marginBottom: '60px',
 
     },
 
@@ -650,6 +688,8 @@ const useStyles = makeStyles((theme) => ({
       padding: '0px 33px',
       marginTop: '0px',
       textAlign: 'left',
+      marginBottom: '100px',
+
     },
 
     [theme.breakpoints.down('sm')]: {
@@ -662,6 +702,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '0px',
       marginTop: '55px',
       textAlign: 'center',
+      marginBottom: '47px',
     },
 
   },
@@ -718,14 +759,19 @@ const useStyles = makeStyles((theme) => ({
 
     marginTop: '140px',
 
+    [theme.breakpoints.down('lg')]: {
+      marginTop: '87px',
+      backgroundColor: '#ECF1F1',
+    },
+
     [theme.breakpoints.down('md')]: {
       marginTop: '25px',
-
+      backgroundColor: '#ECF1F1',
     },
 
     [theme.breakpoints.down('xs')]: {
       marginTop: '0px',
-
+      backgroundColor: 'white',
     },
 
   },

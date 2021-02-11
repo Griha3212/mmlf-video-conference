@@ -227,10 +227,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '38px',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '6vw',
+      fontSize: '5vw',
       lineHeight: '6.9vw',
       marginTop: '17px',
-
+      paddingLeft: '10px',
     },
 
     [theme.breakpoints.up('sm')]: {
@@ -279,9 +279,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '38px',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '6vw',
+      fontSize: '5vw',
       lineHeight: '6.9vw',
       marginTop: '17px',
+      paddingLeft: '10px',
 
     },
 
@@ -502,9 +503,32 @@ const useStyles = makeStyles((theme) => ({
 
     marginTop: '0px',
 
+    [theme.breakpoints.up('xs')]: {
+      marginTop: '5px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '0px',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      marginTop: '0px',
+    },
+
   },
 
   redLeftLine: {
+
+    [theme.breakpoints.up('xs')]: {
+      marginRight: '18px',
+      width: '7px',
+      height: '21px',
+      backgroundColor: '#FF414A',
+      border: 'none',
+      marginTop: '0px',
+      position: 'relative',
+      bottom: '5px',
+    },
 
     [theme.breakpoints.up('lg')]: {
       marginRight: '18px',
@@ -539,9 +563,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '0px',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '5vw',
+      fontSize: '4.5vw',
       lineHeight: '5.8vw',
-      marginBottom: '50px',
+      marginBottom: '12px',
 
     },
 
@@ -583,7 +607,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '0px',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '5vw',
+      fontSize: '4.5vw',
       lineHeight: '5.8vw',
       marginBottom: '50px',
 

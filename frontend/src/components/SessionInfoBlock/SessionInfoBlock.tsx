@@ -218,7 +218,7 @@ const SessionInfoBlock = (props: any) => {
         <Grid item container justify="space-between" className={classes.lightBlueBckg}>
 
           <Grid container item className={classes.speakerInfoBlock} sm={7} xl={8} lg={8} xs={12}>
-            <Grid item xl={12} lg={12}>
+            <Grid item xl={12} lg={12} sm={12} xs={12}>
               <p className={classes.speakerThemeWord}>
                 Доклад:
               </p>
@@ -232,7 +232,7 @@ const SessionInfoBlock = (props: any) => {
 
             </Grid>
 
-            <Grid item xl={11} lg={11}>
+            <Grid item xl={11} lg={11} xs={10}>
               <p className={classes.speakerTheme}>
                 {currentSpeakerInfo && currentSpeakerInfo.topicName || 'Тема доклада'}
               </p>
