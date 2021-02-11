@@ -67,11 +67,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-      width: 'auto',
+      width: '50px',
+      height: '50px',
+      position: 'relative',
+      bottom: '20px',
 
     },
     [theme.breakpoints.up('xl')]: {
-      width: 'auto',
+      width: '100%',
+      height: 'auto',
 
     },
 
@@ -90,11 +94,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-      width: 'auto',
+      width: '50px',
+      height: '50px',
+      position: 'relative',
+      bottom: '20px',
 
     },
     [theme.breakpoints.up('xl')]: {
-      width: 'auto',
+      width: '100%',
+      height: 'auto',
 
     },
 
@@ -113,11 +121,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
-      width: 'auto',
+      width: '50px',
+      height: '50px',
+      position: 'relative',
+      bottom: '20px',
 
     },
     [theme.breakpoints.up('xl')]: {
-      width: 'auto',
+      width: '100%',
+      height: 'auto',
 
     },
 
@@ -494,7 +506,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '0 106px',
       paddingTop: '68px',
       marginTop: '45px',
-      paddingBottom: '63px',
+      paddingBottom: '0px',
 
     },
     [theme.breakpoints.up('xl')]: {
