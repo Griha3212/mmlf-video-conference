@@ -57,7 +57,8 @@ const useStyles = makeStyles((theme) => ({
   loadZoomImg: {
 
     [theme.breakpoints.up('xs')]: {
-      width: 'auto',
+      width: '60px',
+      height: '60px',
 
     },
 
@@ -84,7 +85,8 @@ const useStyles = makeStyles((theme) => ({
   sendContactsImg: {
 
     [theme.breakpoints.up('xs')]: {
-      width: 'auto',
+      width: '60px',
+      height: '60px',
 
     },
 
@@ -111,7 +113,8 @@ const useStyles = makeStyles((theme) => ({
   loadPDFImg: {
 
     [theme.breakpoints.up('xs')]: {
-      width: 'auto',
+      width: '60px',
+      height: '60px',
 
     },
 

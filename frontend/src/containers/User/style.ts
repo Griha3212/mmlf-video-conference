@@ -67,7 +67,6 @@ const useStyles = makeStyles((theme) => ({
       flexBasis: '83.333333%',
       margin: '0 auto',
       marginBottom: '20px !important',
-
     },
 
   },
