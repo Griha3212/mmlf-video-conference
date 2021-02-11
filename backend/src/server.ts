@@ -57,12 +57,12 @@ let amountOfConnectedUsers: number = 0;
 
 io.on('connection', (socket) => {
   socket.emit('giveMeConnectionInfo', ('hello'));
-
+  amountOfConnectedUsers += 1;
   // id as room
   socket.on('connectToPersonalRoom', async (id: number) => {
     socket.leave(String(id));
     socket.join(String(id));
-    amountOfConnectedUsers += 1;
+
     // console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
 
     // const ids = await io.allSockets();
@@ -79,7 +79,7 @@ io.on('connection', (socket) => {
 
   socket.on('disconnecting', (id: number) => {
     // console.log(chalk.blue.underline(`disconnected user: ${id}`));
-    amountOfConnectedUsers -= 1;
+    if (amountOfConnectedUsers > 0) amountOfConnectedUsers -= 1;
     console.log(chalk.blueBright.underline(`amount of connected users total ${amountOfConnectedUsers}`));
     socket.leave(String(id));
   });
