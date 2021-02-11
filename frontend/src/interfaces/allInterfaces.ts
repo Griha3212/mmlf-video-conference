@@ -54,6 +54,12 @@ export interface Speaker {
   hasSendContactsButton: boolean;
 }
 
+export interface SpeakerUserContacts {
+  id: number;
+  createdAt: Date;
+  speaker: Speaker
+}
+
 export interface Channel {
 
   break: boolean, id: number, link: string,

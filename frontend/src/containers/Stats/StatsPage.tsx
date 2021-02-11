@@ -39,6 +39,7 @@ type User = {
   id: number;
   lastName: string;
   email: string;
+  createdAt: Date;
 
 };
 
@@ -105,15 +106,30 @@ const StatsPage: FC = () => {
     };
 
     const renderContactCheckbox = (historyRow: any) => {
-      console.log('row :>> ', row);
-
       const currentContact = row && row!.usersWhoSendContacts.find(
-        (element: any) => element.id === historyRow.id,
+        (element: any) => element.user.id === historyRow.id,
       );
 
       if (currentContact) return true;
 
       return false;
+    };
+
+    const renderDateOfContactsSending = (historyRow: any) => {
+      const currentContact = row && row!.usersWhoSendContacts.find(
+        (element: any) => element.user.id === historyRow.id,
+      );
+
+      if (currentContact) {
+        const today = new Date(currentContact.createdAt);
+        const date = `${today.getDate()}.${today.getMonth() + 1}.${today.getFullYear()}`;
+        const time = `${today.getHours()}:${today.getMinutes()}:${today.getSeconds()}`;
+        const dateTime = `${date} ${time}`;
+
+        return String(dateTime);
+      }
+
+      return '-';
     };
 
     return (
@@ -144,6 +160,7 @@ const StatsPage: FC = () => {
                       <TableCell align="center">Имя Фамилия участника</TableCell>
                       <TableCell align="center">Просмотрел</TableCell>
                       <TableCell align="center">Хочет отправить контакты</TableCell>
+                      <TableCell align="center">Время отправки</TableCell>
                       <TableCell align="center">Email</TableCell>
                       <TableCell align="center">Оценка</TableCell>
                     </TableRow>
@@ -170,6 +187,7 @@ const StatsPage: FC = () => {
                             inputProps={{ 'aria-label': 'secondary checkbox' }}
                           />
                         </TableCell>
+                        <TableCell align="center">{renderDateOfContactsSending(historyRow)}</TableCell>
                         <TableCell align="center">{`${historyRow.email || '-'}`}</TableCell>
                         <TableCell align="center">{renderRate(historyRow)}</TableCell>
                       </TableRow>

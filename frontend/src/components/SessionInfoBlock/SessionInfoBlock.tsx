@@ -13,6 +13,7 @@ import { apiUserTakeAPartInRafflePrizes, apiUserUpdateContactedSpeakers, apiVote
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 import check from '../../img/check.svg';
 import reload from '../../img/reload_icon.svg';
+import { SpeakerUserContacts } from '../../interfaces/allInterfaces';
 
 const SessionInfoBlock = (props: any) => {
   const {
@@ -158,7 +159,8 @@ const SessionInfoBlock = (props: any) => {
     if (currentUserData && currentUserData.foundUser &&
       currentUserData.foundUser.speakersToWhomContactsWereSent) {
       const foundContactedSpeakers = currentUserData.foundUser.speakersToWhomContactsWereSent.find(
-        (speaker: any) => speaker.id === props.currentSpeakerInfo.id,
+        (speakerUserContacts: SpeakerUserContacts) => speakerUserContacts.speaker.id
+          === props.currentSpeakerInfo.id,
       );
 
       if (foundContactedSpeakers) {

@@ -26,7 +26,10 @@ export const getStats = async (req: Request, res: Response, next: NextFunction) 
     if (!foundUser.hasAccessToStatisticPage) throw new Error(allErrors.notStatsAccount);
 
     const foundSpeakers = await speakersRepository.find(
-      { relations: ['usersWhoWatchedSpeaker', 'votes', 'votes.user', 'usersWhoSendContacts'] },
+      {
+        relations: ['usersWhoWatchedSpeaker', 'votes',
+          'votes.user', 'usersWhoSendContacts', 'usersWhoSendContacts.user'],
+      },
     );
 
     res.status(200).send(foundSpeakers);

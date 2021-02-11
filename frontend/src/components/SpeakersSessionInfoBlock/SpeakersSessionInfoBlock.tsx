@@ -20,7 +20,7 @@ import ShareContactsDisabled from '../../img/contact_icon_disabled.svg';
 import ShareContactsCompleted from '../../img/contact_icon_completed.svg';
 import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
-import { Vote, Speaker } from '../../interfaces/allInterfaces';
+import { Vote, Speaker, SpeakerUserContacts } from '../../interfaces/allInterfaces';
 
 const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
@@ -65,9 +65,11 @@ const SpeakersSessionInfoBlock = (props: any) => {
       if (foundWtchedSpeaker) {
         if (currentUserData && currentUserData.foundUser &&
           currentUserData.foundUser.speakersToWhomContactsWereSent) {
+          console.log('foundContactedSpeakers :>> ', currentUserData.foundUser.speakersToWhomContactsWereSent);
           const foundContactedSpeakers = currentUserData.foundUser
             .speakersToWhomContactsWereSent.find(
-              (speaker: Speaker) => speaker.id === speakerId,
+              (speakerUserContacts: SpeakerUserContacts) => speakerUserContacts.speaker.id
+                === speakerId,
             );
 
           if (foundContactedSpeakers) {

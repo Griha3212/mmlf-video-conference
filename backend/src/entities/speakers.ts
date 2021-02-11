@@ -5,6 +5,7 @@ import {
 } from 'typeorm';
 import Sessions from './sessions';
 import Users from './users';
+import UsersSpeakersContacts from './usersSpeakersContacts';
 import Votes from './votes';
 
 @Entity()
@@ -39,8 +40,12 @@ export default class Speakers extends BaseEntity {
   @ManyToMany(() => Users, (users) => users.watchedSpeakers)
   usersWhoWatchedSpeaker: Users[];
 
-  @ManyToMany(() => Users, (users) => users.speakersToWhomContactsWereSent)
-  usersWhoSendContacts: Users[];
+  // @ManyToMany(() => Users, (users) => users.speakersToWhomContactsWereSent)
+  // usersWhoSendContacts: Users[];
+
+  @OneToMany(() => UsersSpeakersContacts,
+    (usersSpeakersContacts) => usersSpeakersContacts.speaker)
+  usersWhoSendContacts: UsersSpeakersContacts[];
 
   @OneToMany(() => Votes, (votes) => votes.speaker)
   @JoinColumn()

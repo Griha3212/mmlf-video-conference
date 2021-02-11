@@ -9,6 +9,7 @@ import Users from '../entities/users';
 import Votes from '../entities/votes';
 import allErrors from '../utils/errors';
 import { io } from '../server';
+import UsersSpeakersContacts from '../entities/usersSpeakersContacts';
 
 export const getUser = async (req: Request, res: Response, next: NextFunction) => {
   const usersRepository = await getRepository(Users);
@@ -22,7 +23,8 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
       {
         where: { id: userId },
         relations: ['votes', 'votes.speaker',
-          'watchedSpeakers', 'speakersToWhomContactsWereSent'],
+          'watchedSpeakers', 'speakersToWhomContactsWereSent',
+          'speakersToWhomContactsWereSent.speaker'],
       },
     );
 
@@ -245,6 +247,7 @@ export const updateSpeakersToWhomContactsWereSent = async (
 ) => {
   const usersRepository = await getRepository(Users);
   const speakersRepository = await getRepository(Speakers);
+  const usersSpeakersContactsRepository = await getRepository(UsersSpeakersContacts);
 
   try {
     const { userId, speakerId } = req.body;
@@ -259,9 +262,28 @@ export const updateSpeakersToWhomContactsWereSent = async (
 
     if (!foundSpeaker) throw new Error(allErrors.speakerNotFound);
 
-    foundUser.speakersToWhomContactsWereSent.push(foundSpeaker);
+    // const foundExistedUserSpeakerContaсts = await usersSpeakersContactsRepository.findOne(
+    //   { where: { user: foundUser, speaker: foundSpeaker } },
+    // );
 
-    await usersRepository.save(foundUser);
+    // if (foundExistedUserSpeakerContaсts) {
+
+    //   foundExistedUserSpeakerContaсts
+
+    // }
+
+    const newUserSpeakerContaсts = new UsersSpeakersContacts();
+
+    newUserSpeakerContaсts.user = foundUser;
+    newUserSpeakerContaсts.speaker = foundSpeaker;
+
+    console.log('newUserSpeakerContaсts :>> ', newUserSpeakerContaсts);
+
+    await usersSpeakersContactsRepository.save(newUserSpeakerContaсts);
+
+    // foundUser.speakersToWhomContactsWereSent.push(foundSpeaker);
+
+    // await usersRepository.save(foundUser);
 
     res.status(200).send(foundUser);
 

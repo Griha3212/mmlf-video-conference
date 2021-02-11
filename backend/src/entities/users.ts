@@ -4,6 +4,7 @@ import {
   Index, OneToMany, ManyToMany, JoinTable,
 } from 'typeorm';
 import Speakers from './speakers';
+import UsersSpeakersContacts from './usersSpeakersContacts';
 import Votes from './votes';
 
 @Entity()
@@ -65,14 +66,18 @@ export default class Users extends BaseEntity {
   @JoinTable()
   watchedSpeakers: Speakers[];
 
-  @ManyToMany(() => Speakers,
-    (speakersToWhomContactsWereSent) => speakersToWhomContactsWereSent.usersWhoSendContacts,
-    { cascade: true })
-  @JoinTable()
-  speakersToWhomContactsWereSent: Speakers[];
+  // @ManyToMany(() => Speakers,
+  //   (speakersToWhomContactsWereSent) => speakersToWhomContactsWereSent.usersWhoSendContacts,
+  //   { cascade: true })
+  // @JoinTable()users_speakers_to_whom_contacts_were_sent_speakers
+  // speakersToWhomContactsWereSent: Speakers[];
 
   @OneToMany(() => Votes, (votes) => votes.user)
   votes: Votes[];
+
+  @OneToMany(() => UsersSpeakersContacts,
+    (usersSpeakersContacts) => usersSpeakersContacts.user)
+  speakersToWhomContactsWereSent: UsersSpeakersContacts[];
 
   @Index()
   @Column({ nullable: true })
