@@ -199,8 +199,8 @@ const SessionInfoBlock = (props: any) => {
             {currentUserData && currentUserData.channelUserInfo.activeSession
               && currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ? (
                 <Grid item xl={3}>
-                  <p>Партнер сессии</p>
-                  <p>
+                  <p className={classes.sessionPartnerWord}>Партнер сессии</p>
+                  <p className={classes.sessionPartnerImgP}>
                     <img src={currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc} alt="" />
                   </p>
                 </Grid>

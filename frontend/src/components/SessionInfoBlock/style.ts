@@ -483,6 +483,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '0 110px',
       paddingTop: '39px',
       minHeight: '190px',
+      paddingRight: '0px',
     },
 
   },
@@ -592,6 +593,57 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: '40px',
       marginBottom: '105px',
 
+    },
+
+  },
+
+  sessionPartnerImgP: {
+
+    [theme.breakpoints.up('xl')]: {
+      textAlign: 'right',
+      marginBottom: '48px',
+    },
+
+  },
+
+  sessionPartnerWord: {
+    fontFamily: 'Open Sans',
+    fontWeight: 400,
+    color: 'white',
+    textAlign: 'center',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      lineHeight: '20px',
+      marginBottom: '14px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '2vw',
+      lineHeight: '2.5vw',
+      marginBottom: '7px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      fontSize: '1.7vw',
+      lineHeight: '2.3vw',
+      marginBottom: '7px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.3vw',
+      lineHeight: '1.7vw',
+      marginBottom: '18px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '21px',
+      lineHeight: '34px',
+      marginBottom: '30px',
+      paddingLeft: '15px',
     },
 
   },
