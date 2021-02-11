@@ -1,3 +1,6 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/anchor-has-content */
+/* eslint-disable jsx-a11y/control-has-associated-label */
 /* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-restricted-syntax */
 /* eslint-disable jsx-a11y/no-static-element-interactions */
@@ -8,7 +11,7 @@
 /* eslint-disable no-lone-blocks */
 /* eslint-disable @typescript-eslint/no-unused-expressions */
 import React, {
-  FC, memo, useState, useEffect,
+  FC, memo, useState, useEffect, useRef,
 } from 'react';
 import {
   useMediaQuery, Grid, Typography, Button, Hidden,
@@ -98,6 +101,15 @@ const UserPage: FC = () => {
   // all channels info
 
   const [allChannelsInfo, setAllChannelsInfo] = React.useState<Channel[]>();
+
+  const changeSession = useRef<HTMLDivElement>(null);
+
+  const executeScroll = () => {
+    if (changeSession.current) {
+      changeSession.current.scrollIntoView();
+    }
+  };
+  // run this function from an event handler or an effect to execute scroll
 
   // on reconnect of socket, if server restarts
   useEffect(() => {
@@ -500,6 +512,7 @@ const UserPage: FC = () => {
       {/* first block (active speaker) info ---------------------------*/}
       <Grid item className={classes.innerContainer}>
         <SessionInfoBlock
+          executeScroll={executeScroll}
           currentSessionLetter={activeSessionLetter}
           currentSessionDescription={activeSessionDescription}
           currentSpeakerInfo={activeSpeakerInfo}
@@ -519,8 +532,7 @@ const UserPage: FC = () => {
       {/* show/hide OtherChannelsBlock-------------------------------------------------------- */}
       {dataForUser && dataForUser.foundUser.showOtherChannelsBlock ? (
         <Grid container className={classes.changeSessionMainContainer} xl>
-
-          <Grid item className={classes.innerContainer}>
+          <Grid ref={changeSession} item className={classes.innerContainer}>
             <Grid xs={12} item container className={`${classes.mainContainerBckgChangeSession} ${classes.mainContainerBckgChangeSessionFirst}`}>
               <p className={classes.speakersBlockHeader}>Сменить сессию</p>
             </Grid>

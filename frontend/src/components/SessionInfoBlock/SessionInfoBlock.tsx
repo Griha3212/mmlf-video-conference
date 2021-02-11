@@ -1,3 +1,5 @@
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-noninteractive-element-interactions */
 /* eslint-disable no-lone-blocks */
 import React, { memo, useEffect } from 'react';
 import {
@@ -10,6 +12,7 @@ import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import { apiUserTakeAPartInRafflePrizes, apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 import check from '../../img/check.svg';
+import reload from '../../img/reload_icon.svg';
 
 const SessionInfoBlock = (props: any) => {
   const {
@@ -180,13 +183,24 @@ const SessionInfoBlock = (props: any) => {
       {currentUserData && currentUserData.channelUserInfo.activeSession &&
         currentUserData.channelUserInfo.activeSession.isSessionForSecondDay ? null : (
           <Grid item container className={classes.darkBlueBckg}>
-            <Grid item xs={12} xl={9} lg={9}>
-              <p className={renderSessionLetter().length > 10
-                ? classes.sessionLetterTextLong : classes.sessionLetterText}
-              >
-                {renderSessionLetter()}
-              </p>
+            <Grid item container xs={12} xl={9} lg={9}>
+              <Grid item container xs>
+                <Grid item xs>
+                  <p className={renderSessionLetter().length > 10
+                    ? classes.sessionLetterTextLong : classes.sessionLetterText}
+                  >
+                    {renderSessionLetter()}
+                  </p>
+                </Grid>
 
+                <Grid item xs>
+                  <p className={classes.changeSessionP} onClick={() => props.executeScroll()}>
+                    <img src={reload} alt="" />
+                    {' '}
+                    Сменить сессию
+                  </p>
+                </Grid>
+              </Grid>
               <p className={currentUserData && currentUserData.channelUserInfo.activeSession &&
                 currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ?
                 classes.sessionNameText : classes.sessionNameText100}

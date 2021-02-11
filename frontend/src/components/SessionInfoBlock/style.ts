@@ -517,6 +517,24 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
+  changeSessionP: {
+
+    fontFamily: 'Gotham Pro',
+
+    [theme.breakpoints.up('xs')]: {
+      marginTop: '5px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '0px',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      marginTop: '0px',
+    },
+
+  },
+
   redLeftLine: {
 
     [theme.breakpoints.up('xs')]: {
