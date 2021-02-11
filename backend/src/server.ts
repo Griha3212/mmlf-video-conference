@@ -8,7 +8,9 @@ import fs from 'fs';
 import chalk from 'chalk';
 import { Server } from 'socket.io';
 import path from 'path';
+import osutils from 'os-utils';
 import { app } from './app';
+
 /* eslint-disable no-console */
 
 // Get port from environment and store in Express.
@@ -48,7 +50,10 @@ export const io = new Server(process.env.PORT ? httpsServer : server, {
     origin: `${process.env.UI_URL}`,
     methods: ['GET', 'POST'],
   },
+  perMessageDeflate: false,
 });
+
+let amountOfConnectedUsers: number = 0;
 
 io.on('connection', (socket) => {
   socket.emit('giveMeConnectionInfo', ('hello'));
@@ -57,11 +62,14 @@ io.on('connection', (socket) => {
   socket.on('connectToPersonalRoom', async (id: number) => {
     socket.leave(String(id));
     socket.join(String(id));
+    amountOfConnectedUsers += 1;
     // console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${room}`));
 
-    const ids = await io.allSockets();
+    // const ids = await io.allSockets();
     // console.log(chalk.blueBright.underline(`connectedToPersonalRoom: ${id}`));
-    console.log(chalk.blueBright.underline(`amount of connected users total ${ids.size}`));
+    // console.log(chalk.blueBright.underline(`amount of connected users total ${ids.size}`));
+
+    console.log(chalk.blueBright.underline(`amount of connected users total ${amountOfConnectedUsers}`));
   });
 
   socket.on('connectToChannelRoom', (numberOfChannelToConnect: number) => {
@@ -71,6 +79,25 @@ io.on('connection', (socket) => {
 
   socket.on('disconnecting', (id: number) => {
     // console.log(chalk.blue.underline(`disconnected user: ${id}`));
+    amountOfConnectedUsers -= 1;
+    console.log(chalk.blueBright.underline(`amount of connected users total ${amountOfConnectedUsers}`));
     socket.leave(String(id));
   });
 });
+
+console.log(`Platform: ${osutils.platform()}`);
+console.log(`Number of CPUs: ${osutils.cpuCount()}`);
+
+setInterval(() => {
+  osutils.cpuUsage((v: any) => {
+    console.log(`CPU Usage (%) : ${(v * 100).toFixed(2)}`);
+  });
+
+  console.log(`Total Memory: ${osutils.totalmem().toFixed(2)}MB`);
+
+  console.log(`Free Memory: ${osutils.freemem().toFixed(2)}MB`);
+
+  console.log(`Free Memory (%): ${(osutils.freememPercentage() * 100).toFixed(2)}`);
+
+  console.log(`System Uptime: ${osutils.sysUptime()}ms`);
+}, 10000);
