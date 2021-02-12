@@ -146,7 +146,23 @@ const useStyles = makeStyles((theme) => ({
 
   disabledImg: {
 
-    pointerEvents: 'none',
+    // pointerEvents: 'none',
+
+  },
+
+  popoverText: {
+
+    padding: theme.spacing(2),
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '14px',
+      lineHeight: '0px',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '14px',
+      lineHeight: '0px',
+
+    },
 
   },
 

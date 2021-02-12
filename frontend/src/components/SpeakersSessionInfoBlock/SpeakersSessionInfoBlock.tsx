@@ -4,11 +4,13 @@
 /* eslint-disable array-callback-return */
 import React, { memo, useEffect } from 'react';
 import {
-  Grid, Hidden,
+  ClickAwayListener,
+  Grid, Hidden, Popover, Tooltip, Typography,
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
 // import { useEffect } from 'react';
+import ReactTooltip from 'react-tooltip';
 import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
 import PDF from '../../img/pdf_icon.svg';
@@ -25,6 +27,7 @@ import { Vote, Speaker, SpeakerUserContacts } from '../../interfaces/allInterfac
 const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
   const [value] = React.useState<number | null>(5);
+  // const [open, setOpen] = React.useState(false);
 
   const {
     currentModeratorInfo,
@@ -33,6 +36,28 @@ const SpeakersSessionInfoBlock = (props: any) => {
     currentUserData,
 
   } = props;
+
+  // const handleTooltipClose = () => {
+  //   setOpen(false);
+  // };
+
+  // const handleTooltipOpen = () => {
+  //   console.log('handleTooltipOpen :>> ');
+  //   setOpen(true);
+  // };
+
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
+
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
   // const [currentSessionSpeakersAllRatesState,
   //   setCurrentSessionSpeakersAllRatesState] =
@@ -204,12 +229,36 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
               <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
                 <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
+                  <Popover
+                    id={id}
+                    open={open}
+                    anchorEl={anchorEl}
+                    onClose={handleClose}
+                    anchorOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                    transformOrigin={{
+                      vertical: 'top',
+                      horizontal: 'center',
+                    }}
+                  >
+                    <p className={classes.popoverText}>
+                      Cначала оцените выступление
+                    </p>
+                  </Popover>
                   <img
                     className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
                       : `${classes.pointerImg} ${classes.loadPDFImg}`}
                     src={checkIsRated(element.id) ? PDFDisabled : PDF}
-                    onClick={() => window.open(`${element.linkToPresentation}`, '_blank')}
+                    onClick={(e) => {
+                      if (checkIsRated(element.id)) {
+                        // return handleTooltipOpen();
+                        return handleClick(e);
+                      } else {
+                        window.open(`${element.linkToPresentation}`, '_blank');
+                      }
+                    }}
                     alt=""
                   />
 
