@@ -19,7 +19,7 @@ export const seedMockedSessions = async () => {
 
       name: 'Plenar',
       letter: 'Пленарная сессия',
-      description: 'Развитие логистики и управления цепями поставок в России и мире: итоги 2020 года, изменения в 2021 г., новые технологии и решения.',
+      description: 'Развитие логистики и управления цепями поставок в России и мире',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'WMS DAY-1',
       nextSessionDescription: 'Панельная дискуссия директоров по логистике о внедрении WMS',
@@ -45,9 +45,10 @@ export const seedMockedSessions = async () => {
       letter: 'Сессия E',
       description: 'Специальная сессия генерального партнера SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года.',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
-      nextSessionLetter: 'WMS DAY-2',
-      nextSessionDescription: 'Панельная сессия. Рекомендации по улучшению логистических процессов от директоров по логистике - лидеров рынка',
+      nextSessionLetter: 'Панельная сессия H',
+      nextSessionDescription: 'Рекомендации по улучшению логистических процессов от директоров по логистике - лидеров рынка',
       voteFoAllSession: true,
+      partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/cemat.svg`,
 
     },
 
@@ -108,7 +109,6 @@ export const seedMockedSessions = async () => {
     },
 
     {
-
       name: 'Exc4',
       letter: 'Экскурсия',
       description: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
@@ -119,10 +119,19 @@ export const seedMockedSessions = async () => {
     },
 
     {
-
       name: 'Exc5',
       letter: 'Экскурсия',
       description: 'Централизованная складская система НЛМК',
+      channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
+      nextSessionLetter: 'Экскурсия',
+      nextSessionDescription: 'Распределительный центр компании-поставщика «S3». Международная премия за лучшую логистику в сегменте поставщиков в 2020 г.',
+      isSessionForSecondDay: true,
+    },
+
+    {
+      name: 'Exc6',
+      letter: 'Экскурсия',
+      description: 'Распределительный центр компании-поставщика «S3». Международная премия за лучшую логистику в сегменте поставщиков в 2020 г.',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Экскурсия',
       nextSessionDescription: '',
@@ -137,20 +146,20 @@ export const seedMockedSessions = async () => {
       letter: 'Сессия A',
       description: 'Лучший опыт применения инновационных технологий в логистике',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
-      nextSessionLetter: 'WMS DAY-2',
-      nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
+      nextSessionLetter: 'Сессия D',
+      nextSessionDescription: 'Опыт создания и оптимизации складов и логистических центров',
       partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/veeroute.svg`,
 
     },
+
     {
 
-      name: 'WMS2',
-      letter: 'WMS DAY-2',
-      description: 'Лучшая практика внедрения и эксплуатации WMS',
+      name: 'SessD',
+      letter: 'Сессия D',
+      description: 'Опыт создания и оптимизации складов и логистических центров',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
       nextSessionLetter: 'Сессия G',
       nextSessionDescription: 'Организация логистики при развитии e-com продаж',
-
     },
 
     {
@@ -172,20 +181,20 @@ export const seedMockedSessions = async () => {
       letter: 'Сессия B',
       description: 'Комплексные логистические решения для ритейлеров и производителей',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
-      nextSessionLetter: 'Сессия D',
-      nextSessionDescription: 'Опыт создания и оптимизации складов и логистических центров',
+      nextSessionLetter: 'WMS DAY-2',
+      nextSessionDescription: 'Лучшая практика внедрения и эксплуатации WMS',
 
     },
 
     {
 
-      name: 'SessD',
-      letter: 'Сессия D',
-      description: 'Опыт создания и оптимизации складов и логистических центров',
+      name: 'WMS2',
+      letter: 'WMS DAY-2',
+      description: 'Лучшая практика внедрения и эксплуатации WMS',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
       nextSessionLetter: 'Сессия J',
       nextSessionDescription: 'Логистика промышленных компаний',
-      voteFoAllSession: true,
+
     },
 
     {
