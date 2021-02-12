@@ -507,12 +507,14 @@ const useStyles = makeStyles((theme) => ({
       paddingTop: '34px',
       minHeight: '190px',
       paddingRight: '0px',
+      paddingBottom: '36px',
     },
     [theme.breakpoints.up('xl')]: {
       padding: '0 110px',
       paddingTop: '39px',
       minHeight: '190px',
       paddingRight: '0px',
+      paddingBottom: '48px',
     },
 
   },
@@ -597,11 +599,10 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       marginTop: '0px',
-      fontSize: '17px',
-      lineHeight: '18px',
+      fontSize: '1.3vw',
+      lineHeight: '1.7vw',
       position: 'relative',
       right: '10vw',
-      bottom: '5px',
     },
 
     [theme.breakpoints.up('xl')]: {
@@ -610,7 +611,22 @@ const useStyles = makeStyles((theme) => ({
       lineHeight: '24px',
       position: 'relative',
       right: '14vw',
-      bottom: '10px',
+    },
+
+  },
+
+  heightFitContent: {
+
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      height: 'fit-content',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      height: 'fit-content',
     },
 
   },
@@ -744,12 +760,12 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       textAlign: 'right',
-      marginBottom: '30px',
+      // marginBottom: '30px',
     },
 
     [theme.breakpoints.up('xl')]: {
       textAlign: 'right',
-      marginBottom: '48px',
+      // marginBottom: '48px',
     },
 
   },

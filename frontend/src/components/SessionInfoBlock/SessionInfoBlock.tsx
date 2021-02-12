@@ -210,7 +210,7 @@ const SessionInfoBlock = (props: any) => {
         currentUserData.channelUserInfo.activeSession.isSessionForSecondDay ? null : (
           <Grid item container className={classes.darkBlueBckg}>
             <Grid item container xs={12} xl={9} lg={9}>
-              <Grid item container xs>
+              <Grid item container xs className={classes.heightFitContent}>
                 <Grid item xs>
                   <p className={renderSessionLetter().length > 10
                     ? classes.sessionLetterTextLong : classes.sessionLetterText}
@@ -218,18 +218,20 @@ const SessionInfoBlock = (props: any) => {
                     {renderSessionLetter()}
                   </p>
                 </Grid>
+                {currentUserData && currentUserData.foundUser.showOtherChannelsBlock ? (
+                  <Grid item xs className={classes.myAuto}>
+                    <p
+                      className={renderSessionLetter().length > 10
+                        ? classes.changeSessionPLong : classes.changeSessionP}
+                      onClick={() => props.executeScroll()}
+                    >
+                      <img className={classes.reloadImg} src={reload} alt="" />
+                      {' '}
+                      Сменить сессию
+                    </p>
+                  </Grid>
+                ) : null}
 
-                <Grid item xs className={classes.myAuto}>
-                  <p
-                    className={renderSessionLetter().length > 10
-                      ? classes.changeSessionPLong : classes.changeSessionP}
-                    onClick={() => props.executeScroll()}
-                  >
-                    <img className={classes.reloadImg} src={reload} alt="" />
-                    {' '}
-                    Сменить сессию
-                  </p>
-                </Grid>
               </Grid>
               <p className={currentUserData && currentUserData.channelUserInfo.activeSession &&
                 currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ?
@@ -356,7 +358,8 @@ const SessionInfoBlock = (props: any) => {
                 }}
               >
                 <p className={classes.popoverText}>
-                  Cначала оцените выступление
+                  Пожалуйста оцените выступление
+                  чтобы скачать презентацию
                 </p>
               </Popover>
             </p>
