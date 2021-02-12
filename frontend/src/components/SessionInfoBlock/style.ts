@@ -19,13 +19,15 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('lg')]: {
       paddingTop: '0px !important',
       position: 'relative',
-      bottom: '5px',
+      bottom: '0px',
       paddingLeft: '0.6vw !important',
+      paddingBottom: '0px !important',
 
     },
 
     [theme.breakpoints.up('xl')]: {
       paddingLeft: '10px !important',
+      paddingBottom: '20px',
 
     },
 
