@@ -3,7 +3,7 @@
 /* eslint-disable no-lone-blocks */
 import React, { memo, useEffect } from 'react';
 import {
-  Grid, Typography, Button,
+  Grid, Typography, Button, Popover,
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
@@ -25,6 +25,20 @@ const SessionInfoBlock = (props: any) => {
   const [closedAccess, setClosedAccess] = React.useState(true);
   const [presentationAccessClosed, setPresentationAccessClosed] =
     React.useState(!currentSpeakerRate);
+
+  // popover state and logic
+  const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
+
+  const handleClick = (event: any) => {
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
+  const id = open ? 'simple-popover' : undefined;
 
   // check timers logic-----------------------------------------------
   useEffect(() => {
@@ -314,13 +328,37 @@ const SessionInfoBlock = (props: any) => {
 
             <p className={classes.textCenter}>
               <Button
-                disabled={presentationAccessClosed}
-                onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank')}
+                // disabled={presentationAccessClosed}
+                onClick={(e) => {
+                  if (presentationAccessClosed) {
+                    return handleClick(e);
+                  } else {
+                    return window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank');
+                  }
+                }}
                 className={classes.loadPresenationButton}
               >
                 Скачать презентацию
-
               </Button>
+
+              <Popover
+                id={id}
+                open={open}
+                anchorEl={anchorEl}
+                onClose={handleClose}
+                anchorOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+                transformOrigin={{
+                  vertical: 'top',
+                  horizontal: 'center',
+                }}
+              >
+                <p className={classes.popoverText}>
+                  Cначала оцените выступление
+                </p>
+              </Popover>
             </p>
 
             {
