@@ -25,8 +25,8 @@ app.set('port', port);
 const server = http.createServer(app);
 
 // Create HTTPS server.
-const privateKey = fs.readFileSync(path.resolve('src/ssl/remote-mmlf.ru.key'));
-const certificate = fs.readFileSync(path.resolve('src/ssl/remote-mmlf.ru.pem'));
+const privateKey = fs.readFileSync(path.resolve('src/ssl/online.mmlf.key'));
+const certificate = fs.readFileSync(path.resolve('src/ssl/online.mmlf.ru.crt'));
 
 const credentials = { key: privateKey, cert: certificate };
 const httpsServer = https.createServer(credentials, app);
