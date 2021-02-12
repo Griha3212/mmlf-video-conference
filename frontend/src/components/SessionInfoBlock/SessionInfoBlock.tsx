@@ -195,9 +195,13 @@ const SessionInfoBlock = (props: any) => {
                   </p>
                 </Grid>
 
-                <Grid item xs>
-                  <p className={classes.changeSessionP} onClick={() => props.executeScroll()}>
-                    <img src={reload} alt="" />
+                <Grid item xs className={classes.myAuto}>
+                  <p
+                    className={renderSessionLetter().length > 10
+                      ? classes.changeSessionPLong : classes.changeSessionP}
+                    onClick={() => props.executeScroll()}
+                  >
+                    <img className={classes.reloadImg} src={reload} alt="" />
                     {' '}
                     Сменить сессию
                   </p>

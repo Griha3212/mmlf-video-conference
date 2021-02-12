@@ -517,9 +517,12 @@ const useStyles = makeStyles((theme) => ({
 
   },
 
-  changeSessionP: {
+  changeSessionPLong: {
 
     fontFamily: 'Gotham Pro',
+    color: 'white',
+    cursor: 'pointer',
+    marginBottom: '0px',
 
     [theme.breakpoints.up('xs')]: {
       marginTop: '5px',
@@ -527,10 +530,69 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       marginTop: '0px',
+      fontSize: '17px',
+      lineHeight: '18px',
+      position: 'relative',
+      right: '2vw',
     },
 
     [theme.breakpoints.up('xl')]: {
       marginTop: '0px',
+      fontSize: '22px',
+      lineHeight: '24px',
+      position: 'relative',
+      right: '2vw',
+    },
+
+  },
+
+  reloadImg: {
+
+    [theme.breakpoints.up('xs')]: {
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      width: '15px',
+      height: '15px',
+      position: 'relative',
+      top: '2px',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      width: '19px',
+      height: '19px',
+    },
+
+  },
+
+  changeSessionP: {
+
+    fontFamily: 'Gotham Pro',
+    color: 'white',
+    cursor: 'pointer',
+    marginBottom: '0px',
+
+    [theme.breakpoints.up('xs')]: {
+      marginTop: '5px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      marginTop: '0px',
+      fontSize: '17px',
+      lineHeight: '18px',
+      position: 'relative',
+      right: '10vw',
+      bottom: '5px',
+    },
+
+    [theme.breakpoints.up('xl')]: {
+      marginTop: '0px',
+      fontSize: '22px',
+      lineHeight: '24px',
+      position: 'relative',
+      right: '14vw',
+      bottom: '10px',
     },
 
   },
