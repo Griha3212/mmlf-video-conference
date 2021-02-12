@@ -14,10 +14,10 @@ export const seedMockedSpeakers = async () => {
   // --------------------------------------------------------------------- Plenar Session
   const speakersToSeed = [{
 
-    firstName: 'Ырысбек',
-    lastName: 'ТАШБАЕВ',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Tashbayev.jpg`,
-    innerSystemName: 'Tashbaev_Plenar',
+    firstName: 'Василий',
+    lastName: 'ДЕМИН',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.jpg`,
+    innerSystemName: '',
     isModerator: true,
     session: foundSessions.filter((session: any) => session.name === 'Plenar'),
 
@@ -34,21 +34,6 @@ export const seedMockedSpeakers = async () => {
     topicName: 'Обзор методов и технологий в Цепях поставок, которые выбраны европейскими компаниями для поддержки устойчивости и развития в 2021 г.',
     innerSystemName: 'Marinus_Plenar',
     statusInCompany: 'президент',
-    session: foundSessions.filter((session: any) => session.name === 'Plenar'),
-
-  },
-  {
-
-    lastName: 'ДЕМЕНТЬЕВА',
-    firstName: 'Ирина',
-
-    company: 'Группа «М.Видео-Эльдорадо»',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dementeva.png`,
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-    topicName: 'Тренды, вызовы и задачи в логистике non-food ритейла в 2021 г.',
-    innerSystemName: 'Dementeva_Plenar',
-    statusInCompany: 'директор по логистике',
     session: foundSessions.filter((session: any) => session.name === 'Plenar'),
 
   },
@@ -73,7 +58,23 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Формирование стратегии логистики компании: конкурентные преимущества и лучшие решения',
+    lastName: 'ДЕМЕНТЬЕВА',
+    firstName: 'Ирина',
+
+    company: 'Группа «М.Видео-Эльдорадо»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dementeva.png`,
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+    topicName: 'Тренды, вызовы и задачи в логистике non-food ритейла в 2021 г.',
+    innerSystemName: 'Dementeva_Plenar',
+    statusInCompany: 'директор по логистике',
+    session: foundSessions.filter((session: any) => session.name === 'Plenar'),
+
+  },
+
+  {
+
+    topicName: 'Формирование стратегии логистики компании с учетом изменений в 2020 – 2021 гг. Создание конкурентных преимуществ',
     lastName: 'ДЕМИН',
     firstName: 'Василий',
     statusInCompany: 'д.т.н., заместитель директора',
@@ -125,6 +126,22 @@ export const seedMockedSpeakers = async () => {
 
   {
 
+    topicName: 'Создание DarkStores при изменении форматов логистики в условиях роста онлайн продаж',
+    lastName: 'ОБРАЗЦОВА',
+    firstName: 'Елена',
+    statusInCompany: 'директор по операциям',
+    company: 'Утконос',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Obrazcova.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessA'),
+
+  },
+
+  {
+
     lastName: 'ЕЛЕЦКИХ ',
     firstName: 'Илья',
 
@@ -132,9 +149,9 @@ export const seedMockedSpeakers = async () => {
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Eleckih.png`,
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
-    topicName: 'Трансформация рынка и цифровизация управления логистикой',
+    topicName: 'Система управления инновациями в цепях поставок: за счет чего мы формируем стратегическое преимущество на меняющемся рынке',
     innerSystemName: 'Eleckih',
-    statusInCompany: 'директор по развитию и инновациям функции снабжения',
+    statusInCompany: 'директор по развитию и инновациям функции снабжения по стране',
     session: foundSessions.filter((session: any) => session.name === 'SessA'),
 
   },
@@ -144,14 +161,12 @@ export const seedMockedSpeakers = async () => {
     topicName: '7 хороших вопросов вендору логистической платформы',
     lastName: 'ГАВРИЛОВ',
     firstName: 'Алексей',
-    statusInCompany: 'руководитель направления «Управление производством и цепочками поставок',
+    statusInCompany: 'руководитель направления «Управление производством и цепочками поставок»',
     company: 'SAP CIS',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gavrilov.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
 
     session: foundSessions.filter((session: any) => session.name === 'SessA'),
 
@@ -209,30 +224,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Как изменилась логистика европейских производителей и ритейлеров в 2020 г.?',
-    lastName: 'VAL',
-    firstName: 'Susana',
-    statusInCompany: 'prof. Dr., Director',
-    company: 'Zaragoza Logistics Center (ZLC)',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Val.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessB'),
-
-  },
-
-  {
-
     topicName: 'Управление потоками товаров в ритейле',
     lastName: 'ФИЛИМОНОВА',
     firstName: 'Наталья',
     statusInCompany: 'директор департамента по операционному планированию',
     company: 'Х5 Retail Group',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Filimonova.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -245,12 +242,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Опыт развития логистики компании-производителя при работе с торговыми сетями',
-    lastName: 'КЛИМОВА',
-    firstName: 'Светлана',
-    statusInCompany: 'директор по логистике',
-    company: 'АО «Прогресс» (Фруто-Няня)',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Klimova.png`,
+    topicName: 'Современные подходы в управлении запасами. Опыт «Магнит»',
+    lastName: 'СОРОКОУМОВА',
+    firstName: 'Анастасия',
+    statusInCompany: 'директор департамента операционного планирования',
+    company: 'МАГНИТ',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sorokoumova.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -268,7 +265,25 @@ export const seedMockedSpeakers = async () => {
     firstName: 'Андрей',
     statusInCompany: 'директор по ИТ',
     company: 'ЗАО "Завод ЭМА"',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ampleev.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessB'),
+
+  },
+
+  {
+
+    topicName: 'Пункты выдачи: что нас ждет в 2021',
+    lastName: 'ЗИЛЬБЕРБЕРГ',
+    firstName: 'Ирина',
+    statusInCompany: 'начальник управления партнерской сети',
+    company: 'DPD Pickup',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zilberberg.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -313,12 +328,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'KPI клиентоцентричной логистики',
-    lastName: 'ЛЕОНТЬЕВ',
-    firstName: 'Дмитрий',
-    statusInCompany: 'руководитель направления «Логистика»',
-    company: 'Группа компаний СВЕЗА',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    topicName: 'Изменения приоритетов в транспортной стратегии компании',
+    lastName: 'ТУПИН',
+    firstName: 'Кирилл',
+    statusInCompany: 'директор по логистике',
+    company: 'ГК «Ренна холдинг»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -349,12 +364,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Тема уточняется',
-    lastName: 'ФАМИЛИЯ',
-    firstName: 'Имя',
-    statusInCompany: 'Представитель компании',
-    company: 'Умная логистика',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    topicName: 'Логистика до «последней мили»: как сделать вашего покупателя счастливым. Инструменты и кейсы.',
+    lastName: 'БАБАЕВА',
+    firstName: 'Ольга',
+    statusInCompany: 'директор по развитию',
+    company: 'Умная Логистика',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Babaeva.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -367,12 +382,30 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'TMS-платформа как система «одного окна» для полной автоматизации всей логистики',
-    lastName: 'ФАМИЛИЯ',
-    firstName: 'Имя',
-    statusInCompany: 'Представитель компании',
-    company: 'AllTrucks online',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    topicName: 'Уменьшение доли логистических затрат в структуре себестоимости с помощью комплексной автоматизации',
+    lastName: 'ШИРИНЯН',
+    firstName: 'Том',
+    statusInCompany: 'CEO',
+    company: 'Vezubr',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shirinyan.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessC'),
+
+  },
+
+  {
+
+    topicName: 'Новая цифровая экосистема в логистике: инновационный подход',
+    lastName: 'КРАУС',
+    firstName: 'Олег',
+    statusInCompany: 'управляющий партнер',
+    company: 'Atlas Delivery и MEDPOINT24',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kraus.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -418,11 +451,11 @@ export const seedMockedSpeakers = async () => {
   {
 
     topicName: '',
-    lastName: 'САПЕЛКИН',
-    firstName: 'Алексей',
-    statusInCompany: 'директор по развитию логистики',
-    company: 'Bezant',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sapelkin.png`,
+    lastName: 'АНТОНОВ',
+    firstName: 'Максим',
+    statusInCompany: 'руководитель проектов',
+    company: 'ГК «ЭФКО',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Antonov.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -436,36 +469,18 @@ export const seedMockedSpeakers = async () => {
   {
 
     topicName: '',
-    lastName: 'ВОРОБЬЕВ',
-    firstName: 'Юрий',
+    lastName: 'ПОЛКОВНИКОВ',
+    firstName: 'Вячеслав',
     statusInCompany: 'директор по логистике',
-    company: 'Ralf Ringer',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vorobev.png`,
+    company: 'ГК «Армтек»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
 
     // innerSystemName: 'Liharev_Plenar',
 
-    session: foundSessions.filter((session: any) => session.name === 'WMS1'),
-
-  },
-
-  {
-
-    topicName: '',
-    lastName: 'ЦАЦУЛИН',
-    firstName: 'Алексей',
-    statusInCompany: 'директор по логистике',
-    company: 'Белуга',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Caculin.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'WMS1'),
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
 
   },
 
@@ -490,10 +505,28 @@ export const seedMockedSpeakers = async () => {
   {
 
     topicName: '',
-    lastName: 'ФАМИЛИЯ',
-    firstName: 'Имя',
-    statusInCompany: 'представитель компании',
-    company: 'ПАО «Мосэнерго»',
+    lastName: 'СУСАНОВ',
+    firstName: 'Игорь',
+    statusInCompany: 'руководитель управления складской логистики, дирекция по управлению поставками, дистрибьюцией и логистикой',
+    company: 'Мвидео-Эльдорадо',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Susanov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'WMS1'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ХАЙРОВ',
+    firstName: 'Марат',
+    statusInCompany: 'вице-президент по инновациям',
+    company: 'ДГК Дамате',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
     linkToZoom: 'https://ya.ru/',
@@ -509,10 +542,10 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    lastName: 'МАКСИМОВСКИЙ',
-    firstName: 'Александр',
+    lastName: 'БОГАЧЕВ',
+    firstName: 'Игорь',
 
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Maksimovskiy.jpg`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bogachev.png`,
     // innerSystemName: 'Bogachev',
     isModerator: true,
     session: foundSessions.filter((session: any) => session.name === 'SessD'),
@@ -579,7 +612,7 @@ export const seedMockedSpeakers = async () => {
     lastName: 'ИВАНУШКИНА',
     firstName: 'Светлана',
     statusInCompany: 'бренд-менеджер',
-    company: 'FirstLogistik',
+    company: 'ООО «Фест Логистик»',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ivanushkina.png`,
 
     linkToZoom: 'https://ya.ru/',
@@ -626,11 +659,11 @@ export const seedMockedSpeakers = async () => {
   {
 
     topicName: '',
-    lastName: 'ШАПОЧКА',
-    firstName: 'Максим',
-    statusInCompany: 'начальник управления по стратегическому развитию Дирекции по логистике',
-    company: 'АО «Объединенная металлургическая компания»',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
+    lastName: 'ТУПИН',
+    firstName: 'Кирилл',
+    statusInCompany: 'директор по логистике',
+    company: 'ГК «Ренна холдинг»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -702,7 +735,25 @@ export const seedMockedSpeakers = async () => {
     firstName: 'Вячеслав',
     statusInCompany: 'директор по логистике',
     company: 'ГК «Армтек»',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ШАПОЧКА',
+    firstName: 'Максим',
+    statusInCompany: 'начальник управления по стратегическому развитию Дирекции по логистике',
+    company: 'АО «Объединенная металлургическая компания»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -720,7 +771,7 @@ export const seedMockedSpeakers = async () => {
     lastName: 'УСМАНОВ',
     firstName: 'Эльдар',
 
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Troickiy.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Ucmanov.jpg`,
     // innerSystemName: 'Bogachev',
     isModerator: true,
     session: foundSessions.filter((session: any) => session.name === 'SessF'),
@@ -729,12 +780,30 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: '',
+    topicName: 'Как логистика создает конкурентные преимущества компании-производителю',
     lastName: 'ШАПОЧКА',
     firstName: 'Максим',
     statusInCompany: 'начальник управления по стратегическому развитию Дирекции по логистике',
     company: 'АО «Объединенная металлургическая компания»',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessF'),
+
+  },
+
+  {
+
+    topicName: 'Оперативное планирование, позволяющее гарантированно снизить стоимость мультимодельных перевозок',
+    lastName: 'ПЬЯНКОВ',
+    firstName: 'Александр',
+    statusInCompany: 'директор по 3PL',
+    company: 'FESCO',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pyankov.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -765,30 +834,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Тема уточняется',
-    lastName: 'ПЬЯНКОВ',
-    firstName: 'Александр',
-    statusInCompany: 'директор по 3PL',
-    company: 'FESCO',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessF'),
-
-  },
-
-  {
-
-    topicName: 'Тема уточняется',
-    lastName: 'Представитель',
-    firstName: 'компании',
-    statusInCompany: '',
-    company: 'ГАЗ',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    topicName: 'Опыт перехода на электромобили в транспортно-логистическом обеспечении ритейлеров и поставщиков',
+    lastName: 'ПЛЕТНИКОВА',
+    firstName: 'Наталья',
+    statusInCompany: 'начальник управления развития продаж, ГК «СТТ»',
+    company: 'эксклюзивный дистрибьютор ГАЗ',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pletnikova.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -806,7 +857,7 @@ export const seedMockedSpeakers = async () => {
     firstName: 'Алексей',
     statusInCompany: 'директор по развитию',
     company: 'корпорация «Енисейская Сибирь»',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Nikolaev.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -824,7 +875,7 @@ export const seedMockedSpeakers = async () => {
     lastName: 'ЗВЕРЕВ',
     firstName: 'Александр',
 
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Troickiy.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Zverev.jpg`,
     // innerSystemName: 'Bogachev',
     isModerator: true,
     session: foundSessions.filter((session: any) => session.name === 'WMS2'),
@@ -869,12 +920,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Тема уточняется',
-    lastName: 'Представитель',
-    firstName: 'компании',
-    statusInCompany: '',
-    company: 'Solvo',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    topicName: 'Мы ждем перемен: как изменилась логистика под влиянием пандемии',
+    lastName: 'ЕВДОКИМОВ',
+    firstName: 'Евгений',
+    statusInCompany: 'руководитель направления внедрения WMS',
+    company: 'КорусКонсалтинг',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Evdokimov.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -908,8 +959,26 @@ export const seedMockedSpeakers = async () => {
     topicName: 'Технология goods-to-person на примере роя роботов',
     lastName: 'ПИВОВАР',
     firstName: 'Александр',
-    statusInCompany: '',
+    statusInCompany: 'начальник отдела ИТ-инноваций',
     company: 'Solvo',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pivovar.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'WMS2'),
+
+  },
+
+  {
+
+    topicName: 'Повышение операционной эффективности склада: голосовая навигация комплектовщика',
+    lastName: 'ШЕВЧУК',
+    firstName: 'Светлана',
+    statusInCompany: '',
+    company: 'компания «Голосовые решения»',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
     linkToZoom: 'https://ya.ru/',
@@ -958,9 +1027,9 @@ export const seedMockedSpeakers = async () => {
     topicName: 'E-comerсe: автоматизация мезонина',
     lastName: 'ГОРСКИЙ',
     firstName: 'Виталий',
-    statusInCompany: '',
+    statusInCompany: 'директор по развитию',
     company: 'COMITAS',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gorskiy.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -973,11 +1042,29 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Изменение форматов логистики в условиях роста онлайн продаж',
-    lastName: 'ОБРАЗЦОВА',
-    firstName: 'Елена',
-    statusInCompany: 'директор по операциям',
-    company: 'Утконос',
+    topicName: 'Логистическая поддержка при развитии e-com продаж',
+    lastName: 'ЗАЙЦЕВА',
+    firstName: 'Мария',
+    statusInCompany: 'заместитель генерального директора по коммерции',
+    company: 'Сберлогистика',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zayceva.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessG'),
+
+  },
+
+  {
+
+    topicName: 'Фулфилмент Фабрика - новый продукт на складском рынке России',
+    lastName: 'СЕЛЕЗНЕВА',
+    firstName: 'Александра',
+    statusInCompany: 'коммерческий директор компании',
+    company: '«Ориентир»',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
     linkToZoom: 'https://ya.ru/',
@@ -1009,30 +1096,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Оптимизации процессов для сокращения срока запуска фулфилмент-центра',
+    topicName: 'Опыт запуска регионального (Ростов-на-Дону) фулфилмент-центра и оптимизации процессов',
     lastName: 'ДИБРОВА',
     firstName: 'Алексей',
     statusInCompany: 'руководитель инжиниринговой группы',
     company: 'Ozon',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dibrova.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessG'),
-
-  },
-
-  {
-
-    topicName: 'Логистическая поддержка при развитии e-com продаж',
-    lastName: 'Представитель',
-    firstName: 'компании',
-    statusInCompany: 'руководитель инжиниринговой группы',
-    company: 'Сберлогистика',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -1060,6 +1129,42 @@ export const seedMockedSpeakers = async () => {
   {
 
     topicName: '',
+    lastName: 'СУРМАЧ',
+    firstName: 'Сергей',
+    statusInCompany: 'генеральный директор',
+    company: 'сеть дискаунтеров ГК «Находка»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Surmach.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ВОЙТИКОВ',
+    firstName: 'Константин',
+    statusInCompany: 'директор по цепям поставок',
+    company: 'Unilever',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Voytikov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessH'),
+
+  },
+
+  {
+
+    topicName: '',
     lastName: 'ЯНКОВИЧ',
     firstName: 'Антонина',
     statusInCompany: 'директор по логистике',
@@ -1078,11 +1183,11 @@ export const seedMockedSpeakers = async () => {
   {
 
     topicName: '',
-    lastName: 'ФАРАФОНОВ',
-    firstName: 'Алексей',
-    statusInCompany: '',
-    company: '',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pharaphonov.png`,
+    lastName: 'ШТЫКОВ',
+    firstName: 'Павел',
+    statusInCompany: 'директор по логистике',
+    company: 'ИЛЬ ДЕ БОТЭ',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shtikov.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -1098,27 +1203,9 @@ export const seedMockedSpeakers = async () => {
     topicName: '',
     lastName: 'БЕРТОВА',
     firstName: 'Татьяна',
-    statusInCompany: '',
-    company: '',
+    statusInCompany: 'директор по логистике',
+    company: 'Технониколь',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bertova.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessH'),
-
-  },
-
-  {
-
-    topicName: '',
-    lastName: 'ШТЫКОВ',
-    firstName: 'Павел',
-    statusInCompany: '',
-    company: '',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -1134,45 +1221,9 @@ export const seedMockedSpeakers = async () => {
     topicName: '',
     lastName: 'ХРИСТЕНКО',
     firstName: 'Леонид',
-    statusInCompany: '',
-    company: '',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessH'),
-
-  },
-
-  {
-
-    topicName: '',
-    lastName: 'СУРМАЧ',
-    firstName: 'Сергей',
-    statusInCompany: '',
-    company: '',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessH'),
-
-  },
-
-  {
-
-    topicName: '',
-    lastName: 'ВОЙТИКОВ',
-    firstName: 'Константин',
-    statusInCompany: '',
-    company: '',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    statusInCompany: 'директор по логистике',
+    company: 'торговая сеть «Командор»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Hristenko.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -1188,8 +1239,8 @@ export const seedMockedSpeakers = async () => {
     topicName: '',
     lastName: 'РАБАЕВ',
     firstName: 'Роман',
-    statusInCompany: '',
-    company: '',
+    statusInCompany: 'директор Supply Chain',
+    company: 'Auchan',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Rabaev.png`,
 
     linkToZoom: 'https://ya.ru/',
@@ -1205,54 +1256,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: '',
-    lastName: 'АДУШЕВ',
-    firstName: 'Дмитрий',
-    statusInCompany: 'директор по логистике',
-    company: 'Mercury',
+    lastName: 'КИМ',
+    firstName: 'Герасим',
+
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessI'),
-
-  },
-
-  {
-
-    topicName: '',
-    lastName: 'УРИН',
-    firstName: 'Вадим',
-    statusInCompany: 'директор по логистике',
-    company: 'Mercury',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Urin.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessI'),
-
-  },
-
-  {
-
-    topicName: '',
-    lastName: 'КЛИМОВА',
-    firstName: 'Светлана',
-    statusInCompany: 'директор по логистике',
-    company: 'Mercury',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
+    // innerSystemName: 'Bogachev',
+    isModerator: true,
     session: foundSessions.filter((session: any) => session.name === 'SessI'),
 
   },
@@ -1262,8 +1271,8 @@ export const seedMockedSpeakers = async () => {
     topicName: '',
     lastName: 'ВЕДЕНЕЕВ',
     firstName: 'Денис',
-    statusInCompany: 'директор по логистике',
-    company: 'Mercury',
+    statusInCompany: 'руководитель управления планирования и промо',
+    company: 'Х5 Retail Group',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
     linkToZoom: 'https://ya.ru/',
@@ -1278,11 +1287,65 @@ export const seedMockedSpeakers = async () => {
   {
 
     topicName: '',
-    lastName: 'Представитель',
-    firstName: 'компании',
+    lastName: 'ФИЛИППОВ',
+    firstName: 'Михаил',
+    statusInCompany: 'заместитель председателя правления по стратегии и операциям',
+    company: '«Национальная Торгово-Распределительная сеть»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Filippov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'ДЕНИСОВ',
+    firstName: 'Евгений',
     statusInCompany: 'директор по логистике',
-    company: 'Mercury',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    company: 'Магнум',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Denisov.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'АЛЕКСАНДРОВА',
+    firstName: 'Надежда',
+    statusInCompany: 'руководитель отдела по работе с клиентами',
+    company: 'Maxxium',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Alexandrova.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessI'),
+
+  },
+
+  {
+
+    topicName: '',
+    lastName: 'СЕМЕНЮГИНА',
+    firstName: 'Татьяна',
+    statusInCompany: 'руководитель отдела закупок и логистики',
+    company: 'ДК СЛАТА',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Semeniugina.jpg`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -1309,30 +1372,12 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Опыт внедрения инновационных технологий в логистике ООО "СИБУР"',
+    topicName: 'Опыт внедрения инновационных технологий в логистике ООО «СИБУР»',
     lastName: 'АГАРКОВА',
     firstName: 'Ирина',
     statusInCompany: 'руководитель функции Логистика',
     company: 'ООО "СИБУР"',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
-
-    linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
-
-    // innerSystemName: 'Liharev_Plenar',
-
-    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
-
-  },
-
-  {
-
-    topicName: 'Трансформация системы управления запасами ПАО «Северсталь» за 2020 год',
-    lastName: 'ЛУЧИН',
-    firstName: 'Владимир',
-    statusInCompany: 'начальник управления по ремонтам и инвестициям',
-    company: 'ПАО «Северсталь»',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Agarkova.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
@@ -1366,7 +1411,7 @@ export const seedMockedSpeakers = async () => {
     topicName: 'Как изменится внутренняя логистика по обеспечению ремонтных служб ПАО «НЛМК» в 2021 г. Результаты пилотного проекта по обеспечению ремонтных служб через пункты выдачи минуя промежуточные склады реализованного в 2020 г.',
     lastName: 'НОВИКОВ',
     firstName: 'Дмитрий',
-    statusInCompany: '',
+    statusInCompany: 'главный специалист дирекции по развитию снабжения',
     company: 'ПАО «НЛМК»',
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/Novikov.png`,
 
@@ -1381,12 +1426,30 @@ export const seedMockedSpeakers = async () => {
 
   {
 
-    topicName: 'Карта предотвращения рисков при доставке проектных грузов на промышленные предприятия',
-    lastName: 'ХЛЕБНИКОВ',
-    firstName: 'Алексей',
-    statusInCompany: 'генеральный директор',
+    topicName: 'Изменение подходов по логистике и снабжению в ПАО «Северсталь» в 2020 г.',
+    lastName: 'ЛУЧИН',
+    firstName: 'Владимир',
+    statusInCompany: 'начальник управления по ремонтам и инвестициям',
+    company: 'ПАО «Северсталь»',
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Luchin.png`,
+
+    linkToZoom: 'https://ya.ru/',
+    linkToPresentation: '',
+
+    // innerSystemName: 'Liharev_Plenar',
+
+    session: foundSessions.filter((session: any) => session.name === 'SessJ'),
+
+  },
+
+  {
+
+    topicName: 'Разработка оптимальных логистических схем при реализации инвестиционных проектов основные риски и примеры их минимизации',
+    lastName: 'ВЫШИДЕНКО',
+    firstName: 'Яроcлав',
+    statusInCompany: 'коммерческий директор',
     company: 'EMAX Logistics',
-    linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+    linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vishidenko.png`,
 
     linkToZoom: 'https://ya.ru/',
     linkToPresentation: '',
