@@ -56,6 +56,20 @@ const SpeakersSessionInfoBlock = (props: any) => {
     } else return true;
   };
 
+  const checkIsRated = (speakerId: number) => {
+    if (currentSessionSpeakersAllRates) {
+      const foundRate = currentSessionSpeakersAllRates.find(
+        (vote: Vote) => vote.speaker.id === speakerId,
+      );
+
+      if (foundRate) {
+        return false;
+      } else {
+        return true;
+      }
+    } else return true;
+  };
+
   const checkIsWatchedAndSent = (speakerId: number, type: string) => {
     if (currentUserData && currentUserData.foundUser && currentUserData.foundUser.watchedSpeakers) {
       const foundWtchedSpeaker = currentUserData.foundUser.watchedSpeakers.find(
@@ -192,9 +206,9 @@ const SpeakersSessionInfoBlock = (props: any) => {
                 <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
                   <img
-                    className={checkIsWatched(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
+                    className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
                       : `${classes.pointerImg} ${classes.loadPDFImg}`}
-                    src={checkIsWatched(element.id) ? PDFDisabled : PDF}
+                    src={checkIsRated(element.id) ? PDFDisabled : PDF}
                     onClick={() => window.open(`${element.linkToPresentation}`, '_blank')}
                     alt=""
                   />
