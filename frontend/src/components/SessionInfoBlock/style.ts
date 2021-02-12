@@ -352,10 +352,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '0px',
 
     [theme.breakpoints.up('xs')]: {
-      width: '48vw',
-      height: '4.8vw',
-      fontSize: '4vw',
-      lineHeight: '4.8vw',
+      width: '35vw',
+      height: '6vw',
+      fontSize: '3vw',
+      lineHeight: '5.9vw',
 
     },
 
@@ -403,10 +403,10 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '0px',
 
     [theme.breakpoints.up('xs')]: {
-      width: '30vw',
-      height: '4.8vw',
-      fontSize: '4vw',
-      lineHeight: '4.8vw',
+      width: '28vw',
+      height: '6vw',
+      fontSize: '3vw',
+      lineHeight: '5.9vw',
 
     },
 
@@ -545,7 +545,7 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '0px',
 
     [theme.breakpoints.up('xs')]: {
-      marginTop: '5px',
+      marginTop: '0px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -569,7 +569,10 @@ const useStyles = makeStyles((theme) => ({
   reloadImg: {
 
     [theme.breakpoints.up('xs')]: {
-
+      width: '11px',
+      height: '11px',
+      position: 'relative',
+      top: '1px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -594,7 +597,8 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '0px',
 
     [theme.breakpoints.up('xs')]: {
-      marginTop: '5px',
+      fontSize: '3vw',
+      marginTop: '0px',
     },
 
     [theme.breakpoints.up('lg')]: {
