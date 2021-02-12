@@ -197,6 +197,11 @@ const useStyles = makeStyles((theme) => ({
 
   speakerAvatarInsideSession: {
 
+    [theme.breakpoints.up('sm')]: {
+      maxWidth: '100px',
+
+    },
+
     [theme.breakpoints.up('md')]: {
       maxWidth: '79px',
 

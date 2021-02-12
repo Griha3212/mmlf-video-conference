@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
       textAlign: 'center',
       marginBottom: '20px',
       paddingTop: '15px',
+      padding: '50px 0px',
     },
 
     [theme.breakpoints.up('md')]: {
@@ -61,6 +62,14 @@ const useStyles = makeStyles((theme) => ({
     marginRight: '15px',
     marginLeft: '15px',
 
+    [theme.breakpoints.down('sm')]: {
+
+      maxWidth: '45%',
+      flexBasis: '45%',
+      margin: '0 auto',
+      // marginBottom: '20px !important',
+    },
+
     [theme.breakpoints.down('xs')]: {
 
       maxWidth: '83.333333%',
@@ -82,7 +91,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('sm')]: {
       marginBottom: '73px',
-      width: '30% !important',
+      width: '70% !important',
     },
 
     [theme.breakpoints.up('md')]: {
@@ -324,8 +333,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      marginTop: '0px',
       height: 'auto',
+      marginTop: '35px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -538,9 +547,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      fontSize: '2.4vw',
-      lineHeight: '3.3vw',
-      paddingTop: '0px',
+      fontSize: '2.8vw',
+      lineHeight: '3.5vw',
+      paddingTop: '20px',
     },
 
     [theme.breakpoints.up('md')]: {
@@ -581,8 +590,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      fontSize: '1.1vw',
-      lineHeight: '1.5vw',
+      fontSize: '1.8vw',
+      lineHeight: '2.5vw',
       paddingBottom: '0px',
     },
 
@@ -653,6 +662,12 @@ const useStyles = makeStyles((theme) => ({
 
   otherSessionContainerInner: {
 
+    [theme.breakpoints.up('sm')]: {
+
+      marginBottom: '90px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
 
       marginBottom: '114px',
@@ -693,8 +708,9 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('sm')]: {
       padding: '0px',
-      marginTop: '55px',
+      marginTop: '35px',
       textAlign: 'center',
+      marginBottom: '47px',
     },
 
     [theme.breakpoints.down('xs')]: {
