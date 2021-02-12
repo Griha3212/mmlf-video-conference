@@ -28,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
 
       marginRight: '0px',
 
-      marginBottom: '35px',
+      marginBottom: '0px',
       flex: '0 0 20% !important',
       maxWidth: '20% !important',
 
@@ -63,7 +63,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      width: '22px',
+      width: '33px',
+      height: '33px',
+      position: 'relative',
+      bottom: '35px',
 
     },
 
@@ -91,7 +94,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      width: '35px',
+      width: '33px',
+      height: '33px',
+      position: 'relative',
+      bottom: '35px',
 
     },
 
@@ -119,8 +125,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      width: '15px',
-
+      width: '33px',
+      height: '33px',
+      position: 'relative',
+      bottom: '35px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -522,7 +530,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '0 60px',
       paddingTop: '68px',
       marginTop: '37px',
-      paddingBottom: '63px',
+      paddingBottom: '35px',
 
     },
 

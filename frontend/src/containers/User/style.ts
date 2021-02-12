@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       textAlign: 'center',
       marginBottom: '0px',
+      padding: '0px 0px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -39,6 +40,11 @@ const useStyles = makeStyles((theme) => ({
   imgPartnerP: {
 
     display: 'flex',
+
+    [theme.breakpoints.up('md')]: {
+      height: '150px',
+      marginBottom: '0px',
+    },
 
     [theme.breakpoints.up('lg')]: {
       height: '100px',
@@ -95,7 +101,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      marginBottom: '73px',
+      marginBottom: '35px',
       width: '70% !important',
     },
 
@@ -147,6 +153,10 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('sm')]: {
       justifyContent: 'center',
+    },
+
+    [theme.breakpoints.up('md')]: {
+      justifyContent: 'space-between',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -553,8 +563,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '2.9vw',
-      lineHeight: '4vw',
+      fontSize: '2.5vw',
+      lineHeight: '3.5vw',
       paddingTop: '18px',
     },
 
@@ -596,8 +606,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.5vw',
-      lineHeight: '2vw',
+      fontSize: '1.2vw',
+      lineHeight: '1.5vw',
       paddingBottom: '0px',
     },
 
@@ -700,9 +710,9 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('md')]: {
       padding: '0px 33px',
-      marginTop: '0px',
+      marginTop: '40px',
       textAlign: 'left',
-      marginBottom: '100px',
+      marginBottom: '60px',
 
     },
 
@@ -780,8 +790,13 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.down('md')]: {
-      marginTop: '25px',
+      marginTop: '72px',
       backgroundColor: '#ECF1F1',
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      marginTop: '0px',
+      backgroundColor: 'white',
     },
 
     [theme.breakpoints.down('xs')]: {

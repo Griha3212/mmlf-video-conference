@@ -209,7 +209,7 @@ const SessionInfoBlock = (props: any) => {
       {currentUserData && currentUserData.channelUserInfo.activeSession &&
         currentUserData.channelUserInfo.activeSession.isSessionForSecondDay ? null : (
           <Grid item container className={classes.darkBlueBckg}>
-            <Grid item container xs={12} xl={9} lg={9}>
+            <Grid item container xs={12} xl={9} lg={9} md={9}>
               <Grid item container xs className={classes.heightFitContent}>
                 <Grid item xs>
                   <p className={renderSessionLetter().length > 10
@@ -244,7 +244,7 @@ const SessionInfoBlock = (props: any) => {
 
             {currentUserData && currentUserData.channelUserInfo.activeSession
               && currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ? (
-                <Grid item xl={3} lg={3}>
+                <Grid item xl={3} lg={3} md={3}>
                   <p className={classes.sessionPartnerWord}>Партнер сессии</p>
                   <p className={classes.sessionPartnerImgP}>
                     <img

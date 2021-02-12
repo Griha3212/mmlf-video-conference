@@ -319,8 +319,8 @@ const UserPage: FC = () => {
 
   const calculateHeightOfSmallChannelWindow = () => {
     if (isXl) return '235px';
-    if (isLg) return '143px';
-    if (isMd) return '160px';
+    if (isLg) return '148px';
+    if (isMd) return '122px';
     if (isSm) return '94px';
     if (isXs) return '227px';
   };
@@ -569,7 +569,7 @@ const UserPage: FC = () => {
               item
               xs={10}
               sm={8}
-              md={4}
+              md={3}
               xl={3}
               lg={3}
             >
@@ -590,7 +590,7 @@ const UserPage: FC = () => {
               item
               xs={10}
               sm={8}
-              md={4}
+              md={3}
               xl={3}
               lg={3}
             >
@@ -610,7 +610,7 @@ const UserPage: FC = () => {
               item
               xs={10}
               sm={8}
-              md={4}
+              md={3}
               xl={3}
               lg={3}
             >

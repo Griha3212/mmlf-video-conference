@@ -115,6 +115,11 @@ const useStyles = makeStyles((theme) => ({
 
     },
 
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '10vw',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       width: '6vw',
 
@@ -313,11 +318,11 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '2.2vw',
+      fontSize: '1.9vw',
       lineHeight: '2.5vw',
       marginTop: '14px',
       width: '100%',
-      marginBottom: '21px',
+      marginBottom: '16px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -368,10 +373,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      width: '17vw',
-      height: '2.8vw',
-      fontSize: '1.5vw',
-      lineHeight: '3vw',
+      width: '26vw',
+      height: '3.8vw',
+      fontSize: '2.2vw',
+      lineHeight: '4vw',
 
     },
 
@@ -419,10 +424,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      width: '12vw',
-      height: '2.8vw',
-      fontSize: '1.5vw',
-      lineHeight: '3vw',
+      width: '14vw',
+      height: '3.8vw',
+      fontSize: '2.2vw',
+      lineHeight: '4vw',
 
     },
 
@@ -500,6 +505,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('md')]: {
       padding: '0 56px',
       paddingTop: '17px',
+      paddingRight: '0px',
+      paddingBottom: '24px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -601,6 +608,14 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '0px',
     },
 
+    [theme.breakpoints.up('md')]: {
+      marginTop: '0px',
+      fontSize: '1.3vw',
+      lineHeight: '1.4vw',
+      position: 'relative',
+      right: '13vw',
+    },
+
     [theme.breakpoints.up('lg')]: {
       marginTop: '0px',
       fontSize: '1.3vw',
@@ -623,6 +638,10 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('xs')]: {
 
+    },
+
+    [theme.breakpoints.up('md')]: {
+      height: 'fit-content',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -695,9 +714,9 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '2vw',
-      lineHeight: '3vw',
-      marginBottom: '50px',
+      fontSize: '1.5vw',
+      lineHeight: '2vw',
+      marginBottom: '17px',
 
     },
 
@@ -739,8 +758,8 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '2vw',
-      lineHeight: '3vw',
+      fontSize: '1.8vw',
+      lineHeight: '2.4vw',
       marginBottom: '50px',
 
     },
@@ -802,9 +821,10 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('md')]: {
-      fontSize: '1.7vw',
+      fontSize: '1.4vw',
       lineHeight: '2.3vw',
       marginBottom: '7px',
+      marginTop: '0px',
 
     },
 
