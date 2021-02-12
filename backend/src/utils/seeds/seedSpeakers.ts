@@ -480,7 +480,7 @@ export const seedMockedSpeakers = async () => {
 
     // innerSystemName: 'Liharev_Plenar',
 
-    session: foundSessions.filter((session: any) => session.name === 'SessE'),
+    session: foundSessions.filter((session: any) => session.name === 'WMS1'),
 
   },
 
