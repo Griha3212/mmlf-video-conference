@@ -65,7 +65,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
       if (foundWtchedSpeaker) {
         if (currentUserData && currentUserData.foundUser &&
           currentUserData.foundUser.speakersToWhomContactsWereSent) {
-          console.log('foundContactedSpeakers :>> ', currentUserData.foundUser.speakersToWhomContactsWereSent);
           const foundContactedSpeakers = currentUserData.foundUser
             .speakersToWhomContactsWereSent.find(
               (speakerUserContacts: SpeakerUserContacts) => speakerUserContacts.speaker.id

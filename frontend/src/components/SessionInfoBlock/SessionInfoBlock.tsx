@@ -23,6 +23,8 @@ const SessionInfoBlock = (props: any) => {
   const classes = useStyles();
   const [rate, setRate] = React.useState<number | null>(currentSpeakerRate || 0);
   const [closedAccess, setClosedAccess] = React.useState(true);
+  const [presentationAccessClosed, setPresentationAccessClosed] =
+    React.useState(!currentSpeakerRate);
 
   // check timers logic-----------------------------------------------
   useEffect(() => {
@@ -40,6 +42,14 @@ const SessionInfoBlock = (props: any) => {
       setClosedAccess(false);
     }
   }, [currentSpeakerInfo]);
+
+  useEffect(() => {
+    setPresentationAccessClosed(true);
+
+    if (currentSpeakerRate) {
+      setPresentationAccessClosed(false);
+    }
+  }, [currentSpeakerRate]);
 
   // useEffect(() => {
   //   const interval = setInterval(() => {
@@ -304,7 +314,7 @@ const SessionInfoBlock = (props: any) => {
 
             <p className={classes.textCenter}>
               <Button
-                disabled={closedAccess}
+                disabled={presentationAccessClosed}
                 onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank')}
                 className={classes.loadPresenationButton}
               >
