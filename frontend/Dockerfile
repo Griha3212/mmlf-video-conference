@@ -4,7 +4,7 @@ WORKDIR /app
 
 RUN apk update && apk upgrade && apk add --no-cache git 
 
-COPY ./frontend/package.json ./frontend/package-lock.json ./
+COPY ./frontend/package.json ./
 
 RUN npm ci
 
