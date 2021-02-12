@@ -89,6 +89,7 @@ console.log(`Platform: ${osutils.platform()}`);
 console.log(`Number of CPUs: ${osutils.cpuCount()}`);
 
 setInterval(() => {
+  console.log('----------------------------------------------');
   osutils.cpuUsage((v: any) => {
     console.log(`CPU Usage (%) : ${(v * 100).toFixed(2)}`);
   });
@@ -100,4 +101,4 @@ setInterval(() => {
   console.log(`Free Memory (%): ${(osutils.freememPercentage() * 100).toFixed(2)}`);
 
   console.log(`System Uptime: ${osutils.sysUptime()}ms`);
-}, 10000);
+}, 15000);
