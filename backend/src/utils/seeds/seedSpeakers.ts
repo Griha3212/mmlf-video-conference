@@ -82,7 +82,7 @@ export const seedMockedSpeakers = async () => {
     linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
 
     linkToZoom: 'https://ya.ru/',
-    linkToPresentation: '',
+    linkToPresentation: `${process.env.BACKEND_URL}/presentations/test.pdf`,
 
     innerSystemName: 'Demin_Plenar',
 
