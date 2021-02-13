@@ -88,6 +88,17 @@ export const setBreakBetweenSessions = async (
       console.log(chalk.green('Activate OtherChannelsBlock'));
     }
 
+    // update first channel link if it's brake after LogistOfTheYear session
+    if (foundChannelToUpdateInfo.activeSession?.name === 'LogistOfTheYear') {
+      foundChannelToUpdateInfo.link = 'https://www.youtube.com/embed/hjKO0d_umLc';
+
+      // // socket update
+      // const data = { message: 'update' };
+
+      // io.to(String('channel1')).emit('connectToChannelRoom', data);
+      // console.log(chalk.green('Update first channel link'));
+    }
+
     // foundChannelToUpdateInfo.activeSession = null;
     foundChannelToUpdateInfo.activeSpeaker = null;
     foundChannelToUpdateInfo.break = true;
