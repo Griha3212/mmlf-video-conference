@@ -187,11 +187,13 @@ const AdminPage: FC = () => {
           <p className={classes.sessionLetter}>
             Канал №
             {dataForAdmin && String(dataForAdmin.channelAdminInfo.number)}
+            {' '}
+            (
+            {dataForAdmin && String(dataForAdmin.channelAdminInfo.channelLocation)}
+            )
           </p>
 
-          <p className={classes.sessionLetter}>
-            {dataForAdmin && String(dataForAdmin.channelAdminInfo.channelLocation)}
-          </p>
+          <p className={classes.sessionLetter} />
 
         </div>
 
