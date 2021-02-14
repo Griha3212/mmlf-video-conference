@@ -90,6 +90,7 @@ export const setBreakBetweenSessions = async (
 
     // update first channel link if it's brake after LogistOfTheYear session
     if (foundChannelToUpdateInfo.activeSession?.name === 'LogistOfTheYear') {
+      // TO DO, update link before start
       foundChannelToUpdateInfo.link = 'https://www.youtube.com/embed/hjKO0d_umLc';
 
       // // socket update
