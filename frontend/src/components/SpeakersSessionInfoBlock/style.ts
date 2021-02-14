@@ -301,8 +301,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       marginTop: '30px',
       display: 'flex',
-      flexDirection: 'row',
-      flexWrap: 'nowrap',
+      // flexDirection: 'row',
+      // flexWrap: 'nowrap',
       overflow: 'auto',
       // overflowX: 'scroll',
 
@@ -325,8 +325,9 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '30px',
       display: 'flex',
       overflow: 'auto',
-      flexDirection: 'row',
-      flexWrap: 'nowrap',
+      justifyContent: 'center',
+      // flexDirection: 'row',
+      // flexWrap: 'nowrap',
       // overflowX: 'scroll',
 
       '&::-webkit-scrollbar': {

@@ -187,7 +187,7 @@ const UserPage: FC = () => {
           localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, '0');
         } else {
           if (initialValueCurrentSpeaker !== 'viewed') {
-            if (initialValueCurrentSpeaker === '120') {
+            if (initialValueCurrentSpeaker === '5') {
               localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, 'viewed');
               // send to back viewed status
               updateWatchedSpeakersSingleSpeaker(activeSpeakerInfo.id);
@@ -208,7 +208,7 @@ const UserPage: FC = () => {
           localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, '0');
         } else {
           if (initialValueCurrentSession !== 'viewed') {
-            if (initialValueCurrentSession === '120') {
+            if (initialValueCurrentSession === '5') {
               localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, 'viewed');
               // send to back viewed status
               updateWatchedSpeakersAllSpeakersInSession(
