@@ -2,24 +2,22 @@
 /* eslint-disable jsx-a11y/click-events-have-key-events */
 /* eslint-disable consistent-return */
 /* eslint-disable array-callback-return */
-import React, { memo, useEffect } from 'react';
+import React, { memo } from 'react';
 import {
-  ClickAwayListener,
-  Grid, Hidden, Popover, Tooltip, Typography,
+  Grid, Hidden, Popover,
 } from '@material-ui/core';
 import Box from '@material-ui/core/Box';
 import Rating from '@material-ui/lab/Rating';
 // import { useEffect } from 'react';
-import ReactTooltip from 'react-tooltip';
 import useStyles from './style';
 import noAvatar from '../../img/speakersImg/noAvatar.svg';
-import PDF from '../../img/pdf_icon.svg';
-import Zoom from '../../img/zoom_icon.svg';
-import ShareContacts from '../../img/contact_icon.svg';
-import PDFDisabled from '../../img/pdf_icon_disabled.svg';
-import ZoomDisabled from '../../img/zoom_icon_disabled.svg';
-import ShareContactsDisabled from '../../img/contact_icon_disabled.svg';
-import ShareContactsCompleted from '../../img/contact_icon_completed.svg';
+import PDF from '../../img/functionalIcons/pdf_icon.svg';
+import Zoom from '../../img/functionalIcons/zoom_icon.svg';
+import ShareContacts from '../../img/functionalIcons/contact_icon.svg';
+import PDFDisabled from '../../img/functionalIcons/pdf_icon_disabled.svg';
+import ZoomDisabled from '../../img/functionalIcons/zoom_icon_disabled.svg';
+import ShareContactsDisabled from '../../img/functionalIcons/contact_icon_disabled.svg';
+import ShareContactsCompleted from '../../img/functionalIcons/contact_icon_completed.svg';
 import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/user';
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 import { Vote, Speaker, SpeakerUserContacts } from '../../interfaces/allInterfaces';
@@ -37,15 +35,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   } = props;
 
-  // const handleTooltipClose = () => {
-  //   setOpen(false);
-  // };
-
-  // const handleTooltipOpen = () => {
-  //   console.log('handleTooltipOpen :>> ');
-  //   setOpen(true);
-  // };
-
   const [anchorEl, setAnchorEl] = React.useState<HTMLButtonElement | null>(null);
 
   const handleClick = (event: any) => {
@@ -58,14 +47,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
   const open = Boolean(anchorEl);
   const id = open ? 'simple-popover' : undefined;
-
-  // const [currentSessionSpeakersAllRatesState,
-  //   setCurrentSessionSpeakersAllRatesState] =
-  //   React.useState<Vote[]>(currentSessionSpeakersAllRates);
-
-  // useEffect(() => {
-  //   setCurrentSessionSpeakersAllRatesState(currentSessionSpeakersAllRates);
-  // }, [currentSessionSpeakersAllRates]);
 
   const checkIsWatched = (speakerId: number) => {
     if (currentUserData && currentUserData.foundUser && currentUserData.foundUser.watchedSpeakers) {
@@ -146,7 +127,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
             <img className={classes.speakerAvatarInsideSession} src={noAvatar} alt="" />
           </p>
           <p className={classes.speakerNameInsideSession}>Имя</p>
-          <p className={classes.speakerNameInsideSession}>Фамилия</p>
+          <p className={classes.speakerSecondNameInsideSession}>Фамилия</p>
 
           <p className={classes.textCenter}>
             <Box component="fieldset" mb={3} borderColor="transparent">
@@ -207,7 +188,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
               </p>
 
               <p className={classes.speakerNameInsideSession}>{element.firstName}</p>
-              <p className={classes.speakerNameInsideSession}>
+              <p className={classes.speakerSecondNameInsideSession}>
                 {capitalizeFirstLetter(element.lastName)}
               </p>
               <p className={classes.textCenter}>

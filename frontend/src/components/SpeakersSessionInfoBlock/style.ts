@@ -37,8 +37,8 @@ const useStyles = makeStyles((theme) => ({
   singleSpeakerBlock: {
 
     [theme.breakpoints.up('xs')]: {
-      marginBottom: '35px',
-      marginRight: '35px',
+      marginBottom: '15px',
+      marginRight: '0px',
       flex: '0 0 100% !important',
       maxWidth: '100% !important',
 
@@ -87,7 +87,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       width: '60px',
       height: '60px',
-
+      position: 'relative',
+      bottom: '35px',
     },
 
     [theme.breakpoints.up('md')]: {
@@ -118,7 +119,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       width: '60px',
       height: '60px',
-
+      position: 'relative',
+      bottom: '35px',
     },
 
     [theme.breakpoints.up('md')]: {
@@ -149,6 +151,8 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xs')]: {
       width: '60px',
       height: '60px',
+      position: 'relative',
+      bottom: '35px',
 
     },
 
@@ -218,6 +222,52 @@ const useStyles = makeStyles((theme) => ({
     marginTop: '0px',
     textAlign: 'center',
 
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '23px',
+      lineHeight: '32px',
+
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '1.4vw',
+      lineHeight: '1.8vw',
+
+    },
+    [theme.breakpoints.up('xl')]: {
+      fontSize: '30px',
+      lineHeight: '41px',
+
+    },
+
+  },
+
+  speakerSecondNameInsideSession: {
+
+    fontFamily: 'Open Sans',
+    fontWeight: 700,
+
+    color: 'black',
+    marginBottom: '0px',
+    marginTop: '0px',
+    textAlign: 'center',
+
+    [theme.breakpoints.up('xs')]: {
+      marginBottom: '20px',
+      fontSize: '23px',
+      lineHeight: '32px',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: '20px',
+
+    },
+
+    [theme.breakpoints.up('md')]: {
+      marginBottom: '0px',
+
+    },
+
     [theme.breakpoints.up('lg')]: {
       fontSize: '1.4vw',
       lineHeight: '1.8vw',
@@ -257,6 +307,11 @@ const useStyles = makeStyles((theme) => ({
   smallScoreStarImg: {
 
     color: '#FF414A',
+
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '2rem',
+
+    },
 
     [theme.breakpoints.up('md')]: {
       fontSize: '15px',
