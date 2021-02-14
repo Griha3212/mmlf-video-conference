@@ -233,7 +233,7 @@ const SessionInfoBlock = (props: any) => {
                     <p
                       className={renderSessionLetter().length > 10
                         ? classes.changeSessionPLong : classes.changeSessionP}
-                      onClick={() => props.executeScroll()}
+                      onClick={() => props.executeScrollToChangeSessionBlock()}
                     >
                       <img className={classes.reloadImg} src={reload} alt="" />
                       {' '}

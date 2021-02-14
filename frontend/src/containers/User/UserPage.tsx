@@ -104,9 +104,18 @@ const UserPage: FC = () => {
 
   const changeSession = useRef<HTMLDivElement>(null);
 
-  const executeScroll = () => {
+  const mainVideoBock = useRef<HTMLDivElement>(null);
+
+  const executeScrollToChangeSessionBlock = () => {
     if (changeSession.current) {
       changeSession.current.scrollIntoView();
+    }
+  };
+
+  const executeScrollToMainVideoBlock = () => {
+    console.log('1 :>> ');
+    if (mainVideoBock.current) {
+      mainVideoBock.current.scrollIntoView();
     }
   };
   // run this function from an event handler or an effect to execute scroll
@@ -275,6 +284,7 @@ const UserPage: FC = () => {
 
   const changeActiveChannel = async (channelNumber: number) => {
     await apiUserChangeActiveChannel(channelNumber, userData.id, token);
+    executeScrollToMainVideoBlock();
     loadDataForUser();
   };
 
@@ -464,7 +474,7 @@ const UserPage: FC = () => {
         </Grid>
       </Hidden>
 
-      <Grid container className={classes.mainVideoContainer} xl justify="center">
+      <Grid ref={mainVideoBock} container className={classes.mainVideoContainer} xl justify="center">
 
         <VideoPlayerMain
           height={calculateHeightOfBigChannelWindow()}
@@ -513,7 +523,7 @@ const UserPage: FC = () => {
       {/* first block (active speaker) info ---------------------------*/}
       <Grid item className={classes.innerContainer}>
         <SessionInfoBlock
-          executeScroll={executeScroll}
+          executeScrollToChangeSessionBlock={executeScrollToChangeSessionBlock}
           currentSessionLetter={activeSessionLetter}
           currentSessionDescription={activeSessionDescription}
           currentSpeakerInfo={activeSpeakerInfo}
