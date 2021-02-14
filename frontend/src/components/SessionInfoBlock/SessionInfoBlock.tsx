@@ -324,7 +324,10 @@ const SessionInfoBlock = (props: any) => {
 
             <div className={classes.textCenter}>
               <Box component="fieldset" mb={1} borderColor="transparent">
-                <Typography className={classes.rateSpeakerText} component="legend">Оцените выступление</Typography>
+                <Typography className={classes.rateSpeakerText} component="legend">
+                  {currentUserData && currentUserData.channelUserInfo.activeSession &&
+                    currentUserData.channelUserInfo.activeSession.isSessionForSecondDay ? 'Оцените экскурсию' : 'Оцените выступление'}
+                </Typography>
                 <Rating
                   classes={{ iconEmpty: 'rateBigDefault' }}
                   className={classes.rateSpeakerStarsImg}
