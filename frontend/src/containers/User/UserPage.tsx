@@ -559,7 +559,7 @@ const UserPage: FC = () => {
 
         <Grid item className={classes.innerContainer}>
           <Grid xs={12} item container className={classes.mainContainerBckgChangeSession}>
-            <p className={`${classes.speakersBlockHeader} ${classes.partnersHeader}`}>Партнеры сессии</p>
+            <p className={`${classes.speakersBlockHeader} ${classes.partnersHeader}`}>Партнеры Форума</p>
           </Grid>
 
           <Grid justify="space-between" container item className={`${classes.mainContainerBckgChangeSession} ${classes.partnersContainerImg}`}>
