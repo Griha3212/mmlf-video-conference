@@ -2,7 +2,35 @@ import { makeStyles } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => ({
 
+  moderatorAvatarImgBlock: {
+
+    [theme.breakpoints.up('xs')]: {
+
+      textAlign: 'right',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+      maxWidth: '100%',
+
+    },
+
+  },
+
   moderatorAvatarImg: {
+
+    [theme.breakpoints.up('xs')]: {
+
+      maxWidth: '70%',
+
+    },
+
+    [theme.breakpoints.up('sm')]: {
+
+      maxWidth: '100%',
+
+    },
 
   },
 

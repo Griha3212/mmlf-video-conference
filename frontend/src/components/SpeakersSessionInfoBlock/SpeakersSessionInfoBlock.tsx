@@ -372,7 +372,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
         <Hidden only={['lg', 'xl', 'md']}>
           <Grid justify="space-around" item className={classes.moderatorContainerInfoBlock} container xs={12} lg={4} xl={4}>
 
-            <Grid item xs={4} sm={2} xl={3}>
+            <Grid className={classes.moderatorAvatarImgBlock} item xs={4} sm={2} xl={3}>
               <img className={classes.moderatorAvatarImg} width="100%" src={renderModeratorImgSrc()} alt="" />
 
             </Grid>
