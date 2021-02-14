@@ -36,14 +36,29 @@ const useStyles = makeStyles((theme) => ({
   popoverText: {
 
     padding: theme.spacing(2),
-    [theme.breakpoints.up('lg')]: {
+    [theme.breakpoints.up('xs')]: {
       fontSize: '14px',
+      lineHeight: '18px',
+      textAlign: 'center',
+      padding: '5px',
+      marginBottom: '5px',
+      marginTop: '5px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '12px',
       lineHeight: '0px',
+      padding: '7px',
+      textAlign: 'left',
+      marginBottom: '15px',
+      marginTop: '15px',
 
     },
     [theme.breakpoints.up('xl')]: {
       fontSize: '14px',
       lineHeight: '0px',
+      padding: '7px',
+      textAlign: 'left',
 
     },
 
