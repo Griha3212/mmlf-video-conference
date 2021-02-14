@@ -14,6 +14,7 @@ import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter
 import check from '../../img/check.svg';
 import reload from '../../img/reload_icon.svg';
 import { SpeakerUserContacts } from '../../interfaces/allInterfaces';
+import { showOtherChannelsBlock } from '../../utils/helpers/showOtherChannelsBlock.helper';
 
 const SessionInfoBlock = (props: any) => {
   const {
@@ -228,7 +229,7 @@ const SessionInfoBlock = (props: any) => {
                     {renderSessionLetter()}
                   </p>
                 </Grid>
-                {currentUserData && currentUserData.foundUser.showOtherChannelsBlock ? (
+                {showOtherChannelsBlock(currentUserData) ? (
                   <Grid item xs className={classes.myAuto}>
                     <p
                       className={renderSessionLetter().length > 10

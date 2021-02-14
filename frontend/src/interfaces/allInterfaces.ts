@@ -1,12 +1,16 @@
 export interface DataForUser {
   channelUserInfo: {
-    break: boolean, id: number, link: string,
+    id: number,
+    break: boolean,
+    link: string,
     number: number,
+    started: boolean,
     activeSession: {
       voteFoAllSession: boolean,
       name: string,
       id: number,
       partnerOfTheSessionImgSrc: string,
+
     },
   },
 

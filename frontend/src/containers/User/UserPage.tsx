@@ -58,6 +58,7 @@ import infoscan from '../../img/partnersImg/infoscan.png';
 import psi from '../../img/partnersImg/psi.png';
 import korusKonsalting from '../../img/partnersImg/korus.jpg';
 import medPoint from '../../img/partnersImg/medpoint_logo.png';
+import { showOtherChannelsBlock } from '../../utils/helpers/showOtherChannelsBlock.helper';
 
 const socket = io(`${process.env.REACT_APP_API_URL}`, { transports: ['websocket'] });
 
@@ -541,7 +542,7 @@ const UserPage: FC = () => {
       {renderSpeakersSessionInfoBlock()}
 
       {/* show/hide OtherChannelsBlock-------------------------------------------------------- */}
-      {dataForUser && dataForUser.foundUser.showOtherChannelsBlock ? (
+      {showOtherChannelsBlock(dataForUser) ? (
         <Grid container className={classes.changeSessionMainContainer} xl>
           <Grid ref={changeSession} item className={classes.innerContainer}>
             <Grid xs={12} item container className={`${classes.mainContainerBckgChangeSession} ${classes.mainContainerBckgChangeSessionFirst}`}>
