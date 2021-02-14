@@ -38,6 +38,10 @@ export const changeActiveSpeakerInChannel = async (
     // if it's input word speaker
     if (foundSpeaker.firstName === 'Слово' && foundSpeaker.lastName === 'ВСТУПИТЕЛЬНОЕ') {
       foundChannelToUpdateInfo.started = true;
+
+      foundChannelToUpdateInfo.activeSpeaker = null;
+      foundChannelToUpdateInfo.activeSession = null;
+      foundChannelToUpdateInfo.break = true;
     } else {
       foundChannelToUpdateInfo.activeSpeaker = foundSpeaker;
       foundChannelToUpdateInfo.activeSession = foundSpeaker.sessions;

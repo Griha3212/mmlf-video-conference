@@ -148,6 +148,10 @@ const SessionInfoBlock = (props: any) => {
 
   const showSecondBlock = () => {
     if (currentUserData) {
+      if (currentUserData.channelUserInfo.break) {
+        return false;
+      }
+
       if (!currentUserData.channelUserInfo.activeSession) {
         if (currentUserData.channelUserInfo.number === 1) {
           return false;
