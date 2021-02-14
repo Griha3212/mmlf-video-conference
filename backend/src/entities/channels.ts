@@ -37,4 +37,8 @@ export default class Channels extends BaseEntity {
   @Index()
   @Column({ nullable: true })
   startChannelSessionDescription: string;
+
+  @Index()
+  @Column({ nullable: true })
+  channelLocation: string;
 }

@@ -45,6 +45,7 @@ type DataForAdmin = {
 
   channelAdminInfo: {
     number: number,
+    channelLocation: string,
   }
 
   foundAllSessionsInAdminChannel: Array<Session>
@@ -186,6 +187,10 @@ const AdminPage: FC = () => {
           <p className={classes.sessionLetter}>
             Канал №
             {dataForAdmin && String(dataForAdmin.channelAdminInfo.number)}
+          </p>
+
+          <p className={classes.sessionLetter}>
+            {dataForAdmin && String(dataForAdmin.channelAdminInfo.channelLocation)}
           </p>
 
         </div>

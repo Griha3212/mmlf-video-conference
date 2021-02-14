@@ -12,6 +12,7 @@ export const seedMockedChannels = async () => {
     link: 'https://www.youtube.com/embed/wnhvanMdx4s',
     startChannelSessionLetter: 'Пленарная сессия',
     startChannelSessionDescription: 'Развитие логистики и управления цепями поставок в России и мире',
+    channelLocation: 'Полусфера',
   },
 
   {
@@ -19,12 +20,14 @@ export const seedMockedChannels = async () => {
     link: 'https://www.youtube.com/embed/LXb3EKWsInQ',
     startChannelSessionLetter: 'Сессия A',
     startChannelSessionDescription: 'Лучший опыт применения инновационных технологий в логистике',
+    channelLocation: 'Сфера',
   },
   {
     number: 3,
     link: 'https://www.youtube.com/embed/BHACKCNDMW8',
     startChannelSessionLetter: 'Сессия B',
     startChannelSessionDescription: 'Комплексные логистические решения для ритейлеров и производителей',
+    channelLocation: 'Аудитория 5',
   },
 
   {
@@ -32,6 +35,7 @@ export const seedMockedChannels = async () => {
     link: 'https://www.youtube.com/embed/pajbM_jJWnI',
     startChannelSessionLetter: 'Сессия С',
     startChannelSessionDescription: 'Цифровой транспорт',
+    channelLocation: 'Аудитория 2',
   },
 
   ];
@@ -45,6 +49,7 @@ export const seedMockedChannels = async () => {
     newChannel.link = channel.link;
     newChannel.startChannelSessionLetter = channel.startChannelSessionLetter;
     newChannel.startChannelSessionDescription = channel.startChannelSessionDescription;
+    newChannel.channelLocation = channel.channelLocation;
 
     results.push(newChannel);
   }
