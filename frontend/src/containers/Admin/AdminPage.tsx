@@ -145,7 +145,7 @@ const AdminPage: FC = () => {
     if (!element.isModerator) {
       return (
 
-        <Grid container xs={12} justify="center">
+        <Grid container item xs={12} justify="center">
           <Button
             onClick={(e) => {
               setSelectedSpeakerToActivate(e.currentTarget.value);
@@ -207,12 +207,12 @@ const AdminPage: FC = () => {
             dataForAdmin && dataForAdmin.foundAllSessionsInAdminChannel.map(
               (session: Session) => (
                 <>
-
                   {session.letter === 'Экскурсия' ? <p className={classes.sessionLetter}>{session.description}</p> : (
                     <p className={classes.sessionLetter}>
                       {session.letter}
                     </p>
                   )}
+
                   <p>
                     {session.speakers.map(
                       (speaker: Speaker) => renderSpeakersDataForAdmin(speaker),
@@ -230,7 +230,7 @@ const AdminPage: FC = () => {
           } */}
         </Grid>
 
-        <Grid item justify="center" xs={4}>
+        <Grid item container justify="center" xs={4}>
           <div className={classes.stickyCentralMenu}>
             <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP}`}>
               <Button

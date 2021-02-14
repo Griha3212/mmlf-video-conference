@@ -120,7 +120,13 @@ const SessionInfoBlock = (props: any) => {
   const renderSessionDescription = () => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession && currentUserData.channelUserInfo.break) {
-        if (currentUserData.channelUserInfo.number === 1) {
+        if (currentUserData.channelUserInfo.number === 1 &&
+          !currentUserData.channelUserInfo.started) {
+          return `Перерыв... Скоро здесь начнётся сессия: ${currentUserData.channelUserInfo.startChannelSessionDescription}`;
+        }
+
+        if (currentUserData.channelUserInfo.number === 1 &&
+          currentUserData.channelUserInfo.started) {
           return 'Вступительное слово Оргкомитета Форума';
         }
 

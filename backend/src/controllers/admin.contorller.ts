@@ -35,9 +35,14 @@ export const changeActiveSpeakerInChannel = async (
 
     if (!foundChannelToUpdateInfo) throw new Error(allErrors.channelNotFound);
 
-    foundChannelToUpdateInfo.activeSpeaker = foundSpeaker;
-    foundChannelToUpdateInfo.activeSession = foundSpeaker.sessions;
-    foundChannelToUpdateInfo.break = false;
+    // if it's input word speaker
+    if (foundSpeaker.firstName === 'Слово' && foundSpeaker.lastName === 'ВСТУПИТЕЛЬНОЕ') {
+      foundChannelToUpdateInfo.started = true;
+    } else {
+      foundChannelToUpdateInfo.activeSpeaker = foundSpeaker;
+      foundChannelToUpdateInfo.activeSession = foundSpeaker.sessions;
+      foundChannelToUpdateInfo.break = false;
+    }
 
     await channelsRepository.save(foundChannelToUpdateInfo);
 

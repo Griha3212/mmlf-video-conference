@@ -41,4 +41,8 @@ export default class Channels extends BaseEntity {
   @Index()
   @Column({ nullable: true })
   channelLocation: string;
+
+  @Index()
+  @Column({ default: false })
+  started: boolean;
 }
