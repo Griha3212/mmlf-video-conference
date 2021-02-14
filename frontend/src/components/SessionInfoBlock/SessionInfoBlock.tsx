@@ -364,7 +364,7 @@ const SessionInfoBlock = (props: any) => {
                 }}
               >
                 <p className={classes.popoverText}>
-                  Пожалуйста оцените выступление
+                  Пожалуйста, оцените выступление,
                   чтобы скачать презентацию
                 </p>
               </Popover>
