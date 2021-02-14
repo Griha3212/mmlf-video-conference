@@ -196,7 +196,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
   const renderSessionSpeakers = () => (
 
     currentSessionSpeakersInfo.map((element: Speaker) => {
-      if (!element.isModerator) {
+      // exept moderators and input word speaker
+      if (!element.isModerator && (element.firstName !== 'Слово' && element.lastName !== 'ВСТУПИТЕЛЬНОЕ')) {
         return (
           <>
             <Grid className={classes.singleSpeakerBlock} sm={6} md={2} xs={12} lg={2} xl={2} item>
