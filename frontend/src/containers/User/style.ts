@@ -686,7 +686,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('xl')]: {
 
-      marginBottom: '235px',
+      marginBottom: '135px',
 
     },
 
@@ -697,14 +697,14 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.down('xl')]: {
 
       marginTop: '150px',
-      marginBottom: '100px',
+      marginBottom: '25px',
 
     },
 
     [theme.breakpoints.down('lg')]: {
 
       marginTop: '100px',
-      marginBottom: '60px',
+      marginBottom: '0px',
 
     },
 
@@ -727,7 +727,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '0px',
       marginTop: '55px',
       textAlign: 'center',
-      marginBottom: '47px',
+      marginBottom: '22px',
     },
 
   },
