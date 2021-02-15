@@ -58,8 +58,8 @@ export const seedMockedSessions = async () => {
       letter: 'Панельная сессия H',
       description: 'Рекомендации по улучшению логистических процессов от директоров по логистике - лидеров рынка',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
-      nextSessionLetter: 'Логист года',
-      nextSessionDescription: 'Вручение премии "Логист года"',
+      nextSessionLetter: '«Логист года»',
+      nextSessionDescription: 'Вручение премии «Логист года»',
       voteFoAllSession: true,
 
     },
@@ -67,11 +67,11 @@ export const seedMockedSessions = async () => {
     {
 
       name: 'LogistOfTheYear',
-      letter: 'Логист года',
-      description: 'Вручение премии "Логист года"',
+      letter: '«Логист года»',
+      description: 'Вручение премии «Логист года»',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Экскурсия',
-      nextSessionDescription: 'Вручение премии "Логист года"',
+      nextSessionDescription: 'Вручение премии «Логист года»',
 
     },
     // Excursions---------------
@@ -168,8 +168,8 @@ export const seedMockedSessions = async () => {
       letter: 'Сессия G',
       description: 'Организация логистики при развитии e-com продаж',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
-      nextSessionLetter: 'Логист года',
-      nextSessionDescription: 'Вручение премии "Логист года"',
+      nextSessionLetter: '«Логист года»',
+      nextSessionDescription: 'Вручение премии «Логист года»',
 
     },
 
@@ -203,8 +203,8 @@ export const seedMockedSessions = async () => {
       letter: 'Сессия J',
       description: 'Логистика промышленных компаний',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
-      nextSessionLetter: 'Логист года',
-      nextSessionDescription: 'Вручение премии "Логист года"',
+      nextSessionLetter: '«Логист года»',
+      nextSessionDescription: 'Вручение премии «Логист года»',
 
     },
 
@@ -238,8 +238,8 @@ export const seedMockedSessions = async () => {
       letter: 'Специальная сессия I',
       description: 'Workshop решения задач участников Форума с лидерами КСЛ.Experts',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
-      nextSessionLetter: 'Логист года',
-      nextSessionDescription: 'Вручение премии "Логист года"',
+      nextSessionLetter: '«Логист года»',
+      nextSessionDescription: 'Вручение премии «Логист года»',
       voteFoAllSession: true,
 
     },

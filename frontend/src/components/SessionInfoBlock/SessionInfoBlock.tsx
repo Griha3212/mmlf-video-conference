@@ -408,7 +408,7 @@ const SessionInfoBlock = (props: any) => {
                         <span>
                           <img alt="check" src={check} />
                           {' '}
-                          Готово
+                          Контакты отправлены
                         </span>
                       ) : 'Поделиться контактами'}
 
