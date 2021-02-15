@@ -188,9 +188,30 @@ const UserPage: FC = () => {
   // if type of session voteForAllSession another logic
   useEffect(() => {
     const interval = setInterval(() => {
-      // count for single speaker
+      // count for usual session
       if (activeSpeakerInfo && dataForUser &&
         !dataForUser.channelUserInfo.activeSession.voteFoAllSession) {
+        let initialValueCurrentSpeaker = localStorage.getItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`);
+
+        if (!initialValueCurrentSpeaker) {
+          localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, '0');
+        } else {
+          if (initialValueCurrentSpeaker !== 'viewed') {
+            if (initialValueCurrentSpeaker === '10') {
+              localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, 'viewed');
+              // send to back viewed status
+              updateWatchedSpeakersSingleSpeaker(activeSpeakerInfo.id);
+            } else {
+              initialValueCurrentSpeaker = String(+initialValueCurrentSpeaker + 1);
+              localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, initialValueCurrentSpeaker);
+            }
+          }
+        }
+      }
+
+      // count in panel session
+      if (activeSpeakerInfo && dataForUser &&
+        dataForUser.channelUserInfo.activeSession.voteFoAllSession) {
         let initialValueCurrentSpeaker = localStorage.getItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`);
 
         if (!initialValueCurrentSpeaker) {
@@ -204,29 +225,6 @@ const UserPage: FC = () => {
             } else {
               initialValueCurrentSpeaker = String(+initialValueCurrentSpeaker + 1);
               localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, initialValueCurrentSpeaker);
-            }
-          }
-        }
-      }
-
-      // count for complete session
-      if (activeSpeakerInfo && dataForUser &&
-        dataForUser.channelUserInfo.activeSession.voteFoAllSession) {
-        let initialValueCurrentSession = localStorage.getItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`);
-
-        if (!initialValueCurrentSession) {
-          localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, '0');
-        } else {
-          if (initialValueCurrentSession !== 'viewed') {
-            if (initialValueCurrentSession === '5') {
-              localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, 'viewed');
-              // send to back viewed status
-              updateWatchedSpeakersAllSpeakersInSession(
-                dataForUser.channelUserInfo.activeSession.id,
-              );
-            } else {
-              initialValueCurrentSession = String(+initialValueCurrentSession + 1);
-              localStorage.setItem(`${String(dataForUser.channelUserInfo.activeSession.name)}`, initialValueCurrentSession);
             }
           }
         }
