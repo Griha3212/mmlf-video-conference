@@ -22,6 +22,12 @@ import { apiUserUpdateContactedSpeakers, apiVoteForSpeaker } from '../../api/use
 import { capitalizeFirstLetter } from '../../utils/helpers/capitalizeFirstLetter.helper';
 import { Vote, Speaker, SpeakerUserContacts } from '../../interfaces/allInterfaces';
 
+import PDFMobile from '../../img/functionalIcons/mobile/pdf_icon_mobile.svg';
+import PDFMobileDisabled from '../../img/functionalIcons/mobile/pdf_icon_disabled_mobile.svg';
+import ZoomMobile from '../../img/functionalIcons/mobile/zoom_icon_mobile.svg';
+import ShareContactsMobile from '../../img/functionalIcons/mobile/contact_icon_mobile.svg';
+import ShareContactsMobileCompleted from '../../img/functionalIcons/mobile/contact_icon_completed_mobile.svg';
+
 const SpeakersSessionInfoBlock = (props: any) => {
   const classes = useStyles();
   const [value] = React.useState<number | null>(5);
@@ -76,7 +82,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
     } else return true;
   };
 
-  const checkIsSent = (speakerId: number, type: string) => {
+  const checkIsSent = (speakerId: number, type: string, mobile: boolean) => {
     if (currentUserData && currentUserData.foundUser &&
       currentUserData.foundUser.speakersToWhomContactsWereSent) {
       const foundContactedSpeakers = currentUserData.foundUser
@@ -86,11 +92,21 @@ const SpeakersSessionInfoBlock = (props: any) => {
         );
 
       if (foundContactedSpeakers) {
-        return type === 'src' ? ShareContactsCompleted : `${classes.sendContactsImg} ${classes.disabledImg}`;
+        if (mobile) {
+          return type === 'src' ? ShareContactsMobileCompleted : `${classes.sendContactsImg} ${classes.disabledImg}`;
+        } else { return type === 'src' ? ShareContactsCompleted : `${classes.sendContactsImg} ${classes.disabledImg}`; }
       } else {
-        return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
+        if (mobile) {
+          return type === 'src' ? ShareContactsMobile : `${classes.sendContactsImg} ${classes.pointerImg}`;
+        } else {
+          return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
+        }
       }
-    } else return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
+    } else {
+      if (mobile) {
+        return type === 'src' ? ShareContactsMobile : `${classes.sendContactsImg} ${classes.pointerImg}`;
+      } else return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
+    }
   };
 
   const renderSpeakersRates = (element: Speaker) => {
@@ -201,7 +217,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
               </p>
 
-              <Grid xs={8} lg={12} xl={10} item container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
+              <Grid xs={8} lg={10} xl={10} item container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
                 <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
                   <Popover
                     id={id}
@@ -222,34 +238,66 @@ const SpeakersSessionInfoBlock = (props: any) => {
                       чтобы скачать презентацию
                     </p>
                   </Popover>
-                  <img
-                    className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
-                      : `${classes.pointerImg} ${classes.loadPDFImg}`}
-                    src={checkIsRated(element.id) ? PDFDisabled : PDF}
-                    onClick={(e) => {
-                      if (checkIsRated(element.id)) {
-                        // return handleTooltipOpen();
-                        return handleClick(e);
-                      } else {
-                        window.open(`${element.linkToPresentation}`, '_blank');
-                      }
-                    }}
-                    alt=""
-                  />
+                  {/* mobile */}
+                  <Hidden only={['lg', 'xl', 'md']}>
+                    <img
+                      className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
+                        : `${classes.pointerImg} ${classes.loadPDFImg}`}
+                      src={checkIsRated(element.id) ? PDFMobileDisabled : PDFMobile}
+                      onClick={(e) => {
+                        if (checkIsRated(element.id)) {
+                          // return handleTooltipOpen();
+                          return handleClick(e);
+                        } else {
+                          window.open(`${element.linkToPresentation}`, '_blank');
+                        }
+                      }}
+                      alt=""
+                    />
+                  </Hidden>
+                  {/* pc */}
+                  <Hidden smDown>
+                    <img
+                      className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
+                        : `${classes.pointerImg} ${classes.loadPDFImg}`}
+                      src={checkIsRated(element.id) ? PDFDisabled : PDF}
+                      onClick={(e) => {
+                        if (checkIsRated(element.id)) {
+                          // return handleTooltipOpen();
+                          return handleClick(e);
+                        } else {
+                          window.open(`${element.linkToPresentation}`, '_blank');
+                        }
+                      }}
+                      alt=""
+                    />
+
+                  </Hidden>
 
                 </Grid>
 
                 {
                   element.linkToZoom ? (
                     <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+                      {/* mobile */}
+                      <Hidden only={['lg', 'xl', 'md']}>
+                        <img
+                          src={ZoomMobile}
+                          className={`${classes.pointerImg} ${classes.loadZoomImg}`}
+                          onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
+                          alt=""
+                        />
+                      </Hidden>
 
-                      <img
-                        src={Zoom}
-                        className={`${classes.pointerImg} ${classes.loadZoomImg}`}
-                        onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
-                        alt=""
-                      />
-
+                      {/* pc */}
+                      <Hidden smDown>
+                        <img
+                          src={Zoom}
+                          className={`${classes.pointerImg} ${classes.loadZoomImg}`}
+                          onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
+                          alt=""
+                        />
+                      </Hidden>
                     </Grid>
                   ) : null
                 }
@@ -257,22 +305,41 @@ const SpeakersSessionInfoBlock = (props: any) => {
                 {
                   element.hasSendContactsButton ? (
                     <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-
-                      <img
-                        src={checkIsSent(element.id, 'src')}
-                        className={
-                          checkIsSent(element.id, 'className')
-                        }
-                        onClick={() => {
-                          if (checkIsSent(element.id, 'src') === ShareContactsCompleted) {
-                            return null;
-                          } else {
-                            sendContacts(element.id);
+                      {/* mobile */}
+                      <Hidden only={['lg', 'xl', 'md']}>
+                        <img
+                          src={checkIsSent(element.id, 'src', true)}
+                          className={
+                            checkIsSent(element.id, 'className', true)
                           }
-                        }}
-                        alt=""
-                      />
+                          onClick={() => {
+                            if (checkIsSent(element.id, 'src', true) === ShareContactsCompleted) {
+                              return null;
+                            } else {
+                              sendContacts(element.id);
+                            }
+                          }}
+                          alt=""
+                        />
+                      </Hidden>
 
+                      {/* pc */}
+                      <Hidden smDown>
+                        <img
+                          src={checkIsSent(element.id, 'src', false)}
+                          className={
+                            checkIsSent(element.id, 'className', false)
+                          }
+                          onClick={() => {
+                            if (checkIsSent(element.id, 'src', false) === ShareContactsCompleted) {
+                              return null;
+                            } else {
+                              sendContacts(element.id);
+                            }
+                          }}
+                          alt=""
+                        />
+                      </Hidden>
                     </Grid>
                   ) : null
                 }

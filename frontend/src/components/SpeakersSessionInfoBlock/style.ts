@@ -45,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('sm')]: {
-      marginBottom: '35px',
+      marginbottom: '25px',
       marginRight: '0px',
       flex: '0 0 50% !important',
       maxWidth: '50% !important',
@@ -66,7 +66,7 @@ const useStyles = makeStyles((theme) => ({
 
       marginRight: '0px',
 
-      marginBottom: '35px',
+      marginbottom: '25px',
       flex: '0 0 20% !important',
       maxWidth: '20% !important',
 
@@ -74,7 +74,7 @@ const useStyles = makeStyles((theme) => ({
     [theme.breakpoints.up('xl')]: {
 
       marginRight: '0px',
-      marginBottom: '35px',
+      marginbottom: '25px',
       flex: '0 0 20% !important',
       maxWidth: '20% !important',
 
@@ -88,14 +88,14 @@ const useStyles = makeStyles((theme) => ({
       width: '60px',
       height: '60px',
       position: 'relative',
-      bottom: '35px',
+      bottom: '25px',
     },
 
     [theme.breakpoints.up('md')]: {
       width: '33px',
       height: '33px',
       position: 'relative',
-      bottom: '35px',
+      bottom: '25px',
 
     },
 
@@ -120,14 +120,14 @@ const useStyles = makeStyles((theme) => ({
       width: '60px',
       height: '60px',
       position: 'relative',
-      bottom: '35px',
+      bottom: '25px',
     },
 
     [theme.breakpoints.up('md')]: {
       width: '33px',
       height: '33px',
       position: 'relative',
-      bottom: '35px',
+      bottom: '25px',
 
     },
 
@@ -152,7 +152,7 @@ const useStyles = makeStyles((theme) => ({
       width: '60px',
       height: '60px',
       position: 'relative',
-      bottom: '35px',
+      bottom: '25px',
 
     },
 
@@ -160,7 +160,7 @@ const useStyles = makeStyles((theme) => ({
       width: '33px',
       height: '33px',
       position: 'relative',
-      bottom: '35px',
+      bottom: '25px',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -252,7 +252,7 @@ const useStyles = makeStyles((theme) => ({
     textAlign: 'center',
 
     [theme.breakpoints.up('xs')]: {
-      marginBottom: '20px',
+      marginBottom: '35px',
       fontSize: '23px',
       lineHeight: '32px',
 
@@ -309,7 +309,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#FF414A',
 
     [theme.breakpoints.up('xs')]: {
-      fontSize: '2rem',
+      fontSize: '2.5rem',
 
     },
 
@@ -614,7 +614,7 @@ const useStyles = makeStyles((theme) => ({
       padding: '0 60px',
       paddingTop: '68px',
       marginTop: '37px',
-      paddingBottom: '35px',
+      paddingbottom: '25px',
 
     },
 
