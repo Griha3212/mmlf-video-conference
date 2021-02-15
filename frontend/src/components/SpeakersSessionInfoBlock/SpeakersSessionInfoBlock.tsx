@@ -76,31 +76,21 @@ const SpeakersSessionInfoBlock = (props: any) => {
     } else return true;
   };
 
-  const checkIsWatchedAndSent = (speakerId: number, type: string) => {
-    if (currentUserData && currentUserData.foundUser && currentUserData.foundUser.watchedSpeakers) {
-      const foundWtchedSpeaker = currentUserData.foundUser.watchedSpeakers.find(
-        (speaker: Speaker) => speaker.id === speakerId,
-      );
+  const checkIsSent = (speakerId: number, type: string) => {
+    if (currentUserData && currentUserData.foundUser &&
+      currentUserData.foundUser.speakersToWhomContactsWereSent) {
+      const foundContactedSpeakers = currentUserData.foundUser
+        .speakersToWhomContactsWereSent.find(
+          (speakerUserContacts: SpeakerUserContacts) => speakerUserContacts.speaker.id
+            === speakerId,
+        );
 
-      if (foundWtchedSpeaker) {
-        if (currentUserData && currentUserData.foundUser &&
-          currentUserData.foundUser.speakersToWhomContactsWereSent) {
-          const foundContactedSpeakers = currentUserData.foundUser
-            .speakersToWhomContactsWereSent.find(
-              (speakerUserContacts: SpeakerUserContacts) => speakerUserContacts.speaker.id
-                === speakerId,
-            );
-
-          if (foundContactedSpeakers) {
-            return type === 'src' ? ShareContactsCompleted : `${classes.sendContactsImg} ${classes.disabledImg}`;
-          } else {
-            return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
-          }
-        } else return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
+      if (foundContactedSpeakers) {
+        return type === 'src' ? ShareContactsCompleted : `${classes.sendContactsImg} ${classes.disabledImg}`;
       } else {
-        return type === 'src' ? ShareContactsDisabled : `${classes.sendContactsImg} ${classes.disabledImg}`;
+        return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
       }
-    } else return type === 'src' ? ShareContactsDisabled : `${classes.sendContactsImg} ${classes.disabledImg}`;
+    } else return type === 'src' ? ShareContacts : `${classes.sendContactsImg} ${classes.pointerImg}`;
   };
 
   const renderSpeakersRates = (element: Speaker) => {
@@ -167,6 +157,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
   };
 
   const sendContacts = async (currentSpeakerId: number) => {
+    console.log('1 :>> ');
+
     await apiUserUpdateContactedSpeakers(
       currentSpeakerId,
       props.userId,
@@ -252,11 +244,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
                     <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
                       <img
-                        src={checkIsWatched(element.id) ? ZoomDisabled : Zoom}
-                        className={
-                          checkIsWatched(element.id) ? `${classes.loadZoomImg} ${classes.disabledImg}`
-                            : `${classes.pointerImg} ${classes.loadZoomImg}`
-                        }
+                        src={Zoom}
+                        className={`${classes.pointerImg} ${classes.loadZoomImg}`}
                         onClick={() => window.open(`${element.linkToZoom}`, '_blank')}
                         alt=""
                       />
@@ -270,11 +259,17 @@ const SpeakersSessionInfoBlock = (props: any) => {
                     <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
 
                       <img
-                        src={checkIsWatchedAndSent(element.id, 'src')}
+                        src={checkIsSent(element.id, 'src')}
                         className={
-                          checkIsWatchedAndSent(element.id, 'className')
+                          checkIsSent(element.id, 'className')
                         }
-                        onClick={() => sendContacts(element.id)}
+                        onClick={() => {
+                          if (checkIsSent(element.id, 'src') === ShareContactsCompleted) {
+                            return null;
+                          } else {
+                            sendContacts(element.id);
+                          }
+                        }}
                         alt=""
                       />
 

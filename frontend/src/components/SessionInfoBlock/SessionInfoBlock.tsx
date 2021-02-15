@@ -382,7 +382,7 @@ const SessionInfoBlock = (props: any) => {
               currentSpeakerInfo && currentSpeakerInfo.linkToZoom ? (
                 <p className={classes.textCenter}>
                   <Button
-                    disabled={closedAccess}
+                    // disabled={closedAccess}
                     onClick={() => window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToZoom}`, '_blank')}
                     className={classes.goToZoomButton}
                   >
@@ -397,7 +397,7 @@ const SessionInfoBlock = (props: any) => {
               currentSpeakerInfo && currentSpeakerInfo.hasSendContactsButton ? (
                 <p className={classes.textCenter}>
                   <Button
-                    disabled={closedAccess}
+                    // disabled={closedAccess}
                     onClick={() => sendContacts()}
                     className={checkAlreadySentContact()
                       ? classes.sendContactsButtonSuccess : classes.sendContactsButton}
@@ -420,7 +420,7 @@ const SessionInfoBlock = (props: any) => {
               currentSpeakerInfo && currentSpeakerInfo.hasRafflePrizesButton ? (
                 <p className={classes.textCenter}>
                   <Button
-                    disabled={closedAccess}
+                    // disabled={closedAccess}
                     onClick={() => takeAPartInRafflePrizes()}
                     className={checkAlreadyTookPart()
                       ? classes.takeAPartInRafflePrizesButtonSuccess :
