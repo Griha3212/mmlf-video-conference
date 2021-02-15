@@ -10,7 +10,7 @@ export interface DataForUser {
       name: string,
       id: number,
       partnerOfTheSessionImgSrc: string,
-
+      isSessionForSecondDay: boolean,
     },
   },
 

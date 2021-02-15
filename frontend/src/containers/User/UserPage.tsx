@@ -350,6 +350,13 @@ const UserPage: FC = () => {
       && dataForUser.channelUserInfo.number === 1) {
       return null;
     }
+
+    // if exc session
+    if (dataForUser &&
+      dataForUser.channelUserInfo.activeSession.isSessionForSecondDay) {
+      return null;
+    }
+
     // if LogistOfTheYear, don't show block
     if (dataForUser && dataForUser.channelUserInfo.activeSession
       && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear') {
