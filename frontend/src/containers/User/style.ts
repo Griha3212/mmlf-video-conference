@@ -78,10 +78,13 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('xs')]: {
 
-      maxWidth: '83.333333%',
-      flexBasis: '83.333333%',
+      maxWidth: '45%',
+      flexBasis: '45%',
       margin: '0 auto',
-      marginBottom: '20px !important',
+      minHeight: '80px',
+      alignItems: 'center',
+      display: 'flex',
+      justifyContent: 'center',
     },
 
   },
@@ -338,7 +341,7 @@ const useStyles = makeStyles((theme) => ({
     borderTop: '33px solid #FF414A',
 
     [theme.breakpoints.up('xs')]: {
-      marginTop: '0px',
+      marginTop: '25px',
       height: 'auto',
     },
 
