@@ -9,7 +9,7 @@ export const seedMockedChannels = async () => {
   // test links now
   const channelsToSeed = [{
     number: 1,
-    link: 'https://www.youtube.com/embed/wnhvanMdx4s',
+    link: 'https://facecast.net/v/dbf35c',
     startChannelSessionLetter: 'Пленарная сессия',
     startChannelSessionDescription: 'Развитие логистики и управления цепями поставок в России и мире',
     channelLocation: 'Полусфера',
@@ -17,14 +17,14 @@ export const seedMockedChannels = async () => {
 
   {
     number: 2,
-    link: 'https://www.youtube.com/embed/LXb3EKWsInQ',
+    link: 'https://facecast.net/v/ddzguw',
     startChannelSessionLetter: 'Сессия A',
     startChannelSessionDescription: 'Лучший опыт применения инновационных технологий в логистике',
     channelLocation: 'Сфера',
   },
   {
     number: 3,
-    link: 'https://www.youtube.com/embed/BHACKCNDMW8',
+    link: 'https://facecast.net/v/owzke1',
     startChannelSessionLetter: 'Сессия B',
     startChannelSessionDescription: 'Комплексные логистические решения для ритейлеров и производителей',
     channelLocation: 'Аудитория 5',
@@ -32,7 +32,7 @@ export const seedMockedChannels = async () => {
 
   {
     number: 4,
-    link: 'https://www.youtube.com/embed/pajbM_jJWnI',
+    link: 'https://facecast.net/v/zcxuvx',
     startChannelSessionLetter: 'Сессия С',
     startChannelSessionDescription: 'Цифровой транспорт',
     channelLocation: 'Аудитория 2',
