@@ -50,6 +50,7 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '0px',
       position: 'fixed',
       left: '68%',
+      top: 'auto',
     },
 
   },
@@ -66,7 +67,15 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: '30px',
     backgroundColor: 'green',
     color: 'white',
+    cursor: 'pointer',
 
+    '&:hover': {
+
+      marginBottom: '30px',
+      backgroundColor: 'green',
+      color: 'white',
+      cursor: 'pointer',
+    },
   },
 
   textCenter: {
@@ -78,6 +87,7 @@ const useStyles = makeStyles((theme) => ({
   speakerButton: {
 
     marginBottom: '30px',
+    cursor: 'pointer',
 
   },
 

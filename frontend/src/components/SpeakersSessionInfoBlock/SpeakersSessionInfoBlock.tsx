@@ -173,8 +173,6 @@ const SpeakersSessionInfoBlock = (props: any) => {
   };
 
   const sendContacts = async (currentSpeakerId: number) => {
-    console.log('1 :>> ');
-
     await apiUserUpdateContactedSpeakers(
       currentSpeakerId,
       props.userId,

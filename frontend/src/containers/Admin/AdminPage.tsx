@@ -146,12 +146,17 @@ const AdminPage: FC = () => {
     if (!element.isModerator) {
       return (
 
-        <Grid container item xs={12} justify="center">
+        <Grid key={element.id} container item xs={12} justify="center">
           <Button
+            // onTouchEnd={(e) => {
+            //   setSelectedSpeakerToActivate(e.currentTarget.value);
+            //   setActiveButtonId(Number(e.currentTarget.value));
+            // }}
             onClick={(e) => {
               setSelectedSpeakerToActivate(e.currentTarget.value);
               setActiveButtonId(Number(e.currentTarget.value));
             }}
+            key={element.id}
             value={element.id}
             data-id=""
             className={activeButtonId === element.id ?
@@ -159,7 +164,7 @@ const AdminPage: FC = () => {
             variant="outlined"
             color="primary"
           >
-            {`${element.lastName}  ${element.firstName}`}
+            {`${element.lastName} ${element.firstName} `}
           </Button>
         </Grid>
 
@@ -208,17 +213,24 @@ const AdminPage: FC = () => {
             dataForAdmin && dataForAdmin.foundAllSessionsInAdminChannel.map(
               (session: Session) => (
                 <>
-                  {session.letter === 'Экскурсия' ? <p className={classes.sessionLetter}>{session.description}</p> : (
-                    <p className={classes.sessionLetter}>
+                  {session.letter === 'Экскурсия' ? (
+                    <p
+                      key={session.id}
+                      className={classes.sessionLetter}
+                    >
+                      {session.description}
+                    </p>
+                  ) : (
+                    <p key={session.id} className={classes.sessionLetter}>
                       {session.letter}
                     </p>
                   )}
 
-                  <p>
+                  <div>
                     {session.speakers.map(
                       (speaker: Speaker) => renderSpeakersDataForAdmin(speaker),
                     )}
-                  </p>
+                  </div>
                 </>
               ),
             )
@@ -238,10 +250,10 @@ const AdminPage: FC = () => {
               <p className={classes.activeSpeakerText}>
                 Активный спикер:
                 {' '}
-                {`${activeSpeaker}`}
+                {`${activeSpeaker} `}
               </p>
             </Hidden>
-            <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP}`}>
+            <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP} `}>
               <Button
                 className={classes.speakerButton}
                 onClick={() => activateSelectedSpeaker(selectedSpeakerToActivate)}
@@ -300,7 +312,7 @@ const AdminPage: FC = () => {
             <p className={classes.activeSpeakerText}>
               Активный спикер:
               {' '}
-              {`${activeSpeaker}`}
+              {`${activeSpeaker} `}
             </p>
           </Grid>
         </Hidden>

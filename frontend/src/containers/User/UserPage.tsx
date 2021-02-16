@@ -114,7 +114,6 @@ const UserPage: FC = () => {
   };
 
   const executeScrollToMainVideoBlock = () => {
-    console.log('1 :>> ');
     if (mainVideoBock.current) {
       mainVideoBock.current.scrollIntoView();
     }
