@@ -355,6 +355,11 @@ const UserPage: FC = () => {
       return null;
     }
 
+    if (dataForUser && !dataForUser.channelUserInfo.activeSpeaker &&
+      dataForUser.channelUserInfo.activeSession.nextSessionName === 'LogistOfTheYear') {
+      return null;
+    }
+
     // if LogistOfTheYear, don't show block
     if (dataForUser && dataForUser.channelUserInfo.activeSession
       && dataForUser.channelUserInfo.activeSession.name === 'LogistOfTheYear') {

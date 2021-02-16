@@ -263,6 +263,7 @@ export const seedMockedSessions = async () => {
     newSession.description = session.description;
     newSession.channelForShowing = session.channelForShowing[0];
     newSession.nextSessionLetter = session.nextSessionLetter;
+    newSession.nextSessionName = session.nextSessionName || '';
     newSession.nextSessionDescription = session.nextSessionDescription;
     newSession.voteFoAllSession = session.voteFoAllSession || false;
     newSession.isSessionForSecondDay = session.isSessionForSecondDay || false;

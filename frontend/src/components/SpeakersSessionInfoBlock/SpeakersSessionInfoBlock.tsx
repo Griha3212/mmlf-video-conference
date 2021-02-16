@@ -182,9 +182,16 @@ const SpeakersSessionInfoBlock = (props: any) => {
     );
   };
 
-  const renderSessionSpeakers = () => (
+  const renderSessionSpeakers = (showNextSessionSpeakers: boolean) => {
+    let selectedArrayWithSpeakers = [];
 
-    currentSessionSpeakersInfo.map((element: Speaker) => {
+    if (showNextSessionSpeakers) {
+      selectedArrayWithSpeakers = currentUserData.foundNextSession.speakers;
+    } else {
+      selectedArrayWithSpeakers = currentSessionSpeakersInfo;
+    }
+
+    return selectedArrayWithSpeakers.map((element: Speaker) => {
       // exept moderators and input word speaker
       if (!element.isModerator && (element.firstName !== 'Слово' && element.lastName !== 'ВСТУПИТЕЛЬНОЕ')) {
         return (
@@ -350,8 +357,8 @@ const SpeakersSessionInfoBlock = (props: any) => {
           </>
         );
       }
-    })
-  );
+    });
+  };
 
   const renderSpeakers = () => {
     if (currentUserData) {
@@ -362,11 +369,12 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       if (currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return renderMockedSessionSpeakers();
+        return renderSessionSpeakers(true);
+        // return renderMockedSessionSpeakers();
       }
 
       if (props.currentSessionSpeakersInfo) {
-        return renderSessionSpeakers();
+        return renderSessionSpeakers(false);
       } else renderMockedSessionSpeakers();
     } else renderMockedSessionSpeakers();
   };

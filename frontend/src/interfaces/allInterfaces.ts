@@ -5,12 +5,14 @@ export interface DataForUser {
     link: string,
     number: number,
     started: boolean,
+    activeSpeaker: Speaker,
     activeSession: {
       voteFoAllSession: boolean,
       name: string,
       id: number,
       partnerOfTheSessionImgSrc: string,
       isSessionForSecondDay: boolean,
+      nextSessionName: string,
     },
   },
 
