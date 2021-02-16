@@ -1133,6 +1133,13 @@ const useStyles = makeStyles((theme) => ({
       marginTop: '11px',
     },
 
+    '&:hover': {
+      backgroundColor: '#24A553',
+      border: '1px solid #24A553',
+      color: 'white',
+      transition: '0.2s',
+    },
+
   },
 
   takeAPartInRafflePrizesButtonSuccess: {
@@ -1184,6 +1191,13 @@ const useStyles = makeStyles((theme) => ({
       height: '53px',
       width: '286px',
       marginTop: '11px',
+    },
+
+    '&:hover': {
+      backgroundColor: '#24A553',
+      border: '1px solid #24A553',
+      color: 'white',
+      transition: '0.2s',
     },
 
   },
