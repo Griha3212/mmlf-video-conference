@@ -17,6 +17,7 @@ import Typography from '@material-ui/core/Typography';
 import Container from '@material-ui/core/Container';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import { Hidden } from '@material-ui/core';
 import useStyles from './style';
 import { apiGetUser } from '../../api/user';
 import parseToken from '../../utils/parseToken';
@@ -201,7 +202,7 @@ const AdminPage: FC = () => {
 
       <Grid container justify="space-around">
 
-        <Grid item xs={4}>
+        <Grid item lg={4} xs={6}>
 
           {
             dataForAdmin && dataForAdmin.foundAllSessionsInAdminChannel.map(
@@ -230,8 +231,16 @@ const AdminPage: FC = () => {
           } */}
         </Grid>
 
-        <Grid item container justify="center" xs={4}>
+        <Grid item container justify="center" lg={4} xs={6}>
           <div className={classes.stickyCentralMenu}>
+            {/* mobile */}
+            <Hidden only={['lg', 'xl', 'md']}>
+              <p className={classes.activeSpeakerText}>
+                Активный спикер:
+                {' '}
+                {`${activeSpeaker}`}
+              </p>
+            </Hidden>
             <p className={`${classes.textCenter} ${classes.activateSelectedSpeakerP}`}>
               <Button
                 className={classes.speakerButton}
@@ -285,15 +294,16 @@ const AdminPage: FC = () => {
             ) : null}
           </div>
         </Grid>
-
-        <Grid item xs={4}>
-          <p className={classes.activeSpeakerText}>
-            Активный спикер:
-            {' '}
-            {`${activeSpeaker}`}
-          </p>
-        </Grid>
-
+        {/* pc */}
+        <Hidden smDown>
+          <Grid item lg={4} xs={12}>
+            <p className={classes.activeSpeakerText}>
+              Активный спикер:
+              {' '}
+              {`${activeSpeaker}`}
+            </p>
+          </Grid>
+        </Hidden>
       </Grid>
 
     </>

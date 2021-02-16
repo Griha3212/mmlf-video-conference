@@ -5,8 +5,20 @@ const useStyles = makeStyles((theme) => ({
 
   stickyCentralMenu: {
 
-    position: 'fixed',
-    left: '36%',
+    [theme.breakpoints.up('xs')]: {
+      position: 'fixed',
+      left: 'auto',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      position: 'fixed',
+      left: '36%',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      position: 'fixed',
+      left: '36%',
+    },
 
   },
 
@@ -18,10 +30,27 @@ const useStyles = makeStyles((theme) => ({
 
   activeSpeakerText: {
 
-    fontSize: '22px',
-    marginTop: '0px',
-    position: 'fixed',
-    left: '68%',
+    [theme.breakpoints.up('xs')]: {
+      fontSize: '15px',
+      marginTop: '0px',
+      position: 'fixed',
+      left: '57%',
+      top: '150px',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      fontSize: '22px',
+      marginTop: '0px',
+      position: 'fixed',
+      left: '68%',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      fontSize: '22px',
+      marginTop: '0px',
+      position: 'fixed',
+      left: '68%',
+    },
 
   },
 
@@ -54,15 +83,43 @@ const useStyles = makeStyles((theme) => ({
 
   speakerButtonBigMargin: {
 
-    marginBottom: '120px',
+    [theme.breakpoints.up('xs')]: {
+      marginBottom: '60px',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      marginBottom: '120px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      marginBottom: '120px',
+    },
 
   },
 
   paper: {
-    marginTop: theme.spacing(8),
-    display: 'flex',
-    flexDirection: 'column',
-    alignItems: 'center',
+
+    [theme.breakpoints.up('xs')]: {
+      marginTop: theme.spacing(2),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+
+    [theme.breakpoints.up('sm')]: {
+      marginTop: theme.spacing(8),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      marginTop: theme.spacing(8),
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+    },
+
   },
   avatar: {
     margin: theme.spacing(1),
