@@ -43,9 +43,9 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Marinus.jpg`,
       linkToZoom: '',
       linkToPresentation: '',
-      topicName: 'Обзор методов и технологий в Цепях поставок, которые выбраны европейскими компаниями для поддержки устойчивости и развития в 2021 г.',
+      topicName: 'Методы и технологии в цепях поставок, обеспечивающие устойчивое развитие',
       innerSystemName: 'Marinus_Plenar',
-      statusInCompany: 'президент',
+      statusInCompany: 'Президент',
       session: foundSessions.filter((session: any) => session.name === 'Plenar'),
 
     },
@@ -55,12 +55,12 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Как изменится цепочка поставок ритейлеров и поставщиков в 2021 г.',
       lastName: 'ШУЛЬГА',
       firstName: 'Денис',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'X5 Retail Group',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shulga.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Shulga.pdf`,
 
       innerSystemName: 'Shulga_Plenar',
 
@@ -76,7 +76,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Группа «М.Видео-Эльдорадо»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dementeva.png`,
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Dementeva.pdf`,
       topicName: 'Тренды, вызовы и задачи в логистике non-food ритейла в 2021 г.',
       innerSystemName: 'Dementeva_Plenar',
       statusInCompany: 'директор по логистике',
@@ -94,7 +94,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: `${process.env.BACKEND_URL}/presentations/test.pdf`,
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Demin.pdf`,
 
       innerSystemName: 'Demin_Plenar',
 
