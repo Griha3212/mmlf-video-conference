@@ -34,7 +34,7 @@ export const seedMockedChannels = async () => {
     number: 4,
     link: 'https://facecast.net/v/zcxuvx',
     startChannelSessionLetter: 'Сессия С',
-    startChannelSessionDescription: 'Цифровой транспорт',
+    startChannelSessionDescription: 'Цифровой транспорт: прозрачное управление затратами и создание конкурентных преимуществ для бизнеса',
     channelLocation: 'Аудитория 2',
   },
 

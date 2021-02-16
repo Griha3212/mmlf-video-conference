@@ -33,7 +33,7 @@ export const seedMockedSessions = async () => {
       description: 'Панельная дискуссия директоров по логистике о внедрении WMS',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Сессия E',
-      nextSessionDescription: 'Специальная сессия генерального партнера SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года.',
+      nextSessionDescription: 'Жизнестойкие цепи поставок: 5 трендов 2021 года',
       voteFoAllSession: true,
       partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/cemat.svg`,
       nextSessionName: 'SessE',
@@ -43,10 +43,10 @@ export const seedMockedSessions = async () => {
 
       name: 'SessE',
       letter: 'Сессия E',
-      description: 'Специальная сессия генерального партнера SAP. Жизнестойкие цепи поставок: 5 трендов 2021 года.',
+      description: 'Жизнестойкие цепи поставок: 5 трендов 2021 года',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Панельная сессия H',
-      nextSessionDescription: 'Рекомендации по улучшению логистических процессов от директоров по логистике - лидеров рынка',
+      nextSessionDescription: 'Рекомендации по улучшению логистических процессов от директоров по логистике',
       voteFoAllSession: true,
       partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/cemat.svg`,
       nextSessionName: 'SessH',
@@ -56,10 +56,10 @@ export const seedMockedSessions = async () => {
 
       name: 'SessH',
       letter: 'Панельная сессия H',
-      description: 'Рекомендации по улучшению логистических процессов от директоров по логистике - лидеров рынка',
+      description: 'Рекомендации по улучшению логистических процессов от директоров по логистике',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: '«Логист года»',
-      nextSessionDescription: 'Вручение премии «Логист года»',
+      nextSessionDescription: 'Подведение итогов конкурса «Логист года» ',
       voteFoAllSession: true,
       nextSessionName: 'LogistOfTheYear',
     },
@@ -68,10 +68,10 @@ export const seedMockedSessions = async () => {
 
       name: 'LogistOfTheYear',
       letter: '«Логист года»',
-      description: 'Вручение премии «Логист года»',
+      description: 'Подведение итогов конкурса «Логист года» ',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 1),
       nextSessionLetter: 'Экскурсия',
-      nextSessionDescription: 'Вручение премии «Логист года»',
+      nextSessionDescription: 'Подведение итогов конкурса «Логист года» ',
       nextSessionName: 'Exc1',
     },
     // Excursions---------------
@@ -164,7 +164,7 @@ export const seedMockedSessions = async () => {
       description: 'Опыт создания и оптимизации складов и логистических центров',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
       nextSessionLetter: 'Сессия G',
-      nextSessionDescription: 'Организация логистики при развитии e-com продаж',
+      nextSessionDescription: 'Лучшая практика организации логистики при развитии e-com продаж',
       nextSessionName: 'SessG',
     },
 
@@ -172,10 +172,10 @@ export const seedMockedSessions = async () => {
 
       name: 'SessG',
       letter: 'Сессия G',
-      description: 'Организация логистики при развитии e-com продаж',
+      description: 'Лучшая практика организации логистики при развитии e-com продаж',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 2),
       nextSessionLetter: '«Логист года»',
-      nextSessionDescription: 'Вручение премии «Логист года»',
+      nextSessionDescription: 'Подведение итогов конкурса «Логист года» ',
       nextSessionName: 'LogistOfTheYear',
     },
 
@@ -199,7 +199,7 @@ export const seedMockedSessions = async () => {
       description: 'Лучшая практика внедрения и эксплуатации WMS',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
       nextSessionLetter: 'Сессия J',
-      nextSessionDescription: 'Логистика промышленных компаний',
+      nextSessionDescription: 'Логистика промышленных компаний: опыт улучшения процессов, систем и инфраструктуры',
       nextSessionName: 'SessJ',
     },
 
@@ -207,10 +207,10 @@ export const seedMockedSessions = async () => {
 
       name: 'SessJ',
       letter: 'Сессия J',
-      description: 'Логистика промышленных компаний',
+      description: 'Логистика промышленных компаний: опыт улучшения процессов, систем и инфраструктуры',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 3),
       nextSessionLetter: '«Логист года»',
-      nextSessionDescription: 'Вручение премии «Логист года»',
+      nextSessionDescription: 'Подведение итогов конкурса «Логист года» ',
       nextSessionName: 'LogistOfTheYear',
     },
 
@@ -220,7 +220,7 @@ export const seedMockedSessions = async () => {
 
       name: 'SessC',
       letter: 'Сессия C',
-      description: 'Цифровой транспорт',
+      description: 'Цифровой транспорт: прозрачное управление затратами и создание конкурентных преимуществ для бизнеса',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
       nextSessionLetter: 'Сессия F',
       nextSessionDescription: 'Опыт оптимизации транспортно-логистического обеспечения компании',
@@ -235,7 +235,7 @@ export const seedMockedSessions = async () => {
       description: 'Опыт оптимизации транспортно-логистического обеспечения компании',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
       nextSessionLetter: 'Специальная сессия I',
-      nextSessionDescription: 'Workshop решения задач участников Форума с лидерами КСЛ.Experts',
+      nextSessionDescription: 'Workshop. Решение задач участников Форума с лидерами КСЛ.Experts',
       nextSessionName: 'SessI',
     },
 
@@ -243,10 +243,10 @@ export const seedMockedSessions = async () => {
 
       name: 'SessI',
       letter: 'Специальная сессия I',
-      description: 'Workshop решения задач участников Форума с лидерами КСЛ.Experts',
+      description: 'Workshop. Решение задач участников Форума с лидерами КСЛ.Experts',
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
       nextSessionLetter: '«Логист года»',
-      nextSessionDescription: 'Вручение премии «Логист года»',
+      nextSessionDescription: 'Подведение итогов конкурса «Логист года» ',
       voteFoAllSession: true,
       nextSessionName: 'LogistOfTheYear',
     },
