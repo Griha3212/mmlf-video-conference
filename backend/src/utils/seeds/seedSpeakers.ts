@@ -79,7 +79,7 @@ export const seedMockedSpeakers = async () => {
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Dementeva.pdf`,
       topicName: 'Тренды, вызовы и задачи в логистике non-food ритейла в 2021 г.',
       innerSystemName: 'Dementeva_Plenar',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       session: foundSessions.filter((session: any) => session.name === 'Plenar'),
 
     },
@@ -89,7 +89,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Формирование стратегии логистики компании с учетом изменений в 2020 – 2021 гг. Создание конкурентных преимуществ',
       lastName: 'ДЕМИН',
       firstName: 'Василий',
-      statusInCompany: 'д.т.н., заместитель директора',
+      statusInCompany: 'Д.т.н., заместитель директора',
       company: 'Координационный совет по логистике',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
 
@@ -109,7 +109,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'От карго-культа к мани-майнингу: как сделать деньги на логистических и информационных технологиях',
       lastName: 'ЛИХАРЕВ',
       firstName: 'Сергей',
-      statusInCompany: 'вице-президент по логистике',
+      statusInCompany: 'Вице-президент по логистике',
       company: 'ПАО «НЛМК»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_LIHAREV.jpg`,
 
@@ -141,7 +141,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Создание DarkStores при изменении форматов логистики в условиях роста онлайн продаж',
       lastName: 'ОБРАЗЦОВА',
       firstName: 'Елена',
-      statusInCompany: 'директор по операциям',
+      statusInCompany: 'Директор по операциям',
       company: 'Утконос',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Obrazcova.png`,
 
@@ -163,7 +163,7 @@ export const seedMockedSpeakers = async () => {
       linkToPresentation: '',
       topicName: 'Система управления инновациями в цепях поставок: за счет чего мы формируем стратегическое преимущество на меняющемся рынке',
       innerSystemName: 'Eleckih',
-      statusInCompany: 'директор по развитию и инновациям функции снабжения по стране',
+      statusInCompany: 'Директор по развитию и инновациям функции снабжения по стране',
       session: foundSessions.filter((session: any) => session.name === 'SessA'),
 
     },
@@ -173,7 +173,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '7 хороших вопросов вендору логистической платформы',
       lastName: 'ГАВРИЛОВ',
       firstName: 'Алексей',
-      statusInCompany: 'руководитель направления «Управление производством и цепочками поставок»',
+      statusInCompany: 'Руководитель направления «Управление производством и цепочками поставок»',
       company: 'SAP CIS',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gavrilov.png`,
 
@@ -207,7 +207,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Логистика на пользу конкурентноспособности',
       lastName: 'МАШКОВ',
       firstName: 'Александр',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'ПАО «Ростелеком»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Mashkov.png`,
 
@@ -239,7 +239,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Управление потоками товаров в ритейле',
       lastName: 'ФИЛИМОНОВА',
       firstName: 'Наталья',
-      statusInCompany: 'директор департамента по операционному планированию',
+      statusInCompany: 'Директор департамента по операционному планированию',
       company: 'Х5 Retail Group',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Filimonova.png`,
 
@@ -275,7 +275,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Опыт внедрения методологии DDMRP в управлении запасами и планировании цепи поставок в компании-производителе медицинской техники в условиях непредсказуемого изменения спроса в 2020 г.',
       lastName: 'АМПЛЕЕВ',
       firstName: 'Андрей',
-      statusInCompany: 'директор по ИТ',
+      statusInCompany: 'Директор по ИТ',
       company: 'ЗАО "Завод ЭМА"',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ampleev.png`,
 
@@ -293,7 +293,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Пункты выдачи: что нас ждет в 2021',
       lastName: 'ЗИЛЬБЕРБЕРГ',
       firstName: 'Ирина',
-      statusInCompany: 'начальник управления партнерской сети',
+      statusInCompany: 'Начальник управления партнерской сети',
       company: 'DPD Pickup',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zilberberg.png`,
 
@@ -311,7 +311,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '"Вакцина" для поставщиков: цифровизация логистики на пути к федеральному ритейлу',
       lastName: 'БЕЗЕНКОВ',
       firstName: 'Денис',
-      statusInCompany: 'директор по развитию',
+      statusInCompany: 'Директор по развитию',
       company: 'SpaceCargo.ru',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bezenkov.png`,
 
@@ -343,7 +343,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Изменения приоритетов в транспортной стратегии компании',
       lastName: 'ТУПИН',
       firstName: 'Кирилл',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'ГК «Ренна холдинг»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
@@ -361,7 +361,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Цифровизация всей цепочки автомобильных грузоперевозок: от грузовладельца до водителя',
       lastName: 'ВИЛЬДЕ',
       firstName: 'Святослав',
-      statusInCompany: 'управляющий',
+      statusInCompany: 'Управляющий',
       company: 'ATI.SU',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vilde.png`,
 
@@ -379,7 +379,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Логистика до «последней мили»: как сделать вашего покупателя счастливым. Инструменты и кейсы.',
       lastName: 'БАБАЕВА',
       firstName: 'Ольга',
-      statusInCompany: 'директор по развитию',
+      statusInCompany: 'Директор по развитию',
       company: 'Умная Логистика',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Babaeva.png`,
 
@@ -415,7 +415,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Новая цифровая экосистема в логистике: инновационный подход',
       lastName: 'КРАУС',
       firstName: 'Олег',
-      statusInCompany: 'управляющий партнер',
+      statusInCompany: 'Управляющий партнер',
       company: 'Atlas Delivery и MEDPOINT24',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kraus.png`,
 
@@ -447,7 +447,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'УРИН',
       firstName: 'Вадим',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'S3',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Urin.png`,
 
@@ -465,7 +465,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'АНТОНОВ',
       firstName: 'Максим',
-      statusInCompany: 'руководитель проектов',
+      statusInCompany: 'Руководитель проектов',
       company: 'ГК «ЭФКО',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Antonov.png`,
 
@@ -483,7 +483,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ПОЛКОВНИКОВ',
       firstName: 'Вячеслав',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'ГК «Армтек»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
 
@@ -501,7 +501,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'КОНОВ',
       firstName: 'Максим',
-      statusInCompany: 'руководитель проектов',
+      statusInCompany: 'Руководитель проектов',
       company: 'Координационный совет по логистике',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Konov.png`,
 
@@ -519,7 +519,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'СУСАНОВ',
       firstName: 'Игорь',
-      statusInCompany: 'руководитель управления складской логистики, дирекция по управлению поставками, дистрибьюцией и логистикой',
+      statusInCompany: 'Руководитель управления складской логистики, дирекция по управлению поставками, дистрибьюцией и логистикой',
       company: 'Мвидео-Эльдорадо',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Susanov.png`,
 
@@ -537,7 +537,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ХАЙРОВ',
       firstName: 'Марат',
-      statusInCompany: 'вице-президент по инновациям',
+      statusInCompany: 'Вице-президент по инновациям',
       company: 'ДГК Дамате',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
@@ -569,7 +569,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Опыт развития региональных складов',
       lastName: 'КАЗАНОВСКИЙ',
       firstName: 'Павел',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'Галацентр',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazanovskiy.png`,
 
@@ -587,7 +587,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Оптимизация складских издержек за счет модернизации существующего оборудования',
       lastName: 'ФАТУЛЛАЕВ',
       firstName: 'Роман',
-      statusInCompany: 'генеральный директор',
+      statusInCompany: 'Генеральный директор',
       company: 'ООО «Новейшие Технологии ЛС»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Fatullaev.jpg`,
 
@@ -605,7 +605,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Подходы к реализации технологий современной концепции Dark Store',
       lastName: 'КОБЫЛИН',
       firstName: 'Александр',
-      statusInCompany: 'директор по развитию',
+      statusInCompany: 'Директор по развитию',
       company: 'ОАО «ПКБ «ТЕХНОПРИБОР»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Kobylin.jpg`,
 
@@ -623,7 +623,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Реализованный кейс. Применение различных технологий хранения и обработки грузов на одном складе',
       lastName: 'ИВАНУШКИНА',
       firstName: 'Светлана',
-      statusInCompany: 'бренд-менеджер',
+      statusInCompany: 'Бренд-менеджер',
       company: 'ООО «Фест Логистик»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ivanushkina.png`,
 
@@ -641,7 +641,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Как на современном складе оптимизировать учет выдачи, сдачи и хранения ТСД с помощью Инлокер',
       lastName: 'КАЗАРЦЕВ',
       firstName: 'Кирилл',
-      statusInCompany: 'генеральный директор',
+      statusInCompany: 'Генеральный директор',
       company: 'Инфотех',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazarcev.png`,
 
@@ -673,7 +673,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ТУПИН',
       firstName: 'Кирилл',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'ГК «Ренна холдинг»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
@@ -691,7 +691,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'МАШКОВ',
       firstName: 'Александр',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'ПАО «Ростелеком»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Mashkov.png`,
 
@@ -709,7 +709,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'КЛИМОВА',
       firstName: 'Светлана',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'АО «Прогресс» (Фруто-Няня)',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Klimova.png`,
 
@@ -727,7 +727,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ШИРЯЕВ',
       firstName: 'Равшан',
-      statusInCompany: 'управляющий сетью СЗФО',
+      statusInCompany: 'Управляющий сетью СЗФО',
       company: 'СТД «Петрович»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
 
@@ -745,7 +745,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ПОЛКОВНИКОВ',
       firstName: 'Вячеслав',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'ГК «Армтек»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
@@ -763,7 +763,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ШАПОЧКА',
       firstName: 'Максим',
-      statusInCompany: 'начальник управления по стратегическому развитию Дирекции по логистике',
+      statusInCompany: 'Начальник управления по стратегическому развитию Дирекции по логистике',
       company: 'АО «Объединенная металлургическая компания»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
 
@@ -795,7 +795,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Как логистика создает конкурентные преимущества компании-производителю',
       lastName: 'ШАПОЧКА',
       firstName: 'Максим',
-      statusInCompany: 'начальник управления по стратегическому развитию Дирекции по логистике',
+      statusInCompany: 'Начальник управления по стратегическому развитию Дирекции по логистике',
       company: 'АО «Объединенная металлургическая компания»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
 
@@ -813,7 +813,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Оперативное планирование, позволяющее гарантированно снизить стоимость мультимодельных перевозок',
       lastName: 'ПЬЯНКОВ',
       firstName: 'Александр',
-      statusInCompany: 'директор по 3PL',
+      statusInCompany: 'Директор по 3PL',
       company: 'FESCO',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pyankov.png`,
 
@@ -831,7 +831,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Как грамотно выстроить процессы транспортной логистики и сократить затраты на грузоперевозку',
       lastName: 'ЛОГВИН',
       firstName: 'Александр',
-      statusInCompany: 'генеральный директор',
+      statusInCompany: 'Генеральный директор',
       company: 'S2B',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.jpg`,
 
@@ -849,7 +849,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Опыт перехода на электромобили в транспортно-логистическом обеспечении ритейлеров и поставщиков',
       lastName: 'ПЛЕТНИКОВА',
       firstName: 'Наталья',
-      statusInCompany: 'начальник управления развития продаж, ГК «СТТ»',
+      statusInCompany: 'Начальник управления развития продаж, ГК «СТТ»',
       company: 'эксклюзивный дистрибьютор ГАЗ',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pletnikova.png`,
 
@@ -867,7 +867,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Оптимизация затрат в цепи поставок с распределением грузов через международный транспортно-логистический и производственный хаб на базе аэропортов Красноярск и Черемшанка',
       lastName: 'НИКОЛАЕВ',
       firstName: 'Алексей',
-      statusInCompany: 'директор по развитию',
+      statusInCompany: 'Директор по развитию',
       company: 'корпорация «Енисейская Сибирь»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Nikolaev.png`,
 
@@ -899,7 +899,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Обязательные условия и мероприятия для удачного выбора и внедрения WMS',
       lastName: 'САНЧЕНКО',
       firstName: 'Никита',
-      statusInCompany: 'директор',
+      statusInCompany: 'Директор',
       company: 'PSI Logistics Moscow',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sanchenko.png`,
 
@@ -917,7 +917,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Продвинутый инструментарий оптимизации затрат в WMS',
       lastName: 'БЛИНОВ',
       firstName: 'Дмитрий',
-      statusInCompany: 'технический директор',
+      statusInCompany: 'Технический директор',
       company: 'LogistiX',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Blinov.jpg`,
 
@@ -935,7 +935,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Мы ждем перемен: как изменилась логистика под влиянием пандемии',
       lastName: 'ЕВДОКИМОВ',
       firstName: 'Евгений',
-      statusInCompany: 'руководитель направления внедрения WMS',
+      statusInCompany: 'Руководитель направления внедрения WMS',
       company: 'КорусКонсалтинг',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Evdokimov.png`,
 
@@ -971,7 +971,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Технология goods-to-person на примере роя роботов',
       lastName: 'ПИВОВАР',
       firstName: 'Александр',
-      statusInCompany: 'начальник отдела ИТ-инноваций',
+      statusInCompany: 'Начальник отдела ИТ-инноваций',
       company: 'Solvo',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pivovar.png`,
 
@@ -1021,7 +1021,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Как e-commerce теряет клиентов из-за логистики?',
       lastName: 'ШИРЯЕВ',
       firstName: 'Равшан',
-      statusInCompany: 'управляющий сетью СЗФО',
+      statusInCompany: 'Управляющий сетью СЗФО',
       company: 'СТД «Петрович»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
 
@@ -1039,7 +1039,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'E-comerсe: автоматизация мезонина',
       lastName: 'ГОРСКИЙ',
       firstName: 'Виталий',
-      statusInCompany: 'директор по развитию',
+      statusInCompany: 'Директор по развитию',
       company: 'COMITAS',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gorskiy.png`,
 
@@ -1057,7 +1057,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Логистическая поддержка при развитии e-com продаж',
       lastName: 'ЗАЙЦЕВА',
       firstName: 'Мария',
-      statusInCompany: 'заместитель генерального директора по коммерции',
+      statusInCompany: 'Заместитель генерального директора по коммерции',
       company: 'Сберлогистика',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zayceva.png`,
 
@@ -1075,7 +1075,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Фулфилмент Фабрика - новый продукт на складском рынке России',
       lastName: 'СЕЛЕЗНЕВА',
       firstName: 'Александра',
-      statusInCompany: 'коммерческий директор компании',
+      statusInCompany: 'Коммерческий директор компании',
       company: '«Ориентир»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
@@ -1093,7 +1093,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Концепт microfullfilment центра на примере кейса commonsense',
       lastName: 'ШУЛЬЦ',
       firstName: 'Александр',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'DECATHLON',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shulz.png`,
 
@@ -1111,7 +1111,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Опыт запуска регионального (Ростов-на-Дону) фулфилмент-центра и оптимизации процессов',
       lastName: 'ДИБРОВА',
       firstName: 'Алексей',
-      statusInCompany: 'руководитель инжиниринговой группы',
+      statusInCompany: 'Руководитель инжиниринговой группы',
       company: 'Ozon',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dibrova.png`,
 
@@ -1143,7 +1143,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'СУРМАЧ',
       firstName: 'Сергей',
-      statusInCompany: 'генеральный директор',
+      statusInCompany: 'Генеральный директор',
       company: 'сеть дискаунтеров ГК «Находка»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Surmach.png`,
 
@@ -1161,7 +1161,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ВОЙТИКОВ',
       firstName: 'Константин',
-      statusInCompany: 'директор по цепям поставок',
+      statusInCompany: 'Директор по цепям поставок',
       company: 'Unilever',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Voytikov.png`,
 
@@ -1179,7 +1179,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ЯНКОВИЧ',
       firstName: 'Антонина',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'Mercury',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Yankovich.png`,
 
@@ -1197,7 +1197,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ШТЫКОВ',
       firstName: 'Павел',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'ИЛЬ ДЕ БОТЭ',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shtikov.png`,
 
@@ -1215,7 +1215,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'БЕРТОВА',
       firstName: 'Татьяна',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'Технониколь',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bertova.png`,
 
@@ -1233,7 +1233,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ХРИСТЕНКО',
       firstName: 'Леонид',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'торговая сеть «Командор»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Hristenko.png`,
 
@@ -1251,7 +1251,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'РАБАЕВ',
       firstName: 'Роман',
-      statusInCompany: 'директор Supply Chain',
+      statusInCompany: 'Директор Supply Chain',
       company: 'Auchan',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Rabaev.png`,
 
@@ -1283,7 +1283,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ВЕДЕНЕЕВ',
       firstName: 'Денис',
-      statusInCompany: 'руководитель управления планирования и промо',
+      statusInCompany: 'Руководитель управления планирования и промо',
       company: 'Х5 Retail Group',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
@@ -1301,7 +1301,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ФИЛИППОВ',
       firstName: 'Михаил',
-      statusInCompany: 'заместитель председателя правления по стратегии и операциям',
+      statusInCompany: 'Заместитель председателя правления по стратегии и операциям',
       company: '«Национальная Торгово-Распределительная сеть»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Filippov.png`,
 
@@ -1319,7 +1319,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'ДЕНИСОВ',
       firstName: 'Евгений',
-      statusInCompany: 'директор по логистике',
+      statusInCompany: 'Директор по логистике',
       company: 'Магнум',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Denisov.png`,
 
@@ -1337,7 +1337,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'АЛЕКСАНДРОВА',
       firstName: 'Надежда',
-      statusInCompany: 'руководитель отдела по работе с клиентами',
+      statusInCompany: 'Руководитель отдела по работе с клиентами',
       company: 'Maxxium',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Alexandrova.png`,
 
@@ -1355,7 +1355,7 @@ export const seedMockedSpeakers = async () => {
       topicName: '',
       lastName: 'СЕМЕНЮГИНА',
       firstName: 'Татьяна',
-      statusInCompany: 'руководитель отдела закупок и логистики',
+      statusInCompany: 'Руководитель отдела закупок и логистики',
       company: 'ДК СЛАТА',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Semeniugina.jpg`,
 
@@ -1387,7 +1387,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Опыт внедрения инновационных технологий в логистике ООО «СИБУР»',
       lastName: 'АГАРКОВА',
       firstName: 'Ирина',
-      statusInCompany: 'руководитель функции Логистика',
+      statusInCompany: 'Руководитель функции Логистика',
       company: 'ООО "СИБУР"',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Agarkova.png`,
 
@@ -1405,7 +1405,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Опыт внедрения централизованной системы управления складским хозяйством на промышленном предприятии',
       lastName: 'АБДРАХМАНОВ',
       firstName: 'Артур',
-      statusInCompany: 'советник управляющего директора',
+      statusInCompany: 'Советник управляющего директора',
       company: 'ПАО «Мосэнерго»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Abdrahmanov.png`,
 
@@ -1423,7 +1423,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Как изменится внутренняя логистика по обеспечению ремонтных служб ПАО «НЛМК» в 2021 г. Результаты пилотного проекта по обеспечению ремонтных служб через пункты выдачи минуя промежуточные склады реализованного в 2020 г.',
       lastName: 'НОВИКОВ',
       firstName: 'Дмитрий',
-      statusInCompany: 'главный специалист дирекции по развитию снабжения',
+      statusInCompany: 'Главный специалист дирекции по развитию снабжения',
       company: 'ПАО «НЛМК»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Novikov.png`,
 
@@ -1441,7 +1441,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Изменение подходов по логистике и снабжению в ПАО «Северсталь» в 2020 г.',
       lastName: 'ЛУЧИН',
       firstName: 'Владимир',
-      statusInCompany: 'начальник управления по ремонтам и инвестициям',
+      statusInCompany: 'Начальник управления по ремонтам и инвестициям',
       company: 'ПАО «Северсталь»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Luchin.png`,
 
@@ -1459,7 +1459,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Разработка оптимальных логистических схем при реализации инвестиционных проектов основные риски и примеры их минимизации',
       lastName: 'ВЫШИДЕНКО',
       firstName: 'Яроcлав',
-      statusInCompany: 'коммерческий директор',
+      statusInCompany: 'Коммерческий директор',
       company: 'EMAX Logistics',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vishidenko.png`,
 
@@ -1491,7 +1491,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
       lastName: 'АГАРКОВА',
       firstName: 'Ирина',
-      statusInCompany: 'руководитель функции Логистика',
+      statusInCompany: 'Руководитель функции Логистика',
       company: 'ООО "СИБУР"',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
@@ -1509,7 +1509,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
       lastName: 'ЛУЧИН',
       firstName: 'Владимир',
-      statusInCompany: 'начальник управления по ремонтам и инвестициям',
+      statusInCompany: 'Начальник управления по ремонтам и инвестициям',
       company: 'ПАО «Северсталь»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
@@ -1527,7 +1527,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
       lastName: 'АБДРАХМАНОВ',
       firstName: 'Артур',
-      statusInCompany: 'советник управляющего директора',
+      statusInCompany: 'Советник управляющего директора',
       company: 'ПАО «Мосэнерго»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Abdrahmanov.png`,
 
@@ -1563,7 +1563,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Экскурсия на Логистический центр (ЦРЦ Чехов) «М.Видео»',
       lastName: 'ХЛЕБНИКОВ',
       firstName: 'Алексей',
-      statusInCompany: 'генеральный директор',
+      statusInCompany: 'Генеральный директор',
       company: 'EMAX Logistics',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
