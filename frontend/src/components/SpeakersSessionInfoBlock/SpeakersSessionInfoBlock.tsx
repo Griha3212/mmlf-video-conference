@@ -388,7 +388,9 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
       if (currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return noAvatar;
+        return currentUserData.foundNextSession.speakers.find(
+          (speaker: Speaker) => speaker.isModerator,
+        ).linkToImg;
       }
 
       if (currentModeratorInfo) {
