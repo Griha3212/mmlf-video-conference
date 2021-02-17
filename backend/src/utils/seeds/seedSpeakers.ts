@@ -931,7 +931,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Эффективный подход к организации проекта внедрения систем управления складом',
       lastName: 'ГАБДУЛХАКОВ',
       firstName: 'Наиль',
-      statusInCompany: 'Консультант по внедрению WMS',
+      statusInCompany: 'Старший консультант',
       company: 'SAP CIS',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gabdulhakov.png`,
 
