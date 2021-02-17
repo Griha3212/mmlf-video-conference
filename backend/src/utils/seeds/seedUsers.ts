@@ -187,7 +187,7 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'Plenaer',
     company: 'CCL',
-    loginCode: 'admin1',
+    loginCode: 'TkKGut',
     adminOfTheChannelNumber: 1,
     isAdmin: true,
 
@@ -198,7 +198,7 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'A',
     company: 'CCL',
-    loginCode: 'admin2',
+    loginCode: 'Z2oxcI',
     adminOfTheChannelNumber: 2,
     isAdmin: true,
 
@@ -209,7 +209,7 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'B',
     company: 'CCL',
-    loginCode: 'admin3',
+    loginCode: '9qJf57',
     adminOfTheChannelNumber: 3,
     isAdmin: true,
 
@@ -220,7 +220,7 @@ export const seedMockedUsers = async () => {
     firstName: 'admin',
     lastName: 'C',
     company: 'CCL',
-    loginCode: 'admin4',
+    loginCode: 'EiHNfv',
     adminOfTheChannelNumber: 4,
     isAdmin: true,
 
