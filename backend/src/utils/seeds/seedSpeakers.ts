@@ -42,7 +42,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Бельгийская Логистическая Ассоциация (VIB), г. Брюссель',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Marinus.png`,
       linkToZoom: '',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Marinus.pdf`,
       topicName: 'Методы и технологии в цепях поставок, обеспечивающие устойчивое развитие',
       innerSystemName: 'Marinus_Plenar',
       statusInCompany: 'Президент',
@@ -112,7 +112,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_LIHAREV.png`,
 
       linkToZoom: '',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Liharev.pdf`,
 
       innerSystemName: 'Liharev_Plenar',
 
