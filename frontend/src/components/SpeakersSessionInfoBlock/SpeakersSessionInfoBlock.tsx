@@ -223,63 +223,65 @@ const SpeakersSessionInfoBlock = (props: any) => {
               </p>
 
               <Grid xs={8} lg={10} xl={10} item container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
-                <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
-                  <Popover
-                    id={id}
-                    open={open}
-                    anchorEl={anchorEl}
-                    onClose={handleClose}
-                    anchorOrigin={{
-                      vertical: 'top',
-                      horizontal: 'center',
-                    }}
-                    transformOrigin={{
-                      vertical: 'top',
-                      horizontal: 'center',
-                    }}
-                  >
-                    <p className={classes.popoverText}>
-                      Пожалуйста, оцените выступление,
-                      чтобы скачать презентацию
-                    </p>
-                  </Popover>
-                  {/* mobile */}
-                  <Hidden only={['lg', 'xl', 'md']}>
-                    <img
-                      className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
-                        : `${classes.pointerImg} ${classes.loadPDFImg}`}
-                      src={checkIsRated(element.id) ? PDFMobileDisabled : PDFMobile}
-                      onClick={(e) => {
-                        if (checkIsRated(element.id)) {
-                          // return handleTooltipOpen();
-                          return handleClick(e);
-                        } else {
-                          window.open(`${element.linkToPresentation}`, '_blank');
-                        }
+                {element.linkToPresentation ? (
+                  <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
+                    <Popover
+                      id={id}
+                      open={open}
+                      anchorEl={anchorEl}
+                      onClose={handleClose}
+                      anchorOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
                       }}
-                      alt=""
-                    />
-                  </Hidden>
-                  {/* pc */}
-                  <Hidden smDown>
-                    <img
-                      className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
-                        : `${classes.pointerImg} ${classes.loadPDFImg}`}
-                      src={checkIsRated(element.id) ? PDFDisabled : PDF}
-                      onClick={(e) => {
-                        if (checkIsRated(element.id)) {
-                          // return handleTooltipOpen();
-                          return handleClick(e);
-                        } else {
-                          window.open(`${element.linkToPresentation}`, '_blank');
-                        }
+                      transformOrigin={{
+                        vertical: 'top',
+                        horizontal: 'center',
                       }}
-                      alt=""
-                    />
+                    >
+                      <p className={classes.popoverText}>
+                        Пожалуйста, оцените выступление,
+                        чтобы скачать презентацию
+                      </p>
+                    </Popover>
+                    {/* mobile */}
+                    <Hidden only={['lg', 'xl', 'md']}>
+                      <img
+                        className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
+                          : `${classes.pointerImg} ${classes.loadPDFImg}`}
+                        src={checkIsRated(element.id) ? PDFMobileDisabled : PDFMobile}
+                        onClick={(e) => {
+                          if (checkIsRated(element.id)) {
+                            // return handleTooltipOpen();
+                            return handleClick(e);
+                          } else {
+                            window.open(`${element.linkToPresentation}`, '_blank');
+                          }
+                        }}
+                        alt=""
+                      />
+                    </Hidden>
+                    {/* pc */}
+                    <Hidden smDown>
+                      <img
+                        className={checkIsRated(element.id) ? `${classes.loadPDFImg} ${classes.disabledImg}`
+                          : `${classes.pointerImg} ${classes.loadPDFImg}`}
+                        src={checkIsRated(element.id) ? PDFDisabled : PDF}
+                        onClick={(e) => {
+                          if (checkIsRated(element.id)) {
+                            // return handleTooltipOpen();
+                            return handleClick(e);
+                          } else {
+                            window.open(`${element.linkToPresentation}`, '_blank');
+                          }
+                        }}
+                        alt=""
+                      />
 
-                  </Hidden>
+                    </Hidden>
 
-                </Grid>
+                  </Grid>
+                ) : null}
 
                 {
                   element.linkToZoom ? (

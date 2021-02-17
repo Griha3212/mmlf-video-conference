@@ -345,42 +345,43 @@ const SessionInfoBlock = (props: any) => {
                 />
               </Box>
             </div>
-
-            <p className={classes.textCenter}>
-              <Button
+            {currentSpeakerInfo && currentSpeakerInfo.linkToPresentation ? (
+              <p className={classes.textCenter}>
+                <Button
                 // disabled={presentationAccessClosed}
-                onClick={(e) => {
-                  if (presentationAccessClosed) {
-                    return handleClick(e);
-                  } else {
-                    return window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank');
-                  }
-                }}
-                className={classes.loadPresenationButton}
-              >
-                Скачать презентацию
-              </Button>
+                  onClick={(e) => {
+                    if (presentationAccessClosed) {
+                      return handleClick(e);
+                    } else {
+                      return window.open(`${currentSpeakerInfo && currentSpeakerInfo.linkToPresentation}`, '_blank');
+                    }
+                  }}
+                  className={classes.loadPresenationButton}
+                >
+                  Скачать презентацию
+                </Button>
 
-              <Popover
-                id={id}
-                open={open}
-                anchorEl={anchorEl}
-                onClose={handleClose}
-                anchorOrigin={{
-                  vertical: 'top',
-                  horizontal: 'center',
-                }}
-                transformOrigin={{
-                  vertical: 'top',
-                  horizontal: 'center',
-                }}
-              >
-                <p className={classes.popoverText}>
-                  Пожалуйста, оцените выступление,
-                  чтобы скачать презентацию
-                </p>
-              </Popover>
-            </p>
+                <Popover
+                  id={id}
+                  open={open}
+                  anchorEl={anchorEl}
+                  onClose={handleClose}
+                  anchorOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                  }}
+                  transformOrigin={{
+                    vertical: 'top',
+                    horizontal: 'center',
+                  }}
+                >
+                  <p className={classes.popoverText}>
+                    Пожалуйста, оцените выступление,
+                    чтобы скачать презентацию
+                  </p>
+                </Popover>
+              </p>
+            ) : null}
 
             {
               currentSpeakerInfo && currentSpeakerInfo.linkToZoom ? (
