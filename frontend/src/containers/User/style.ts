@@ -28,11 +28,17 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.up('lg')]: {
+      maxWidth: '30%',
+      flexBasis: '30%',
+      height: '22vw',
+      paddingTop: '5%',
     },
 
     [theme.breakpoints.up('xl')]: {
       height: '22vw',
       padding: '100px 0px',
+      maxWidth: '30%',
+      flexBasis: '30%',
     },
 
   },
@@ -164,6 +170,7 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.up('lg')]: {
       justifyContent: 'space-between',
+      // width: '80%',
     },
 
   },

@@ -590,8 +590,8 @@ const UserPage: FC = () => {
               xs={10}
               sm={8}
               md={3}
-              xl={3}
-              lg={3}
+              xl={4}
+              lg={4}
             >
               <p className={classes.imgPartnerP}>
                 {' '}
@@ -611,8 +611,8 @@ const UserPage: FC = () => {
               xs={10}
               sm={8}
               md={3}
-              xl={3}
-              lg={3}
+              xl={4}
+              lg={4}
             >
 
               <p className={classes.imgPartnerP}>
@@ -631,8 +631,8 @@ const UserPage: FC = () => {
               xs={10}
               sm={8}
               md={3}
-              xl={3}
-              lg={3}
+              xl={4}
+              lg={4}
             >
 
               <p className={classes.imgPartnerP}>
