@@ -59,7 +59,7 @@ export const seedMockedSpeakers = async () => {
       company: 'X5 Retail Group',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shulga.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Shulga.pdf`,
 
       innerSystemName: 'Shulga_Plenar',
@@ -75,7 +75,7 @@ export const seedMockedSpeakers = async () => {
 
       company: 'Группа «М.Видео-Эльдорадо»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Dementeva.png`,
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Dementeva.pdf`,
       topicName: 'Тренды, вызовы и задачи в логистике non-food ритейла в 2021 г.',
       innerSystemName: 'Dementeva_Plenar',
@@ -93,14 +93,12 @@ export const seedMockedSpeakers = async () => {
       company: 'Координационный совет по логистике',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/Plenar/Demin.pdf`,
 
       innerSystemName: 'Demin_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'Plenar'),
-      hasSendContactsButton: true,
-      hasRafflePrizesButton: true,
 
     },
 
@@ -113,7 +111,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «НЛМК»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_LIHAREV.jpg`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       innerSystemName: 'Liharev_Plenar',
@@ -145,7 +143,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Утконос',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Obrazcova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessA/Obrazcova.pdf`,
 
       session: foundSessions.filter((session: any) => session.name === 'SessA'),
@@ -159,7 +157,7 @@ export const seedMockedSpeakers = async () => {
 
       company: 'Coca-Cola HBC Россия',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Eleckih.png`,
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessA/Eleckih.pdf`,
       topicName: 'Система управления инновациями в цепях поставок: за счет чего мы формируем стратегическое преимущество на меняющемся рынке',
       innerSystemName: 'Eleckih',
@@ -179,7 +177,7 @@ export const seedMockedSpeakers = async () => {
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessA/Gavrilov.pdf`,
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessA'),
 
     },
@@ -193,9 +191,9 @@ export const seedMockedSpeakers = async () => {
       company: 'VeeRoute Consulting',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Makeev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessA/Makeev.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessA'),
@@ -211,7 +209,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «Ростелеком»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Mashkov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessA/Mashkov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -243,7 +241,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Х5 Retail Group',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Filimonova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Filimonova.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -261,7 +259,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Магнит',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sorokoumova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Sorokoumova,Kanaev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -279,7 +277,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ЗАО "Завод ЭМА"',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ampleev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Ampleev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -297,11 +295,11 @@ export const seedMockedSpeakers = async () => {
       company: 'DPD Pickup',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zilberberg.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Zilberberg.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessB'),
 
     },
@@ -315,11 +313,11 @@ export const seedMockedSpeakers = async () => {
       company: 'SpaceCargo.ru',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bezenkov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Bezenkov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessB'),
 
     },
@@ -347,7 +345,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ГК «Ренна холдинг»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Tupin.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -365,11 +363,11 @@ export const seedMockedSpeakers = async () => {
       company: 'ATI.SU',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vilde.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Vilde.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessC'),
 
     },
@@ -385,7 +383,8 @@ export const seedMockedSpeakers = async () => {
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Babaeva.pdf`,
-
+      hasSendContactsButton: true,
+      hasRafflePrizesButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessC'),
@@ -401,10 +400,10 @@ export const seedMockedSpeakers = async () => {
       company: 'Vezubr',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shirinyan.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Shirinyan.pdf`,
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessC'),
 
     },
@@ -418,9 +417,9 @@ export const seedMockedSpeakers = async () => {
       company: 'Atlas Delivery и MEDPOINT24',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kraus.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kraus.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessC'),
@@ -450,7 +449,7 @@ export const seedMockedSpeakers = async () => {
       company: 'S3',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Urin.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -468,7 +467,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ГК «ЭФКО',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Antonov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -486,7 +485,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ГК «Армтек»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Polkovnikov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       session: foundSessions.filter((session: any) => session.name === 'WMS1'),
@@ -502,7 +501,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Координационный совет по логистике',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Konov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -520,7 +519,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ДГК Дамате',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -538,7 +537,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Мвидео-Эльдорадо',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Susanov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -570,7 +569,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Галацентр',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazanovskiy.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kazanovskii.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -588,9 +587,9 @@ export const seedMockedSpeakers = async () => {
       company: 'ООО «Новейшие Технологии ЛС»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Fatullaev.jpg`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Fattulaev.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessD'),
@@ -606,9 +605,9 @@ export const seedMockedSpeakers = async () => {
       company: 'ОАО «ПКБ «ТЕХНОПРИБОР»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Kobylin.jpg`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kobylin.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessD'),
@@ -624,9 +623,9 @@ export const seedMockedSpeakers = async () => {
       company: 'ООО «Фест Логистик»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ivanushkina.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Ivanushkina.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessD'),
@@ -642,9 +641,9 @@ export const seedMockedSpeakers = async () => {
       company: 'Инфотех',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazarcev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kazarcev.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessD'),
@@ -674,7 +673,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ГК «Армтек»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Polkovnikov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -692,7 +691,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «Ростелеком»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Mashkov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -710,7 +709,7 @@ export const seedMockedSpeakers = async () => {
       company: 'АО «Прогресс» (Фруто-Няня)',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Klimova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -728,7 +727,7 @@ export const seedMockedSpeakers = async () => {
       company: 'СТД «Петрович»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -746,7 +745,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ГК «Ренна холдинг»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -764,7 +763,7 @@ export const seedMockedSpeakers = async () => {
       company: 'АО «Объединенная металлургическая компания»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -796,7 +795,7 @@ export const seedMockedSpeakers = async () => {
       company: 'АО «Объединенная металлургическая компания»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Shapochka.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -814,11 +813,11 @@ export const seedMockedSpeakers = async () => {
       company: 'FESCO',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pyankov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Piankov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessF'),
 
     },
@@ -832,11 +831,11 @@ export const seedMockedSpeakers = async () => {
       company: 'S2B',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.jpg`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Logvin.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessF'),
 
     },
@@ -850,11 +849,11 @@ export const seedMockedSpeakers = async () => {
       company: 'эксклюзивный дистрибьютор ГАЗ',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pletnikova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Pletnikova,lukashuk.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessF'),
 
     },
@@ -868,11 +867,11 @@ export const seedMockedSpeakers = async () => {
       company: 'корпорация «Енисейская Сибирь»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Nikolaev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Nikolaev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
-
+      hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessF'),
 
     },
@@ -900,9 +899,9 @@ export const seedMockedSpeakers = async () => {
       company: 'PSI Logistics Moscow',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sanchenko.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'WMS2'),
@@ -918,9 +917,9 @@ export const seedMockedSpeakers = async () => {
       company: 'LogistiX',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Blinov.jpg`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Blinov.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'WMS2'),
@@ -936,9 +935,9 @@ export const seedMockedSpeakers = async () => {
       company: 'SAP CIS',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gabdulhakov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'WMS2'),
@@ -954,9 +953,9 @@ export const seedMockedSpeakers = async () => {
       company: 'Solvo',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pivovar.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Pivovar,Dolgih.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'WMS2'),
@@ -972,9 +971,9 @@ export const seedMockedSpeakers = async () => {
       company: 'компания «Голосовые решения»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Shevchuk.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'WMS2'),
@@ -1004,7 +1003,7 @@ export const seedMockedSpeakers = async () => {
       company: 'СТД «Петрович»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessG/Shiryaev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1024,7 +1023,7 @@ export const seedMockedSpeakers = async () => {
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessG/Gorskii.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessG'),
@@ -1040,9 +1039,9 @@ export const seedMockedSpeakers = async () => {
       company: 'Сберлогистика',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zayceva.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessG/Zayceva.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessG'),
@@ -1058,9 +1057,9 @@ export const seedMockedSpeakers = async () => {
       company: '«Ориентир»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Damirov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessG/Damirov.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessG'),
@@ -1076,7 +1075,7 @@ export const seedMockedSpeakers = async () => {
       company: 'DECATHLON',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shulz.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1094,7 +1093,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Ozon',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1126,7 +1125,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Auchan',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Rabaev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1144,7 +1143,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Unilever',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Voytikov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1162,7 +1161,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ИЛЬ ДЕ БОТЭ',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shtikov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1180,7 +1179,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Mercury',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Yankovich.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1198,7 +1197,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Технониколь',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bertova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1216,7 +1215,7 @@ export const seedMockedSpeakers = async () => {
       company: 'торговая сеть «Командор»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Hristenko.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1248,7 +1247,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Х5 Retail Group',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vedeneev.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Vedeneev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1266,7 +1265,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ФТС «Пятерочка»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Pavlovskii.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1284,7 +1283,7 @@ export const seedMockedSpeakers = async () => {
       company: '«Национальная Торгово-Распределительная сеть»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Filippov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1302,7 +1301,7 @@ export const seedMockedSpeakers = async () => {
       company: 'КСЛ.Experts',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kim.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Kim.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1320,7 +1319,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Cash&Carry Магнум',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Denisov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1338,7 +1337,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Maxxium',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Alexandrova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1356,7 +1355,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ДК СЛАТА',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Semeniugina.jpg`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1388,7 +1387,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ООО "СИБУР"',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Agarkova.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Agarkova.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1406,7 +1405,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «Мосэнерго»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Abdrahmanov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Abdrahmanov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1424,7 +1423,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «НЛМК»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Novikov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Novikov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1442,7 +1441,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «Северсталь»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Luchin.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Luchin.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1460,9 +1459,9 @@ export const seedMockedSpeakers = async () => {
       company: 'EMAX Logistics',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vishidenko.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Vyshidenko.pdf`,
-
+      hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessJ'),
@@ -1492,7 +1491,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ООО "СИБУР"',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1510,7 +1509,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «Северсталь»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1528,7 +1527,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «Мосэнерго»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Abdrahmanov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1546,7 +1545,7 @@ export const seedMockedSpeakers = async () => {
       company: 'ПАО «НЛМК»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Novikov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
@@ -1564,7 +1563,7 @@ export const seedMockedSpeakers = async () => {
       company: 'EMAX Logistics',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: '',
       linkToPresentation: '',
 
       // innerSystemName: 'Liharev_Plenar',
