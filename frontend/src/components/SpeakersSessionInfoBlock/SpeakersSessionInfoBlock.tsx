@@ -222,7 +222,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
 
               </p>
 
-              <Grid xs={8} lg={10} xl={10} item container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'space-between' : 'center'}>
+              <Grid xs={8} lg={10} xl={10} item container className={classes.mxAuto} justify={element.hasSendContactsButton ? 'center' : 'center'}>
                 {element.linkToPresentation ? (
                   <Grid lg={4} xs={4} className={classes.zoomPdfIconsItem} item>
                     <Popover
