@@ -950,7 +950,7 @@ export const seedMockedSpeakers = async () => {
       lastName: 'ПИВОВАР',
       firstName: 'Александр',
       statusInCompany: 'Начальник отдела ИТ-инноваций',
-      company: 'Solvo',
+      company: 'Русконтрактор',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pivovar.png`,
 
       linkToZoom: '',
@@ -967,7 +967,7 @@ export const seedMockedSpeakers = async () => {
       topicName: 'Повышение операционной эффективности склада: голосовая навигация комплектовщика',
       lastName: 'ШЕВЧУК',
       firstName: 'Светлана',
-      statusInCompany: '',
+      statusInCompany: 'Коммерческий директор',
       company: 'компания «Голосовые решения»',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
