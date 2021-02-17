@@ -969,7 +969,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Светлана',
       statusInCompany: 'Коммерческий директор',
       company: 'компания «Голосовые решения»',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shevchuk.png`,
 
       linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Shevchuk.pdf`,
