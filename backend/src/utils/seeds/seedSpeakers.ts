@@ -517,7 +517,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Марат',
       statusInCompany: 'Вице-президент по инновациям',
       company: 'ДГК Дамате',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Hairov.png`,
 
       linkToZoom: '',
       linkToPresentation: '',
