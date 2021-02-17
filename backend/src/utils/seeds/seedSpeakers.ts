@@ -381,7 +381,7 @@ export const seedMockedSpeakers = async () => {
       company: 'Умная Логистика',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Babaeva.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: 'https://zoom.us/j/94564426366?pwd=end4Y0xhSkhScnh2Qm40TklNenFYQT09',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Babaeva.pdf`,
       hasSendContactsButton: true,
       hasRafflePrizesButton: true,
