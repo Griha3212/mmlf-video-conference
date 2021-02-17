@@ -484,12 +484,10 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Вячеслав',
       statusInCompany: 'Директор по логистике',
       company: 'ГК «Армтек»',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Polkovnikov.png`,
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: '',
-
-      // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'WMS1'),
 
@@ -516,11 +514,11 @@ export const seedMockedSpeakers = async () => {
     {
 
       topicName: '',
-      lastName: 'СУСАНОВ',
-      firstName: 'Игорь',
-      statusInCompany: 'Руководитель управления складской логистики, дирекция по управлению поставками, дистрибьюцией и логистикой',
-      company: 'Мвидео-Эльдорадо',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Susanov.png`,
+      lastName: 'ХАЙРОВ',
+      firstName: 'Марат',
+      statusInCompany: 'Вице-президент по инновациям',
+      company: 'ДГК Дамате',
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: '',
@@ -534,11 +532,11 @@ export const seedMockedSpeakers = async () => {
     {
 
       topicName: '',
-      lastName: 'ХАЙРОВ',
-      firstName: 'Марат',
-      statusInCompany: 'Вице-президент по инновациям',
-      company: 'ДГК Дамате',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+      lastName: 'СУСАНОВ',
+      firstName: 'Игорь',
+      statusInCompany: 'Руководитель управления складской логистики, дирекция по управлению поставками, дистрибьюцией и логистикой',
+      company: 'Мвидео-Эльдорадо',
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Susanov.png`,
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: '',
@@ -573,7 +571,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazanovskiy.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kazanovskii.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -591,7 +589,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Fatullaev.jpg`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Fattulaev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -601,7 +599,7 @@ export const seedMockedSpeakers = async () => {
 
     {
 
-      topicName: 'Подходы к реализации технологий современной концепции Dark Store',
+      topicName: 'Повышаем эффективность склада и делаем технологию ASRS дешевле',
       lastName: 'КОБЫЛИН',
       firstName: 'Александр',
       statusInCompany: 'Директор по развитию',
@@ -609,7 +607,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Kobylin.jpg`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kobylin.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -627,7 +625,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Ivanushkina.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Ivanushkina.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -645,7 +643,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kazarcev.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kazarcev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
