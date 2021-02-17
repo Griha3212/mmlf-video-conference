@@ -410,7 +410,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
         const moderator = currentUserData.foundNextSession.speakers.find(
           (speaker: Speaker) => speaker.isModerator,
         );
-        return `${capitalizeFirstLetter(moderator.lastName)} ${moderator.firstName}`;
+        return `${moderator.firstName} ${capitalizeFirstLetter(moderator.lastName)}`;
       }
 
       if (currentUserData.channelUserInfo.activeSession
@@ -418,11 +418,11 @@ const SpeakersSessionInfoBlock = (props: any) => {
         const moderator = currentUserData.foundNextSession.speakers.find(
           (speaker: Speaker) => speaker.isModerator,
         );
-        return `${capitalizeFirstLetter(moderator.lastName)} ${moderator.firstName}`;
+        return `${moderator.firstName} ${capitalizeFirstLetter(moderator.lastName)}`;
       }
 
       if (currentModeratorInfo) {
-        return `${capitalizeFirstLetter(currentModeratorInfo.lastName)} ${currentModeratorInfo.firstName}`;
+        return `${currentModeratorInfo.firstName} ${capitalizeFirstLetter(currentModeratorInfo.lastName)}`;
       } else return 'Имя Фамилия';
     } else return 'Имя Фамилия';
   };
