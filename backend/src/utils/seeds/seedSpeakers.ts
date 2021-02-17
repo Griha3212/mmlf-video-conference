@@ -829,7 +829,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Ольга',
       statusInCompany: 'Руководитель отдела',
       company: 'S2B Group',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zabavskaya.png`,
 
       linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Logvin.pdf`,
