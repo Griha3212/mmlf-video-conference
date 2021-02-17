@@ -668,11 +668,11 @@ export const seedMockedSpeakers = async () => {
     {
 
       topicName: '',
-      lastName: 'ТУПИН',
-      firstName: 'Кирилл',
+      lastName: 'ПОЛКОВНИКОВ',
+      firstName: 'Вячеслав',
       statusInCompany: 'Директор по логистике',
-      company: 'ГК «Ренна холдинг»',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
+      company: 'ГК «Армтек»',
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Polkovnikov.png`,
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: '',
@@ -740,11 +740,11 @@ export const seedMockedSpeakers = async () => {
     {
 
       topicName: '',
-      lastName: 'ПОЛКОВНИКОВ',
-      firstName: 'Вячеслав',
+      lastName: 'ТУПИН',
+      firstName: 'Кирилл',
       statusInCompany: 'Директор по логистике',
-      company: 'ГК «Армтек»',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+      company: 'ГК «Ренна холдинг»',
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: '',
@@ -797,7 +797,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shapochka.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Shapochka.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -807,7 +807,7 @@ export const seedMockedSpeakers = async () => {
 
     {
 
-      topicName: 'Оперативное планирование, позволяющее гарантированно снизить стоимость мультимодельных перевозок',
+      topicName: 'Оперативное планирование: Как снизить стоимость мультимодальных перевозок',
       lastName: 'ПЬЯНКОВ',
       firstName: 'Александр',
       statusInCompany: 'Директор по 3PL',
@@ -815,7 +815,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pyankov.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Piankov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -833,7 +833,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.jpg`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Logvin.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -851,7 +851,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pletnikova.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Pletnikova,lukashuk.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -869,7 +869,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Nikolaev.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Nikolaev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
