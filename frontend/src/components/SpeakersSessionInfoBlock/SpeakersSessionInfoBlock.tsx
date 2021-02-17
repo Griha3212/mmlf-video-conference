@@ -362,7 +362,7 @@ const SpeakersSessionInfoBlock = (props: any) => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return renderMockedSessionSpeakers();
+        return renderSessionSpeakers(true);
       }
 
       if (currentUserData.channelUserInfo.activeSession
@@ -381,7 +381,9 @@ const SpeakersSessionInfoBlock = (props: any) => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return noAvatar;
+        return currentUserData.foundNextSession.speakers.find(
+          (speaker: Speaker) => speaker.isModerator,
+        ).linkToImg;
       }
 
       if (currentUserData.channelUserInfo.activeSession
@@ -401,15 +403,24 @@ const SpeakersSessionInfoBlock = (props: any) => {
     if (currentUserData) {
       if (!currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return 'Имя Фамилия';
+        const moderator = currentUserData.foundNextSession.speakers.find(
+          (speaker: Speaker) => speaker.isModerator,
+        );
+        return `${capitalizeFirstLetter(moderator.lastName)} ${moderator.firstName}`;
       }
 
       if (currentUserData.channelUserInfo.activeSession
         && currentUserData.channelUserInfo.break) {
-        return 'Имя Фамилия';
+        const moderator = currentUserData.foundNextSession.speakers.find(
+          (speaker: Speaker) => speaker.isModerator,
+        );
+        return `${capitalizeFirstLetter(moderator.lastName)} ${moderator.firstName}`;
       }
 
       if (currentModeratorInfo) {
+        const moderator = currentUserData.foundNextSession.speakers.find(
+          (speaker: Speaker) => speaker.isModerator,
+        ).linkToImg;
         return `${capitalizeFirstLetter(currentModeratorInfo.lastName)} ${currentModeratorInfo.firstName}`;
       } else return 'Имя Фамилия';
     } else return 'Имя Фамилия';

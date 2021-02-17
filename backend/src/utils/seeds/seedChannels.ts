@@ -13,6 +13,7 @@ export const seedMockedChannels = async () => {
     startChannelSessionLetter: 'Пленарная сессия',
     startChannelSessionDescription: 'Развитие логистики и управления цепями поставок в России и мире',
     channelLocation: 'Полусфера',
+    nextSessionName: 'Plenar',
   },
 
   {
@@ -21,6 +22,7 @@ export const seedMockedChannels = async () => {
     startChannelSessionLetter: 'Сессия A',
     startChannelSessionDescription: 'Лучший опыт применения инновационных технологий в логистике',
     channelLocation: 'Сфера',
+    nextSessionName: 'SessA',
   },
   {
     number: 3,
@@ -28,6 +30,7 @@ export const seedMockedChannels = async () => {
     startChannelSessionLetter: 'Сессия B',
     startChannelSessionDescription: 'Комплексные логистические решения для ритейлеров и производителей',
     channelLocation: 'Аудитория 5',
+    nextSessionName: 'SessB',
   },
 
   {
@@ -36,6 +39,7 @@ export const seedMockedChannels = async () => {
     startChannelSessionLetter: 'Сессия С',
     startChannelSessionDescription: 'Цифровой транспорт: прозрачное управление затратами и создание конкурентных преимуществ для бизнеса',
     channelLocation: 'Аудитория 2',
+    nextSessionName: 'SessC',
   },
 
   ];
@@ -50,6 +54,7 @@ export const seedMockedChannels = async () => {
     newChannel.startChannelSessionLetter = channel.startChannelSessionLetter;
     newChannel.startChannelSessionDescription = channel.startChannelSessionDescription;
     newChannel.channelLocation = channel.channelLocation;
+    newChannel.nextSessionName = channel.nextSessionName;
 
     results.push(newChannel);
   }

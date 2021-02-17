@@ -62,13 +62,21 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
       );
 
       // find next session info to show speakers in next session
-      const nextSessionName = channelUserInfo?.activeSession?.nextSessionName;
+      let nextSessionName = channelUserInfo?.activeSession?.nextSessionName;
+      let foundNextSession;
 
-      console.log('nextSessionName :>> ', nextSessionName);
-
-      const foundNextSession = await sessionsRepository.findOne(
-        { where: { name: nextSessionName }, relations: ['speakers'] },
-      );
+      if (nextSessionName) {
+        foundNextSession = await sessionsRepository.findOne(
+          { where: { name: nextSessionName }, relations: ['speakers'] },
+        );
+      } else {
+        console.log('1 :>> ');
+        nextSessionName = channelUserInfo?.nextSessionName;
+        console.log('nextSessionName :>> ', channelUserInfo);
+        foundNextSession = await sessionsRepository.findOne(
+          { where: { name: nextSessionName }, relations: ['speakers'] },
+        );
+      }
 
       const finalInfoForUser = { foundUser, channelUserInfo, foundNextSession };
 

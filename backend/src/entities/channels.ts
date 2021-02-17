@@ -45,4 +45,8 @@ export default class Channels extends BaseEntity {
   @Index()
   @Column({ default: false })
   started: boolean;
+
+  @Index()
+  @Column({ nullable: true })
+  nextSessionName: string;
 }
