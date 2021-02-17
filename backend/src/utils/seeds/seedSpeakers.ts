@@ -175,7 +175,7 @@ export const seedMockedSpeakers = async () => {
       company: 'SAP CIS',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gavrilov.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: 'https://sap-se.zoom.com/j/91038491097',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessA/Gavrilov.pdf`,
       hasSendContactsButton: true,
       session: foundSessions.filter((session: any) => session.name === 'SessA'),
