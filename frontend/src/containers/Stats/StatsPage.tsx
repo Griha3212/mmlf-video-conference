@@ -77,7 +77,11 @@ const StatsPage: FC = () => {
   const [userData] = useState(parseToken(token.accessToken as string));
 
   const [openContactsDialog, setOpenContactsDialog] = React.useState(false);
+  const [openRafflePrizesDialog, setOpenRafflePrizesDialog] = React.useState(false);
+
   const [contactedSpeakersList, setContactedSpeakersList] = React.useState([]);
+
+  const [rafflePrizesUserList, setRafflePrizesUserList] = React.useState([]);
 
   console.log('contactedSpeakersList :>> ', contactedSpeakersList);
 
@@ -90,6 +94,7 @@ const StatsPage: FC = () => {
 
   const handleCloseModalDialog = () => {
     setOpenContactsDialog(false);
+    setOpenRafflePrizesDialog(false);
   };
 
   const [dataForStatsViewer, setDataForStatsViewer] = useState<DataForStats[]>();
@@ -97,6 +102,11 @@ const StatsPage: FC = () => {
   const loadDataForStatsViewer = async () => {
     const response = await apiGetStats(userData.id, token);
     setDataForStatsViewer(response);
+  };
+
+  const handleOpenRafflePrizesModalDialog = () => {
+    setRafflePrizesUserList(dataForStatsViewer);
+    setOpenRafflePrizesDialog(true);
   };
 
   useEffect(() => {
@@ -244,6 +254,18 @@ const StatsPage: FC = () => {
           <Typography component="h1" variant="h5">
             Страница Просмотра Статистики
           </Typography>
+          <p>
+            <Button
+              variant="contained"
+              color="primary"
+              onClick={
+                () => handleOpenRafflePrizesModalDialog()
+              }
+            >
+              Список людей, участвующих в конкурсе
+            </Button>
+
+          </p>
 
         </div>
 
@@ -275,10 +297,31 @@ const StatsPage: FC = () => {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
           >
-            <DialogTitle id="alert-dialog-title">Text</DialogTitle>
+            <DialogTitle id="alert-dialog-title">Список людей, отправивших контакты</DialogTitle>
             <DialogContent>
               <DialogContentText id="alert-dialog-description">
                 {contactedSpeakersList.map((element: any) => (
+                  <p>
+                    {element.user.firstName}
+                    {' '}
+                    {element.user.lastName}
+                  </p>
+                ))}
+              </DialogContentText>
+            </DialogContent>
+
+          </Dialog>
+
+          <Dialog
+            open={openRafflePrizesDialog}
+            onClose={handleCloseModalDialog}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">Список людей, участвующих в конкурсе</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                {rafflePrizesUserList.map((element: any) => (
                   <p>
                     {element.user.firstName}
                     {' '}

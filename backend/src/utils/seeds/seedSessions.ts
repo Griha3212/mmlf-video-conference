@@ -48,7 +48,6 @@ export const seedMockedSessions = async () => {
       nextSessionLetter: 'Панельная сессия H',
       nextSessionDescription: 'Рекомендации по улучшению логистических процессов от директоров по логистике',
       voteFoAllSession: true,
-      partnerOfTheSessionImgSrc: `${process.env.BACKEND_URL}/img/sessionPartners/cemat.svg`,
       nextSessionName: 'SessH',
     },
 
