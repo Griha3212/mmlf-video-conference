@@ -1284,7 +1284,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Filippov.png`,
 
       linkToZoom: '',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessI/Filippov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
