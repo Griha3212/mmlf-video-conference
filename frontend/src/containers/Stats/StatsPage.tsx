@@ -26,11 +26,14 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import KeyboardArrowDownIcon from '@material-ui/icons/KeyboardArrowDown';
 import KeyboardArrowUpIcon from '@material-ui/icons/KeyboardArrowUp';
-import { Checkbox } from '@material-ui/core';
-import { apiGetStats } from '../../api/stats';
-import getLocalStorageData from '../../utils/helpers/localStorage.helper';
-import parseToken from '../../utils/parseToken';
+import {
+  Button, Checkbox, Dialog, DialogContent, DialogContentText, DialogTitle,
+} from '@material-ui/core';
+
 import useStyles from './style';
+import parseToken from '../../utils/parseToken';
+import getLocalStorageData from '../../utils/helpers/localStorage.helper';
+import { apiGetStats } from '../../api/stats';
 
 type User = {
 
@@ -73,6 +76,22 @@ const StatsPage: FC = () => {
   const { token } = getLocalStorageData();
   const [userData] = useState(parseToken(token.accessToken as string));
 
+  const [openContactsDialog, setOpenContactsDialog] = React.useState(false);
+  const [contactedSpeakersList, setContactedSpeakersList] = React.useState([]);
+
+  console.log('contactedSpeakersList :>> ', contactedSpeakersList);
+
+  // console.log('openContactsDialog :>> ', openContactsDialog);
+
+  const handleOpenModalDialog = (row: any) => {
+    setContactedSpeakersList(row.usersWhoSendContacts);
+    setOpenContactsDialog(true);
+  };
+
+  const handleCloseModalDialog = () => {
+    setOpenContactsDialog(false);
+  };
+
   const [dataForStatsViewer, setDataForStatsViewer] = useState<DataForStats[]>();
 
   const loadDataForStatsViewer = async () => {
@@ -87,6 +106,8 @@ const StatsPage: FC = () => {
   const Row = (props: { row: DataForStats }) => {
     const { row } = props;
     const [open, setOpen] = React.useState(false);
+
+    // console.log('row :>> ', row);
 
     let sum = 0;
 
@@ -146,6 +167,15 @@ const StatsPage: FC = () => {
           <TableCell align="center">{row.usersWhoWatchedSpeaker.length}</TableCell>
           <TableCell align="center">{row.votes.length}</TableCell>
           <TableCell align="center">{medianValue}</TableCell>
+          <TableCell align="center">
+            <Button
+              color={row.usersWhoSendContacts.length > 0 ? 'primary' : 'secondary'}
+              onClick={() => handleOpenModalDialog(row)}
+            >
+              Показать список
+            </Button>
+
+          </TableCell>
         </TableRow>
         <TableRow>
           <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
@@ -229,6 +259,7 @@ const StatsPage: FC = () => {
                 <TableCell align="center">Количество просмотров</TableCell>
                 <TableCell align="center">Количество оценок</TableCell>
                 <TableCell align="center">Средняя оценка</TableCell>
+                <TableCell align="center">Кто отправил контакты</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -237,6 +268,29 @@ const StatsPage: FC = () => {
               ))}
             </TableBody>
           </Table>
+
+          <Dialog
+            open={openContactsDialog}
+            onClose={handleCloseModalDialog}
+            aria-labelledby="alert-dialog-title"
+            aria-describedby="alert-dialog-description"
+          >
+            <DialogTitle id="alert-dialog-title">Text</DialogTitle>
+            <DialogContent>
+              <DialogContentText id="alert-dialog-description">
+                {contactedSpeakersList.map((element: any) => (
+                  <p>
+                    {element.user.firstName}
+                    {' '}
+                    {element.user.lastName}
+                  </p>
+                ))}
+              </DialogContentText>
+            </DialogContent>
+
+          </Dialog>
+          ;
+
         </TableContainer>
       </div>
     </>
