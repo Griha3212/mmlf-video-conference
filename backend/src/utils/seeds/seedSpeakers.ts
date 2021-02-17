@@ -26,9 +26,9 @@ export const seedMockedSpeakers = async () => {
 
     {
 
-      firstName: 'Василий',
-      lastName: 'ДЕМИН',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
+      firstName: 'Ырысбек',
+      lastName: 'ТАШБАЕВ',
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Tashbayev.png`,
       innerSystemName: '',
       isModerator: true,
       session: foundSessions.filter((session: any) => session.name === 'Plenar'),
