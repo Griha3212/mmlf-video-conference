@@ -1021,7 +1021,7 @@ export const seedMockedSpeakers = async () => {
       company: 'COMITAS',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gorskiy.png`,
 
-      linkToZoom: 'https://ya.ru/',
+      linkToZoom: 'https://zoom.us/j/97646449025?pwd=ZGNhdjdwZlpmdjhWRmg3N1FaZ091dz09',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessG/Gorskii.pdf`,
       hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
