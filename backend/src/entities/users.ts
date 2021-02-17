@@ -26,6 +26,10 @@ export default class Users extends BaseEntity {
 
   @Index()
   @Column({ nullable: true })
+  phone: string;
+
+  @Index()
+  @Column({ nullable: true })
   company: string;
 
   // uniq login code
@@ -90,4 +94,8 @@ export default class Users extends BaseEntity {
   @Index()
   @Column({ default: false })
   wantToTakeAPartInRafflePrizes: boolean;
+
+  @Index()
+  @Column({ nullable: true })
+  statusInCompany: string;
 }
