@@ -8,7 +8,6 @@ import fs from 'fs';
 import chalk from 'chalk';
 import { Server } from 'socket.io';
 import path from 'path';
-import osutils from 'os-utils';
 import { app } from './app';
 
 /* eslint-disable no-console */
@@ -84,21 +83,3 @@ io.on('connection', (socket) => {
     socket.leave(String(id));
   });
 });
-
-console.log(`Platform: ${osutils.platform()}`);
-console.log(`Number of CPUs: ${osutils.cpuCount()}`);
-
-setInterval(() => {
-  console.log('----------------------------------------------');
-  osutils.cpuUsage((v: any) => {
-    console.log(`CPU Usage (%) : ${(v * 100).toFixed(2)}`);
-  });
-
-  console.log(`Total Memory: ${osutils.totalmem().toFixed(2)}MB`);
-
-  console.log(`Free Memory: ${osutils.freemem().toFixed(2)}MB`);
-
-  console.log(`Free Memory (%): ${(osutils.freememPercentage() * 100).toFixed(2)}`);
-
-  console.log(`System Uptime: ${osutils.sysUptime()}ms`);
-}, 15000);
