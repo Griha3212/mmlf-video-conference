@@ -1076,7 +1076,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shulz.png`,
 
       linkToZoom: '',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessG/Shulc.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
