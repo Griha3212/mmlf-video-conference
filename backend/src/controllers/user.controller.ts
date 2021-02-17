@@ -60,8 +60,11 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
           relations: ['activeSession', 'activeSession.speakers', 'activeSpeaker'],
         },
       );
+
       // find next session info to show speakers in next session
       const nextSessionName = channelUserInfo?.activeSession?.nextSessionName;
+
+      console.log('nextSessionName :>> ', nextSessionName);
 
       const foundNextSession = await sessionsRepository.findOne(
         { where: { name: nextSessionName }, relations: ['speakers'] },

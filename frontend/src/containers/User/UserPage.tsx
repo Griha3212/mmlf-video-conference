@@ -349,12 +349,13 @@ const UserPage: FC = () => {
     }
 
     // if exc session
-    if (dataForUser &&
+    if (dataForUser && dataForUser.channelUserInfo.activeSession &&
       dataForUser.channelUserInfo.activeSession.isSessionForSecondDay) {
       return null;
     }
 
     if (dataForUser && !dataForUser.channelUserInfo.activeSpeaker &&
+      dataForUser.channelUserInfo.activeSession &&
       dataForUser.channelUserInfo.activeSession.nextSessionName === 'LogistOfTheYear') {
       return null;
     }
@@ -489,7 +490,7 @@ const UserPage: FC = () => {
         <VideoPlayerMain
           height={calculateHeightOfBigChannelWindow()}
           classNameInner="mainVideoContainerBig"
-          videoURL={dataForUser && dataForUser.channelUserInfo.link}
+          videoURL={dataForUser && dataForUser.channelUserInfo && dataForUser.channelUserInfo.link}
         />
 
       </Grid>
