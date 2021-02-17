@@ -298,7 +298,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Zilberberg.png`,
 
       linkToZoom: 'https://ya.ru/',
-      llinkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Zilberberg.pdf`,
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Zilberberg.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -316,7 +316,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Bezenkov.png`,
 
       linkToZoom: 'https://ya.ru/',
-      llinkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Bezenkov.pdf`,
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessB/Bezenkov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -348,7 +348,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Tupin.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Tupin.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -366,7 +366,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Vilde.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Vilde.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -384,7 +384,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Babaeva.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Babaeva.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -402,8 +402,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shirinyan.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
-
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Shirinyan.pdf`,
       // innerSystemName: 'Liharev_Plenar',
 
       session: foundSessions.filter((session: any) => session.name === 'SessC'),
@@ -420,7 +419,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Kraus.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kraus.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
