@@ -247,7 +247,7 @@ export const seedMockedSessions = async () => {
       channelForShowing: await foundChannels.filter((channel: any) => channel.number === 4),
       nextSessionLetter: '«Логист года»',
       nextSessionDescription: 'Подведение итогов конкурса «Логист года» ',
-      voteFoAllSession: true,
+      // voteFoAllSession: true,
       nextSessionName: 'LogistOfTheYear',
     },
 
