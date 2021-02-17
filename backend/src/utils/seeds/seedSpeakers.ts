@@ -919,25 +919,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Blinov.jpg`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
-
-      // innerSystemName: 'Liharev_Plenar',
-
-      session: foundSessions.filter((session: any) => session.name === 'WMS2'),
-
-    },
-
-    {
-
-      topicName: 'Мы ждем перемен: как изменилась логистика под влиянием пандемии',
-      lastName: 'ЕВДОКИМОВ',
-      firstName: 'Евгений',
-      statusInCompany: 'Руководитель направления внедрения WMS',
-      company: 'КорусКонсалтинг',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Evdokimov.png`,
-
-      linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Blinov.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -948,11 +930,11 @@ export const seedMockedSpeakers = async () => {
     {
 
       topicName: 'Тема уточняется',
-      lastName: 'Представитель',
-      firstName: 'компании',
-      statusInCompany: '',
-      company: 'КорусКонсалтинг',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
+      lastName: 'ГАБДУЛХАКОВ',
+      firstName: 'Наиль',
+      statusInCompany: 'Консультант по внедрению WMS',
+      company: 'SAP CIS',
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Gabdulhakov.png`,
 
       linkToZoom: 'https://ya.ru/',
       linkToPresentation: '',
@@ -973,7 +955,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Pivovar.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Pivovar,Dolgih.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -991,7 +973,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Shevchuk.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
@@ -1023,7 +1005,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Shiryaev.png`,
 
       linkToZoom: 'https://ya.ru/',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Nikolaev.pdf`,
 
       // innerSystemName: 'Liharev_Plenar',
 
