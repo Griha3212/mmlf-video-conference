@@ -253,7 +253,8 @@ const SessionInfoBlock = (props: any) => {
 
             </Grid>
 
-            {currentUserData && currentUserData.channelUserInfo.activeSession
+            {currentUserData && currentUserData.channelUserInfo.activeSession &&
+              !currentUserData.channelUserInfo.break
               && currentUserData.channelUserInfo.activeSession.partnerOfTheSessionImgSrc ? (
                 <Grid item xl={3} lg={3} md={3}>
                   <p className={classes.sessionPartnerWord}>Партнер сессии</p>
@@ -348,7 +349,7 @@ const SessionInfoBlock = (props: any) => {
             {currentSpeakerInfo && currentSpeakerInfo.linkToPresentation ? (
               <p className={classes.textCenter}>
                 <Button
-                // disabled={presentationAccessClosed}
+                  // disabled={presentationAccessClosed}
                   onClick={(e) => {
                     if (presentationAccessClosed) {
                       return handleClick(e);
