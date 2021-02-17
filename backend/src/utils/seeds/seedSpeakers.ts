@@ -829,7 +829,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Ольга',
       statusInCompany: 'Руководитель отдела',
       company: 'S2B Group',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.png`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/no_photo.png`,
 
       linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Logvin.pdf`,
@@ -1353,7 +1353,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Татьяна',
       statusInCompany: 'Руководитель отдела закупок и логистики',
       company: 'ДК СЛАТА',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Semeniugina.png`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Semenugina.png`,
 
       linkToZoom: '',
       linkToPresentation: '',
