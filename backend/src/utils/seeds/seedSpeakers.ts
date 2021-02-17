@@ -28,7 +28,7 @@ export const seedMockedSpeakers = async () => {
 
       firstName: 'Василий',
       lastName: 'ДЕМИН',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Demin.png`,
       innerSystemName: '',
       isModerator: true,
       session: foundSessions.filter((session: any) => session.name === 'Plenar'),
@@ -40,7 +40,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Jos',
 
       company: 'Бельгийская Логистическая Ассоциация (VIB), г. Брюссель',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Marinus.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Marinus.png`,
       linkToZoom: '',
       linkToPresentation: '',
       topicName: 'Методы и технологии в цепях поставок, обеспечивающие устойчивое развитие',
@@ -109,7 +109,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Сергей',
       statusInCompany: 'Вице-президент по логистике',
       company: 'ПАО «НЛМК»',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_LIHAREV.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_LIHAREV.png`,
 
       linkToZoom: '',
       linkToPresentation: '',
@@ -585,7 +585,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Роман',
       statusInCompany: 'Генеральный директор',
       company: 'ООО «Новейшие Технологии ЛС»',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Fatullaev.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Fatullaev.png`,
 
       linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Fattulaev.pdf`,
@@ -603,7 +603,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Александр',
       statusInCompany: 'Директор по развитию',
       company: 'ОАО «ПКБ «ТЕХНОПРИБОР»',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Kobylin.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Kobylin.png`,
 
       linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessC/Kobylin.pdf`,
@@ -779,7 +779,7 @@ export const seedMockedSpeakers = async () => {
       lastName: 'УСМАНОВ',
       firstName: 'Эльдар',
 
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Ucmanov.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Ucmanov.png`,
       // innerSystemName: 'Bogachev',
       isModerator: true,
       session: foundSessions.filter((session: any) => session.name === 'SessF'),
@@ -829,7 +829,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Ольга',
       statusInCompany: 'Руководитель отдела',
       company: 'S2B Group',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.png`,
 
       linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/SessF/Logvin.pdf`,
@@ -883,7 +883,7 @@ export const seedMockedSpeakers = async () => {
       lastName: 'ЗВЕРЕВ',
       firstName: 'Александр',
 
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Zverev.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Zverev.png`,
       // innerSystemName: 'Bogachev',
       isModerator: true,
       session: foundSessions.filter((session: any) => session.name === 'WMS2'),
@@ -915,7 +915,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Дмитрий',
       statusInCompany: 'Технический директор',
       company: 'LogistiX',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Blinov.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Blinov.png`,
 
       linkToZoom: '',
       linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Blinov.pdf`,
@@ -1353,7 +1353,7 @@ export const seedMockedSpeakers = async () => {
       firstName: 'Татьяна',
       statusInCompany: 'Руководитель отдела закупок и логистики',
       company: 'ДК СЛАТА',
-      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Semeniugina.jpg`,
+      linkToImg: `${process.env.BACKEND_URL}/img/speakers/per_Semeniugina.png`,
 
       linkToZoom: '',
       linkToPresentation: '',
