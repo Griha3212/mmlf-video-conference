@@ -928,7 +928,7 @@ export const seedMockedSpeakers = async () => {
 
     {
 
-      topicName: 'Тема уточняется',
+      topicName: 'Эффективный подход к организации проекта внедрения систем управления складом',
       lastName: 'ГАБДУЛХАКОВ',
       firstName: 'Наиль',
       statusInCompany: 'Консультант по внедрению WMS',
