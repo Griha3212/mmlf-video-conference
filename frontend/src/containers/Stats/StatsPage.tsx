@@ -81,11 +81,7 @@ const StatsPage: FC = () => {
 
   const [contactedSpeakersList, setContactedSpeakersList] = React.useState([]);
 
-  const [rafflePrizesUserList, setRafflePrizesUserList] = React.useState([]);
-
-  console.log('contactedSpeakersList :>> ', contactedSpeakersList);
-
-  // console.log('openContactsDialog :>> ', openContactsDialog);
+  const [rafflePrizesUserList, setRafflePrizesUserList] = useState<User[]>();
 
   const handleOpenModalDialog = (row: any) => {
     setContactedSpeakersList(row.usersWhoSendContacts);
@@ -98,14 +94,17 @@ const StatsPage: FC = () => {
   };
 
   const [dataForStatsViewer, setDataForStatsViewer] = useState<DataForStats[]>();
+  const [dataForStatsViewerUsers, setDataForStatsViewerUsers] = useState<User[]>();
 
   const loadDataForStatsViewer = async () => {
     const response = await apiGetStats(userData.id, token);
-    setDataForStatsViewer(response);
+    setDataForStatsViewer(response.foundSpeakers);
+    setDataForStatsViewerUsers(response.foundAllUsers);
   };
 
   const handleOpenRafflePrizesModalDialog = () => {
-    setRafflePrizesUserList(dataForStatsViewer);
+    setRafflePrizesUserList(dataForStatsViewerUsers && dataForStatsViewerUsers);
+
     setOpenRafflePrizesDialog(true);
   };
 
@@ -116,8 +115,6 @@ const StatsPage: FC = () => {
   const Row = (props: { row: DataForStats }) => {
     const { row } = props;
     const [open, setOpen] = React.useState(false);
-
-    // console.log('row :>> ', row);
 
     let sum = 0;
 
@@ -321,13 +318,19 @@ const StatsPage: FC = () => {
             <DialogTitle id="alert-dialog-title">Список людей, участвующих в конкурсе</DialogTitle>
             <DialogContent>
               <DialogContentText id="alert-dialog-description">
-                {rafflePrizesUserList.map((element: any) => (
-                  <p>
-                    {element.user.firstName}
-                    {' '}
-                    {element.user.lastName}
-                  </p>
-                ))}
+                {rafflePrizesUserList && rafflePrizesUserList.map((element: any) => {
+                  if (element.wantToTakeAPartInRafflePrizes) {
+                    return (
+                      <p>
+                        {element.firstName}
+                        {' '}
+                        {element.lastName}
+                        {' '}
+                        {element.email}
+                      </p>
+                    );
+                  }
+                })}
               </DialogContentText>
             </DialogContent>
 

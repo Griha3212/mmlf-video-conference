@@ -32,7 +32,9 @@ export const getStats = async (req: Request, res: Response, next: NextFunction) 
       },
     );
 
-    res.status(200).send(foundSpeakers);
+    const foundAllUsers = await usersRepository.find();
+
+    res.status(200).send({ foundSpeakers, foundAllUsers });
   } catch (error) {
     next(error);
   }
