@@ -70,9 +70,7 @@ export const getUser = async (req: Request, res: Response, next: NextFunction) =
           { where: { name: nextSessionName }, relations: ['speakers'] },
         );
       } else {
-        console.log('1 :>> ');
         nextSessionName = channelUserInfo?.nextSessionName;
-        console.log('nextSessionName :>> ', channelUserInfo);
         foundNextSession = await sessionsRepository.findOne(
           { where: { name: nextSessionName }, relations: ['speakers'] },
         );
