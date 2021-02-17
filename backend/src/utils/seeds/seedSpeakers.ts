@@ -825,10 +825,10 @@ export const seedMockedSpeakers = async () => {
     {
 
       topicName: 'Как грамотно выстроить процессы транспортной логистики и сократить затраты на грузоперевозку',
-      lastName: 'ЛОГВИН',
-      firstName: 'Александр',
-      statusInCompany: 'Генеральный директор',
-      company: 'S2B',
+      lastName: 'ЗАБАВСКАЯ',
+      firstName: 'Ольга',
+      statusInCompany: 'Руководитель отдела',
+      company: 'S2B Group',
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Logvin.jpg`,
 
       linkToZoom: '',
