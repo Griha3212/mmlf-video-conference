@@ -900,7 +900,7 @@ export const seedMockedSpeakers = async () => {
       linkToImg: `${process.env.BACKEND_URL}/img/speakers/Sanchenko.png`,
 
       linkToZoom: '',
-      linkToPresentation: '',
+      linkToPresentation: `${process.env.BACKEND_URL}/presentations/WMS2/Sanchenko.pdf`,
       hasSendContactsButton: true,
       // innerSystemName: 'Liharev_Plenar',
 
