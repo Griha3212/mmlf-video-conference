@@ -282,9 +282,11 @@ const StatsPage: FC = () => {
               </TableRow>
             </TableHead>
             <TableBody>
-              {dataForStatsViewer && dataForStatsViewer.map((row) => (
-                <Row key={row.id} row={row} />
-              ))}
+              {dataForStatsViewer && dataForStatsViewer.map((row) => {
+                if (!row.isModerator) {
+                  return <Row key={row.id} row={row} />;
+                }
+              })}
             </TableBody>
           </Table>
 
@@ -302,6 +304,8 @@ const StatsPage: FC = () => {
                     {element.user.firstName}
                     {' '}
                     {element.user.lastName}
+                    {' '}
+                    {element.user.email}
                   </p>
                 ))}
               </DialogContentText>
