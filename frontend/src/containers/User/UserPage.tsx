@@ -197,7 +197,7 @@ const UserPage: FC = () => {
           localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, '0');
         } else {
           if (initialValueCurrentSpeaker !== 'viewed') {
-            if (initialValueCurrentSpeaker === '5') {
+            if (initialValueCurrentSpeaker === '350') {
               localStorage.setItem(`${String(activeSpeakerInfo && activeSpeakerInfo.id)}`, 'viewed');
               // send to back viewed status
               updateWatchedSpeakersSingleSpeaker(activeSpeakerInfo.id);
