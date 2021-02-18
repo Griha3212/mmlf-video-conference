@@ -441,7 +441,7 @@ const UserPage: FC = () => {
 
           <Grid item className={classes.myAuto} xl={3} lg={3} sm={4}>
             <Button
-              onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
+              onClick={() => { window.open(`${process.env.REACT_APP_API_URL}ксл_брошюра_1.pdf`, '_blank'); }}
               className={classes.loadProgramButton}
             >
               Скачать программу
@@ -476,7 +476,7 @@ const UserPage: FC = () => {
 
           <Grid item className={classes.myAuto} sm={6} xs={6}>
             <Button
-              onClick={() => { window.open('https://www.mmlf.ru/programma-mmlf-2021.html', '_blank'); }}
+              onClick={() => { window.open(`${process.env.REACT_APP_API_URL}ксл_брошюра_1.pdf`, '_blank'); }}
               className={classes.loadProgramButton}
             >
               Скачать программу
