@@ -100,7 +100,7 @@ export const setBreakBetweenSessions = async (
     // update first channel link if it's brake after LogistOfTheYear session
     if (foundChannelToUpdateInfo.activeSession?.name === 'LogistOfTheYear') {
       // TO DO, update link before start
-      foundChannelToUpdateInfo.link = 'https://facecast.net/v/dbf35c';
+      foundChannelToUpdateInfo.link = 'https://facecast.net/v/e0ypcc';
 
       // // socket update
       // const data = { message: 'update' };
