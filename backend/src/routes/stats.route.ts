@@ -9,6 +9,7 @@ const router = express.Router();
 const {
 
   getStats,
+  updateStats,
   // updateToken,
 
 } = authController;
@@ -17,6 +18,12 @@ router.get(
   '/get_stats/:userId',
   passport.authenticate('jwt', { session: false }),
   getStats,
+);
+
+router.get(
+  '/update_stats',
+  // passport.authenticate('jwt', { session: false }),
+  updateStats,
 );
 
 export { router };
