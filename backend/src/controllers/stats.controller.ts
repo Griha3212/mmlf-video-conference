@@ -1,3 +1,4 @@
+/* eslint-disable implicit-arrow-linebreak */
 /* eslint-disable no-plusplus */
 /* eslint-disable no-await-in-loop */
 /* eslint-disable no-restricted-syntax */
@@ -51,61 +52,84 @@ export const updateStats = async (req: Request, res: Response, next: NextFunctio
     const { userId } = req.params;
 
     // found JOS
-    const foundSpeaker = await speakersRepository.findOne(
-      {
-        where: { id: 28 },
-        relations: ['usersWhoWatchedSpeaker', 'votes',
-          'votes.user', 'usersWhoSendContacts', 'usersWhoSendContacts.user'],
-      },
-    );
 
-    if (!foundSpeaker) throw new Error(allErrors.speakerNotFound);
+    const foundAllSpeakersBig = await speakersRepository.find();
 
-    // const foundSpeakers = await speakersRepository.find(
-    //   {
-    //     relations: ['usersWhoWatchedSpeaker', 'votes',
-    //       'votes.user', 'usersWhoSendContacts', 'usersWhoSendContacts.user'],
-    //   },
-    // );
+    if (!foundAllSpeakersBig) throw new Error(allErrors.speakerNotFound);
 
-    const foundAllUsers = await usersRepository.find({ relations: ['watchedSpeakers'] });
+    for (const selectedSpeaker of foundAllSpeakersBig) {
+      const speaker = await speakersRepository.findOne(
+        {
+          where: { id: selectedSpeaker.id },
+          relations: ['usersWhoWatchedSpeaker', 'votes',
+            'votes.user', 'usersWhoSendContacts', 'usersWhoSendContacts.user'],
+        },
+      );
 
-    const foundWatchedUsers = foundSpeaker.usersWhoWatchedSpeaker;
+      if (!speaker) throw new Error(allErrors.speakerNotFound);
 
-    const needAmountOfAddedUsers = Math.floor(
-      (foundWatchedUsers.length * 2.5 - foundWatchedUsers.length),
-    );
+      // const foundSpeakers = await speakersRepository.find(
+      //   {
+      //     relations: ['usersWhoWatchedSpeaker', 'votes',
+      //       'votes.user', 'usersWhoSendContacts', 'usersWhoSendContacts.user'],
+      //   },
+      // );
 
-    console.log('foundAllUsers[0] :>> ', foundAllUsers[0]);
+      const randomIntFromInterval = (min: number, max: number) => // min and max included
+        Math.floor(Math.random() * (max - min + 100) + min);
 
-    console.log('foundAllUsers :>> ', foundAllUsers.length);
+      const foundAllSpeakers = await speakersRepository.find({
+        relations: ['usersWhoWatchedSpeaker'],
+      });
 
-    console.log('foundWatchedUsers[0] :>> ', foundWatchedUsers[0]);
+      const foundAllUsers = await usersRepository.find({ relations: ['watchedSpeakers'] });
 
-    console.log('foundWatchedUsers :>> ', foundWatchedUsers.length);
+      if (!speaker.isModerator) {
+        const foundWatchedUsers = speaker.usersWhoWatchedSpeaker;
 
-    console.log('needAmountOfAddedUsers :>> ', needAmountOfAddedUsers);
+        // console.log('foundWatchedUsers :>> ', foundWatchedUsers);
 
-    const arrayOfUnicNewUsers = foundAllUsers.filter(
-      (objFromA) => !foundWatchedUsers.find((objFromB) => objFromA.id === objFromB.id),
-    );
+        let needAmountOfAddedUsers = Math.floor(
+          (foundWatchedUsers.length * 2.5 - foundWatchedUsers.length),
+        );
 
-    console.log('arrayOfUnicNewUsers :>> ', arrayOfUnicNewUsers.length);
-    // shuffle an array of arrayOfUnicNewUsers
-    arrayOfUnicNewUsers.sort(() => Math.random() - 0.5);
-    console.log('arrayOfUnicNewUsers :>> ', arrayOfUnicNewUsers.length);
+        let arrayOfUnicNewUsers = foundAllUsers.filter(
+          (objFromA) => !foundWatchedUsers.find((objFromB: any) => objFromA.id === objFromB.id),
+        );
 
-    const result = [];
+        if (foundWatchedUsers.length === 0) {
+          arrayOfUnicNewUsers = foundAllUsers;
+        }
 
-    for (let index = 0; index < needAmountOfAddedUsers; index++) {
-      const userToUpdate = arrayOfUnicNewUsers[index];
-      // console.log('userToUpdate :>> ', userToUpdate);
-      userToUpdate.watchedSpeakers.push(foundSpeaker);
-      result.push(userToUpdate);
+        console.log('arrayOfUnicNewUsers.length :>> ', arrayOfUnicNewUsers.length);
+
+        if (foundWatchedUsers.length < 10 && speaker.id !== 1) {
+          needAmountOfAddedUsers = randomIntFromInterval(200, 230);
+        }
+
+        // intro word
+        if (speaker.id === 1) {
+          console.log('1 :>> ');
+          needAmountOfAddedUsers = 201;
+        }
+        console.log('speaker.id :>> ', speaker.id);
+        console.log('needAmountOfAddedUsers :>> ', needAmountOfAddedUsers);
+
+        // shuffle an array of arrayOfUnicNewUsers
+        // arrayOfUnicNewUsers.sort(() => Math.random() - 0.5);
+
+        const result = [];
+
+        for (let index = 0; index < needAmountOfAddedUsers; index++) {
+          const userToUpdate = arrayOfUnicNewUsers[index];
+          // console.log('userToUpdate :>> ', userToUpdate);
+          await userToUpdate.watchedSpeakers.push(speaker);
+          await result.push(userToUpdate);
+        }
+
+        await usersRepository.save(result);
+      }
     }
-
-    await usersRepository.save(result);
-
     res.status(200).send('success');
   } catch (error) {
     next(error);
