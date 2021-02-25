@@ -43,6 +43,7 @@ type User = {
   lastName: string;
   email: string;
   createdAt: Date;
+  statusInCompany: string;
 
 };
 
@@ -195,6 +196,8 @@ const StatsPage: FC = () => {
                   <TableHead>
                     <TableRow>
                       <TableCell align="center">Имя Фамилия участника</TableCell>
+                      <TableCell align="center">Должность</TableCell>
+                      <TableCell align="center">Компания</TableCell>
                       <TableCell align="center">Просмотрел</TableCell>
                       <TableCell align="center">Хочет отправить контакты</TableCell>
                       <TableCell align="center">Время отправки</TableCell>
@@ -205,6 +208,15 @@ const StatsPage: FC = () => {
                   <TableBody>
                     {row.usersWhoWatchedSpeaker.map((historyRow) => (
                       <TableRow key={historyRow.id}>
+                        <TableCell align="center" component="th" scope="row">
+                          {`${historyRow.firstName || '-'} ${historyRow.lastName || '-'}`}
+                        </TableCell>
+                        <TableCell align="center" component="th" scope="row">
+                          {`${historyRow.statusInCompany || '-'}`}
+                        </TableCell>
+                        <TableCell align="center" component="th" scope="row">
+                          {`${historyRow.company || '-'}`}
+                        </TableCell>
                         <TableCell align="center" component="th" scope="row">
                           {`${historyRow.firstName} ${historyRow.lastName}`}
                         </TableCell>
