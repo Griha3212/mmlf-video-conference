@@ -217,9 +217,6 @@ const StatsPage: FC = () => {
                         <TableCell align="center" component="th" scope="row">
                           {`${historyRow.company || '-'}`}
                         </TableCell>
-                        <TableCell align="center" component="th" scope="row">
-                          {`${historyRow.firstName} ${historyRow.lastName}`}
-                        </TableCell>
                         <TableCell align="center">
                           <Checkbox
                             defaultChecked
